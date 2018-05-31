@@ -1,0 +1,4 @@
+coreid,identifiedBy,identifiedByID,dateIdentified,identificationQualifier,scientificName,identificationIsCurrent,scientificNameAuthorship,genus,specificEpithet,taxonRank,infraspecificEpithet,identificationReferences,identificationRemarks,recordId,modified
+3276628,"Liz Makings",,"2009-06-10 00:00:00",,"Physalis crassifolia",0,Benth.,,,,,,,urn:uuid:412f544d-ed7f-4dfb-9009-0135f019ba72,"2011-04-14 22:42:33"
+3276683,"Les Landrum",,2012,,"Physalis crassifolia",1,Benth.,,,,,,,urn:uuid:c62a6f5b-bb51-46e5-92f3-9a1866f94eba,"2015-07-20 16:07:44"
+3276683,unknown,,unknown,,"Physalis crassifolia var. versicolor",0,"(Rydb.) Waterfall",,,,,,,urn:uuid:c44d0904-b7fc-4321-bb52-c5d48e4b4674,"2015-07-20 16:07:44"

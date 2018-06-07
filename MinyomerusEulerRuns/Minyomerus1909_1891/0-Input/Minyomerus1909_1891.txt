@@ -1,0 +1,22 @@
+# 1909_1891
+taxonomy 1909 Pierce
+(Elissa Elissa_constricta Elissa_laticeps)
+(Minyomerus Minyomerus_caseyi Minyomerus_innocuus Minyomerus_languidus)
+(Thylacites_microsus)
+
+taxonomy 1891 Sharp
+(Pseudelissa Pseudelissa_caseyi Pseudelissa_cinerea)
+(Elissa Elissa_constricta Elissa_laticeps)
+(Minyomerus Minyomerus_innocuus Minyomerus_languidus)
+(Thylacites_microsus)
+
+articulation 1909_1891 Pierce_Sharp
+[1909.Elissa_constricta equals 1891.Elissa_constricta]
+[1909.Elissa_laticeps equals 1891.Elissa_laticeps]
+[1909.Minyomerus includes 1891.Pseudelissa]
+[1909.Minyomerus includes 1891.Minyomerus]
+[1909.Minyomerus_caseyi equals 1891.Pseudelissa_caseyi]
+[1909.Minyomerus_innocuus equals 1891.Minyomerus_innocuus]
+[1909.Minyomerus_languidus includes 1891.Pseudelissa_cinerea]
+[1909.Minyomerus_languidus includes 1891.Minyomerus_languidus]
+[1909.Thylacites_microsus equals 1891.Thylacites_microsus]

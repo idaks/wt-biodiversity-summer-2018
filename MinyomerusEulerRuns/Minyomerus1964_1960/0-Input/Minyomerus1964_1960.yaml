@@ -1,0 +1,167 @@
+1960.Elissa:
+  concept: Elissa
+  group: '1960'
+1960.Elissa_constricta:
+  concept: Elissa_constricta
+  group: '1960'
+1960.Elissa_laticeps:
+  concept: Elissa_laticeps
+  group: '1960'
+1960.Minyomerus:
+  concept: Minyomerus
+  group: '1960'
+1960.Minyomerus_caseyi:
+  concept: Minyomerus_caseyi
+  group: '1960'
+1960.Minyomerus_conicollis:
+  concept: Minyomerus_conicollis
+  group: '1960'
+1960.Minyomerus_innocuus:
+  concept: Minyomerus_innocuus
+  group: '1960'
+1960.Minyomerus_languidus:
+  concept: Minyomerus_languidus
+  group: '1960'
+1960.Minyomerus_microps:
+  concept: Minyomerus_microps
+  group: '1960'
+1960.Piscatopus:
+  concept: Piscatopus
+  group: '1960'
+1960.Piscatopus_griseus:
+  concept: Piscatopus_griseus
+  group: '1960'
+1964.Minyomerus:
+  concept: Minyomerus
+  group: '1964'
+1964.Minyomerus_caseyi:
+  concept: Minyomerus_caseyi
+  group: '1964'
+1964.Minyomerus_conicollis:
+  concept: Minyomerus_conicollis
+  group: '1964'
+1964.Minyomerus_constrictus:
+  concept: Minyomerus_constrictus
+  group: '1964'
+1964.Minyomerus_innocuus:
+  concept: Minyomerus_innocuus
+  group: '1964'
+1964.Minyomerus_languidus:
+  concept: Minyomerus_languidus
+  group: '1964'
+1964.Minyomerus_laticeps:
+  concept: Minyomerus_laticeps
+  group: '1964'
+1964.Minyomerus_microps:
+  concept: Minyomerus_microps
+  group: '1964'
+1964.Piscatopus:
+  concept: Piscatopus
+  group: '1964'
+1964.Piscatopus_griseus:
+  concept: Piscatopus_griseus
+  group: '1964'
+1960.Elissa_constricta_1960.Elissa:
+  label: isa
+  s: 1960.Elissa_constricta
+  t: 1960.Elissa
+1960.Elissa_laticeps_1960.Elissa:
+  label: isa
+  s: 1960.Elissa_laticeps
+  t: 1960.Elissa
+1960.Minyomerus_caseyi_1960.Minyomerus:
+  label: isa
+  s: 1960.Minyomerus_caseyi
+  t: 1960.Minyomerus
+1960.Minyomerus_conicollis_1960.Minyomerus:
+  label: isa
+  s: 1960.Minyomerus_conicollis
+  t: 1960.Minyomerus
+1960.Minyomerus_innocuus_1960.Minyomerus:
+  label: isa
+  s: 1960.Minyomerus_innocuus
+  t: 1960.Minyomerus
+1960.Minyomerus_languidus_1960.Minyomerus:
+  label: isa
+  s: 1960.Minyomerus_languidus
+  t: 1960.Minyomerus
+1960.Minyomerus_microps_1960.Minyomerus:
+  label: isa
+  s: 1960.Minyomerus_microps
+  t: 1960.Minyomerus
+1960.Piscatopus_griseus_1960.Piscatopus:
+  label: isa
+  s: 1960.Piscatopus_griseus
+  t: 1960.Piscatopus
+1964.Minyomerus_1960.Elissa:
+  label: '>'
+  s: 1964.Minyomerus
+  t: 1960.Elissa
+1964.Minyomerus_1960.Minyomerus:
+  label: '>'
+  s: 1964.Minyomerus
+  t: 1960.Minyomerus
+1964.Minyomerus_caseyi_1960.Minyomerus_caseyi:
+  label: '='
+  s: 1964.Minyomerus_caseyi
+  t: 1960.Minyomerus_caseyi
+1964.Minyomerus_caseyi_1964.Minyomerus:
+  label: isa
+  s: 1964.Minyomerus_caseyi
+  t: 1964.Minyomerus
+1964.Minyomerus_conicollis_1960.Minyomerus_conicollis:
+  label: '='
+  s: 1964.Minyomerus_conicollis
+  t: 1960.Minyomerus_conicollis
+1964.Minyomerus_conicollis_1964.Minyomerus:
+  label: isa
+  s: 1964.Minyomerus_conicollis
+  t: 1964.Minyomerus
+1964.Minyomerus_constrictus_1960.Elissa_constricta:
+  label: '='
+  s: 1964.Minyomerus_constrictus
+  t: 1960.Elissa_constricta
+1964.Minyomerus_constrictus_1964.Minyomerus:
+  label: isa
+  s: 1964.Minyomerus_constrictus
+  t: 1964.Minyomerus
+1964.Minyomerus_innocuus_1960.Minyomerus_innocuus:
+  label: '='
+  s: 1964.Minyomerus_innocuus
+  t: 1960.Minyomerus_innocuus
+1964.Minyomerus_innocuus_1964.Minyomerus:
+  label: isa
+  s: 1964.Minyomerus_innocuus
+  t: 1964.Minyomerus
+1964.Minyomerus_languidus_1960.Minyomerus_languidus:
+  label: '='
+  s: 1964.Minyomerus_languidus
+  t: 1960.Minyomerus_languidus
+1964.Minyomerus_languidus_1964.Minyomerus:
+  label: isa
+  s: 1964.Minyomerus_languidus
+  t: 1964.Minyomerus
+1964.Minyomerus_laticeps_1960.Elissa_laticeps:
+  label: '='
+  s: 1964.Minyomerus_laticeps
+  t: 1960.Elissa_laticeps
+1964.Minyomerus_laticeps_1964.Minyomerus:
+  label: isa
+  s: 1964.Minyomerus_laticeps
+  t: 1964.Minyomerus
+1964.Minyomerus_microps_1960.Minyomerus_microps:
+  label: '='
+  s: 1964.Minyomerus_microps
+  t: 1960.Minyomerus_microps
+1964.Minyomerus_microps_1964.Minyomerus:
+  label: isa
+  s: 1964.Minyomerus_microps
+  t: 1964.Minyomerus
+1964.Piscatopus_griseus_1960.Piscatopus_griseus:
+  label: '='
+  s: 1964.Piscatopus_griseus
+  t: 1960.Piscatopus_griseus
+1964.Piscatopus_griseus_1964.Piscatopus:
+  label: isa
+  s: 1964.Piscatopus_griseus
+  t: 1964.Piscatopus

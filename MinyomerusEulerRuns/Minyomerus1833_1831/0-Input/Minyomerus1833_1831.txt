@@ -1,0 +1,9 @@
+# 1833_1831
+taxonomy 1833 Boheman
+(Thylacites_microsus)
+
+taxonomy 1831 Say
+(Thylacites_microps)
+
+articulation 1833_1831 Boheman_Say
+[1833.Thylacites_microsus equals 1831.Thylacites_microps]

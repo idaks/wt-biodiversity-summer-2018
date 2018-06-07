@@ -1,0 +1,11 @@
+firstTName = '1876'
+secondTName = '1859'
+thirdTName = ''
+fourthTName = ''
+fifthTName = ''
+allRcgEdgesDict = {}
+numOfPws = 1
+avFlag = False
+allRcgNodesDict = {'congruent.1876.Thylacites_microsus\\n1859.Thylacites_microps': {'concept': '1876.Thylacites_microsus\\n1859.Thylacites_microps', 'group': 'congruent'}, '1876.Minyomerus_languidus': {'concept': 'Minyomerus_languidus', 'group': '1876'}, '1876.Minyomerus': {'concept': 'Minyomerus', 'group': '1876'}, '1876.Minyomerus_innocuus': {'concept': 'Minyomerus_innocuus', 'group': '1876'}}
+trlist = [['1876.Minyomerus_innocuus', '1876.Minyomerus', 0], ['1876.Minyomerus_languidus', '1876.Minyomerus', 0]]
+avFlag = True

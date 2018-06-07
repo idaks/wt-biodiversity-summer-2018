@@ -1,0 +1,42 @@
+digraph{
+rankdir=RL
+node[shape=box style="filled,rounded" fillcolor="#EEEEEE" fontname="helvetica"] 
+"1960.Elissa\n1948.Elissa"
+"1960.Minyomerus_caseyi\n1948.Minyomerus_caseyi"
+"1960.Minyomerus_conicollis\n1948.Minyomerus_conicollis"
+"1960.Elissa_laticeps\n1948.Elissa_laticeps"
+"1960.Minyomerus_microps\n1948.Minyomerus_microps"
+"1960.Minyomerus_languidus\n1948.Minyomerus_languidus"
+"1960.Elissa_constricta\n1948.Elissa_constricta"
+"1960.Minyomerus\n1948.Minyomerus"
+"1960.Minyomerus_innocuus\n1948.Minyomerus_innocuus"
+node[shape=box style=filled fillcolor="#CCFFCC" fontname="helvetica"] 
+"1960.Piscatopus\n1960.Piscatopus_griseus"
+edge[arrowhead=normal style=solid color="#000000" constraint=true penwidth=1]
+"1960.Minyomerus_languidus\n1948.Minyomerus_languidus" -> "1960.Minyomerus\n1948.Minyomerus"
+"1960.Elissa_laticeps\n1948.Elissa_laticeps" -> "1960.Elissa\n1948.Elissa"
+"1960.Minyomerus_microps\n1948.Minyomerus_microps" -> "1960.Minyomerus\n1948.Minyomerus"
+"1960.Minyomerus_conicollis\n1948.Minyomerus_conicollis" -> "1960.Minyomerus\n1948.Minyomerus"
+"1960.Elissa_constricta\n1948.Elissa_constricta" -> "1960.Elissa\n1948.Elissa"
+"1960.Minyomerus_innocuus\n1948.Minyomerus_innocuus" -> "1960.Minyomerus\n1948.Minyomerus"
+"1960.Minyomerus_caseyi\n1948.Minyomerus_caseyi" -> "1960.Minyomerus\n1948.Minyomerus"
+edge[arrowhead=normal style=dotted color="#000000" constraint=true penwidth=1]
+node[shape=box] 
+{rank=source Legend [fillcolor= white margin=0 label=< 
+ <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4"> 
+<TR> <TD COLSPAN="2"><font face="Arial Black"> Nodes</font></TD> </TR> 
+<TR> 
+ <TD bgcolor="#EEEEEE" fontname="helvetica">congruent</TD> 
+ <TD>9</TD> 
+ </TR> 
+<TR> 
+ <TD bgcolor="#CCFFCC" fontname="helvetica">1960</TD> 
+ <TD>1</TD> 
+ </TR> 
+<TR> <TD COLSPAN="2"><font face = "Arial Black"> Edges </font></TD> </TR> 
+<TR> 
+ <TD><font color ="#000000">is_a (input)</font></TD><TD>7</TD>
+</TR>
+</TABLE> 
+ >] } 
+}

@@ -1,0 +1,87 @@
+1876.Minyomerus:
+  concept: Minyomerus
+  group: '1876'
+1876.Minyomerus_innocuus:
+  concept: Minyomerus_innocuus
+  group: '1876'
+1876.Minyomerus_languidus:
+  concept: Minyomerus_languidus
+  group: '1876'
+1876.Thylacites_microsus:
+  concept: Thylacites_microsus
+  group: '1876'
+1888.Elissa:
+  concept: Elissa
+  group: '1888'
+1888.Elissa_constricta:
+  concept: Elissa_constricta
+  group: '1888'
+1888.Elissa_laticeps:
+  concept: Elissa_laticeps
+  group: '1888'
+1888.Minyomerus:
+  concept: Minyomerus
+  group: '1888'
+1888.Minyomerus_innocuus:
+  concept: Minyomerus_innocuus
+  group: '1888'
+1888.Minyomerus_languidus:
+  concept: Minyomerus_languidus
+  group: '1888'
+1888.Pseudelissa:
+  concept: Pseudelissa
+  group: '1888'
+1888.Pseudelissa_cinerea:
+  concept: Pseudelissa_cinerea
+  group: '1888'
+1888.Thylacites_microsus:
+  concept: Thylacites_microsus
+  group: '1888'
+1876.Minyomerus_innocuus_1876.Minyomerus:
+  label: isa
+  s: 1876.Minyomerus_innocuus
+  t: 1876.Minyomerus
+1876.Minyomerus_languidus_1876.Minyomerus:
+  label: isa
+  s: 1876.Minyomerus_languidus
+  t: 1876.Minyomerus
+1888.Elissa_1876.Minyomerus:
+  label: '!'
+  s: 1888.Elissa
+  t: 1876.Minyomerus
+1888.Elissa_constricta_1888.Elissa:
+  label: isa
+  s: 1888.Elissa_constricta
+  t: 1888.Elissa
+1888.Elissa_laticeps_1888.Elissa:
+  label: isa
+  s: 1888.Elissa_laticeps
+  t: 1888.Elissa
+1888.Minyomerus_innocuus_1876.Minyomerus_innocuus:
+  label: '='
+  s: 1888.Minyomerus_innocuus
+  t: 1876.Minyomerus_innocuus
+1888.Minyomerus_innocuus_1888.Minyomerus:
+  label: isa
+  s: 1888.Minyomerus_innocuus
+  t: 1888.Minyomerus
+1888.Minyomerus_languidus_1876.Minyomerus_languidus:
+  label: '='
+  s: 1888.Minyomerus_languidus
+  t: 1876.Minyomerus_languidus
+1888.Minyomerus_languidus_1888.Minyomerus:
+  label: isa
+  s: 1888.Minyomerus_languidus
+  t: 1888.Minyomerus
+1888.Pseudelissa_1876.Minyomerus:
+  label: '!'
+  s: 1888.Pseudelissa
+  t: 1876.Minyomerus
+1888.Pseudelissa_cinerea_1888.Pseudelissa:
+  label: isa
+  s: 1888.Pseudelissa_cinerea
+  t: 1888.Pseudelissa
+1888.Thylacites_microsus_1876.Thylacites_microsus:
+  label: '='
+  s: 1888.Thylacites_microsus
+  t: 1876.Thylacites_microsus

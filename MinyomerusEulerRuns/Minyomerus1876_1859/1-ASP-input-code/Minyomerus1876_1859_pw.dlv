@@ -1,0 +1,117 @@
+%%% Max Number of Euler Regions
+#maxint=7.
+
+%%% Euler Regions
+r(M):- #int(M),M>=1,M<=#maxint.
+
+%%% Concepts
+tax(t1876,0).
+concept2(A, B) :- concept(A,B,_).
+concept(c1876_Minyomerus_innocuus,0,0).
+concept2(c1876_Minyomerus,0).
+concept(c1876_Thylacites_microsus,0,1).
+concept(c1876_Minyomerus_languidus,0,2).
+tax(t1859,1).
+concept2(A, B) :- concept(A,B,_).
+concept(c1859_Thylacites_microps,1,0).
+
+%%% Euler Bit
+bit(M, 0, V):-r(M),M1=M/1, #mod(M1,4,V).
+bit(M, 1, V):-r(M),M1=M/4, #mod(M1,2,V).
+
+
+%%% Meaning of regions
+in(X, M) :- r(M),concept(X,T,N),N1=N+1,bit(M,T,N1).
+out(X, M) :- r(M),concept(X,T,N),N1=N+1,not bit(M,T,N1).
+in(X, M) :- r(M),concept2(X,_),not out(X, M).
+out(X, M) :- out3(X, M, _), ix.
+irs(M) :- in(X, M), out(X, M), r(M), concept2(X,_).
+
+%%% Constraints of regions.
+irs(X) :- ir(X, _).
+vrs(X) :- vr(X, _).
+vr(X, X) :- not irs(X), r(X).
+ir(X, X) :- not vrs(X), r(X), pw.
+ie(prod(A,B)) :- vr(X, A), ir(X, B), ix.
+:- vrs(X), irs(X), pw.
+
+%%% Inconsistency Explanation.
+ie(s(R, A, Y)) :- pie(R, A, Y), not cc(R, Y), ix.
+cc(R, Y) :- c(R, _, Y), ix.
+
+%%% Parent-Child relations
+%% ISA
+% c1876_Minyomerus_innocuus isa c1876_Minyomerus
+ir(X, r0) :- in(c1876_Minyomerus_innocuus, X), out(c1876_Minyomerus, X), pw.
+ir(X, prod(r0,R)) :- in(c1876_Minyomerus_innocuus,X), out3(c1876_Minyomerus, X, R), ix.
+:- #count {X : vrs(X), in(c1876_Minyomerus_innocuus,X), in(c1876_Minyomerus,X)} <= 0, pw.
+pie(r0, A, 1) :- ir(X, A), in(c1876_Minyomerus_innocuus, X), in(c1876_Minyomerus, X), ix.
+c(r0, A, 1) :- vr(X, A), in(c1876_Minyomerus_innocuus, X), in(c1876_Minyomerus, X), ix.
+
+% c1876_Minyomerus_languidus isa c1876_Minyomerus
+ir(X, r1) :- in(c1876_Minyomerus_languidus, X), out(c1876_Minyomerus, X), pw.
+ir(X, prod(r1,R)) :- in(c1876_Minyomerus_languidus,X), out3(c1876_Minyomerus, X, R), ix.
+:- #count {X : vrs(X), in(c1876_Minyomerus_languidus,X), in(c1876_Minyomerus,X)} <= 0, pw.
+pie(r1, A, 1) :- ir(X, A), in(c1876_Minyomerus_languidus, X), in(c1876_Minyomerus, X), ix.
+c(r1, A, 1) :- vr(X, A), in(c1876_Minyomerus_languidus, X), in(c1876_Minyomerus, X), ix.
+
+%% coverage
+out3(c1876_Minyomerus, X, r2) :- out(c1876_Minyomerus_innocuus, X), out(c1876_Minyomerus_languidus, X), ix.
+out(c1876_Minyomerus, X) :- out(c1876_Minyomerus_innocuus, X), out(c1876_Minyomerus_languidus, X), pw.
+%% sibling disjointness
+% c1876_Minyomerus_innocuus ! c1876_Minyomerus_languidus
+ir(X, r3) :- in(c1876_Minyomerus_innocuus, X), in(c1876_Minyomerus_languidus, X).
+:- #count {X : vrs(X), in(c1876_Minyomerus_innocuus,X), out(c1876_Minyomerus_languidus,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c1876_Minyomerus_innocuus,X), in(c1876_Minyomerus_languidus,X)} <= 0, pw.
+pie(r3, A, 1) :- ir(X, A), in(c1876_Minyomerus_innocuus, X), out(c1876_Minyomerus_languidus, X), ix.
+c(r3, A, 1) :- vr(X, A), in(c1876_Minyomerus_innocuus, X), out(c1876_Minyomerus_languidus, X), ix.
+pie(r3, A, 2) :- ir(X, A), out(c1876_Minyomerus_innocuus, X), in(c1876_Minyomerus_languidus, X), ix.
+c(r3, A, 2) :- vr(X, A), out(c1876_Minyomerus_innocuus, X), in(c1876_Minyomerus_languidus, X), ix.
+
+
+%%% Articulations
+% 1876.Minyomerus disjoint 1859.Thylacites_microps
+:- #count {X : vrs(X), in(c1876_Minyomerus,X), out(c1859_Thylacites_microps,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c1876_Minyomerus,X), in(c1859_Thylacites_microps,X)} <= 0, pw.
+pie(r4, A, 1) :- ir(X, A), out(c1876_Minyomerus, X), in(c1859_Thylacites_microps, X), ix.
+c(r4, A, 1) :- vr(X, A), out(c1876_Minyomerus, X), in(c1859_Thylacites_microps, X), ix.
+
+pie(r4, A, 2) :- ir(X, A), in(c1876_Minyomerus, X), out(c1859_Thylacites_microps, X), ix.
+c(r4, A, 2) :- vr(X, A), in(c1876_Minyomerus, X), out(c1859_Thylacites_microps, X), ix.
+
+ir(X, r4) :- in(c1876_Minyomerus,X), in(c1859_Thylacites_microps,X).
+
+% 1876.Thylacites_microsus equals 1859.Thylacites_microps
+ir(X, r5) :- out(c1876_Thylacites_microsus,X), in(c1859_Thylacites_microps,X).
+ir(X, r5) :- in(c1876_Thylacites_microsus,X), out(c1859_Thylacites_microps,X).
+ir(X, prod(r5,R)) :- out3(c1876_Thylacites_microsus, X, R), in(c1859_Thylacites_microps,X), ix.
+ir(X, prod(r5,R)) :- in(c1876_Thylacites_microsus,X), out3(c1859_Thylacites_microps, X, R), ix.
+:- #count {X : vrs(X), in(c1876_Thylacites_microsus,X), in(c1859_Thylacites_microps,X)} <= 0, pw.
+pie(r5, A, 1) :- ir(X, A), in(c1876_Thylacites_microsus, X), in(c1859_Thylacites_microps, X), ix.
+c(r5, A, 1) :- vr(X, A), in(c1876_Thylacites_microsus, X), in(c1859_Thylacites_microps, X), ix.
+
+
+%%% Decoding now
+:- rel(X, Y, "="), rel(X, Y, "<"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, "="), rel(X, Y, ">"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, "="), rel(X, Y, "><"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, "="), rel(X, Y, "!"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, "<"), rel(X, Y, ">"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, "<"), rel(X, Y, "><"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, "<"), rel(X, Y, "!"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, ">"), rel(X, Y, "><"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, ">"), rel(X, Y, "!"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, "><"), rel(X, Y, "!"), concept2(X, N1), concept2(Y, N2), pw.
+:- not rel(X, Y, "="), not rel(X, Y, "<"), not rel(X, Y, ">"), not rel(X, Y, "><"), not rel(X, Y, "!"), concept2(X, N1), concept2(Y, N2), N1 < N2, not ncf(X), not ncf(Y), pw.
+
+rel(X, Y, "=") :- not hint(X, Y, 0), hint(X, Y, 1), not hint(X, Y, 2), pw.
+rel(X, Y, "<") :- not hint(X, Y, 0), hint(X, Y, 1), hint(X, Y, 2), pw.
+rel(X, Y, ">") :- hint(X, Y, 0), hint(X, Y, 1), not hint(X, Y, 2), pw.
+rel(X, Y, "><") :- hint(X, Y, 0), hint(X, Y, 1), hint(X, Y, 2), pw.
+rel(X, Y, "!") :- hint(X, Y, 0), not hint(X, Y, 1), hint(X, Y, 2), pw.
+
+
+hint(X, Y, 0) :- concept2(X, N1), concept2(Y, N2), N1 < N2, vrs(R), in(X, R), out(Y, R), not ncf(X), not ncf(Y), pw.
+hint(X, Y, 1) :- concept2(X, N1), concept2(Y, N2), N1 < N2, vrs(R), in(X, R), in(Y, R), not ncf(X), not ncf(Y), pw.
+hint(X, Y, 2) :- concept2(X, N1), concept2(Y, N2), N1 < N2, vrs(R), out(X, R), in(Y, R), not ncf(X), not ncf(Y), pw.
+

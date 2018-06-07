@@ -1,0 +1,301 @@
+%%% Max Number of Euler Regions
+#maxint=48.
+
+%%% Euler Regions
+r(M):- #int(M),M>=1,M<=#maxint.
+
+%%% Concepts
+tax(t1913,0).
+concept2(A, B) :- concept(A,B,_).
+concept(c1913_Minyomerus_caseyi,0,0).
+concept(c1913_Thylacites_microsus,0,1).
+concept(c1913_Elissa_laticeps,0,2).
+concept(c1913_Minyomerus_innocuus,0,3).
+concept2(c1913_Minyomerus,0).
+concept2(c1913_Elissa,0).
+concept(c1913_Elissa_constricta,0,4).
+concept(c1913_Minyomerus_languidus,0,5).
+tax(t1909,1).
+concept2(A, B) :- concept(A,B,_).
+concept(c1909_Minyomerus_caseyi,1,0).
+concept(c1909_Thylacites_microsus,1,1).
+concept(c1909_Elissa_laticeps,1,2).
+concept(c1909_Minyomerus_innocuus,1,3).
+concept2(c1909_Minyomerus,1).
+concept2(c1909_Elissa,1).
+concept(c1909_Elissa_constricta,1,4).
+concept(c1909_Minyomerus_languidus,1,5).
+
+%%% Euler Bit
+bit(M, 0, V):-r(M),M1=M/1, #mod(M1,7,V).
+bit(M, 1, V):-r(M),M1=M/7, #mod(M1,7,V).
+
+
+%%% Meaning of regions
+in(X, M) :- r(M),concept(X,T,N),N1=N+1,bit(M,T,N1).
+out(X, M) :- r(M),concept(X,T,N),N1=N+1,not bit(M,T,N1).
+in(X, M) :- r(M),concept2(X,_),not out(X, M).
+out(X, M) :- out3(X, M, _), ix.
+irs(M) :- in(X, M), out(X, M), r(M), concept2(X,_).
+
+%%% Constraints of regions.
+irs(X) :- ir(X, _).
+vrs(X) :- vr(X, _).
+vr(X, X) :- not irs(X), r(X).
+ir(X, X) :- not vrs(X), r(X), pw.
+ie(prod(A,B)) :- vr(X, A), ir(X, B), ix.
+:- vrs(X), irs(X), pw.
+
+%%% Inconsistency Explanation.
+ie(s(R, A, Y)) :- pie(R, A, Y), not cc(R, Y), ix.
+cc(R, Y) :- c(R, _, Y), ix.
+
+%%% Parent-Child relations
+%% ISA
+% c1913_Elissa_constricta isa c1913_Elissa
+ir(X, r0) :- in(c1913_Elissa_constricta, X), out(c1913_Elissa, X), pw.
+ir(X, prod(r0,R)) :- in(c1913_Elissa_constricta,X), out3(c1913_Elissa, X, R), ix.
+:- #count {X : vrs(X), in(c1913_Elissa_constricta,X), in(c1913_Elissa,X)} <= 0, pw.
+pie(r0, A, 1) :- ir(X, A), in(c1913_Elissa_constricta, X), in(c1913_Elissa, X), ix.
+c(r0, A, 1) :- vr(X, A), in(c1913_Elissa_constricta, X), in(c1913_Elissa, X), ix.
+
+% c1913_Elissa_laticeps isa c1913_Elissa
+ir(X, r1) :- in(c1913_Elissa_laticeps, X), out(c1913_Elissa, X), pw.
+ir(X, prod(r1,R)) :- in(c1913_Elissa_laticeps,X), out3(c1913_Elissa, X, R), ix.
+:- #count {X : vrs(X), in(c1913_Elissa_laticeps,X), in(c1913_Elissa,X)} <= 0, pw.
+pie(r1, A, 1) :- ir(X, A), in(c1913_Elissa_laticeps, X), in(c1913_Elissa, X), ix.
+c(r1, A, 1) :- vr(X, A), in(c1913_Elissa_laticeps, X), in(c1913_Elissa, X), ix.
+
+%% coverage
+out3(c1913_Elissa, X, r2) :- out(c1913_Elissa_constricta, X), out(c1913_Elissa_laticeps, X), ix.
+out(c1913_Elissa, X) :- out(c1913_Elissa_constricta, X), out(c1913_Elissa_laticeps, X), pw.
+%% sibling disjointness
+% c1913_Elissa_constricta ! c1913_Elissa_laticeps
+ir(X, r3) :- in(c1913_Elissa_constricta, X), in(c1913_Elissa_laticeps, X).
+:- #count {X : vrs(X), in(c1913_Elissa_constricta,X), out(c1913_Elissa_laticeps,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c1913_Elissa_constricta,X), in(c1913_Elissa_laticeps,X)} <= 0, pw.
+pie(r3, A, 1) :- ir(X, A), in(c1913_Elissa_constricta, X), out(c1913_Elissa_laticeps, X), ix.
+c(r3, A, 1) :- vr(X, A), in(c1913_Elissa_constricta, X), out(c1913_Elissa_laticeps, X), ix.
+pie(r3, A, 2) :- ir(X, A), out(c1913_Elissa_constricta, X), in(c1913_Elissa_laticeps, X), ix.
+c(r3, A, 2) :- vr(X, A), out(c1913_Elissa_constricta, X), in(c1913_Elissa_laticeps, X), ix.
+
+%% ISA
+% c1913_Minyomerus_caseyi isa c1913_Minyomerus
+ir(X, r4) :- in(c1913_Minyomerus_caseyi, X), out(c1913_Minyomerus, X), pw.
+ir(X, prod(r4,R)) :- in(c1913_Minyomerus_caseyi,X), out3(c1913_Minyomerus, X, R), ix.
+:- #count {X : vrs(X), in(c1913_Minyomerus_caseyi,X), in(c1913_Minyomerus,X)} <= 0, pw.
+pie(r4, A, 1) :- ir(X, A), in(c1913_Minyomerus_caseyi, X), in(c1913_Minyomerus, X), ix.
+c(r4, A, 1) :- vr(X, A), in(c1913_Minyomerus_caseyi, X), in(c1913_Minyomerus, X), ix.
+
+% c1913_Minyomerus_innocuus isa c1913_Minyomerus
+ir(X, r5) :- in(c1913_Minyomerus_innocuus, X), out(c1913_Minyomerus, X), pw.
+ir(X, prod(r5,R)) :- in(c1913_Minyomerus_innocuus,X), out3(c1913_Minyomerus, X, R), ix.
+:- #count {X : vrs(X), in(c1913_Minyomerus_innocuus,X), in(c1913_Minyomerus,X)} <= 0, pw.
+pie(r5, A, 1) :- ir(X, A), in(c1913_Minyomerus_innocuus, X), in(c1913_Minyomerus, X), ix.
+c(r5, A, 1) :- vr(X, A), in(c1913_Minyomerus_innocuus, X), in(c1913_Minyomerus, X), ix.
+
+% c1913_Minyomerus_languidus isa c1913_Minyomerus
+ir(X, r6) :- in(c1913_Minyomerus_languidus, X), out(c1913_Minyomerus, X), pw.
+ir(X, prod(r6,R)) :- in(c1913_Minyomerus_languidus,X), out3(c1913_Minyomerus, X, R), ix.
+:- #count {X : vrs(X), in(c1913_Minyomerus_languidus,X), in(c1913_Minyomerus,X)} <= 0, pw.
+pie(r6, A, 1) :- ir(X, A), in(c1913_Minyomerus_languidus, X), in(c1913_Minyomerus, X), ix.
+c(r6, A, 1) :- vr(X, A), in(c1913_Minyomerus_languidus, X), in(c1913_Minyomerus, X), ix.
+
+%% coverage
+out3(c1913_Minyomerus, X, r7) :- out(c1913_Minyomerus_caseyi, X), out(c1913_Minyomerus_innocuus, X), out(c1913_Minyomerus_languidus, X), ix.
+out(c1913_Minyomerus, X) :- out(c1913_Minyomerus_caseyi, X), out(c1913_Minyomerus_innocuus, X), out(c1913_Minyomerus_languidus, X), pw.
+%% sibling disjointness
+% c1913_Minyomerus_caseyi ! c1913_Minyomerus_innocuus
+ir(X, r8) :- in(c1913_Minyomerus_caseyi, X), in(c1913_Minyomerus_innocuus, X).
+:- #count {X : vrs(X), in(c1913_Minyomerus_caseyi,X), out(c1913_Minyomerus_innocuus,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c1913_Minyomerus_caseyi,X), in(c1913_Minyomerus_innocuus,X)} <= 0, pw.
+pie(r8, A, 1) :- ir(X, A), in(c1913_Minyomerus_caseyi, X), out(c1913_Minyomerus_innocuus, X), ix.
+c(r8, A, 1) :- vr(X, A), in(c1913_Minyomerus_caseyi, X), out(c1913_Minyomerus_innocuus, X), ix.
+pie(r8, A, 2) :- ir(X, A), out(c1913_Minyomerus_caseyi, X), in(c1913_Minyomerus_innocuus, X), ix.
+c(r8, A, 2) :- vr(X, A), out(c1913_Minyomerus_caseyi, X), in(c1913_Minyomerus_innocuus, X), ix.
+
+% c1913_Minyomerus_caseyi ! c1913_Minyomerus_languidus
+ir(X, r9) :- in(c1913_Minyomerus_caseyi, X), in(c1913_Minyomerus_languidus, X).
+:- #count {X : vrs(X), in(c1913_Minyomerus_caseyi,X), out(c1913_Minyomerus_languidus,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c1913_Minyomerus_caseyi,X), in(c1913_Minyomerus_languidus,X)} <= 0, pw.
+pie(r9, A, 1) :- ir(X, A), in(c1913_Minyomerus_caseyi, X), out(c1913_Minyomerus_languidus, X), ix.
+c(r9, A, 1) :- vr(X, A), in(c1913_Minyomerus_caseyi, X), out(c1913_Minyomerus_languidus, X), ix.
+pie(r9, A, 2) :- ir(X, A), out(c1913_Minyomerus_caseyi, X), in(c1913_Minyomerus_languidus, X), ix.
+c(r9, A, 2) :- vr(X, A), out(c1913_Minyomerus_caseyi, X), in(c1913_Minyomerus_languidus, X), ix.
+
+% c1913_Minyomerus_innocuus ! c1913_Minyomerus_languidus
+ir(X, r10) :- in(c1913_Minyomerus_innocuus, X), in(c1913_Minyomerus_languidus, X).
+:- #count {X : vrs(X), in(c1913_Minyomerus_innocuus,X), out(c1913_Minyomerus_languidus,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c1913_Minyomerus_innocuus,X), in(c1913_Minyomerus_languidus,X)} <= 0, pw.
+pie(r10, A, 1) :- ir(X, A), in(c1913_Minyomerus_innocuus, X), out(c1913_Minyomerus_languidus, X), ix.
+c(r10, A, 1) :- vr(X, A), in(c1913_Minyomerus_innocuus, X), out(c1913_Minyomerus_languidus, X), ix.
+pie(r10, A, 2) :- ir(X, A), out(c1913_Minyomerus_innocuus, X), in(c1913_Minyomerus_languidus, X), ix.
+c(r10, A, 2) :- vr(X, A), out(c1913_Minyomerus_innocuus, X), in(c1913_Minyomerus_languidus, X), ix.
+
+%% ISA
+% c1909_Elissa_constricta isa c1909_Elissa
+ir(X, r11) :- in(c1909_Elissa_constricta, X), out(c1909_Elissa, X), pw.
+ir(X, prod(r11,R)) :- in(c1909_Elissa_constricta,X), out3(c1909_Elissa, X, R), ix.
+:- #count {X : vrs(X), in(c1909_Elissa_constricta,X), in(c1909_Elissa,X)} <= 0, pw.
+pie(r11, A, 1) :- ir(X, A), in(c1909_Elissa_constricta, X), in(c1909_Elissa, X), ix.
+c(r11, A, 1) :- vr(X, A), in(c1909_Elissa_constricta, X), in(c1909_Elissa, X), ix.
+
+% c1909_Elissa_laticeps isa c1909_Elissa
+ir(X, r12) :- in(c1909_Elissa_laticeps, X), out(c1909_Elissa, X), pw.
+ir(X, prod(r12,R)) :- in(c1909_Elissa_laticeps,X), out3(c1909_Elissa, X, R), ix.
+:- #count {X : vrs(X), in(c1909_Elissa_laticeps,X), in(c1909_Elissa,X)} <= 0, pw.
+pie(r12, A, 1) :- ir(X, A), in(c1909_Elissa_laticeps, X), in(c1909_Elissa, X), ix.
+c(r12, A, 1) :- vr(X, A), in(c1909_Elissa_laticeps, X), in(c1909_Elissa, X), ix.
+
+%% coverage
+out3(c1909_Elissa, X, r13) :- out(c1909_Elissa_constricta, X), out(c1909_Elissa_laticeps, X), ix.
+out(c1909_Elissa, X) :- out(c1909_Elissa_constricta, X), out(c1909_Elissa_laticeps, X), pw.
+%% sibling disjointness
+% c1909_Elissa_constricta ! c1909_Elissa_laticeps
+ir(X, r14) :- in(c1909_Elissa_constricta, X), in(c1909_Elissa_laticeps, X).
+:- #count {X : vrs(X), in(c1909_Elissa_constricta,X), out(c1909_Elissa_laticeps,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c1909_Elissa_constricta,X), in(c1909_Elissa_laticeps,X)} <= 0, pw.
+pie(r14, A, 1) :- ir(X, A), in(c1909_Elissa_constricta, X), out(c1909_Elissa_laticeps, X), ix.
+c(r14, A, 1) :- vr(X, A), in(c1909_Elissa_constricta, X), out(c1909_Elissa_laticeps, X), ix.
+pie(r14, A, 2) :- ir(X, A), out(c1909_Elissa_constricta, X), in(c1909_Elissa_laticeps, X), ix.
+c(r14, A, 2) :- vr(X, A), out(c1909_Elissa_constricta, X), in(c1909_Elissa_laticeps, X), ix.
+
+%% ISA
+% c1909_Minyomerus_caseyi isa c1909_Minyomerus
+ir(X, r15) :- in(c1909_Minyomerus_caseyi, X), out(c1909_Minyomerus, X), pw.
+ir(X, prod(r15,R)) :- in(c1909_Minyomerus_caseyi,X), out3(c1909_Minyomerus, X, R), ix.
+:- #count {X : vrs(X), in(c1909_Minyomerus_caseyi,X), in(c1909_Minyomerus,X)} <= 0, pw.
+pie(r15, A, 1) :- ir(X, A), in(c1909_Minyomerus_caseyi, X), in(c1909_Minyomerus, X), ix.
+c(r15, A, 1) :- vr(X, A), in(c1909_Minyomerus_caseyi, X), in(c1909_Minyomerus, X), ix.
+
+% c1909_Minyomerus_innocuus isa c1909_Minyomerus
+ir(X, r16) :- in(c1909_Minyomerus_innocuus, X), out(c1909_Minyomerus, X), pw.
+ir(X, prod(r16,R)) :- in(c1909_Minyomerus_innocuus,X), out3(c1909_Minyomerus, X, R), ix.
+:- #count {X : vrs(X), in(c1909_Minyomerus_innocuus,X), in(c1909_Minyomerus,X)} <= 0, pw.
+pie(r16, A, 1) :- ir(X, A), in(c1909_Minyomerus_innocuus, X), in(c1909_Minyomerus, X), ix.
+c(r16, A, 1) :- vr(X, A), in(c1909_Minyomerus_innocuus, X), in(c1909_Minyomerus, X), ix.
+
+% c1909_Minyomerus_languidus isa c1909_Minyomerus
+ir(X, r17) :- in(c1909_Minyomerus_languidus, X), out(c1909_Minyomerus, X), pw.
+ir(X, prod(r17,R)) :- in(c1909_Minyomerus_languidus,X), out3(c1909_Minyomerus, X, R), ix.
+:- #count {X : vrs(X), in(c1909_Minyomerus_languidus,X), in(c1909_Minyomerus,X)} <= 0, pw.
+pie(r17, A, 1) :- ir(X, A), in(c1909_Minyomerus_languidus, X), in(c1909_Minyomerus, X), ix.
+c(r17, A, 1) :- vr(X, A), in(c1909_Minyomerus_languidus, X), in(c1909_Minyomerus, X), ix.
+
+%% coverage
+out3(c1909_Minyomerus, X, r18) :- out(c1909_Minyomerus_caseyi, X), out(c1909_Minyomerus_innocuus, X), out(c1909_Minyomerus_languidus, X), ix.
+out(c1909_Minyomerus, X) :- out(c1909_Minyomerus_caseyi, X), out(c1909_Minyomerus_innocuus, X), out(c1909_Minyomerus_languidus, X), pw.
+%% sibling disjointness
+% c1909_Minyomerus_caseyi ! c1909_Minyomerus_innocuus
+ir(X, r19) :- in(c1909_Minyomerus_caseyi, X), in(c1909_Minyomerus_innocuus, X).
+:- #count {X : vrs(X), in(c1909_Minyomerus_caseyi,X), out(c1909_Minyomerus_innocuus,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c1909_Minyomerus_caseyi,X), in(c1909_Minyomerus_innocuus,X)} <= 0, pw.
+pie(r19, A, 1) :- ir(X, A), in(c1909_Minyomerus_caseyi, X), out(c1909_Minyomerus_innocuus, X), ix.
+c(r19, A, 1) :- vr(X, A), in(c1909_Minyomerus_caseyi, X), out(c1909_Minyomerus_innocuus, X), ix.
+pie(r19, A, 2) :- ir(X, A), out(c1909_Minyomerus_caseyi, X), in(c1909_Minyomerus_innocuus, X), ix.
+c(r19, A, 2) :- vr(X, A), out(c1909_Minyomerus_caseyi, X), in(c1909_Minyomerus_innocuus, X), ix.
+
+% c1909_Minyomerus_caseyi ! c1909_Minyomerus_languidus
+ir(X, r20) :- in(c1909_Minyomerus_caseyi, X), in(c1909_Minyomerus_languidus, X).
+:- #count {X : vrs(X), in(c1909_Minyomerus_caseyi,X), out(c1909_Minyomerus_languidus,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c1909_Minyomerus_caseyi,X), in(c1909_Minyomerus_languidus,X)} <= 0, pw.
+pie(r20, A, 1) :- ir(X, A), in(c1909_Minyomerus_caseyi, X), out(c1909_Minyomerus_languidus, X), ix.
+c(r20, A, 1) :- vr(X, A), in(c1909_Minyomerus_caseyi, X), out(c1909_Minyomerus_languidus, X), ix.
+pie(r20, A, 2) :- ir(X, A), out(c1909_Minyomerus_caseyi, X), in(c1909_Minyomerus_languidus, X), ix.
+c(r20, A, 2) :- vr(X, A), out(c1909_Minyomerus_caseyi, X), in(c1909_Minyomerus_languidus, X), ix.
+
+% c1909_Minyomerus_innocuus ! c1909_Minyomerus_languidus
+ir(X, r21) :- in(c1909_Minyomerus_innocuus, X), in(c1909_Minyomerus_languidus, X).
+:- #count {X : vrs(X), in(c1909_Minyomerus_innocuus,X), out(c1909_Minyomerus_languidus,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c1909_Minyomerus_innocuus,X), in(c1909_Minyomerus_languidus,X)} <= 0, pw.
+pie(r21, A, 1) :- ir(X, A), in(c1909_Minyomerus_innocuus, X), out(c1909_Minyomerus_languidus, X), ix.
+c(r21, A, 1) :- vr(X, A), in(c1909_Minyomerus_innocuus, X), out(c1909_Minyomerus_languidus, X), ix.
+pie(r21, A, 2) :- ir(X, A), out(c1909_Minyomerus_innocuus, X), in(c1909_Minyomerus_languidus, X), ix.
+c(r21, A, 2) :- vr(X, A), out(c1909_Minyomerus_innocuus, X), in(c1909_Minyomerus_languidus, X), ix.
+
+
+%%% Articulations
+% 1913.Elissa_constricta equals 1909.Elissa_constricta
+ir(X, r22) :- out(c1913_Elissa_constricta,X), in(c1909_Elissa_constricta,X).
+ir(X, r22) :- in(c1913_Elissa_constricta,X), out(c1909_Elissa_constricta,X).
+ir(X, prod(r22,R)) :- out3(c1913_Elissa_constricta, X, R), in(c1909_Elissa_constricta,X), ix.
+ir(X, prod(r22,R)) :- in(c1913_Elissa_constricta,X), out3(c1909_Elissa_constricta, X, R), ix.
+:- #count {X : vrs(X), in(c1913_Elissa_constricta,X), in(c1909_Elissa_constricta,X)} <= 0, pw.
+pie(r22, A, 1) :- ir(X, A), in(c1913_Elissa_constricta, X), in(c1909_Elissa_constricta, X), ix.
+c(r22, A, 1) :- vr(X, A), in(c1913_Elissa_constricta, X), in(c1909_Elissa_constricta, X), ix.
+
+
+% 1913.Elissa_laticeps equals 1909.Elissa_laticeps
+ir(X, r23) :- out(c1913_Elissa_laticeps,X), in(c1909_Elissa_laticeps,X).
+ir(X, r23) :- in(c1913_Elissa_laticeps,X), out(c1909_Elissa_laticeps,X).
+ir(X, prod(r23,R)) :- out3(c1913_Elissa_laticeps, X, R), in(c1909_Elissa_laticeps,X), ix.
+ir(X, prod(r23,R)) :- in(c1913_Elissa_laticeps,X), out3(c1909_Elissa_laticeps, X, R), ix.
+:- #count {X : vrs(X), in(c1913_Elissa_laticeps,X), in(c1909_Elissa_laticeps,X)} <= 0, pw.
+pie(r23, A, 1) :- ir(X, A), in(c1913_Elissa_laticeps, X), in(c1909_Elissa_laticeps, X), ix.
+c(r23, A, 1) :- vr(X, A), in(c1913_Elissa_laticeps, X), in(c1909_Elissa_laticeps, X), ix.
+
+
+% 1913.Minyomerus_caseyi equals 1909.Minyomerus_caseyi
+ir(X, r24) :- out(c1913_Minyomerus_caseyi,X), in(c1909_Minyomerus_caseyi,X).
+ir(X, r24) :- in(c1913_Minyomerus_caseyi,X), out(c1909_Minyomerus_caseyi,X).
+ir(X, prod(r24,R)) :- out3(c1913_Minyomerus_caseyi, X, R), in(c1909_Minyomerus_caseyi,X), ix.
+ir(X, prod(r24,R)) :- in(c1913_Minyomerus_caseyi,X), out3(c1909_Minyomerus_caseyi, X, R), ix.
+:- #count {X : vrs(X), in(c1913_Minyomerus_caseyi,X), in(c1909_Minyomerus_caseyi,X)} <= 0, pw.
+pie(r24, A, 1) :- ir(X, A), in(c1913_Minyomerus_caseyi, X), in(c1909_Minyomerus_caseyi, X), ix.
+c(r24, A, 1) :- vr(X, A), in(c1913_Minyomerus_caseyi, X), in(c1909_Minyomerus_caseyi, X), ix.
+
+
+% 1913.Minyomerus_innocuus equals 1909.Minyomerus_innocuus
+ir(X, r25) :- out(c1913_Minyomerus_innocuus,X), in(c1909_Minyomerus_innocuus,X).
+ir(X, r25) :- in(c1913_Minyomerus_innocuus,X), out(c1909_Minyomerus_innocuus,X).
+ir(X, prod(r25,R)) :- out3(c1913_Minyomerus_innocuus, X, R), in(c1909_Minyomerus_innocuus,X), ix.
+ir(X, prod(r25,R)) :- in(c1913_Minyomerus_innocuus,X), out3(c1909_Minyomerus_innocuus, X, R), ix.
+:- #count {X : vrs(X), in(c1913_Minyomerus_innocuus,X), in(c1909_Minyomerus_innocuus,X)} <= 0, pw.
+pie(r25, A, 1) :- ir(X, A), in(c1913_Minyomerus_innocuus, X), in(c1909_Minyomerus_innocuus, X), ix.
+c(r25, A, 1) :- vr(X, A), in(c1913_Minyomerus_innocuus, X), in(c1909_Minyomerus_innocuus, X), ix.
+
+
+% 1913.Minyomerus_languidus equals 1909.Minyomerus_languidus
+ir(X, r26) :- out(c1913_Minyomerus_languidus,X), in(c1909_Minyomerus_languidus,X).
+ir(X, r26) :- in(c1913_Minyomerus_languidus,X), out(c1909_Minyomerus_languidus,X).
+ir(X, prod(r26,R)) :- out3(c1913_Minyomerus_languidus, X, R), in(c1909_Minyomerus_languidus,X), ix.
+ir(X, prod(r26,R)) :- in(c1913_Minyomerus_languidus,X), out3(c1909_Minyomerus_languidus, X, R), ix.
+:- #count {X : vrs(X), in(c1913_Minyomerus_languidus,X), in(c1909_Minyomerus_languidus,X)} <= 0, pw.
+pie(r26, A, 1) :- ir(X, A), in(c1913_Minyomerus_languidus, X), in(c1909_Minyomerus_languidus, X), ix.
+c(r26, A, 1) :- vr(X, A), in(c1913_Minyomerus_languidus, X), in(c1909_Minyomerus_languidus, X), ix.
+
+
+% 1913.Thylacites_microsus equals 1909.Thylacites_microsus
+ir(X, r27) :- out(c1913_Thylacites_microsus,X), in(c1909_Thylacites_microsus,X).
+ir(X, r27) :- in(c1913_Thylacites_microsus,X), out(c1909_Thylacites_microsus,X).
+ir(X, prod(r27,R)) :- out3(c1913_Thylacites_microsus, X, R), in(c1909_Thylacites_microsus,X), ix.
+ir(X, prod(r27,R)) :- in(c1913_Thylacites_microsus,X), out3(c1909_Thylacites_microsus, X, R), ix.
+:- #count {X : vrs(X), in(c1913_Thylacites_microsus,X), in(c1909_Thylacites_microsus,X)} <= 0, pw.
+pie(r27, A, 1) :- ir(X, A), in(c1913_Thylacites_microsus, X), in(c1909_Thylacites_microsus, X), ix.
+c(r27, A, 1) :- vr(X, A), in(c1913_Thylacites_microsus, X), in(c1909_Thylacites_microsus, X), ix.
+
+
+%%% Decoding now
+:- rel(X, Y, "="), rel(X, Y, "<"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, "="), rel(X, Y, ">"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, "="), rel(X, Y, "><"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, "="), rel(X, Y, "!"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, "<"), rel(X, Y, ">"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, "<"), rel(X, Y, "><"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, "<"), rel(X, Y, "!"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, ">"), rel(X, Y, "><"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, ">"), rel(X, Y, "!"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, "><"), rel(X, Y, "!"), concept2(X, N1), concept2(Y, N2), pw.
+:- not rel(X, Y, "="), not rel(X, Y, "<"), not rel(X, Y, ">"), not rel(X, Y, "><"), not rel(X, Y, "!"), concept2(X, N1), concept2(Y, N2), N1 < N2, not ncf(X), not ncf(Y), pw.
+
+rel(X, Y, "=") :- not hint(X, Y, 0), hint(X, Y, 1), not hint(X, Y, 2), pw.
+rel(X, Y, "<") :- not hint(X, Y, 0), hint(X, Y, 1), hint(X, Y, 2), pw.
+rel(X, Y, ">") :- hint(X, Y, 0), hint(X, Y, 1), not hint(X, Y, 2), pw.
+rel(X, Y, "><") :- hint(X, Y, 0), hint(X, Y, 1), hint(X, Y, 2), pw.
+rel(X, Y, "!") :- hint(X, Y, 0), not hint(X, Y, 1), hint(X, Y, 2), pw.
+
+
+hint(X, Y, 0) :- concept2(X, N1), concept2(Y, N2), N1 < N2, vrs(R), in(X, R), out(Y, R), not ncf(X), not ncf(Y), pw.
+hint(X, Y, 1) :- concept2(X, N1), concept2(Y, N2), N1 < N2, vrs(R), in(X, R), in(Y, R), not ncf(X), not ncf(Y), pw.
+hint(X, Y, 2) :- concept2(X, N1), concept2(Y, N2), N1 < N2, vrs(R), out(X, R), in(Y, R), not ncf(X), not ncf(Y), pw.
+

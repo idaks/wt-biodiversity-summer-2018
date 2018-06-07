@@ -1,0 +1,71 @@
+digraph{
+rankdir=RL
+node[shape=box style=filled fillcolor="#CCFFCC" fontname="helvetica"] 
+"2015.Minyomerus_trisetosus"
+"2015.Minyomerus_reburrus"
+"2015.Minyomerus_microps"
+"2015.Minyomerus_bulbifrons"
+"2015.Minyomerus_politus"
+"2015.Minyomerus_puticulatus"
+"2015.Minyomerus"
+"2015.Minyomerus_cracens"
+"2015.Minyomerus_imberbus"
+"2015.Minyomerus_caponei"
+"2015.Minyomerus_rutellirostris"
+"2015.Minyomerus_gravivultus"
+node[shape=box style="filled,rounded" fillcolor="#EEEEEE" fontname="helvetica"] 
+"2015.Minyomerus_conicollis\n1982.Minyomerus_conicollis"
+"2015.Minyomerus_constrictus\n1982.Minyomerus_constrictus"
+"2015.Minyomerus_laticeps\n1982.Minyomerus_laticeps"
+"1982.Piscatopus\n1982.Piscatopus_griseus\n2015.Minyomerus_griseus"
+"2015.Minyomerus_caseyi\n1982.Minyomerus_caseyi"
+"2015.Minyomerus_languidus\n1982.Minyomerus_languidus"
+node[shape=note style=filled fillcolor="#FFFFCC" fontname="helvetica"] 
+"1982.Minyomerus_microps"
+"1982.Minyomerus"
+"1982.Minyomerus_innocuus"
+edge[arrowhead=normal style=solid color="#000000" constraint=true penwidth=1]
+"2015.Minyomerus_microps" -> "1982.Minyomerus"
+"2015.Minyomerus_caponei" -> "2015.Minyomerus"
+"2015.Minyomerus_conicollis\n1982.Minyomerus_conicollis" -> "1982.Minyomerus"
+"2015.Minyomerus_languidus\n1982.Minyomerus_languidus" -> "1982.Minyomerus"
+"2015.Minyomerus_caseyi\n1982.Minyomerus_caseyi" -> "1982.Minyomerus"
+"2015.Minyomerus_constrictus\n1982.Minyomerus_constrictus" -> "1982.Minyomerus"
+"2015.Minyomerus_puticulatus" -> "2015.Minyomerus"
+"2015.Minyomerus_gravivultus" -> "2015.Minyomerus"
+"1982.Minyomerus_innocuus" -> "2015.Minyomerus_microps"
+"2015.Minyomerus_reburrus" -> "2015.Minyomerus"
+"2015.Minyomerus_bulbifrons" -> "2015.Minyomerus"
+"1982.Minyomerus" -> "2015.Minyomerus"
+"2015.Minyomerus_rutellirostris" -> "2015.Minyomerus"
+"2015.Minyomerus_imberbus" -> "2015.Minyomerus"
+"2015.Minyomerus_trisetosus" -> "2015.Minyomerus"
+"1982.Piscatopus\n1982.Piscatopus_griseus\n2015.Minyomerus_griseus" -> "2015.Minyomerus"
+"2015.Minyomerus_cracens" -> "2015.Minyomerus"
+"2015.Minyomerus_laticeps\n1982.Minyomerus_laticeps" -> "1982.Minyomerus"
+"1982.Minyomerus_microps" -> "2015.Minyomerus_microps"
+"2015.Minyomerus_politus" -> "2015.Minyomerus"
+edge[arrowhead=normal style=dotted color="#000000" constraint=true penwidth=1]
+node[shape=box] 
+{rank=source Legend [fillcolor= white margin=0 label=< 
+ <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4"> 
+<TR> <TD COLSPAN="2"><font face="Arial Black"> Nodes</font></TD> </TR> 
+<TR> 
+ <TD bgcolor="#CCFFCC" fontname="helvetica">2015</TD> 
+ <TD>12</TD> 
+ </TR> 
+<TR> 
+ <TD bgcolor="#EEEEEE" fontname="helvetica">congruent</TD> 
+ <TD>6</TD> 
+ </TR> 
+<TR> 
+ <TD bgcolor="#FFFFCC" fontname="helvetica">1982</TD> 
+ <TD>3</TD> 
+ </TR> 
+<TR> <TD COLSPAN="2"><font face = "Arial Black"> Edges </font></TD> </TR> 
+<TR> 
+ <TD><font color ="#000000">is_a (input)</font></TD><TD>20</TD>
+</TR>
+</TABLE> 
+ >] } 
+}

@@ -1,0 +1,58 @@
+1960.1960.Piscatopus\n1960.Piscatopus_griseus:
+  concept: 1960.Piscatopus\n1960.Piscatopus_griseus
+  group: '1960'
+congruent.1960.Elissa\n1948.Elissa:
+  concept: 1960.Elissa\n1948.Elissa
+  group: congruent
+congruent.1960.Elissa_constricta\n1948.Elissa_constricta:
+  concept: 1960.Elissa_constricta\n1948.Elissa_constricta
+  group: congruent
+congruent.1960.Elissa_laticeps\n1948.Elissa_laticeps:
+  concept: 1960.Elissa_laticeps\n1948.Elissa_laticeps
+  group: congruent
+congruent.1960.Minyomerus\n1948.Minyomerus:
+  concept: 1960.Minyomerus\n1948.Minyomerus
+  group: congruent
+congruent.1960.Minyomerus_caseyi\n1948.Minyomerus_caseyi:
+  concept: 1960.Minyomerus_caseyi\n1948.Minyomerus_caseyi
+  group: congruent
+congruent.1960.Minyomerus_conicollis\n1948.Minyomerus_conicollis:
+  concept: 1960.Minyomerus_conicollis\n1948.Minyomerus_conicollis
+  group: congruent
+congruent.1960.Minyomerus_innocuus\n1948.Minyomerus_innocuus:
+  concept: 1960.Minyomerus_innocuus\n1948.Minyomerus_innocuus
+  group: congruent
+congruent.1960.Minyomerus_languidus\n1948.Minyomerus_languidus:
+  concept: 1960.Minyomerus_languidus\n1948.Minyomerus_languidus
+  group: congruent
+congruent.1960.Minyomerus_microps\n1948.Minyomerus_microps:
+  concept: 1960.Minyomerus_microps\n1948.Minyomerus_microps
+  group: congruent
+1960.Elissa_constricta\n1948.Elissa_constricta_1960.Elissa\n1948.Elissa:
+  label: is_a (input)
+  s: 1960.Elissa_constricta\n1948.Elissa_constricta
+  t: 1960.Elissa\n1948.Elissa
+1960.Elissa_laticeps\n1948.Elissa_laticeps_1960.Elissa\n1948.Elissa:
+  label: is_a (input)
+  s: 1960.Elissa_laticeps\n1948.Elissa_laticeps
+  t: 1960.Elissa\n1948.Elissa
+1960.Minyomerus_caseyi\n1948.Minyomerus_caseyi_1960.Minyomerus\n1948.Minyomerus:
+  label: is_a (input)
+  s: 1960.Minyomerus_caseyi\n1948.Minyomerus_caseyi
+  t: 1960.Minyomerus\n1948.Minyomerus
+1960.Minyomerus_conicollis\n1948.Minyomerus_conicollis_1960.Minyomerus\n1948.Minyomerus:
+  label: is_a (input)
+  s: 1960.Minyomerus_conicollis\n1948.Minyomerus_conicollis
+  t: 1960.Minyomerus\n1948.Minyomerus
+1960.Minyomerus_innocuus\n1948.Minyomerus_innocuus_1960.Minyomerus\n1948.Minyomerus:
+  label: is_a (input)
+  s: 1960.Minyomerus_innocuus\n1948.Minyomerus_innocuus
+  t: 1960.Minyomerus\n1948.Minyomerus
+1960.Minyomerus_languidus\n1948.Minyomerus_languidus_1960.Minyomerus\n1948.Minyomerus:
+  label: is_a (input)
+  s: 1960.Minyomerus_languidus\n1948.Minyomerus_languidus
+  t: 1960.Minyomerus\n1948.Minyomerus
+1960.Minyomerus_microps\n1948.Minyomerus_microps_1960.Minyomerus\n1948.Minyomerus:
+  label: is_a (input)
+  s: 1960.Minyomerus_microps\n1948.Minyomerus_microps
+  t: 1960.Minyomerus\n1948.Minyomerus

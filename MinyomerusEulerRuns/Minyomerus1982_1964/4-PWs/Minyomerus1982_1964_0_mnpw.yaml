@@ -1,0 +1,55 @@
+congruent.1964.Piscatopus\n1964.Piscatopus_griseus\n1982.Piscatopus\n1982.Piscatopus_griseus:
+  concept: 1964.Piscatopus\n1964.Piscatopus_griseus\n1982.Piscatopus\n1982.Piscatopus_griseus
+  group: congruent
+congruent.1982.Minyomerus\n1964.Minyomerus:
+  concept: 1982.Minyomerus\n1964.Minyomerus
+  group: congruent
+congruent.1982.Minyomerus_caseyi\n1964.Minyomerus_caseyi:
+  concept: 1982.Minyomerus_caseyi\n1964.Minyomerus_caseyi
+  group: congruent
+congruent.1982.Minyomerus_conicollis\n1964.Minyomerus_conicollis:
+  concept: 1982.Minyomerus_conicollis\n1964.Minyomerus_conicollis
+  group: congruent
+congruent.1982.Minyomerus_constrictus\n1964.Minyomerus_constrictus:
+  concept: 1982.Minyomerus_constrictus\n1964.Minyomerus_constrictus
+  group: congruent
+congruent.1982.Minyomerus_innocuus\n1964.Minyomerus_innocuus:
+  concept: 1982.Minyomerus_innocuus\n1964.Minyomerus_innocuus
+  group: congruent
+congruent.1982.Minyomerus_languidus\n1964.Minyomerus_languidus:
+  concept: 1982.Minyomerus_languidus\n1964.Minyomerus_languidus
+  group: congruent
+congruent.1982.Minyomerus_laticeps\n1964.Minyomerus_laticeps:
+  concept: 1982.Minyomerus_laticeps\n1964.Minyomerus_laticeps
+  group: congruent
+congruent.1982.Minyomerus_microps\n1964.Minyomerus_microps:
+  concept: 1982.Minyomerus_microps\n1964.Minyomerus_microps
+  group: congruent
+1982.Minyomerus_caseyi\n1964.Minyomerus_caseyi_1982.Minyomerus\n1964.Minyomerus:
+  label: is_a (input)
+  s: 1982.Minyomerus_caseyi\n1964.Minyomerus_caseyi
+  t: 1982.Minyomerus\n1964.Minyomerus
+1982.Minyomerus_conicollis\n1964.Minyomerus_conicollis_1982.Minyomerus\n1964.Minyomerus:
+  label: is_a (input)
+  s: 1982.Minyomerus_conicollis\n1964.Minyomerus_conicollis
+  t: 1982.Minyomerus\n1964.Minyomerus
+1982.Minyomerus_constrictus\n1964.Minyomerus_constrictus_1982.Minyomerus\n1964.Minyomerus:
+  label: is_a (input)
+  s: 1982.Minyomerus_constrictus\n1964.Minyomerus_constrictus
+  t: 1982.Minyomerus\n1964.Minyomerus
+1982.Minyomerus_innocuus\n1964.Minyomerus_innocuus_1982.Minyomerus\n1964.Minyomerus:
+  label: is_a (input)
+  s: 1982.Minyomerus_innocuus\n1964.Minyomerus_innocuus
+  t: 1982.Minyomerus\n1964.Minyomerus
+1982.Minyomerus_languidus\n1964.Minyomerus_languidus_1982.Minyomerus\n1964.Minyomerus:
+  label: is_a (input)
+  s: 1982.Minyomerus_languidus\n1964.Minyomerus_languidus
+  t: 1982.Minyomerus\n1964.Minyomerus
+1982.Minyomerus_laticeps\n1964.Minyomerus_laticeps_1982.Minyomerus\n1964.Minyomerus:
+  label: is_a (input)
+  s: 1982.Minyomerus_laticeps\n1964.Minyomerus_laticeps
+  t: 1982.Minyomerus\n1964.Minyomerus
+1982.Minyomerus_microps\n1964.Minyomerus_microps_1982.Minyomerus\n1964.Minyomerus:
+  label: is_a (input)
+  s: 1982.Minyomerus_microps\n1964.Minyomerus_microps
+  t: 1982.Minyomerus\n1964.Minyomerus

@@ -1,0 +1,11 @@
+firstTName = '1982'
+secondTName = '1964'
+thirdTName = ''
+fourthTName = ''
+fifthTName = ''
+allRcgEdgesDict = {}
+numOfPws = 1
+avFlag = False
+allRcgNodesDict = {'congruent.1964.Piscatopus\\n1964.Piscatopus_griseus\\n1982.Piscatopus\\n1982.Piscatopus_griseus': {'concept': '1964.Piscatopus\\n1964.Piscatopus_griseus\\n1982.Piscatopus\\n1982.Piscatopus_griseus', 'group': 'congruent'}, 'congruent.1982.Minyomerus_innocuus\\n1964.Minyomerus_innocuus': {'concept': '1982.Minyomerus_innocuus\\n1964.Minyomerus_innocuus', 'group': 'congruent'}, 'congruent.1982.Minyomerus\\n1964.Minyomerus': {'concept': '1982.Minyomerus\\n1964.Minyomerus', 'group': 'congruent'}, 'congruent.1982.Minyomerus_conicollis\\n1964.Minyomerus_conicollis': {'concept': '1982.Minyomerus_conicollis\\n1964.Minyomerus_conicollis', 'group': 'congruent'}, 'congruent.1982.Minyomerus_constrictus\\n1964.Minyomerus_constrictus': {'concept': '1982.Minyomerus_constrictus\\n1964.Minyomerus_constrictus', 'group': 'congruent'}, 'congruent.1982.Minyomerus_laticeps\\n1964.Minyomerus_laticeps': {'concept': '1982.Minyomerus_laticeps\\n1964.Minyomerus_laticeps', 'group': 'congruent'}, 'congruent.1982.Minyomerus_microps\\n1964.Minyomerus_microps': {'concept': '1982.Minyomerus_microps\\n1964.Minyomerus_microps', 'group': 'congruent'}, 'congruent.1982.Minyomerus_languidus\\n1964.Minyomerus_languidus': {'concept': '1982.Minyomerus_languidus\\n1964.Minyomerus_languidus', 'group': 'congruent'}, 'congruent.1982.Minyomerus_caseyi\\n1964.Minyomerus_caseyi': {'concept': '1982.Minyomerus_caseyi\\n1964.Minyomerus_caseyi', 'group': 'congruent'}}
+trlist = [['1982.Minyomerus_conicollis\\n1964.Minyomerus_conicollis', '1982.Minyomerus\\n1964.Minyomerus', 0], ['1982.Minyomerus_laticeps\\n1964.Minyomerus_laticeps', '1982.Minyomerus\\n1964.Minyomerus', 0], ['1982.Minyomerus_caseyi\\n1964.Minyomerus_caseyi', '1982.Minyomerus\\n1964.Minyomerus', 0], ['1982.Minyomerus_constrictus\\n1964.Minyomerus_constrictus', '1982.Minyomerus\\n1964.Minyomerus', 0], ['1982.Minyomerus_innocuus\\n1964.Minyomerus_innocuus', '1982.Minyomerus\\n1964.Minyomerus', 0], ['1982.Minyomerus_languidus\\n1964.Minyomerus_languidus', '1982.Minyomerus\\n1964.Minyomerus', 0], ['1982.Minyomerus_microps\\n1964.Minyomerus_microps', '1982.Minyomerus\\n1964.Minyomerus', 0]]
+avFlag = True

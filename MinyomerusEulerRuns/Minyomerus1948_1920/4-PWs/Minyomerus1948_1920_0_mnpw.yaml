@@ -1,0 +1,62 @@
+1920.Minyomerus:
+  concept: Minyomerus
+  group: '1920'
+1948.Minyomerus:
+  concept: Minyomerus
+  group: '1948'
+congruent.1948.Elissa\n1920.Elissa:
+  concept: 1948.Elissa\n1920.Elissa
+  group: congruent
+congruent.1948.Elissa_constricta\n1920.Elissa_constricta:
+  concept: 1948.Elissa_constricta\n1920.Elissa_constricta
+  group: congruent
+congruent.1948.Elissa_laticeps\n1920.Elissa_laticeps:
+  concept: 1948.Elissa_laticeps\n1920.Elissa_laticeps
+  group: congruent
+congruent.1948.Minyomerus_caseyi\n1920.Minyomerus_caseyi:
+  concept: 1948.Minyomerus_caseyi\n1920.Minyomerus_caseyi
+  group: congruent
+congruent.1948.Minyomerus_conicollis\n1920.Minyomerus_conicollis:
+  concept: 1948.Minyomerus_conicollis\n1920.Minyomerus_conicollis
+  group: congruent
+congruent.1948.Minyomerus_innocuus\n1920.Minyomerus_innocuus:
+  concept: 1948.Minyomerus_innocuus\n1920.Minyomerus_innocuus
+  group: congruent
+congruent.1948.Minyomerus_languidus\n1920.Minyomerus_languidus:
+  concept: 1948.Minyomerus_languidus\n1920.Minyomerus_languidus
+  group: congruent
+congruent.1948.Minyomerus_microps\n1920.Thylacites_microsus:
+  concept: 1948.Minyomerus_microps\n1920.Thylacites_microsus
+  group: congruent
+1920.Minyomerus_1948.Minyomerus:
+  label: is_a (input)
+  s: 1920.Minyomerus
+  t: 1948.Minyomerus
+1948.Elissa_constricta\n1920.Elissa_constricta_1948.Elissa\n1920.Elissa:
+  label: is_a (input)
+  s: 1948.Elissa_constricta\n1920.Elissa_constricta
+  t: 1948.Elissa\n1920.Elissa
+1948.Elissa_laticeps\n1920.Elissa_laticeps_1948.Elissa\n1920.Elissa:
+  label: is_a (input)
+  s: 1948.Elissa_laticeps\n1920.Elissa_laticeps
+  t: 1948.Elissa\n1920.Elissa
+1948.Minyomerus_caseyi\n1920.Minyomerus_caseyi_1920.Minyomerus:
+  label: is_a (input)
+  s: 1948.Minyomerus_caseyi\n1920.Minyomerus_caseyi
+  t: 1920.Minyomerus
+1948.Minyomerus_conicollis\n1920.Minyomerus_conicollis_1920.Minyomerus:
+  label: is_a (input)
+  s: 1948.Minyomerus_conicollis\n1920.Minyomerus_conicollis
+  t: 1920.Minyomerus
+1948.Minyomerus_innocuus\n1920.Minyomerus_innocuus_1920.Minyomerus:
+  label: is_a (input)
+  s: 1948.Minyomerus_innocuus\n1920.Minyomerus_innocuus
+  t: 1920.Minyomerus
+1948.Minyomerus_languidus\n1920.Minyomerus_languidus_1920.Minyomerus:
+  label: is_a (input)
+  s: 1948.Minyomerus_languidus\n1920.Minyomerus_languidus
+  t: 1920.Minyomerus
+1948.Minyomerus_microps\n1920.Thylacites_microsus_1948.Minyomerus:
+  label: is_a (input)
+  s: 1948.Minyomerus_microps\n1920.Thylacites_microsus
+  t: 1948.Minyomerus

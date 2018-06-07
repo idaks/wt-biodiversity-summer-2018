@@ -1,0 +1,84 @@
+digraph{
+rankdir=LR
+node[shape=circle style=filled fillcolor="#FFFFFF"] 
+node[shape=box style=filled fillcolor="#CCFFCC" fontname="helvetica"] 
+"1964.Minyomerus"
+"1964.Minyomerus_microps"
+"1964.Piscatopus_griseus"
+"1964.Minyomerus_caseyi"
+"1964.Minyomerus_laticeps"
+"1964.Minyomerus_languidus"
+"1964.Minyomerus_conicollis"
+"1964.Minyomerus_constrictus"
+"1964.Piscatopus"
+"1964.Minyomerus_innocuus"
+node[shape=circle style=filled fillcolor="#FFFFFF"] 
+node[shape=note style=filled fillcolor="#FFFFCC" fontname="helvetica"] 
+"1960.Piscatopus_griseus"
+"1960.Minyomerus_languidus"
+"1960.Elissa"
+"1960.Minyomerus_microps"
+"1960.Minyomerus_conicollis"
+"1960.Minyomerus_caseyi"
+"1960.Elissa_constricta"
+"1960.Elissa_laticeps"
+"1960.Minyomerus_innocuus"
+"1960.Minyomerus"
+"1960.Piscatopus"
+edge[style=solid color="#000000" constraint=true penwidth=1 dir=forward]
+edge[style=solid color="#000000" constraint=true penwidth=1 dir=forward]
+"1964.Minyomerus" -> "1964.Minyomerus_microps" [dir=back]
+"1964.Minyomerus" -> "1964.Minyomerus_languidus" [dir=back]
+"1964.Minyomerus" -> "1964.Minyomerus_caseyi" [dir=back]
+"1964.Minyomerus" -> "1964.Minyomerus_laticeps" [dir=back]
+"1964.Minyomerus" -> "1964.Minyomerus_constrictus" [dir=back]
+"1964.Piscatopus" -> "1964.Piscatopus_griseus" [dir=back]
+"1964.Minyomerus" -> "1964.Minyomerus_innocuus" [dir=back]
+"1964.Minyomerus" -> "1964.Minyomerus_conicollis" [dir=back]
+edge[style=solid color="#000000" constraint=true penwidth=1 dir=forward]
+edge[style=solid color="#000000" constraint=true penwidth=1 dir=forward]
+"1960.Piscatopus_griseus" -> "1960.Piscatopus"
+"1960.Elissa_laticeps" -> "1960.Elissa"
+"1960.Minyomerus_languidus" -> "1960.Minyomerus"
+"1960.Minyomerus_caseyi" -> "1960.Minyomerus"
+"1960.Minyomerus_microps" -> "1960.Minyomerus"
+"1960.Elissa_constricta" -> "1960.Elissa"
+"1960.Minyomerus_innocuus" -> "1960.Minyomerus"
+"1960.Minyomerus_conicollis" -> "1960.Minyomerus"
+edge[style=solid color="#000000" constraint=true penwidth=1 dir=forward]
+edge[style=dashed color="#AA00FF" constraint=true penwidth=2 dir=both]
+"1964.Minyomerus_microps" -> "1960.Minyomerus_microps" [label="="]
+"1964.Piscatopus_griseus" -> "1960.Piscatopus_griseus" [label="="]
+"1964.Minyomerus_languidus" -> "1960.Minyomerus_languidus" [label="="]
+"1964.Minyomerus_innocuus" -> "1960.Minyomerus_innocuus" [label="="]
+"1964.Minyomerus_conicollis" -> "1960.Minyomerus_conicollis" [label="="]
+"1964.Minyomerus" -> "1960.Elissa" [label=">"]
+"1964.Minyomerus" -> "1960.Minyomerus" [label=">"]
+"1964.Minyomerus_laticeps" -> "1960.Elissa_laticeps" [label="="]
+"1964.Minyomerus_caseyi" -> "1960.Minyomerus_caseyi" [label="="]
+"1964.Minyomerus_constrictus" -> "1960.Elissa_constricta" [label="="]
+node[shape=box] 
+{rank=source Legend [fillcolor= white margin=0 label=< 
+ <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4"> 
+<TR> <TD COLSPAN="2"><font face="Arial Black"> Nodes</font></TD> </TR> 
+<TR> 
+ <TD bgcolor="#CCFFCC" fontname="helvetica">1964</TD> 
+ <TD>10</TD> 
+ </TR> 
+<TR> 
+ <TD bgcolor="#FFFFCC" fontname="helvetica">1960</TD> 
+ <TD>11</TD> 
+ </TR> 
+<TR> <TD COLSPAN="2"><font face = "Arial Black"> Edges </font></TD> </TR> 
+<TR> 
+ <TD><font color ="#000000">is_a (1964)</font></TD><TD>8</TD>
+</TR>
+<TR> 
+ <TD><font color ="#000000">is_a (1960)</font></TD><TD>8</TD>
+</TR>
+<TR> 
+ <TD><font color ="#AA00FF">articulations</font></TD><TD>10</TD>
+</TR>
+</TABLE> 
+ >] } 
+}

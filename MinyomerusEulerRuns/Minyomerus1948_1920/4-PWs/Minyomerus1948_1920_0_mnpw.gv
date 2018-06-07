@@ -1,0 +1,48 @@
+digraph{
+rankdir=RL
+node[shape=note style=filled fillcolor="#FFFFCC" fontname="helvetica"] 
+"1920.Minyomerus"
+node[shape=box style="filled,rounded" fillcolor="#EEEEEE" fontname="helvetica"] 
+"1948.Minyomerus_caseyi\n1920.Minyomerus_caseyi"
+"1948.Minyomerus_microps\n1920.Thylacites_microsus"
+"1948.Elissa_constricta\n1920.Elissa_constricta"
+"1948.Minyomerus_conicollis\n1920.Minyomerus_conicollis"
+"1948.Minyomerus_innocuus\n1920.Minyomerus_innocuus"
+"1948.Elissa\n1920.Elissa"
+"1948.Elissa_laticeps\n1920.Elissa_laticeps"
+"1948.Minyomerus_languidus\n1920.Minyomerus_languidus"
+node[shape=box style=filled fillcolor="#CCFFCC" fontname="helvetica"] 
+"1948.Minyomerus"
+edge[arrowhead=normal style=solid color="#000000" constraint=true penwidth=1]
+"1948.Minyomerus_caseyi\n1920.Minyomerus_caseyi" -> "1920.Minyomerus"
+"1948.Minyomerus_microps\n1920.Thylacites_microsus" -> "1948.Minyomerus"
+"1948.Minyomerus_innocuus\n1920.Minyomerus_innocuus" -> "1920.Minyomerus"
+"1920.Minyomerus" -> "1948.Minyomerus"
+"1948.Minyomerus_conicollis\n1920.Minyomerus_conicollis" -> "1920.Minyomerus"
+"1948.Elissa_laticeps\n1920.Elissa_laticeps" -> "1948.Elissa\n1920.Elissa"
+"1948.Minyomerus_languidus\n1920.Minyomerus_languidus" -> "1920.Minyomerus"
+"1948.Elissa_constricta\n1920.Elissa_constricta" -> "1948.Elissa\n1920.Elissa"
+edge[arrowhead=normal style=dotted color="#000000" constraint=true penwidth=1]
+node[shape=box] 
+{rank=source Legend [fillcolor= white margin=0 label=< 
+ <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4"> 
+<TR> <TD COLSPAN="2"><font face="Arial Black"> Nodes</font></TD> </TR> 
+<TR> 
+ <TD bgcolor="#FFFFCC" fontname="helvetica">1920</TD> 
+ <TD>1</TD> 
+ </TR> 
+<TR> 
+ <TD bgcolor="#EEEEEE" fontname="helvetica">congruent</TD> 
+ <TD>8</TD> 
+ </TR> 
+<TR> 
+ <TD bgcolor="#CCFFCC" fontname="helvetica">1948</TD> 
+ <TD>1</TD> 
+ </TR> 
+<TR> <TD COLSPAN="2"><font face = "Arial Black"> Edges </font></TD> </TR> 
+<TR> 
+ <TD><font color ="#000000">is_a (input)</font></TD><TD>8</TD>
+</TR>
+</TABLE> 
+ >] } 
+}

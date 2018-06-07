@@ -1,0 +1,40 @@
+1888.1888.Pseudelissa\n1888.Pseudelissa_cinerea:
+  concept: 1888.Pseudelissa\n1888.Pseudelissa_cinerea
+  group: '1888'
+1888.Elissa:
+  concept: Elissa
+  group: '1888'
+1888.Elissa_constricta:
+  concept: Elissa_constricta
+  group: '1888'
+1888.Elissa_laticeps:
+  concept: Elissa_laticeps
+  group: '1888'
+congruent.1888.Minyomerus\n1876.Minyomerus:
+  concept: 1888.Minyomerus\n1876.Minyomerus
+  group: congruent
+congruent.1888.Minyomerus_innocuus\n1876.Minyomerus_innocuus:
+  concept: 1888.Minyomerus_innocuus\n1876.Minyomerus_innocuus
+  group: congruent
+congruent.1888.Minyomerus_languidus\n1876.Minyomerus_languidus:
+  concept: 1888.Minyomerus_languidus\n1876.Minyomerus_languidus
+  group: congruent
+congruent.1888.Thylacites_microsus\n1876.Thylacites_microsus:
+  concept: 1888.Thylacites_microsus\n1876.Thylacites_microsus
+  group: congruent
+1888.Elissa_constricta_1888.Elissa:
+  label: is_a (input)
+  s: 1888.Elissa_constricta
+  t: 1888.Elissa
+1888.Elissa_laticeps_1888.Elissa:
+  label: is_a (input)
+  s: 1888.Elissa_laticeps
+  t: 1888.Elissa
+1888.Minyomerus_innocuus\n1876.Minyomerus_innocuus_1888.Minyomerus\n1876.Minyomerus:
+  label: is_a (input)
+  s: 1888.Minyomerus_innocuus\n1876.Minyomerus_innocuus
+  t: 1888.Minyomerus\n1876.Minyomerus
+1888.Minyomerus_languidus\n1876.Minyomerus_languidus_1888.Minyomerus\n1876.Minyomerus:
+  label: is_a (input)
+  s: 1888.Minyomerus_languidus\n1876.Minyomerus_languidus
+  t: 1888.Minyomerus\n1876.Minyomerus

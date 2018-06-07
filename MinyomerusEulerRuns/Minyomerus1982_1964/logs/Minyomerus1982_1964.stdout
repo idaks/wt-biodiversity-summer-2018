@@ -1,0 +1,37 @@
+##### Executing command:
+
+/Users/jessicacheng/EulerX/src-el/euler2 align Minyomerus1982_1964.txt 
+
+
+##### Euler version:
+
+master
+49e63e6a27be97ab30832180a47d214494388e15
+
+
+##### GraphViz version:
+
+dot - graphviz version 2.36.0 (20140111.2315)
+
+
+##### DLV version:
+
+DLV [build BEN/Dec 17 2012   gcc 4.2.1 (Apple Inc. build 5666) (dot 3)]
+
+usage: dlv {FRONTEND} {OPTIONS} [filename [filename [...]]]
+
+Specify -help for more detailed usage information.
+
+
+##### Running User, Host and Date:
+User:	jessicacheng
+Host:	wirelessprv-10-195-175-58.near.illinois.edu
+Date:	2018-06-07-12:31:04
+
+
+##### Euler Outputs:
+******* You are running example Minyomerus1982_1964 *******
+
+Possible world 0:
+{1982.Minyomerus_microps"!"1964.Minyomerus_caseyi, 1982.Minyomerus_constrictus"!"1964.Minyomerus_languidus, 1982.Minyomerus_conicollis"!"1964.Minyomerus_languidus, 1982.Piscatopus"!"1964.Minyomerus_languidus, 1982.Minyomerus_laticeps"!"1964.Minyomerus_languidus, 1982.Minyomerus_innocuus"!"1964.Minyomerus_languidus, 1982.Piscatopus_griseus"!"1964.Minyomerus_languidus, 1982.Minyomerus_microps"!"1964.Minyomerus_languidus, 1982.Minyomerus_caseyi"!"1964.Minyomerus_languidus, 1982.Minyomerus_languidus"!"1964.Minyomerus_constrictus, 1982.Minyomerus_conicollis"!"1964.Minyomerus_constrictus, 1982.Piscatopus"!"1964.Minyomerus_constrictus, 1982.Minyomerus_laticeps"!"1964.Minyomerus_constrictus, 1982.Minyomerus_innocuus"!"1964.Minyomerus_constrictus, 1982.Piscatopus_griseus"!"1964.Minyomerus_constrictus, 1982.Minyomerus_microps"!"1964.Minyomerus_constrictus, 1982.Minyomerus_caseyi"!"1964.Minyomerus_constrictus, 1982.Minyomerus_languidus"!"1964.Minyomerus_conicollis, 1982.Minyomerus_constrictus"!"1964.Minyomerus_conicollis, 1982.Piscatopus"!"1964.Minyomerus_conicollis, 1982.Minyomerus_laticeps"!"1964.Minyomerus_conicollis, 1982.Minyomerus_innocuus"!"1964.Minyomerus_conicollis, 1982.Piscatopus_griseus"!"1964.Minyomerus_conicollis, 1982.Minyomerus_microps"!"1964.Minyomerus_conicollis, 1982.Minyomerus_caseyi"!"1964.Minyomerus_conicollis, 1982.Minyomerus_languidus"!"1964.Piscatopus, 1982.Minyomerus_constrictus"!"1964.Piscatopus, 1982.Minyomerus_conicollis"!"1964.Piscatopus, 1982.Piscatopus_griseus"!"1964.Minyomerus_innocuus, 1982.Minyomerus_microps"!"1964.Minyomerus_innocuus, 1982.Minyomerus_caseyi"!"1964.Minyomerus_innocuus, 1982.Minyomerus_languidus"!"1964.Piscatopus_griseus, 1982.Minyomerus_constrictus"!"1964.Piscatopus_griseus, 1982.Minyomerus_conicollis"!"1964.Piscatopus_griseus, 1982.Minyomerus"!"1964.Piscatopus_griseus, 1982.Minyomerus_laticeps"!"1964.Piscatopus_griseus, 1982.Minyomerus_innocuus"!"1964.Piscatopus_griseus, 1982.Minyomerus_microps"!"1964.Piscatopus_griseus, 1982.Minyomerus_caseyi"!"1964.Piscatopus_griseus, 1982.Minyomerus_languidus"!"1964.Minyomerus_microps, 1982.Minyomerus_constrictus"!"1964.Minyomerus_microps, 1982.Minyomerus_conicollis"!"1964.Minyomerus_microps, 1982.Piscatopus"!"1964.Minyomerus_microps, 1982.Minyomerus_conicollis"!"1964.Minyomerus_caseyi, 1982.Piscatopus"!"1964.Minyomerus_caseyi, 1982.Minyomerus_laticeps"!"1964.Minyomerus_caseyi, 1982.Piscatopus_griseus"!"1964.Minyomerus_caseyi, 1982.Minyomerus_innocuus"!"1964.Minyomerus_caseyi, 1982.Minyomerus_constrictus"!"1964.Minyomerus_caseyi, 1982.Minyomerus_languidus"!"1964.Minyomerus_caseyi, 1982.Minyomerus_caseyi"!"1964.Minyomerus_microps, 1982.Piscatopus_griseus"!"1964.Minyomerus_microps, 1982.Minyomerus_innocuus"!"1964.Minyomerus_microps, 1982.Minyomerus_laticeps"!"1964.Minyomerus_microps, 1982.Minyomerus_laticeps"!"1964.Minyomerus_innocuus, 1982.Piscatopus"!"1964.Minyomerus_innocuus, 1982.Minyomerus_conicollis"!"1964.Minyomerus_innocuus, 1982.Minyomerus_constrictus"!"1964.Minyomerus_innocuus, 1982.Minyomerus_languidus"!"1964.Minyomerus_innocuus, 1982.Minyomerus_caseyi"!"1964.Minyomerus_laticeps, 1982.Minyomerus_microps"!"1964.Minyomerus_laticeps, 1982.Piscatopus_griseus"!"1964.Minyomerus_laticeps, 1982.Minyomerus_innocuus"!"1964.Minyomerus_laticeps, 1982.Piscatopus"!"1964.Minyomerus_laticeps, 1982.Minyomerus_conicollis"!"1964.Minyomerus_laticeps, 1982.Minyomerus_constrictus"!"1964.Minyomerus_laticeps, 1982.Minyomerus_languidus"!"1964.Minyomerus_laticeps, 1982.Piscatopus_griseus"!"1964.Minyomerus, 1982.Piscatopus"!"1964.Minyomerus, 1982.Minyomerus_caseyi"!"1964.Piscatopus, 1982.Minyomerus_microps"!"1964.Piscatopus, 1982.Minyomerus_innocuus"!"1964.Piscatopus, 1982.Minyomerus_laticeps"!"1964.Piscatopus, 1982.Minyomerus"!"1964.Piscatopus, 1982.Minyomerus_caseyi"<"1964.Minyomerus, 1982.Minyomerus_microps"<"1964.Minyomerus, 1982.Minyomerus_innocuus"<"1964.Minyomerus, 1982.Minyomerus_laticeps"<"1964.Minyomerus, 1982.Minyomerus_conicollis"<"1964.Minyomerus, 1982.Minyomerus_constrictus"<"1964.Minyomerus, 1982.Minyomerus_languidus"<"1964.Minyomerus, 1982.Minyomerus">"1964.Minyomerus_languidus, 1982.Minyomerus">"1964.Minyomerus_constrictus, 1982.Minyomerus">"1964.Minyomerus_conicollis, 1982.Minyomerus">"1964.Minyomerus_caseyi, 1982.Minyomerus">"1964.Minyomerus_microps, 1982.Minyomerus">"1964.Minyomerus_innocuus, 1982.Minyomerus">"1964.Minyomerus_laticeps, 1982.Minyomerus_languidus"="1964.Minyomerus_languidus, 1982.Minyomerus_constrictus"="1964.Minyomerus_constrictus, 1982.Minyomerus_conicollis"="1964.Minyomerus_conicollis, 1982.Piscatopus"="1964.Piscatopus, 1982.Piscatopus"="1964.Piscatopus_griseus, 1982.Piscatopus_griseus"="1964.Piscatopus_griseus, 1982.Minyomerus_microps"="1964.Minyomerus_microps, 1982.Minyomerus_innocuus"="1964.Minyomerus_innocuus, 1982.Minyomerus_laticeps"="1964.Minyomerus_laticeps, 1982.Minyomerus"="1964.Minyomerus, 1982.Piscatopus_griseus"="1964.Piscatopus, 1982.Minyomerus_caseyi"="1964.Minyomerus_caseyi}
+

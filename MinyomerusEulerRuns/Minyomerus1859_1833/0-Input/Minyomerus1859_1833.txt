@@ -1,0 +1,9 @@
+# 1859_1833
+taxonomy 1859 LeConte
+(Thylacites_microps)
+
+taxonomy 1833 Boheman
+(Thylacites_microsus)
+
+articulation 1859_1833 LeConte_Boheman
+[1859.Thylacites_microps equals 1833.Thylacites_microsus]

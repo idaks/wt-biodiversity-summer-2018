@@ -1,0 +1,13 @@
+from sets import Set
+fileName = 'Minyomerus1859_1833_0_mnpw'
+pwIndex = 0
+eq = {'1859.Thylacites_microps': Set(['1833.Thylacites_microsus']), '1833.Thylacites_microsus': Set(['1859.Thylacites_microps'])}
+firstTName = '1859'
+secondTName = '1833'
+thirdTName = ''
+fourthTName = ''
+fifthTName = ''
+eqConLi = []
+tr = []
+mir = {'1859.Thylacites_microps,1833.Thylacites_microsus': 4}
+inputoverlaps = []

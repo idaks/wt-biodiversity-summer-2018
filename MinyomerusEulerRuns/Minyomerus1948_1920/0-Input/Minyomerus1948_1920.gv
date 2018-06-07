@@ -1,0 +1,76 @@
+digraph{
+rankdir=LR
+node[shape=circle style=filled fillcolor="#FFFFFF"] 
+node[shape=note style=filled fillcolor="#FFFFCC" fontname="helvetica"] 
+"1920.Minyomerus_languidus"
+"1920.Thylacites_microsus"
+"1920.Minyomerus_conicollis"
+"1920.Elissa_laticeps"
+"1920.Minyomerus"
+"1920.Minyomerus_innocuus"
+"1920.Minyomerus_caseyi"
+"1920.Elissa_constricta"
+"1920.Elissa"
+node[shape=circle style=filled fillcolor="#FFFFFF"] 
+node[shape=box style=filled fillcolor="#CCFFCC" fontname="helvetica"] 
+"1948.Elissa"
+"1948.Elissa_constricta"
+"1948.Elissa_laticeps"
+"1948.Minyomerus_microps"
+"1948.Minyomerus_caseyi"
+"1948.Minyomerus_languidus"
+"1948.Minyomerus_conicollis"
+"1948.Minyomerus_innocuus"
+"1948.Minyomerus"
+edge[style=solid color="#000000" constraint=true penwidth=1 dir=forward]
+edge[style=solid color="#000000" constraint=true penwidth=1 dir=forward]
+"1920.Minyomerus_languidus" -> "1920.Minyomerus"
+"1920.Minyomerus_conicollis" -> "1920.Minyomerus"
+"1920.Elissa_constricta" -> "1920.Elissa"
+"1920.Minyomerus_caseyi" -> "1920.Minyomerus"
+"1920.Elissa_laticeps" -> "1920.Elissa"
+"1920.Minyomerus_innocuus" -> "1920.Minyomerus"
+edge[style=solid color="#000000" constraint=true penwidth=1 dir=forward]
+edge[style=solid color="#000000" constraint=true penwidth=1 dir=forward]
+"1948.Elissa" -> "1948.Elissa_constricta" [dir=back]
+"1948.Elissa" -> "1948.Elissa_laticeps" [dir=back]
+"1948.Minyomerus" -> "1948.Minyomerus_languidus" [dir=back]
+"1948.Minyomerus" -> "1948.Minyomerus_conicollis" [dir=back]
+"1948.Minyomerus" -> "1948.Minyomerus_microps" [dir=back]
+"1948.Minyomerus" -> "1948.Minyomerus_innocuus" [dir=back]
+"1948.Minyomerus" -> "1948.Minyomerus_caseyi" [dir=back]
+edge[style=solid color="#000000" constraint=true penwidth=1 dir=forward]
+edge[style=dashed color="#AA00FF" constraint=true penwidth=2 dir=both]
+"1948.Minyomerus" -> "1920.Minyomerus" [label=">"]
+"1948.Minyomerus_languidus" -> "1920.Minyomerus_languidus" [label="="]
+"1948.Minyomerus_caseyi" -> "1920.Minyomerus_caseyi" [label="="]
+"1948.Minyomerus_innocuus" -> "1920.Minyomerus_innocuus" [label="="]
+"1948.Minyomerus_conicollis" -> "1920.Minyomerus_conicollis" [label="="]
+"1948.Elissa_laticeps" -> "1920.Elissa_laticeps" [label="="]
+"1948.Elissa_constricta" -> "1920.Elissa_constricta" [label="="]
+"1948.Minyomerus_microps" -> "1920.Thylacites_microsus" [label="="]
+node[shape=box] 
+{rank=source Legend [fillcolor= white margin=0 label=< 
+ <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4"> 
+<TR> <TD COLSPAN="2"><font face="Arial Black"> Nodes</font></TD> </TR> 
+<TR> 
+ <TD bgcolor="#FFFFCC" fontname="helvetica">1920</TD> 
+ <TD>9</TD> 
+ </TR> 
+<TR> 
+ <TD bgcolor="#CCFFCC" fontname="helvetica">1948</TD> 
+ <TD>9</TD> 
+ </TR> 
+<TR> <TD COLSPAN="2"><font face = "Arial Black"> Edges </font></TD> </TR> 
+<TR> 
+ <TD><font color ="#000000">is_a (1920)</font></TD><TD>6</TD>
+</TR>
+<TR> 
+ <TD><font color ="#000000">is_a (1948)</font></TD><TD>7</TD>
+</TR>
+<TR> 
+ <TD><font color ="#AA00FF">articulations</font></TD><TD>8</TD>
+</TR>
+</TABLE> 
+ >] } 
+}

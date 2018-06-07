@@ -1,0 +1,18 @@
+# 1982_1964
+taxonomy 1982 OBrienWibmer
+(Minyomerus Minyomerus_caseyi Minyomerus_conicollis Minyomerus_constrictus Minyomerus_innocuus Minyomerus_languidus Minyomerus_laticeps Minyomerus_microps)
+(Piscatopus Piscatopus_griseus)
+
+taxonomy 1964 Kissinger
+(Minyomerus Minyomerus_caseyi Minyomerus_conicollis Minyomerus_constrictus Minyomerus_innocuus Minyomerus_languidus Minyomerus_laticeps Minyomerus_microps)
+(Piscatopus Piscatopus_griseus)
+
+articulation 1982_1964 OBrienWibmer
+[1982.Minyomerus_caseyi equals 1964.Minyomerus_caseyi]
+[1982.Minyomerus_conicollis equals 1964.Minyomerus_conicollis]
+[1982.Minyomerus_constrictus equals 1964.Minyomerus_constrictus]
+[1982.Minyomerus_innocuus equals 1964.Minyomerus_innocuus]
+[1982.Minyomerus_languidus equals 1964.Minyomerus_languidus]
+[1982.Minyomerus_laticeps equals 1964.Minyomerus_laticeps]
+[1982.Minyomerus_microps equals 1964.Minyomerus_microps]
+[1982.Piscatopus_griseus equals 1964.Piscatopus_griseus]

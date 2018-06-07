@@ -1,0 +1,156 @@
+1948.Elissa:
+  concept: Elissa
+  group: '1948'
+1948.Elissa_constricta:
+  concept: Elissa_constricta
+  group: '1948'
+1948.Elissa_laticeps:
+  concept: Elissa_laticeps
+  group: '1948'
+1948.Minyomerus:
+  concept: Minyomerus
+  group: '1948'
+1948.Minyomerus_caseyi:
+  concept: Minyomerus_caseyi
+  group: '1948'
+1948.Minyomerus_conicollis:
+  concept: Minyomerus_conicollis
+  group: '1948'
+1948.Minyomerus_innocuus:
+  concept: Minyomerus_innocuus
+  group: '1948'
+1948.Minyomerus_languidus:
+  concept: Minyomerus_languidus
+  group: '1948'
+1948.Minyomerus_microps:
+  concept: Minyomerus_microps
+  group: '1948'
+1960.Elissa:
+  concept: Elissa
+  group: '1960'
+1960.Elissa_constricta:
+  concept: Elissa_constricta
+  group: '1960'
+1960.Elissa_laticeps:
+  concept: Elissa_laticeps
+  group: '1960'
+1960.Minyomerus:
+  concept: Minyomerus
+  group: '1960'
+1960.Minyomerus_caseyi:
+  concept: Minyomerus_caseyi
+  group: '1960'
+1960.Minyomerus_conicollis:
+  concept: Minyomerus_conicollis
+  group: '1960'
+1960.Minyomerus_innocuus:
+  concept: Minyomerus_innocuus
+  group: '1960'
+1960.Minyomerus_languidus:
+  concept: Minyomerus_languidus
+  group: '1960'
+1960.Minyomerus_microps:
+  concept: Minyomerus_microps
+  group: '1960'
+1960.Piscatopus:
+  concept: Piscatopus
+  group: '1960'
+1960.Piscatopus_griseus:
+  concept: Piscatopus_griseus
+  group: '1960'
+1948.Elissa_constricta_1948.Elissa:
+  label: isa
+  s: 1948.Elissa_constricta
+  t: 1948.Elissa
+1948.Elissa_laticeps_1948.Elissa:
+  label: isa
+  s: 1948.Elissa_laticeps
+  t: 1948.Elissa
+1948.Minyomerus_caseyi_1948.Minyomerus:
+  label: isa
+  s: 1948.Minyomerus_caseyi
+  t: 1948.Minyomerus
+1948.Minyomerus_conicollis_1948.Minyomerus:
+  label: isa
+  s: 1948.Minyomerus_conicollis
+  t: 1948.Minyomerus
+1948.Minyomerus_innocuus_1948.Minyomerus:
+  label: isa
+  s: 1948.Minyomerus_innocuus
+  t: 1948.Minyomerus
+1948.Minyomerus_languidus_1948.Minyomerus:
+  label: isa
+  s: 1948.Minyomerus_languidus
+  t: 1948.Minyomerus
+1948.Minyomerus_microps_1948.Minyomerus:
+  label: isa
+  s: 1948.Minyomerus_microps
+  t: 1948.Minyomerus
+1960.Elissa_1948.Elissa:
+  label: '='
+  s: 1960.Elissa
+  t: 1948.Elissa
+1960.Elissa_constricta_1948.Elissa_constricta:
+  label: '='
+  s: 1960.Elissa_constricta
+  t: 1948.Elissa_constricta
+1960.Elissa_constricta_1960.Elissa:
+  label: isa
+  s: 1960.Elissa_constricta
+  t: 1960.Elissa
+1960.Elissa_laticeps_1948.Elissa_laticeps:
+  label: '='
+  s: 1960.Elissa_laticeps
+  t: 1948.Elissa_laticeps
+1960.Elissa_laticeps_1960.Elissa:
+  label: isa
+  s: 1960.Elissa_laticeps
+  t: 1960.Elissa
+1960.Minyomerus_1948.Minyomerus:
+  label: '='
+  s: 1960.Minyomerus
+  t: 1948.Minyomerus
+1960.Minyomerus_caseyi_1948.Minyomerus_caseyi:
+  label: '='
+  s: 1960.Minyomerus_caseyi
+  t: 1948.Minyomerus_caseyi
+1960.Minyomerus_caseyi_1960.Minyomerus:
+  label: isa
+  s: 1960.Minyomerus_caseyi
+  t: 1960.Minyomerus
+1960.Minyomerus_conicollis_1948.Minyomerus_conicollis:
+  label: '='
+  s: 1960.Minyomerus_conicollis
+  t: 1948.Minyomerus_conicollis
+1960.Minyomerus_conicollis_1960.Minyomerus:
+  label: isa
+  s: 1960.Minyomerus_conicollis
+  t: 1960.Minyomerus
+1960.Minyomerus_innocuus_1948.Minyomerus_innocuus:
+  label: '='
+  s: 1960.Minyomerus_innocuus
+  t: 1948.Minyomerus_innocuus
+1960.Minyomerus_innocuus_1960.Minyomerus:
+  label: isa
+  s: 1960.Minyomerus_innocuus
+  t: 1960.Minyomerus
+1960.Minyomerus_languidus_1948.Minyomerus_languidus:
+  label: '='
+  s: 1960.Minyomerus_languidus
+  t: 1948.Minyomerus_languidus
+1960.Minyomerus_languidus_1960.Minyomerus:
+  label: isa
+  s: 1960.Minyomerus_languidus
+  t: 1960.Minyomerus
+1960.Minyomerus_microps_1948.Minyomerus_microps:
+  label: '='
+  s: 1960.Minyomerus_microps
+  t: 1948.Minyomerus_microps
+1960.Minyomerus_microps_1960.Minyomerus:
+  label: isa
+  s: 1960.Minyomerus_microps
+  t: 1960.Minyomerus
+1960.Piscatopus_griseus_1960.Piscatopus:
+  label: isa
+  s: 1960.Piscatopus_griseus
+  t: 1960.Piscatopus

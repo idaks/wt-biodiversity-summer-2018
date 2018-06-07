@@ -1,0 +1,112 @@
+1909.Elissa:
+  concept: Elissa
+  group: '1909'
+1909.Elissa_constricta:
+  concept: Elissa_constricta
+  group: '1909'
+1909.Elissa_laticeps:
+  concept: Elissa_laticeps
+  group: '1909'
+1909.Minyomerus:
+  concept: Minyomerus
+  group: '1909'
+1909.Minyomerus_caseyi:
+  concept: Minyomerus_caseyi
+  group: '1909'
+1909.Minyomerus_innocuus:
+  concept: Minyomerus_innocuus
+  group: '1909'
+1909.Minyomerus_languidus:
+  concept: Minyomerus_languidus
+  group: '1909'
+1909.Thylacites_microsus:
+  concept: Thylacites_microsus
+  group: '1909'
+1913.Elissa:
+  concept: Elissa
+  group: '1913'
+1913.Elissa_constricta:
+  concept: Elissa_constricta
+  group: '1913'
+1913.Elissa_laticeps:
+  concept: Elissa_laticeps
+  group: '1913'
+1913.Minyomerus:
+  concept: Minyomerus
+  group: '1913'
+1913.Minyomerus_caseyi:
+  concept: Minyomerus_caseyi
+  group: '1913'
+1913.Minyomerus_innocuus:
+  concept: Minyomerus_innocuus
+  group: '1913'
+1913.Minyomerus_languidus:
+  concept: Minyomerus_languidus
+  group: '1913'
+1913.Thylacites_microsus:
+  concept: Thylacites_microsus
+  group: '1913'
+1909.Elissa_constricta_1909.Elissa:
+  label: isa
+  s: 1909.Elissa_constricta
+  t: 1909.Elissa
+1909.Elissa_laticeps_1909.Elissa:
+  label: isa
+  s: 1909.Elissa_laticeps
+  t: 1909.Elissa
+1909.Minyomerus_caseyi_1909.Minyomerus:
+  label: isa
+  s: 1909.Minyomerus_caseyi
+  t: 1909.Minyomerus
+1909.Minyomerus_innocuus_1909.Minyomerus:
+  label: isa
+  s: 1909.Minyomerus_innocuus
+  t: 1909.Minyomerus
+1909.Minyomerus_languidus_1909.Minyomerus:
+  label: isa
+  s: 1909.Minyomerus_languidus
+  t: 1909.Minyomerus
+1913.Elissa_constricta_1909.Elissa_constricta:
+  label: '='
+  s: 1913.Elissa_constricta
+  t: 1909.Elissa_constricta
+1913.Elissa_constricta_1913.Elissa:
+  label: isa
+  s: 1913.Elissa_constricta
+  t: 1913.Elissa
+1913.Elissa_laticeps_1909.Elissa_laticeps:
+  label: '='
+  s: 1913.Elissa_laticeps
+  t: 1909.Elissa_laticeps
+1913.Elissa_laticeps_1913.Elissa:
+  label: isa
+  s: 1913.Elissa_laticeps
+  t: 1913.Elissa
+1913.Minyomerus_caseyi_1909.Minyomerus_caseyi:
+  label: '='
+  s: 1913.Minyomerus_caseyi
+  t: 1909.Minyomerus_caseyi
+1913.Minyomerus_caseyi_1913.Minyomerus:
+  label: isa
+  s: 1913.Minyomerus_caseyi
+  t: 1913.Minyomerus
+1913.Minyomerus_innocuus_1909.Minyomerus_innocuus:
+  label: '='
+  s: 1913.Minyomerus_innocuus
+  t: 1909.Minyomerus_innocuus
+1913.Minyomerus_innocuus_1913.Minyomerus:
+  label: isa
+  s: 1913.Minyomerus_innocuus
+  t: 1913.Minyomerus
+1913.Minyomerus_languidus_1909.Minyomerus_languidus:
+  label: '='
+  s: 1913.Minyomerus_languidus
+  t: 1909.Minyomerus_languidus
+1913.Minyomerus_languidus_1913.Minyomerus:
+  label: isa
+  s: 1913.Minyomerus_languidus
+  t: 1913.Minyomerus
+1913.Thylacites_microsus_1909.Thylacites_microsus:
+  label: '='
+  s: 1913.Thylacites_microsus
+  t: 1909.Thylacites_microsus

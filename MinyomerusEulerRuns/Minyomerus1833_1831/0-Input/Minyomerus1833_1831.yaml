@@ -1,0 +1,10 @@
+1831.Thylacites_microps:
+  concept: Thylacites_microps
+  group: '1831'
+1833.Thylacites_microsus:
+  concept: Thylacites_microsus
+  group: '1833'
+1833.Thylacites_microsus_1831.Thylacites_microps:
+  label: '='
+  s: 1833.Thylacites_microsus
+  t: 1831.Thylacites_microps

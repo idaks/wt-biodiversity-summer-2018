@@ -1,0 +1,59 @@
+digraph{
+rankdir=RL
+node[shape=box style="filled,rounded" fillcolor="#EEEEEE" fontname="helvetica"] 
+"1909.Elissa_constricta\n1891.Elissa_constricta"
+"1909.Elissa\n1891.Elissa"
+"1909.Minyomerus_innocuus\n1891.Minyomerus_innocuus"
+"1909.Minyomerus_caseyi\n1891.Pseudelissa_caseyi"
+"1909.Elissa_laticeps\n1891.Elissa_laticeps"
+"1909.Thylacites_microsus\n1891.Thylacites_microsus"
+node[shape=note style=filled fillcolor="#FFFFCC" fontname="helvetica"] 
+"1891.Pseudelissa_cinerea"
+"1891.Minyomerus"
+"1891.Pseudelissa"
+"1891.Minyomerus_languidus"
+node[shape=box style=filled fillcolor="#CCFFCC" fontname="helvetica"] 
+"1909.Minyomerus_languidus"
+"1909.Minyomerus"
+edge[arrowhead=normal style=dotted color="#000000" constraint=true penwidth=1]
+edge[arrowhead=normal style=solid color="#000000" constraint=true penwidth=1]
+"1891.Minyomerus_languidus" -> "1909.Minyomerus_languidus"
+"1909.Minyomerus_caseyi\n1891.Pseudelissa_caseyi" -> "1891.Pseudelissa"
+"1891.Minyomerus_languidus" -> "1891.Minyomerus"
+"1891.Pseudelissa_cinerea" -> "1891.Pseudelissa"
+"1909.Minyomerus_innocuus\n1891.Minyomerus_innocuus" -> "1891.Minyomerus"
+"1891.Pseudelissa" -> "1909.Minyomerus"
+"1909.Elissa_constricta\n1891.Elissa_constricta" -> "1909.Elissa\n1891.Elissa"
+"1891.Minyomerus" -> "1909.Minyomerus"
+"1909.Elissa_laticeps\n1891.Elissa_laticeps" -> "1909.Elissa\n1891.Elissa"
+"1891.Pseudelissa_cinerea" -> "1909.Minyomerus_languidus"
+"1909.Minyomerus_languidus" -> "1909.Minyomerus"
+edge[arrowhead=none style=dashed color="#FF0000" constraint=false penwidth=1]
+"1891.Minyomerus" -> "1909.Minyomerus_languidus"
+"1891.Pseudelissa" -> "1909.Minyomerus_languidus"
+node[shape=box] 
+{rank=source Legend [fillcolor= white margin=0 label=< 
+ <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4"> 
+<TR> <TD COLSPAN="2"><font face="Arial Black"> Nodes</font></TD> </TR> 
+<TR> 
+ <TD bgcolor="#EEEEEE" fontname="helvetica">congruent</TD> 
+ <TD>6</TD> 
+ </TR> 
+<TR> 
+ <TD bgcolor="#FFFFCC" fontname="helvetica">1891</TD> 
+ <TD>4</TD> 
+ </TR> 
+<TR> 
+ <TD bgcolor="#CCFFCC" fontname="helvetica">1909</TD> 
+ <TD>2</TD> 
+ </TR> 
+<TR> <TD COLSPAN="2"><font face = "Arial Black"> Edges </font></TD> </TR> 
+<TR> 
+ <TD><font color ="#000000">is_a (input)</font></TD><TD>11</TD>
+</TR>
+<TR> 
+ <TD><font color ="#FF0000">overlaps (inferred)</font></TD><TD>2</TD>
+</TR>
+</TABLE> 
+ >] } 
+}

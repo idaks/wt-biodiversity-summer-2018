@@ -1,0 +1,11 @@
+# 1876_1859
+taxonomy 1876 Horn
+(Minyomerus Minyomerus_innocuus Minyomerus_languidus)
+(Thylacites_microsus)
+
+taxonomy 1859 LeConte
+(Thylacites_microps)
+
+articulation 1876_1859 Horn_LeConte
+[1876.Minyomerus disjoint 1859.Thylacites_microps]
+[1876.Thylacites_microsus equals 1859.Thylacites_microps]

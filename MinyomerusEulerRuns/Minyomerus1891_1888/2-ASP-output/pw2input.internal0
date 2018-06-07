@@ -1,0 +1,2 @@
+tr = [['1891.Pseudelissa_caseyi', '1891.Pseudelissa', 0], ['1891.Minyomerus_innocuus\\n1888.Minyomerus_innocuus', '1891.Minyomerus\\n1888.Minyomerus', 0], ['1891.Minyomerus_languidus\\n1888.Minyomerus_languidus', '1891.Minyomerus\\n1888.Minyomerus', 0], ['1891.Elissa_laticeps\\n1888.Elissa_laticeps', '1891.Elissa\\n1888.Elissa', 0], ['1891.Elissa_constricta\\n1888.Elissa_constricta', '1891.Elissa\\n1888.Elissa', 0], ['1888.Pseudelissa\\n1888.Pseudelissa_cinerea\\n1891.Pseudelissa_cinerea', '1891.Pseudelissa', 0]]
+pwIndex = 0

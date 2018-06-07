@@ -1,0 +1,23 @@
+# 1891_1888
+taxonomy 1891 Sharp
+(Pseudelissa Pseudelissa_caseyi Pseudelissa_cinerea)
+(Elissa Elissa_constricta Elissa_laticeps)
+(Minyomerus Minyomerus_innocuus Minyomerus_languidus)
+(Thylacites_microsus)
+
+taxonomy 1888 Casey
+(Elissa Elissa_constricta Elissa_laticeps)
+(Minyomerus Minyomerus_innocuus Minyomerus_languidus)
+(Pseudelissa Pseudelissa_cinerea)
+(Thylacites_microsus)
+
+articulation 1891_1888 Sharp_Casey
+[1891.Elissa equals 1888.Elissa]
+[1891.Elissa_constricta equals 1888.Elissa_constricta]
+[1891.Elissa_laticeps equals 1888.Elissa_laticeps]
+[1891.Minyomerus equals 1888.Minyomerus]
+[1891.Minyomerus_innocuus equals 1888.Minyomerus_innocuus]
+[1891.Minyomerus_languidus equals 1888.Minyomerus_languidus]
+[1891.Pseudelissa_caseyi disjoint 1888.Pseudelissa]
+[1891.Pseudelissa_cinerea equals 1888.Pseudelissa_cinerea]
+[1891.Thylacites_microsus equals 1888.Thylacites_microsus]

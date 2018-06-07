@@ -1,0 +1,143 @@
+1982.Minyomerus:
+  concept: Minyomerus
+  group: '1982'
+1982.Minyomerus_innocuus:
+  concept: Minyomerus_innocuus
+  group: '1982'
+1982.Minyomerus_microps:
+  concept: Minyomerus_microps
+  group: '1982'
+2015.Minyomerus:
+  concept: Minyomerus
+  group: '2015'
+2015.Minyomerus_bulbifrons:
+  concept: Minyomerus_bulbifrons
+  group: '2015'
+2015.Minyomerus_caponei:
+  concept: Minyomerus_caponei
+  group: '2015'
+2015.Minyomerus_cracens:
+  concept: Minyomerus_cracens
+  group: '2015'
+2015.Minyomerus_gravivultus:
+  concept: Minyomerus_gravivultus
+  group: '2015'
+2015.Minyomerus_imberbus:
+  concept: Minyomerus_imberbus
+  group: '2015'
+2015.Minyomerus_microps:
+  concept: Minyomerus_microps
+  group: '2015'
+2015.Minyomerus_politus:
+  concept: Minyomerus_politus
+  group: '2015'
+2015.Minyomerus_puticulatus:
+  concept: Minyomerus_puticulatus
+  group: '2015'
+2015.Minyomerus_reburrus:
+  concept: Minyomerus_reburrus
+  group: '2015'
+2015.Minyomerus_rutellirostris:
+  concept: Minyomerus_rutellirostris
+  group: '2015'
+2015.Minyomerus_trisetosus:
+  concept: Minyomerus_trisetosus
+  group: '2015'
+congruent.1982.Piscatopus\n1982.Piscatopus_griseus\n2015.Minyomerus_griseus:
+  concept: 1982.Piscatopus\n1982.Piscatopus_griseus\n2015.Minyomerus_griseus
+  group: congruent
+congruent.2015.Minyomerus_caseyi\n1982.Minyomerus_caseyi:
+  concept: 2015.Minyomerus_caseyi\n1982.Minyomerus_caseyi
+  group: congruent
+congruent.2015.Minyomerus_conicollis\n1982.Minyomerus_conicollis:
+  concept: 2015.Minyomerus_conicollis\n1982.Minyomerus_conicollis
+  group: congruent
+congruent.2015.Minyomerus_constrictus\n1982.Minyomerus_constrictus:
+  concept: 2015.Minyomerus_constrictus\n1982.Minyomerus_constrictus
+  group: congruent
+congruent.2015.Minyomerus_languidus\n1982.Minyomerus_languidus:
+  concept: 2015.Minyomerus_languidus\n1982.Minyomerus_languidus
+  group: congruent
+congruent.2015.Minyomerus_laticeps\n1982.Minyomerus_laticeps:
+  concept: 2015.Minyomerus_laticeps\n1982.Minyomerus_laticeps
+  group: congruent
+1982.Minyomerus_2015.Minyomerus:
+  label: is_a (input)
+  s: 1982.Minyomerus
+  t: 2015.Minyomerus
+1982.Minyomerus_innocuus_2015.Minyomerus_microps:
+  label: is_a (input)
+  s: 1982.Minyomerus_innocuus
+  t: 2015.Minyomerus_microps
+1982.Minyomerus_microps_2015.Minyomerus_microps:
+  label: is_a (input)
+  s: 1982.Minyomerus_microps
+  t: 2015.Minyomerus_microps
+1982.Piscatopus\n1982.Piscatopus_griseus\n2015.Minyomerus_griseus_2015.Minyomerus:
+  label: is_a (input)
+  s: 1982.Piscatopus\n1982.Piscatopus_griseus\n2015.Minyomerus_griseus
+  t: 2015.Minyomerus
+2015.Minyomerus_bulbifrons_2015.Minyomerus:
+  label: is_a (input)
+  s: 2015.Minyomerus_bulbifrons
+  t: 2015.Minyomerus
+2015.Minyomerus_caponei_2015.Minyomerus:
+  label: is_a (input)
+  s: 2015.Minyomerus_caponei
+  t: 2015.Minyomerus
+2015.Minyomerus_caseyi\n1982.Minyomerus_caseyi_1982.Minyomerus:
+  label: is_a (input)
+  s: 2015.Minyomerus_caseyi\n1982.Minyomerus_caseyi
+  t: 1982.Minyomerus
+2015.Minyomerus_conicollis\n1982.Minyomerus_conicollis_1982.Minyomerus:
+  label: is_a (input)
+  s: 2015.Minyomerus_conicollis\n1982.Minyomerus_conicollis
+  t: 1982.Minyomerus
+2015.Minyomerus_constrictus\n1982.Minyomerus_constrictus_1982.Minyomerus:
+  label: is_a (input)
+  s: 2015.Minyomerus_constrictus\n1982.Minyomerus_constrictus
+  t: 1982.Minyomerus
+2015.Minyomerus_cracens_2015.Minyomerus:
+  label: is_a (input)
+  s: 2015.Minyomerus_cracens
+  t: 2015.Minyomerus
+2015.Minyomerus_gravivultus_2015.Minyomerus:
+  label: is_a (input)
+  s: 2015.Minyomerus_gravivultus
+  t: 2015.Minyomerus
+2015.Minyomerus_imberbus_2015.Minyomerus:
+  label: is_a (input)
+  s: 2015.Minyomerus_imberbus
+  t: 2015.Minyomerus
+2015.Minyomerus_languidus\n1982.Minyomerus_languidus_1982.Minyomerus:
+  label: is_a (input)
+  s: 2015.Minyomerus_languidus\n1982.Minyomerus_languidus
+  t: 1982.Minyomerus
+2015.Minyomerus_laticeps\n1982.Minyomerus_laticeps_1982.Minyomerus:
+  label: is_a (input)
+  s: 2015.Minyomerus_laticeps\n1982.Minyomerus_laticeps
+  t: 1982.Minyomerus
+2015.Minyomerus_microps_1982.Minyomerus:
+  label: is_a (input)
+  s: 2015.Minyomerus_microps
+  t: 1982.Minyomerus
+2015.Minyomerus_politus_2015.Minyomerus:
+  label: is_a (input)
+  s: 2015.Minyomerus_politus
+  t: 2015.Minyomerus
+2015.Minyomerus_puticulatus_2015.Minyomerus:
+  label: is_a (input)
+  s: 2015.Minyomerus_puticulatus
+  t: 2015.Minyomerus
+2015.Minyomerus_reburrus_2015.Minyomerus:
+  label: is_a (input)
+  s: 2015.Minyomerus_reburrus
+  t: 2015.Minyomerus
+2015.Minyomerus_rutellirostris_2015.Minyomerus:
+  label: is_a (input)
+  s: 2015.Minyomerus_rutellirostris
+  t: 2015.Minyomerus
+2015.Minyomerus_trisetosus_2015.Minyomerus:
+  label: is_a (input)
+  s: 2015.Minyomerus_trisetosus
+  t: 2015.Minyomerus

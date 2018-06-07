@@ -1,0 +1,11 @@
+firstTName = '1891'
+secondTName = '1888'
+thirdTName = ''
+fourthTName = ''
+fifthTName = ''
+allRcgEdgesDict = {}
+numOfPws = 1
+avFlag = False
+allRcgNodesDict = {'congruent.1891.Thylacites_microsus\\n1888.Thylacites_microsus': {'concept': '1891.Thylacites_microsus\\n1888.Thylacites_microsus', 'group': 'congruent'}, '1891.Pseudelissa_caseyi': {'concept': 'Pseudelissa_caseyi', 'group': '1891'}, 'congruent.1891.Minyomerus_languidus\\n1888.Minyomerus_languidus': {'concept': '1891.Minyomerus_languidus\\n1888.Minyomerus_languidus', 'group': 'congruent'}, 'congruent.1888.Pseudelissa\\n1888.Pseudelissa_cinerea\\n1891.Pseudelissa_cinerea': {'concept': '1888.Pseudelissa\\n1888.Pseudelissa_cinerea\\n1891.Pseudelissa_cinerea', 'group': 'congruent'}, 'congruent.1891.Minyomerus_innocuus\\n1888.Minyomerus_innocuus': {'concept': '1891.Minyomerus_innocuus\\n1888.Minyomerus_innocuus', 'group': 'congruent'}, 'congruent.1891.Elissa\\n1888.Elissa': {'concept': '1891.Elissa\\n1888.Elissa', 'group': 'congruent'}, 'congruent.1891.Minyomerus\\n1888.Minyomerus': {'concept': '1891.Minyomerus\\n1888.Minyomerus', 'group': 'congruent'}, 'congruent.1891.Elissa_laticeps\\n1888.Elissa_laticeps': {'concept': '1891.Elissa_laticeps\\n1888.Elissa_laticeps', 'group': 'congruent'}, 'congruent.1891.Elissa_constricta\\n1888.Elissa_constricta': {'concept': '1891.Elissa_constricta\\n1888.Elissa_constricta', 'group': 'congruent'}, '1891.Pseudelissa': {'concept': 'Pseudelissa', 'group': '1891'}}
+trlist = [['1891.Pseudelissa_caseyi', '1891.Pseudelissa', 0], ['1891.Minyomerus_innocuus\\n1888.Minyomerus_innocuus', '1891.Minyomerus\\n1888.Minyomerus', 0], ['1891.Minyomerus_languidus\\n1888.Minyomerus_languidus', '1891.Minyomerus\\n1888.Minyomerus', 0], ['1891.Elissa_laticeps\\n1888.Elissa_laticeps', '1891.Elissa\\n1888.Elissa', 0], ['1891.Elissa_constricta\\n1888.Elissa_constricta', '1891.Elissa\\n1888.Elissa', 0], ['1888.Pseudelissa\\n1888.Pseudelissa_cinerea\\n1891.Pseudelissa_cinerea', '1891.Pseudelissa', 0]]
+avFlag = True

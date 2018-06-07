@@ -1,0 +1,11 @@
+firstTName = '1859'
+secondTName = '1833'
+thirdTName = ''
+fourthTName = ''
+fifthTName = ''
+allRcgEdgesDict = {}
+numOfPws = 1
+avFlag = False
+allRcgNodesDict = {'congruent.1859.Thylacites_microps\\n1833.Thylacites_microsus': {'concept': '1859.Thylacites_microps\\n1833.Thylacites_microsus', 'group': 'congruent'}}
+trlist = []
+avFlag = True

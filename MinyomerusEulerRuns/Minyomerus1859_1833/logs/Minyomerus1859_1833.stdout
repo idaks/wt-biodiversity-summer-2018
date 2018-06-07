@@ -1,0 +1,37 @@
+##### Executing command:
+
+/Users/jessicacheng/EulerX/src-el/euler2 align Minyomerus1859_1833.txt 
+
+
+##### Euler version:
+
+master
+49e63e6a27be97ab30832180a47d214494388e15
+
+
+##### GraphViz version:
+
+dot - graphviz version 2.36.0 (20140111.2315)
+
+
+##### DLV version:
+
+DLV [build BEN/Dec 17 2012   gcc 4.2.1 (Apple Inc. build 5666) (dot 3)]
+
+usage: dlv {FRONTEND} {OPTIONS} [filename [filename [...]]]
+
+Specify -help for more detailed usage information.
+
+
+##### Running User, Host and Date:
+User:	jessicacheng
+Host:	wirelessprv-10-195-175-58.near.illinois.edu
+Date:	2018-06-07-12:28:09
+
+
+##### Euler Outputs:
+******* You are running example Minyomerus1859_1833 *******
+
+Possible world 0:
+{1859.Thylacites_microps"="1833.Thylacites_microsus}
+

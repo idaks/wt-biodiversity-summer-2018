@@ -1,0 +1,31 @@
+1859.Thylacites_microps:
+  concept: Thylacites_microps
+  group: '1859'
+1876.Minyomerus:
+  concept: Minyomerus
+  group: '1876'
+1876.Minyomerus_innocuus:
+  concept: Minyomerus_innocuus
+  group: '1876'
+1876.Minyomerus_languidus:
+  concept: Minyomerus_languidus
+  group: '1876'
+1876.Thylacites_microsus:
+  concept: Thylacites_microsus
+  group: '1876'
+1876.Minyomerus_1859.Thylacites_microps:
+  label: '!'
+  s: 1876.Minyomerus
+  t: 1859.Thylacites_microps
+1876.Minyomerus_innocuus_1876.Minyomerus:
+  label: isa
+  s: 1876.Minyomerus_innocuus
+  t: 1876.Minyomerus
+1876.Minyomerus_languidus_1876.Minyomerus:
+  label: isa
+  s: 1876.Minyomerus_languidus
+  t: 1876.Minyomerus
+1876.Thylacites_microsus_1859.Thylacites_microps:
+  label: '='
+  s: 1876.Thylacites_microsus
+  t: 1859.Thylacites_microps

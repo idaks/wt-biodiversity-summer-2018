@@ -1,0 +1,76 @@
+digraph{
+rankdir=LR
+node[shape=circle style=filled fillcolor="#FFFFFF"] 
+node[shape=box style=filled fillcolor="#CCFFCC" fontname="helvetica"] 
+"1891.Elissa"
+"1891.Minyomerus"
+"1891.Pseudelissa"
+"1891.Elissa_laticeps"
+"1891.Thylacites_microsus"
+"1891.Minyomerus_innocuus"
+"1891.Pseudelissa_caseyi"
+"1891.Pseudelissa_cinerea"
+"1891.Elissa_constricta"
+"1891.Minyomerus_languidus"
+node[shape=circle style=filled fillcolor="#FFFFFF"] 
+node[shape=note style=filled fillcolor="#FFFFCC" fontname="helvetica"] 
+"1888.Elissa_laticeps"
+"1888.Minyomerus"
+"1888.Pseudelissa"
+"1888.Elissa"
+"1888.Minyomerus_languidus"
+"1888.Pseudelissa_cinerea"
+"1888.Minyomerus_innocuus"
+"1888.Thylacites_microsus"
+"1888.Elissa_constricta"
+edge[style=solid color="#000000" constraint=true penwidth=1 dir=forward]
+edge[style=solid color="#000000" constraint=true penwidth=1 dir=forward]
+"1888.Minyomerus_innocuus" -> "1888.Minyomerus"
+"1888.Pseudelissa_cinerea" -> "1888.Pseudelissa"
+"1888.Minyomerus_languidus" -> "1888.Minyomerus"
+"1888.Elissa_laticeps" -> "1888.Elissa"
+"1888.Elissa_constricta" -> "1888.Elissa"
+edge[style=solid color="#000000" constraint=true penwidth=1 dir=forward]
+edge[style=solid color="#000000" constraint=true penwidth=1 dir=forward]
+"1891.Elissa" -> "1891.Elissa_laticeps" [dir=back]
+"1891.Minyomerus" -> "1891.Minyomerus_innocuus" [dir=back]
+"1891.Elissa" -> "1891.Elissa_constricta" [dir=back]
+"1891.Pseudelissa" -> "1891.Pseudelissa_cinerea" [dir=back]
+"1891.Minyomerus" -> "1891.Minyomerus_languidus" [dir=back]
+"1891.Pseudelissa" -> "1891.Pseudelissa_caseyi" [dir=back]
+edge[style=solid color="#000000" constraint=true penwidth=1 dir=forward]
+edge[style=dashed color="#AA00FF" constraint=true penwidth=2 dir=both]
+"1891.Elissa_laticeps" -> "1888.Elissa_laticeps" [label="="]
+"1891.Minyomerus_innocuus" -> "1888.Minyomerus_innocuus" [label="="]
+"1891.Minyomerus" -> "1888.Minyomerus" [label="="]
+"1891.Elissa" -> "1888.Elissa" [label="="]
+"1891.Pseudelissa_cinerea" -> "1888.Pseudelissa_cinerea" [label="="]
+"1891.Pseudelissa_caseyi" -> "1888.Pseudelissa" [label="!"]
+"1891.Minyomerus_languidus" -> "1888.Minyomerus_languidus" [label="="]
+"1891.Thylacites_microsus" -> "1888.Thylacites_microsus" [label="="]
+"1891.Elissa_constricta" -> "1888.Elissa_constricta" [label="="]
+node[shape=box] 
+{rank=source Legend [fillcolor= white margin=0 label=< 
+ <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4"> 
+<TR> <TD COLSPAN="2"><font face="Arial Black"> Nodes</font></TD> </TR> 
+<TR> 
+ <TD bgcolor="#CCFFCC" fontname="helvetica">1891</TD> 
+ <TD>10</TD> 
+ </TR> 
+<TR> 
+ <TD bgcolor="#FFFFCC" fontname="helvetica">1888</TD> 
+ <TD>9</TD> 
+ </TR> 
+<TR> <TD COLSPAN="2"><font face = "Arial Black"> Edges </font></TD> </TR> 
+<TR> 
+ <TD><font color ="#000000">is_a (1888)</font></TD><TD>5</TD>
+</TR>
+<TR> 
+ <TD><font color ="#000000">is_a (1891)</font></TD><TD>6</TD>
+</TR>
+<TR> 
+ <TD><font color ="#AA00FF">articulations</font></TD><TD>9</TD>
+</TR>
+</TABLE> 
+ >] } 
+}

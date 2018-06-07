@@ -1,0 +1,58 @@
+1913.Minyomerus:
+  concept: Minyomerus
+  group: '1913'
+1920.Minyomerus:
+  concept: Minyomerus
+  group: '1920'
+1920.Minyomerus_conicollis:
+  concept: Minyomerus_conicollis
+  group: '1920'
+congruent.1920.Elissa\n1913.Elissa:
+  concept: 1920.Elissa\n1913.Elissa
+  group: congruent
+congruent.1920.Elissa_constricta\n1913.Elissa_constricta:
+  concept: 1920.Elissa_constricta\n1913.Elissa_constricta
+  group: congruent
+congruent.1920.Elissa_laticeps\n1913.Elissa_laticeps:
+  concept: 1920.Elissa_laticeps\n1913.Elissa_laticeps
+  group: congruent
+congruent.1920.Minyomerus_caseyi\n1913.Minyomerus_caseyi:
+  concept: 1920.Minyomerus_caseyi\n1913.Minyomerus_caseyi
+  group: congruent
+congruent.1920.Minyomerus_innocuus\n1913.Minyomerus_innocuus:
+  concept: 1920.Minyomerus_innocuus\n1913.Minyomerus_innocuus
+  group: congruent
+congruent.1920.Minyomerus_languidus\n1913.Minyomerus_languidus:
+  concept: 1920.Minyomerus_languidus\n1913.Minyomerus_languidus
+  group: congruent
+congruent.1920.Thylacites_microsus\n1913.Thylacites_microsus:
+  concept: 1920.Thylacites_microsus\n1913.Thylacites_microsus
+  group: congruent
+1913.Minyomerus_1920.Minyomerus:
+  label: is_a (input)
+  s: 1913.Minyomerus
+  t: 1920.Minyomerus
+1920.Elissa_constricta\n1913.Elissa_constricta_1920.Elissa\n1913.Elissa:
+  label: is_a (input)
+  s: 1920.Elissa_constricta\n1913.Elissa_constricta
+  t: 1920.Elissa\n1913.Elissa
+1920.Elissa_laticeps\n1913.Elissa_laticeps_1920.Elissa\n1913.Elissa:
+  label: is_a (input)
+  s: 1920.Elissa_laticeps\n1913.Elissa_laticeps
+  t: 1920.Elissa\n1913.Elissa
+1920.Minyomerus_caseyi\n1913.Minyomerus_caseyi_1913.Minyomerus:
+  label: is_a (input)
+  s: 1920.Minyomerus_caseyi\n1913.Minyomerus_caseyi
+  t: 1913.Minyomerus
+1920.Minyomerus_conicollis_1920.Minyomerus:
+  label: is_a (input)
+  s: 1920.Minyomerus_conicollis
+  t: 1920.Minyomerus
+1920.Minyomerus_innocuus\n1913.Minyomerus_innocuus_1913.Minyomerus:
+  label: is_a (input)
+  s: 1920.Minyomerus_innocuus\n1913.Minyomerus_innocuus
+  t: 1913.Minyomerus
+1920.Minyomerus_languidus\n1913.Minyomerus_languidus_1913.Minyomerus:
+  label: is_a (input)
+  s: 1920.Minyomerus_languidus\n1913.Minyomerus_languidus
+  t: 1913.Minyomerus

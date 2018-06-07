@@ -1,0 +1,69 @@
+1960.Elissa:
+  concept: Elissa
+  group: '1960'
+1960.Minyomerus:
+  concept: Minyomerus
+  group: '1960'
+1964.Minyomerus:
+  concept: Minyomerus
+  group: '1964'
+congruent.1960.Piscatopus\n1960.Piscatopus_griseus\n1964.Piscatopus\n1964.Piscatopus_griseus:
+  concept: 1960.Piscatopus\n1960.Piscatopus_griseus\n1964.Piscatopus\n1964.Piscatopus_griseus
+  group: congruent
+congruent.1964.Minyomerus_caseyi\n1960.Minyomerus_caseyi:
+  concept: 1964.Minyomerus_caseyi\n1960.Minyomerus_caseyi
+  group: congruent
+congruent.1964.Minyomerus_conicollis\n1960.Minyomerus_conicollis:
+  concept: 1964.Minyomerus_conicollis\n1960.Minyomerus_conicollis
+  group: congruent
+congruent.1964.Minyomerus_constrictus\n1960.Elissa_constricta:
+  concept: 1964.Minyomerus_constrictus\n1960.Elissa_constricta
+  group: congruent
+congruent.1964.Minyomerus_innocuus\n1960.Minyomerus_innocuus:
+  concept: 1964.Minyomerus_innocuus\n1960.Minyomerus_innocuus
+  group: congruent
+congruent.1964.Minyomerus_languidus\n1960.Minyomerus_languidus:
+  concept: 1964.Minyomerus_languidus\n1960.Minyomerus_languidus
+  group: congruent
+congruent.1964.Minyomerus_laticeps\n1960.Elissa_laticeps:
+  concept: 1964.Minyomerus_laticeps\n1960.Elissa_laticeps
+  group: congruent
+congruent.1964.Minyomerus_microps\n1960.Minyomerus_microps:
+  concept: 1964.Minyomerus_microps\n1960.Minyomerus_microps
+  group: congruent
+1960.Elissa_1964.Minyomerus:
+  label: is_a (input)
+  s: 1960.Elissa
+  t: 1964.Minyomerus
+1960.Minyomerus_1964.Minyomerus:
+  label: is_a (input)
+  s: 1960.Minyomerus
+  t: 1964.Minyomerus
+1964.Minyomerus_caseyi\n1960.Minyomerus_caseyi_1960.Minyomerus:
+  label: is_a (input)
+  s: 1964.Minyomerus_caseyi\n1960.Minyomerus_caseyi
+  t: 1960.Minyomerus
+1964.Minyomerus_conicollis\n1960.Minyomerus_conicollis_1960.Minyomerus:
+  label: is_a (input)
+  s: 1964.Minyomerus_conicollis\n1960.Minyomerus_conicollis
+  t: 1960.Minyomerus
+1964.Minyomerus_constrictus\n1960.Elissa_constricta_1960.Elissa:
+  label: is_a (input)
+  s: 1964.Minyomerus_constrictus\n1960.Elissa_constricta
+  t: 1960.Elissa
+1964.Minyomerus_innocuus\n1960.Minyomerus_innocuus_1960.Minyomerus:
+  label: is_a (input)
+  s: 1964.Minyomerus_innocuus\n1960.Minyomerus_innocuus
+  t: 1960.Minyomerus
+1964.Minyomerus_languidus\n1960.Minyomerus_languidus_1960.Minyomerus:
+  label: is_a (input)
+  s: 1964.Minyomerus_languidus\n1960.Minyomerus_languidus
+  t: 1960.Minyomerus
+1964.Minyomerus_laticeps\n1960.Elissa_laticeps_1960.Elissa:
+  label: is_a (input)
+  s: 1964.Minyomerus_laticeps\n1960.Elissa_laticeps
+  t: 1960.Elissa
+1964.Minyomerus_microps\n1960.Minyomerus_microps_1960.Minyomerus:
+  label: is_a (input)
+  s: 1964.Minyomerus_microps\n1960.Minyomerus_microps
+  t: 1960.Minyomerus

@@ -1,0 +1,69 @@
+digraph{
+rankdir=LR
+node[shape=circle style=filled fillcolor="#FFFFFF"] 
+node[shape=box style=filled fillcolor="#CCFFCC" fontname="helvetica"] 
+"1913.Minyomerus_languidus"
+"1913.Thylacites_microsus"
+"1913.Elissa_laticeps"
+"1913.Minyomerus_caseyi"
+"1913.Minyomerus"
+"1913.Elissa_constricta"
+"1913.Elissa"
+"1913.Minyomerus_innocuus"
+node[shape=circle style=filled fillcolor="#FFFFFF"] 
+node[shape=note style=filled fillcolor="#FFFFCC" fontname="helvetica"] 
+"1909.Minyomerus_innocuus"
+"1909.Thylacites_microsus"
+"1909.Elissa_constricta"
+"1909.Minyomerus_caseyi"
+"1909.Elissa"
+"1909.Elissa_laticeps"
+"1909.Minyomerus_languidus"
+"1909.Minyomerus"
+edge[style=solid color="#000000" constraint=true penwidth=1 dir=forward]
+edge[style=solid color="#000000" constraint=true penwidth=1 dir=forward]
+"1913.Elissa" -> "1913.Elissa_laticeps" [dir=back]
+"1913.Minyomerus" -> "1913.Minyomerus_innocuus" [dir=back]
+"1913.Minyomerus" -> "1913.Minyomerus_caseyi" [dir=back]
+"1913.Elissa" -> "1913.Elissa_constricta" [dir=back]
+"1913.Minyomerus" -> "1913.Minyomerus_languidus" [dir=back]
+edge[style=solid color="#000000" constraint=true penwidth=1 dir=forward]
+edge[style=dashed color="#AA00FF" constraint=true penwidth=2 dir=both]
+"1913.Elissa_laticeps" -> "1909.Elissa_laticeps" [label="="]
+"1913.Minyomerus_caseyi" -> "1909.Minyomerus_caseyi" [label="="]
+"1913.Thylacites_microsus" -> "1909.Thylacites_microsus" [label="="]
+"1913.Minyomerus_languidus" -> "1909.Minyomerus_languidus" [label="="]
+"1913.Elissa_constricta" -> "1909.Elissa_constricta" [label="="]
+"1913.Minyomerus_innocuus" -> "1909.Minyomerus_innocuus" [label="="]
+edge[style=solid color="#000000" constraint=true penwidth=1 dir=forward]
+edge[style=solid color="#000000" constraint=true penwidth=1 dir=forward]
+"1909.Elissa_constricta" -> "1909.Elissa"
+"1909.Minyomerus_caseyi" -> "1909.Minyomerus"
+"1909.Minyomerus_innocuus" -> "1909.Minyomerus"
+"1909.Elissa_laticeps" -> "1909.Elissa"
+"1909.Minyomerus_languidus" -> "1909.Minyomerus"
+node[shape=box] 
+{rank=source Legend [fillcolor= white margin=0 label=< 
+ <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4"> 
+<TR> <TD COLSPAN="2"><font face="Arial Black"> Nodes</font></TD> </TR> 
+<TR> 
+ <TD bgcolor="#CCFFCC" fontname="helvetica">1913</TD> 
+ <TD>8</TD> 
+ </TR> 
+<TR> 
+ <TD bgcolor="#FFFFCC" fontname="helvetica">1909</TD> 
+ <TD>8</TD> 
+ </TR> 
+<TR> <TD COLSPAN="2"><font face = "Arial Black"> Edges </font></TD> </TR> 
+<TR> 
+ <TD><font color ="#000000">is_a (1913)</font></TD><TD>5</TD>
+</TR>
+<TR> 
+ <TD><font color ="#AA00FF">articulations</font></TD><TD>6</TD>
+</TR>
+<TR> 
+ <TD><font color ="#000000">is_a (1909)</font></TD><TD>5</TD>
+</TR>
+</TABLE> 
+ >] } 
+}

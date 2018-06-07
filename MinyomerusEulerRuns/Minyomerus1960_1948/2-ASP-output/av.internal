@@ -1,0 +1,11 @@
+firstTName = '1960'
+secondTName = '1948'
+thirdTName = ''
+fourthTName = ''
+fifthTName = ''
+allRcgEdgesDict = {}
+numOfPws = 1
+avFlag = False
+allRcgNodesDict = {'congruent.1960.Elissa\\n1948.Elissa': {'concept': '1960.Elissa\\n1948.Elissa', 'group': 'congruent'}, 'congruent.1960.Minyomerus_caseyi\\n1948.Minyomerus_caseyi': {'concept': '1960.Minyomerus_caseyi\\n1948.Minyomerus_caseyi', 'group': 'congruent'}, '1960.1960.Piscatopus\\n1960.Piscatopus_griseus': {'concept': '1960.Piscatopus\\n1960.Piscatopus_griseus', 'group': '1960'}, 'congruent.1960.Minyomerus_conicollis\\n1948.Minyomerus_conicollis': {'concept': '1960.Minyomerus_conicollis\\n1948.Minyomerus_conicollis', 'group': 'congruent'}, 'congruent.1960.Elissa_constricta\\n1948.Elissa_constricta': {'concept': '1960.Elissa_constricta\\n1948.Elissa_constricta', 'group': 'congruent'}, 'congruent.1960.Minyomerus_languidus\\n1948.Minyomerus_languidus': {'concept': '1960.Minyomerus_languidus\\n1948.Minyomerus_languidus', 'group': 'congruent'}, 'congruent.1960.Minyomerus\\n1948.Minyomerus': {'concept': '1960.Minyomerus\\n1948.Minyomerus', 'group': 'congruent'}, 'congruent.1960.Minyomerus_innocuus\\n1948.Minyomerus_innocuus': {'concept': '1960.Minyomerus_innocuus\\n1948.Minyomerus_innocuus', 'group': 'congruent'}, 'congruent.1960.Minyomerus_microps\\n1948.Minyomerus_microps': {'concept': '1960.Minyomerus_microps\\n1948.Minyomerus_microps', 'group': 'congruent'}, 'congruent.1960.Elissa_laticeps\\n1948.Elissa_laticeps': {'concept': '1960.Elissa_laticeps\\n1948.Elissa_laticeps', 'group': 'congruent'}}
+trlist = [['1960.Minyomerus_conicollis\\n1948.Minyomerus_conicollis', '1960.Minyomerus\\n1948.Minyomerus', 0], ['1960.Minyomerus_languidus\\n1948.Minyomerus_languidus', '1960.Minyomerus\\n1948.Minyomerus', 0], ['1960.Minyomerus_microps\\n1948.Minyomerus_microps', '1960.Minyomerus\\n1948.Minyomerus', 0], ['1960.Elissa_constricta\\n1948.Elissa_constricta', '1960.Elissa\\n1948.Elissa', 0], ['1960.Elissa_laticeps\\n1948.Elissa_laticeps', '1960.Elissa\\n1948.Elissa', 0], ['1960.Minyomerus_caseyi\\n1948.Minyomerus_caseyi', '1960.Minyomerus\\n1948.Minyomerus', 0], ['1960.Minyomerus_innocuus\\n1948.Minyomerus_innocuus', '1960.Minyomerus\\n1948.Minyomerus', 0]]
+avFlag = True

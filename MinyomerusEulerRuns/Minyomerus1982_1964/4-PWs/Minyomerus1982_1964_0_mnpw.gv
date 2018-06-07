@@ -1,0 +1,36 @@
+digraph{
+rankdir=RL
+node[shape=box style="filled,rounded" fillcolor="#EEEEEE" fontname="helvetica"] 
+"1982.Minyomerus_caseyi\n1964.Minyomerus_caseyi"
+"1982.Minyomerus_constrictus\n1964.Minyomerus_constrictus"
+"1982.Minyomerus_microps\n1964.Minyomerus_microps"
+"1982.Minyomerus_conicollis\n1964.Minyomerus_conicollis"
+"1982.Minyomerus_innocuus\n1964.Minyomerus_innocuus"
+"1964.Piscatopus\n1964.Piscatopus_griseus\n1982.Piscatopus\n1982.Piscatopus_griseus"
+"1982.Minyomerus\n1964.Minyomerus"
+"1982.Minyomerus_laticeps\n1964.Minyomerus_laticeps"
+"1982.Minyomerus_languidus\n1964.Minyomerus_languidus"
+edge[arrowhead=normal style=solid color="#000000" constraint=true penwidth=1]
+"1982.Minyomerus_constrictus\n1964.Minyomerus_constrictus" -> "1982.Minyomerus\n1964.Minyomerus"
+"1982.Minyomerus_languidus\n1964.Minyomerus_languidus" -> "1982.Minyomerus\n1964.Minyomerus"
+"1982.Minyomerus_innocuus\n1964.Minyomerus_innocuus" -> "1982.Minyomerus\n1964.Minyomerus"
+"1982.Minyomerus_microps\n1964.Minyomerus_microps" -> "1982.Minyomerus\n1964.Minyomerus"
+"1982.Minyomerus_caseyi\n1964.Minyomerus_caseyi" -> "1982.Minyomerus\n1964.Minyomerus"
+"1982.Minyomerus_laticeps\n1964.Minyomerus_laticeps" -> "1982.Minyomerus\n1964.Minyomerus"
+"1982.Minyomerus_conicollis\n1964.Minyomerus_conicollis" -> "1982.Minyomerus\n1964.Minyomerus"
+edge[arrowhead=normal style=dotted color="#000000" constraint=true penwidth=1]
+node[shape=box] 
+{rank=source Legend [fillcolor= white margin=0 label=< 
+ <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4"> 
+<TR> <TD COLSPAN="2"><font face="Arial Black"> Nodes</font></TD> </TR> 
+<TR> 
+ <TD bgcolor="#EEEEEE" fontname="helvetica">congruent</TD> 
+ <TD>9</TD> 
+ </TR> 
+<TR> <TD COLSPAN="2"><font face = "Arial Black"> Edges </font></TD> </TR> 
+<TR> 
+ <TD><font color ="#000000">is_a (input)</font></TD><TD>7</TD>
+</TR>
+</TABLE> 
+ >] } 
+}

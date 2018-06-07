@@ -1,0 +1,138 @@
+1920.Elissa:
+  concept: Elissa
+  group: '1920'
+1920.Elissa_constricta:
+  concept: Elissa_constricta
+  group: '1920'
+1920.Elissa_laticeps:
+  concept: Elissa_laticeps
+  group: '1920'
+1920.Minyomerus:
+  concept: Minyomerus
+  group: '1920'
+1920.Minyomerus_caseyi:
+  concept: Minyomerus_caseyi
+  group: '1920'
+1920.Minyomerus_conicollis:
+  concept: Minyomerus_conicollis
+  group: '1920'
+1920.Minyomerus_innocuus:
+  concept: Minyomerus_innocuus
+  group: '1920'
+1920.Minyomerus_languidus:
+  concept: Minyomerus_languidus
+  group: '1920'
+1920.Thylacites_microsus:
+  concept: Thylacites_microsus
+  group: '1920'
+1948.Elissa:
+  concept: Elissa
+  group: '1948'
+1948.Elissa_constricta:
+  concept: Elissa_constricta
+  group: '1948'
+1948.Elissa_laticeps:
+  concept: Elissa_laticeps
+  group: '1948'
+1948.Minyomerus:
+  concept: Minyomerus
+  group: '1948'
+1948.Minyomerus_caseyi:
+  concept: Minyomerus_caseyi
+  group: '1948'
+1948.Minyomerus_conicollis:
+  concept: Minyomerus_conicollis
+  group: '1948'
+1948.Minyomerus_innocuus:
+  concept: Minyomerus_innocuus
+  group: '1948'
+1948.Minyomerus_languidus:
+  concept: Minyomerus_languidus
+  group: '1948'
+1948.Minyomerus_microps:
+  concept: Minyomerus_microps
+  group: '1948'
+1920.Elissa_constricta_1920.Elissa:
+  label: isa
+  s: 1920.Elissa_constricta
+  t: 1920.Elissa
+1920.Elissa_laticeps_1920.Elissa:
+  label: isa
+  s: 1920.Elissa_laticeps
+  t: 1920.Elissa
+1920.Minyomerus_caseyi_1920.Minyomerus:
+  label: isa
+  s: 1920.Minyomerus_caseyi
+  t: 1920.Minyomerus
+1920.Minyomerus_conicollis_1920.Minyomerus:
+  label: isa
+  s: 1920.Minyomerus_conicollis
+  t: 1920.Minyomerus
+1920.Minyomerus_innocuus_1920.Minyomerus:
+  label: isa
+  s: 1920.Minyomerus_innocuus
+  t: 1920.Minyomerus
+1920.Minyomerus_languidus_1920.Minyomerus:
+  label: isa
+  s: 1920.Minyomerus_languidus
+  t: 1920.Minyomerus
+1948.Elissa_constricta_1920.Elissa_constricta:
+  label: '='
+  s: 1948.Elissa_constricta
+  t: 1920.Elissa_constricta
+1948.Elissa_constricta_1948.Elissa:
+  label: isa
+  s: 1948.Elissa_constricta
+  t: 1948.Elissa
+1948.Elissa_laticeps_1920.Elissa_laticeps:
+  label: '='
+  s: 1948.Elissa_laticeps
+  t: 1920.Elissa_laticeps
+1948.Elissa_laticeps_1948.Elissa:
+  label: isa
+  s: 1948.Elissa_laticeps
+  t: 1948.Elissa
+1948.Minyomerus_1920.Minyomerus:
+  label: '>'
+  s: 1948.Minyomerus
+  t: 1920.Minyomerus
+1948.Minyomerus_caseyi_1920.Minyomerus_caseyi:
+  label: '='
+  s: 1948.Minyomerus_caseyi
+  t: 1920.Minyomerus_caseyi
+1948.Minyomerus_caseyi_1948.Minyomerus:
+  label: isa
+  s: 1948.Minyomerus_caseyi
+  t: 1948.Minyomerus
+1948.Minyomerus_conicollis_1920.Minyomerus_conicollis:
+  label: '='
+  s: 1948.Minyomerus_conicollis
+  t: 1920.Minyomerus_conicollis
+1948.Minyomerus_conicollis_1948.Minyomerus:
+  label: isa
+  s: 1948.Minyomerus_conicollis
+  t: 1948.Minyomerus
+1948.Minyomerus_innocuus_1920.Minyomerus_innocuus:
+  label: '='
+  s: 1948.Minyomerus_innocuus
+  t: 1920.Minyomerus_innocuus
+1948.Minyomerus_innocuus_1948.Minyomerus:
+  label: isa
+  s: 1948.Minyomerus_innocuus
+  t: 1948.Minyomerus
+1948.Minyomerus_languidus_1920.Minyomerus_languidus:
+  label: '='
+  s: 1948.Minyomerus_languidus
+  t: 1920.Minyomerus_languidus
+1948.Minyomerus_languidus_1948.Minyomerus:
+  label: isa
+  s: 1948.Minyomerus_languidus
+  t: 1948.Minyomerus
+1948.Minyomerus_microps_1920.Thylacites_microsus:
+  label: '='
+  s: 1948.Minyomerus_microps
+  t: 1920.Thylacites_microsus
+1948.Minyomerus_microps_1948.Minyomerus:
+  label: isa
+  s: 1948.Minyomerus_microps
+  t: 1948.Minyomerus

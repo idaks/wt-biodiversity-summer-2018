@@ -1,0 +1,21 @@
+# 1964_1960
+taxonomy 1964 Kissinger
+(Minyomerus Minyomerus_caseyi Minyomerus_conicollis Minyomerus_constrictus Minyomerus_innocuus Minyomerus_languidus Minyomerus_laticeps Minyomerus_microps)
+(Piscatopus Piscatopus_griseus)
+
+taxonomy 1960 Sleeper
+(Elissa Elissa_constricta Elissa_laticeps)
+(Minyomerus Minyomerus_caseyi Minyomerus_conicollis Minyomerus_innocuus Minyomerus_languidus Minyomerus_microps)
+(Piscatopus Piscatopus_griseus)
+
+articulation 1964_1960 Kissinger_Sleeper
+[1964.Minyomerus includes 1960.Elissa]
+[1964.Minyomerus includes 1960.Minyomerus]
+[1964.Minyomerus_caseyi equals 1960.Minyomerus_caseyi]
+[1964.Minyomerus_conicollis equals 1960.Minyomerus_conicollis]
+[1964.Minyomerus_constrictus equals 1960.Elissa_constricta]
+[1964.Minyomerus_innocuus equals 1960.Minyomerus_innocuus]
+[1964.Minyomerus_languidus equals 1960.Minyomerus_languidus]
+[1964.Minyomerus_laticeps equals 1960.Elissa_laticeps]
+[1964.Minyomerus_microps equals 1960.Minyomerus_microps]
+[1964.Piscatopus_griseus equals 1960.Piscatopus_griseus]

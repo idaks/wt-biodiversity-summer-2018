@@ -1,0 +1,156 @@
+1964.Minyomerus:
+  concept: Minyomerus
+  group: '1964'
+1964.Minyomerus_caseyi:
+  concept: Minyomerus_caseyi
+  group: '1964'
+1964.Minyomerus_conicollis:
+  concept: Minyomerus_conicollis
+  group: '1964'
+1964.Minyomerus_constrictus:
+  concept: Minyomerus_constrictus
+  group: '1964'
+1964.Minyomerus_innocuus:
+  concept: Minyomerus_innocuus
+  group: '1964'
+1964.Minyomerus_languidus:
+  concept: Minyomerus_languidus
+  group: '1964'
+1964.Minyomerus_laticeps:
+  concept: Minyomerus_laticeps
+  group: '1964'
+1964.Minyomerus_microps:
+  concept: Minyomerus_microps
+  group: '1964'
+1964.Piscatopus:
+  concept: Piscatopus
+  group: '1964'
+1964.Piscatopus_griseus:
+  concept: Piscatopus_griseus
+  group: '1964'
+1982.Minyomerus:
+  concept: Minyomerus
+  group: '1982'
+1982.Minyomerus_caseyi:
+  concept: Minyomerus_caseyi
+  group: '1982'
+1982.Minyomerus_conicollis:
+  concept: Minyomerus_conicollis
+  group: '1982'
+1982.Minyomerus_constrictus:
+  concept: Minyomerus_constrictus
+  group: '1982'
+1982.Minyomerus_innocuus:
+  concept: Minyomerus_innocuus
+  group: '1982'
+1982.Minyomerus_languidus:
+  concept: Minyomerus_languidus
+  group: '1982'
+1982.Minyomerus_laticeps:
+  concept: Minyomerus_laticeps
+  group: '1982'
+1982.Minyomerus_microps:
+  concept: Minyomerus_microps
+  group: '1982'
+1982.Piscatopus:
+  concept: Piscatopus
+  group: '1982'
+1982.Piscatopus_griseus:
+  concept: Piscatopus_griseus
+  group: '1982'
+1964.Minyomerus_caseyi_1964.Minyomerus:
+  label: isa
+  s: 1964.Minyomerus_caseyi
+  t: 1964.Minyomerus
+1964.Minyomerus_conicollis_1964.Minyomerus:
+  label: isa
+  s: 1964.Minyomerus_conicollis
+  t: 1964.Minyomerus
+1964.Minyomerus_constrictus_1964.Minyomerus:
+  label: isa
+  s: 1964.Minyomerus_constrictus
+  t: 1964.Minyomerus
+1964.Minyomerus_innocuus_1964.Minyomerus:
+  label: isa
+  s: 1964.Minyomerus_innocuus
+  t: 1964.Minyomerus
+1964.Minyomerus_languidus_1964.Minyomerus:
+  label: isa
+  s: 1964.Minyomerus_languidus
+  t: 1964.Minyomerus
+1964.Minyomerus_laticeps_1964.Minyomerus:
+  label: isa
+  s: 1964.Minyomerus_laticeps
+  t: 1964.Minyomerus
+1964.Minyomerus_microps_1964.Minyomerus:
+  label: isa
+  s: 1964.Minyomerus_microps
+  t: 1964.Minyomerus
+1964.Piscatopus_griseus_1964.Piscatopus:
+  label: isa
+  s: 1964.Piscatopus_griseus
+  t: 1964.Piscatopus
+1982.Minyomerus_caseyi_1964.Minyomerus_caseyi:
+  label: '='
+  s: 1982.Minyomerus_caseyi
+  t: 1964.Minyomerus_caseyi
+1982.Minyomerus_caseyi_1982.Minyomerus:
+  label: isa
+  s: 1982.Minyomerus_caseyi
+  t: 1982.Minyomerus
+1982.Minyomerus_conicollis_1964.Minyomerus_conicollis:
+  label: '='
+  s: 1982.Minyomerus_conicollis
+  t: 1964.Minyomerus_conicollis
+1982.Minyomerus_conicollis_1982.Minyomerus:
+  label: isa
+  s: 1982.Minyomerus_conicollis
+  t: 1982.Minyomerus
+1982.Minyomerus_constrictus_1964.Minyomerus_constrictus:
+  label: '='
+  s: 1982.Minyomerus_constrictus
+  t: 1964.Minyomerus_constrictus
+1982.Minyomerus_constrictus_1982.Minyomerus:
+  label: isa
+  s: 1982.Minyomerus_constrictus
+  t: 1982.Minyomerus
+1982.Minyomerus_innocuus_1964.Minyomerus_innocuus:
+  label: '='
+  s: 1982.Minyomerus_innocuus
+  t: 1964.Minyomerus_innocuus
+1982.Minyomerus_innocuus_1982.Minyomerus:
+  label: isa
+  s: 1982.Minyomerus_innocuus
+  t: 1982.Minyomerus
+1982.Minyomerus_languidus_1964.Minyomerus_languidus:
+  label: '='
+  s: 1982.Minyomerus_languidus
+  t: 1964.Minyomerus_languidus
+1982.Minyomerus_languidus_1982.Minyomerus:
+  label: isa
+  s: 1982.Minyomerus_languidus
+  t: 1982.Minyomerus
+1982.Minyomerus_laticeps_1964.Minyomerus_laticeps:
+  label: '='
+  s: 1982.Minyomerus_laticeps
+  t: 1964.Minyomerus_laticeps
+1982.Minyomerus_laticeps_1982.Minyomerus:
+  label: isa
+  s: 1982.Minyomerus_laticeps
+  t: 1982.Minyomerus
+1982.Minyomerus_microps_1964.Minyomerus_microps:
+  label: '='
+  s: 1982.Minyomerus_microps
+  t: 1964.Minyomerus_microps
+1982.Minyomerus_microps_1982.Minyomerus:
+  label: isa
+  s: 1982.Minyomerus_microps
+  t: 1982.Minyomerus
+1982.Piscatopus_griseus_1964.Piscatopus_griseus:
+  label: '='
+  s: 1982.Piscatopus_griseus
+  t: 1964.Piscatopus_griseus
+1982.Piscatopus_griseus_1982.Piscatopus:
+  label: isa
+  s: 1982.Piscatopus_griseus
+  t: 1982.Piscatopus

@@ -1,0 +1,18 @@
+# 1913_1909
+taxonomy 1913 Pierce
+(Elissa Elissa_constricta Elissa_laticeps)
+(Minyomerus Minyomerus_caseyi Minyomerus_innocuus Minyomerus_languidus)
+(Thylacites_microsus)
+
+taxonomy 1909 Pierce
+(Elissa Elissa_constricta Elissa_laticeps)
+(Minyomerus Minyomerus_caseyi Minyomerus_innocuus Minyomerus_languidus)
+(Thylacites_microsus)
+
+articulation 1913_1909 Pierce_Pierce
+[1913.Elissa_constricta equals 1909.Elissa_constricta]
+[1913.Elissa_laticeps equals 1909.Elissa_laticeps]
+[1913.Minyomerus_caseyi equals 1909.Minyomerus_caseyi]
+[1913.Minyomerus_innocuus equals 1909.Minyomerus_innocuus]
+[1913.Minyomerus_languidus equals 1909.Minyomerus_languidus]
+[1913.Thylacites_microsus equals 1909.Thylacites_microsus]

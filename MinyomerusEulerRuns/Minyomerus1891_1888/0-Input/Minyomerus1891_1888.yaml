@@ -1,0 +1,137 @@
+1888.Elissa:
+  concept: Elissa
+  group: '1888'
+1888.Elissa_constricta:
+  concept: Elissa_constricta
+  group: '1888'
+1888.Elissa_laticeps:
+  concept: Elissa_laticeps
+  group: '1888'
+1888.Minyomerus:
+  concept: Minyomerus
+  group: '1888'
+1888.Minyomerus_innocuus:
+  concept: Minyomerus_innocuus
+  group: '1888'
+1888.Minyomerus_languidus:
+  concept: Minyomerus_languidus
+  group: '1888'
+1888.Pseudelissa:
+  concept: Pseudelissa
+  group: '1888'
+1888.Pseudelissa_cinerea:
+  concept: Pseudelissa_cinerea
+  group: '1888'
+1888.Thylacites_microsus:
+  concept: Thylacites_microsus
+  group: '1888'
+1891.Elissa:
+  concept: Elissa
+  group: '1891'
+1891.Elissa_constricta:
+  concept: Elissa_constricta
+  group: '1891'
+1891.Elissa_laticeps:
+  concept: Elissa_laticeps
+  group: '1891'
+1891.Minyomerus:
+  concept: Minyomerus
+  group: '1891'
+1891.Minyomerus_innocuus:
+  concept: Minyomerus_innocuus
+  group: '1891'
+1891.Minyomerus_languidus:
+  concept: Minyomerus_languidus
+  group: '1891'
+1891.Pseudelissa:
+  concept: Pseudelissa
+  group: '1891'
+1891.Pseudelissa_caseyi:
+  concept: Pseudelissa_caseyi
+  group: '1891'
+1891.Pseudelissa_cinerea:
+  concept: Pseudelissa_cinerea
+  group: '1891'
+1891.Thylacites_microsus:
+  concept: Thylacites_microsus
+  group: '1891'
+1888.Elissa_constricta_1888.Elissa:
+  label: isa
+  s: 1888.Elissa_constricta
+  t: 1888.Elissa
+1888.Elissa_laticeps_1888.Elissa:
+  label: isa
+  s: 1888.Elissa_laticeps
+  t: 1888.Elissa
+1888.Minyomerus_innocuus_1888.Minyomerus:
+  label: isa
+  s: 1888.Minyomerus_innocuus
+  t: 1888.Minyomerus
+1888.Minyomerus_languidus_1888.Minyomerus:
+  label: isa
+  s: 1888.Minyomerus_languidus
+  t: 1888.Minyomerus
+1888.Pseudelissa_cinerea_1888.Pseudelissa:
+  label: isa
+  s: 1888.Pseudelissa_cinerea
+  t: 1888.Pseudelissa
+1891.Elissa_1888.Elissa:
+  label: '='
+  s: 1891.Elissa
+  t: 1888.Elissa
+1891.Elissa_constricta_1888.Elissa_constricta:
+  label: '='
+  s: 1891.Elissa_constricta
+  t: 1888.Elissa_constricta
+1891.Elissa_constricta_1891.Elissa:
+  label: isa
+  s: 1891.Elissa_constricta
+  t: 1891.Elissa
+1891.Elissa_laticeps_1888.Elissa_laticeps:
+  label: '='
+  s: 1891.Elissa_laticeps
+  t: 1888.Elissa_laticeps
+1891.Elissa_laticeps_1891.Elissa:
+  label: isa
+  s: 1891.Elissa_laticeps
+  t: 1891.Elissa
+1891.Minyomerus_1888.Minyomerus:
+  label: '='
+  s: 1891.Minyomerus
+  t: 1888.Minyomerus
+1891.Minyomerus_innocuus_1888.Minyomerus_innocuus:
+  label: '='
+  s: 1891.Minyomerus_innocuus
+  t: 1888.Minyomerus_innocuus
+1891.Minyomerus_innocuus_1891.Minyomerus:
+  label: isa
+  s: 1891.Minyomerus_innocuus
+  t: 1891.Minyomerus
+1891.Minyomerus_languidus_1888.Minyomerus_languidus:
+  label: '='
+  s: 1891.Minyomerus_languidus
+  t: 1888.Minyomerus_languidus
+1891.Minyomerus_languidus_1891.Minyomerus:
+  label: isa
+  s: 1891.Minyomerus_languidus
+  t: 1891.Minyomerus
+1891.Pseudelissa_caseyi_1888.Pseudelissa:
+  label: '!'
+  s: 1891.Pseudelissa_caseyi
+  t: 1888.Pseudelissa
+1891.Pseudelissa_caseyi_1891.Pseudelissa:
+  label: isa
+  s: 1891.Pseudelissa_caseyi
+  t: 1891.Pseudelissa
+1891.Pseudelissa_cinerea_1888.Pseudelissa_cinerea:
+  label: '='
+  s: 1891.Pseudelissa_cinerea
+  t: 1888.Pseudelissa_cinerea
+1891.Pseudelissa_cinerea_1891.Pseudelissa:
+  label: isa
+  s: 1891.Pseudelissa_cinerea
+  t: 1891.Pseudelissa
+1891.Thylacites_microsus_1888.Thylacites_microsus:
+  label: '='
+  s: 1891.Thylacites_microsus
+  t: 1888.Thylacites_microsus

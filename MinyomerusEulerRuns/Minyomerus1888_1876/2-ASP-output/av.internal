@@ -1,0 +1,11 @@
+firstTName = '1888'
+secondTName = '1876'
+thirdTName = ''
+fourthTName = ''
+fifthTName = ''
+allRcgEdgesDict = {}
+numOfPws = 1
+avFlag = False
+allRcgNodesDict = {'congruent.1888.Minyomerus\\n1876.Minyomerus': {'concept': '1888.Minyomerus\\n1876.Minyomerus', 'group': 'congruent'}, '1888.1888.Pseudelissa\\n1888.Pseudelissa_cinerea': {'concept': '1888.Pseudelissa\\n1888.Pseudelissa_cinerea', 'group': '1888'}, 'congruent.1888.Minyomerus_languidus\\n1876.Minyomerus_languidus': {'concept': '1888.Minyomerus_languidus\\n1876.Minyomerus_languidus', 'group': 'congruent'}, 'congruent.1888.Thylacites_microsus\\n1876.Thylacites_microsus': {'concept': '1888.Thylacites_microsus\\n1876.Thylacites_microsus', 'group': 'congruent'}, '1888.Elissa': {'concept': 'Elissa', 'group': '1888'}, '1888.Elissa_laticeps': {'concept': 'Elissa_laticeps', 'group': '1888'}, '1888.Elissa_constricta': {'concept': 'Elissa_constricta', 'group': '1888'}, 'congruent.1888.Minyomerus_innocuus\\n1876.Minyomerus_innocuus': {'concept': '1888.Minyomerus_innocuus\\n1876.Minyomerus_innocuus', 'group': 'congruent'}}
+trlist = [['1888.Elissa_constricta', '1888.Elissa', 0], ['1888.Elissa_laticeps', '1888.Elissa', 0], ['1888.Minyomerus_innocuus\\n1876.Minyomerus_innocuus', '1888.Minyomerus\\n1876.Minyomerus', 0], ['1888.Minyomerus_languidus\\n1876.Minyomerus_languidus', '1888.Minyomerus\\n1876.Minyomerus', 0]]
+avFlag = True

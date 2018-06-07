@@ -1,0 +1,41 @@
+digraph{
+rankdir=RL
+node[shape=box style="filled,rounded" fillcolor="#EEEEEE" fontname="helvetica"] 
+"1888.Pseudelissa\n1888.Pseudelissa_cinerea\n1891.Pseudelissa_cinerea"
+"1891.Minyomerus\n1888.Minyomerus"
+"1891.Elissa\n1888.Elissa"
+"1891.Elissa_laticeps\n1888.Elissa_laticeps"
+"1891.Minyomerus_languidus\n1888.Minyomerus_languidus"
+"1891.Minyomerus_innocuus\n1888.Minyomerus_innocuus"
+"1891.Elissa_constricta\n1888.Elissa_constricta"
+"1891.Thylacites_microsus\n1888.Thylacites_microsus"
+node[shape=box style=filled fillcolor="#CCFFCC" fontname="helvetica"] 
+"1891.Pseudelissa_caseyi"
+"1891.Pseudelissa"
+edge[arrowhead=normal style=solid color="#000000" constraint=true penwidth=1]
+"1891.Minyomerus_innocuus\n1888.Minyomerus_innocuus" -> "1891.Minyomerus\n1888.Minyomerus"
+"1891.Elissa_laticeps\n1888.Elissa_laticeps" -> "1891.Elissa\n1888.Elissa"
+"1891.Elissa_constricta\n1888.Elissa_constricta" -> "1891.Elissa\n1888.Elissa"
+"1888.Pseudelissa\n1888.Pseudelissa_cinerea\n1891.Pseudelissa_cinerea" -> "1891.Pseudelissa"
+"1891.Minyomerus_languidus\n1888.Minyomerus_languidus" -> "1891.Minyomerus\n1888.Minyomerus"
+"1891.Pseudelissa_caseyi" -> "1891.Pseudelissa"
+edge[arrowhead=normal style=dotted color="#000000" constraint=true penwidth=1]
+node[shape=box] 
+{rank=source Legend [fillcolor= white margin=0 label=< 
+ <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4"> 
+<TR> <TD COLSPAN="2"><font face="Arial Black"> Nodes</font></TD> </TR> 
+<TR> 
+ <TD bgcolor="#EEEEEE" fontname="helvetica">congruent</TD> 
+ <TD>8</TD> 
+ </TR> 
+<TR> 
+ <TD bgcolor="#CCFFCC" fontname="helvetica">1891</TD> 
+ <TD>2</TD> 
+ </TR> 
+<TR> <TD COLSPAN="2"><font face = "Arial Black"> Edges </font></TD> </TR> 
+<TR> 
+ <TD><font color ="#000000">is_a (input)</font></TD><TD>6</TD>
+</TR>
+</TABLE> 
+ >] } 
+}

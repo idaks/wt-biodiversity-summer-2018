@@ -1,0 +1,20 @@
+# 1920_1913
+taxonomy 1920 Green
+(Elissa Elissa_constricta Elissa_laticeps)
+(Minyomerus Minyomerus_caseyi Minyomerus_conicollis Minyomerus_innocuus Minyomerus_languidus)
+(Thylacites_microsus)
+
+taxonomy 1913 Pierce
+(Elissa Elissa_constricta Elissa_laticeps)
+(Minyomerus Minyomerus_caseyi Minyomerus_innocuus Minyomerus_languidus)
+(Thylacites_microsus)
+
+articulation 1920_1913 Green_Pierce
+[1920.Elissa_constricta equals 1913.Elissa_constricta]
+[1920.Elissa_laticeps equals 1913.Elissa_laticeps]
+[1920.Minyomerus includes 1913.Minyomerus]
+[1920.Minyomerus_caseyi equals 1913.Minyomerus_caseyi]
+[1920.Minyomerus_conicollis disjoint 1913.Minyomerus]
+[1920.Minyomerus_innocuus equals 1913.Minyomerus_innocuus]
+[1920.Minyomerus_languidus equals 1913.Minyomerus_languidus]
+[1920.Thylacites_microsus equals 1913.Thylacites_microsus]

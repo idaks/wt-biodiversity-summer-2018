@@ -1,0 +1,20 @@
+# 1960_1948
+taxonomy 1960 Sleeper
+(Elissa Elissa_constricta Elissa_laticeps)
+(Minyomerus Minyomerus_caseyi Minyomerus_conicollis Minyomerus_innocuus Minyomerus_languidus Minyomerus_microps)
+(Piscatopus Piscatopus_griseus)
+
+taxonomy 1948 BlackwelderBlackwelder
+(Elissa Elissa_constricta Elissa_laticeps)
+(Minyomerus Minyomerus_caseyi Minyomerus_conicollis Minyomerus_innocuus Minyomerus_languidus Minyomerus_microps)
+
+articulation 1960_1948 Sleeper_BlackwelderBlackwelder
+[1960.Elissa equals 1948.Elissa]
+[1960.Elissa_constricta equals 1948.Elissa_constricta]
+[1960.Elissa_laticeps equals 1948.Elissa_laticeps]
+[1960.Minyomerus equals 1948.Minyomerus]
+[1960.Minyomerus_caseyi equals 1948.Minyomerus_caseyi]
+[1960.Minyomerus_conicollis equals 1948.Minyomerus_conicollis]
+[1960.Minyomerus_innocuus equals 1948.Minyomerus_innocuus]
+[1960.Minyomerus_languidus equals 1948.Minyomerus_languidus]
+[1960.Minyomerus_microps equals 1948.Minyomerus_microps]

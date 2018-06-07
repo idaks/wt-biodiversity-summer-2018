@@ -1,0 +1,17 @@
+# 1888_1876
+taxonomy 1888 Casey
+(Elissa Elissa_constricta Elissa_laticeps)
+(Minyomerus Minyomerus_innocuus Minyomerus_languidus)
+(Pseudelissa Pseudelissa_cinerea)
+(Thylacites_microsus)
+
+taxonomy 1876 Horn
+(Minyomerus Minyomerus_innocuus Minyomerus_languidus)
+(Thylacites_microsus)
+
+articulation 1888_1876 Casey_Horn
+[1888.Elissa disjoint 1876.Minyomerus]
+[1888.Minyomerus_innocuus equals 1876.Minyomerus_innocuus]
+[1888.Minyomerus_languidus equals 1876.Minyomerus_languidus]
+[1888.Pseudelissa disjoint 1876.Minyomerus]
+[1888.Thylacites_microsus equals 1876.Thylacites_microsus]

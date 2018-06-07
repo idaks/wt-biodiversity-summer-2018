@@ -1,0 +1,20 @@
+1876.Minyomerus:
+  concept: Minyomerus
+  group: '1876'
+1876.Minyomerus_innocuus:
+  concept: Minyomerus_innocuus
+  group: '1876'
+1876.Minyomerus_languidus:
+  concept: Minyomerus_languidus
+  group: '1876'
+congruent.1876.Thylacites_microsus\n1859.Thylacites_microps:
+  concept: 1876.Thylacites_microsus\n1859.Thylacites_microps
+  group: congruent
+1876.Minyomerus_innocuus_1876.Minyomerus:
+  label: is_a (input)
+  s: 1876.Minyomerus_innocuus
+  t: 1876.Minyomerus
+1876.Minyomerus_languidus_1876.Minyomerus:
+  label: is_a (input)
+  s: 1876.Minyomerus_languidus
+  t: 1876.Minyomerus

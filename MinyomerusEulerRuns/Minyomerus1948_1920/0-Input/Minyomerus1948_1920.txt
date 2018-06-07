@@ -1,0 +1,19 @@
+# 1948_1920
+taxonomy 1948 BlackwelderBlackwelder
+(Elissa Elissa_constricta Elissa_laticeps)
+(Minyomerus Minyomerus_caseyi Minyomerus_conicollis Minyomerus_innocuus Minyomerus_languidus Minyomerus_microps)
+
+taxonomy 1920 Green
+(Elissa Elissa_constricta Elissa_laticeps)
+(Minyomerus Minyomerus_caseyi Minyomerus_conicollis Minyomerus_innocuus Minyomerus_languidus)
+(Thylacites_microsus)
+
+articulation 1948_1920 BlackwelderBlackwelder_Pierce
+[1948.Elissa_constricta equals 1920.Elissa_constricta]
+[1948.Elissa_laticeps equals 1920.Elissa_laticeps]
+[1948.Minyomerus includes 1920.Minyomerus]
+[1948.Minyomerus_caseyi equals 1920.Minyomerus_caseyi]
+[1948.Minyomerus_conicollis equals 1920.Minyomerus_conicollis]
+[1948.Minyomerus_innocuus equals 1920.Minyomerus_innocuus]
+[1948.Minyomerus_languidus equals 1920.Minyomerus_languidus]
+[1948.Minyomerus_microps equals 1920.Thylacites_microsus]

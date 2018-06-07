@@ -1,0 +1,33 @@
+digraph{
+rankdir=RL
+node[shape=box style="filled,rounded" fillcolor="#EEEEEE" fontname="helvetica"] 
+"1913.Minyomerus_innocuus\n1909.Minyomerus_innocuus"
+"1913.Minyomerus_languidus\n1909.Minyomerus_languidus"
+"1913.Elissa_constricta\n1909.Elissa_constricta"
+"1913.Minyomerus\n1909.Minyomerus"
+"1913.Thylacites_microsus\n1909.Thylacites_microsus"
+"1913.Elissa_laticeps\n1909.Elissa_laticeps"
+"1913.Minyomerus_caseyi\n1909.Minyomerus_caseyi"
+"1913.Elissa\n1909.Elissa"
+edge[arrowhead=normal style=solid color="#000000" constraint=true penwidth=1]
+"1913.Minyomerus_innocuus\n1909.Minyomerus_innocuus" -> "1913.Minyomerus\n1909.Minyomerus"
+"1913.Minyomerus_languidus\n1909.Minyomerus_languidus" -> "1913.Minyomerus\n1909.Minyomerus"
+"1913.Minyomerus_caseyi\n1909.Minyomerus_caseyi" -> "1913.Minyomerus\n1909.Minyomerus"
+"1913.Elissa_laticeps\n1909.Elissa_laticeps" -> "1913.Elissa\n1909.Elissa"
+"1913.Elissa_constricta\n1909.Elissa_constricta" -> "1913.Elissa\n1909.Elissa"
+edge[arrowhead=normal style=dotted color="#000000" constraint=true penwidth=1]
+node[shape=box] 
+{rank=source Legend [fillcolor= white margin=0 label=< 
+ <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4"> 
+<TR> <TD COLSPAN="2"><font face="Arial Black"> Nodes</font></TD> </TR> 
+<TR> 
+ <TD bgcolor="#EEEEEE" fontname="helvetica">congruent</TD> 
+ <TD>8</TD> 
+ </TR> 
+<TR> <TD COLSPAN="2"><font face = "Arial Black"> Edges </font></TD> </TR> 
+<TR> 
+ <TD><font color ="#000000">is_a (input)</font></TD><TD>5</TD>
+</TR>
+</TABLE> 
+ >] } 
+}

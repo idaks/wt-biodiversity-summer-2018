@@ -1,0 +1,2 @@
+tr = [['2015.Cleistesiopsis_divaricata', '2015.Cleistesiopsis', 0], ['2015.Cleistesiopsis_orcamporum', '2015.Cleistesiopsis', 0], ['2015.Cleistesiopsis_bifaria', '2015.Cleistesiopsis', 0], ['2015.Cleistesiopsis', '1968.Cleistes\\n1968.Cleistes_divaricata', 1], ['2015.Cleistesiopsis_divaricata', '1968.Cleistes\\n1968.Cleistes_divaricata', 2], ['2015.Cleistesiopsis_orcamporum', '1968.Cleistes\\n1968.Cleistes_divaricata', 2], ['2015.Cleistesiopsis_bifaria', '1968.Cleistes\\n1968.Cleistes_divaricata', 2]]
+pwIndex = 0

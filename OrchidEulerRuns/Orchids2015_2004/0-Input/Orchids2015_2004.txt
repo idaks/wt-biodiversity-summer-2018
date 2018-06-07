@@ -1,0 +1,16 @@
+taxonomy 2015 Weakley2015
+(Cleistesiopsis Cleistesiopsis_divaricata Cleistesiopsis_orcamporum Cleistesiopsis_bifaria)
+
+taxonomy 2004 Smith2004
+(Cleistes Cleistes_divaricata Cleistes_bifaria_coastalpopulations Cleistes_bifaria_mountainpopulations)
+
+articulations 2015 2010
+[2015.Cleistesiopsis_divaricata {=} 2004.Cleistes_divaricata]
+[2015.Cleistesiopsis_orcamporum {=} 2004.Cleistes_bifaria_coastalpopulations]
+[2015.Cleistesiopsis_bifaria {=} 2004.Cleistes_bifaria_mountainpopulations]
+
+
+
+
+
+

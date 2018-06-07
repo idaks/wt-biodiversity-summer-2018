@@ -1,0 +1,50 @@
+2011.Pogonia:
+  concept: Pogonia
+  group: '2011'
+2011.Pogonia_bifaria:
+  concept: Pogonia_bifaria
+  group: '2011'
+2015.Cleistesiopsis:
+  concept: Cleistesiopsis
+  group: '2015'
+2015.Cleistesiopsis_bifaria:
+  concept: Cleistesiopsis_bifaria
+  group: '2015'
+2015.Cleistesiopsis_orcamporum:
+  concept: Cleistesiopsis_orcamporum
+  group: '2015'
+congruent.2015.Cleistesiopsis_divaricata\n2011.Pogonia_divaricata:
+  concept: 2015.Cleistesiopsis_divaricata\n2011.Pogonia_divaricata
+  group: congruent
+2011.Pogonia_bifaria_2011.Pogonia:
+  label: is_a (input)
+  s: 2011.Pogonia_bifaria
+  t: 2011.Pogonia
+2015.Cleistesiopsis_2011.Pogonia:
+  label: is_a (inferred)
+  s: 2015.Cleistesiopsis
+  t: 2011.Pogonia
+2015.Cleistesiopsis_2011.Pogonia_bifaria:
+  label: overlaps (inferred)
+  s: 2015.Cleistesiopsis
+  t: 2011.Pogonia_bifaria
+2015.Cleistesiopsis_bifaria_2011.Pogonia_bifaria:
+  label: is_a (input)
+  s: 2015.Cleistesiopsis_bifaria
+  t: 2011.Pogonia_bifaria
+2015.Cleistesiopsis_bifaria_2015.Cleistesiopsis:
+  label: is_a (input)
+  s: 2015.Cleistesiopsis_bifaria
+  t: 2015.Cleistesiopsis
+2015.Cleistesiopsis_divaricata\n2011.Pogonia_divaricata_2015.Cleistesiopsis:
+  label: is_a (input)
+  s: 2015.Cleistesiopsis_divaricata\n2011.Pogonia_divaricata
+  t: 2015.Cleistesiopsis
+2015.Cleistesiopsis_orcamporum_2011.Pogonia_bifaria:
+  label: is_a (input)
+  s: 2015.Cleistesiopsis_orcamporum
+  t: 2011.Pogonia_bifaria
+2015.Cleistesiopsis_orcamporum_2015.Cleistesiopsis:
+  label: is_a (input)
+  s: 2015.Cleistesiopsis_orcamporum
+  t: 2015.Cleistesiopsis

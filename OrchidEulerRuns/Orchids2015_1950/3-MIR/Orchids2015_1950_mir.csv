@@ -1,0 +1,12 @@
+2015.Cleistesiopsis,{=, <},1950.Cleistes,inferred
+2015.Cleistesiopsis,{>, ><},1950.Cleistes_divaricata_var_bifaria,inferred
+2015.Cleistesiopsis,>,1950.Cleistes_divaricata_var_divaricata,inferred
+2015.Cleistesiopsis_bifaria,<,1950.Cleistes,inferred
+2015.Cleistesiopsis_bifaria,!,1950.Cleistes_divaricata_var_divaricata,inferred
+2015.Cleistesiopsis_divaricata,<,1950.Cleistes,inferred
+2015.Cleistesiopsis_divaricata,!,1950.Cleistes_divaricata_var_bifaria,inferred
+2015.Cleistesiopsis_orcamporum,<,1950.Cleistes,inferred
+2015.Cleistesiopsis_orcamporum,!,1950.Cleistes_divaricata_var_divaricata,inferred
+2015.Cleistesiopsis_bifaria,<,1950.Cleistes_divaricata_var_bifaria,input
+2015.Cleistesiopsis_divaricata,=,1950.Cleistes_divaricata_var_divaricata,input
+2015.Cleistesiopsis_orcamporum,<,1950.Cleistes_divaricata_var_bifaria,input

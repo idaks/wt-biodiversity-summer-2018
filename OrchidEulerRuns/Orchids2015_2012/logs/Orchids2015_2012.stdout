@@ -1,0 +1,40 @@
+##### Executing command:
+
+/Users/jessicacheng/EulerX/src-el/euler2 align Orchids2015_2012.txt 
+
+
+##### Euler version:
+
+master
+49e63e6a27be97ab30832180a47d214494388e15
+
+
+##### GraphViz version:
+
+dot - graphviz version 2.36.0 (20140111.2315)
+
+
+##### DLV version:
+
+DLV [build BEN/Dec 17 2012   gcc 4.2.1 (Apple Inc. build 5666) (dot 3)]
+
+usage: dlv {FRONTEND} {OPTIONS} [filename [filename [...]]]
+
+Specify -help for more detailed usage information.
+
+
+##### Running User, Host and Date:
+User:	jessicacheng
+Host:	wirelessprv-10-195-175-58.near.illinois.edu
+Date:	2018-06-07-14:37:25
+
+
+##### Euler Outputs:
+******* You are running example Orchids2015_2012 *******
+
+Possible world 0:
+{2015.Cleistesiopsis_divaricata"!"2012.Cleistes_bifaria, 2015.Cleistesiopsis_bifaria"!"2012.Cleistes_divaricata, 2015.Cleistesiopsis_orcamporum"!"2012.Cleistes_divaricata, 2015.Cleistesiopsis"><"2012.Cleistes_bifaria, 2015.Cleistesiopsis">"2012.Cleistes_divaricata, 2015.Cleistesiopsis_orcamporum"<"2012.Cleistes_bifaria, 2015.Cleistesiopsis"<"2012.Cleistes, 2015.Cleistesiopsis_bifaria"<"2012.Cleistes, 2015.Cleistesiopsis_orcamporum"<"2012.Cleistes, 2015.Cleistesiopsis_divaricata"<"2012.Cleistes, 2015.Cleistesiopsis_bifaria"<"2012.Cleistes_bifaria, 2015.Cleistesiopsis_divaricata"="2012.Cleistes_divaricata}
+
+Possible world 1:
+{2015.Cleistesiopsis_divaricata"!"2012.Cleistes_bifaria, 2015.Cleistesiopsis_bifaria"!"2012.Cleistes_divaricata, 2015.Cleistesiopsis_orcamporum"!"2012.Cleistes_divaricata, 2015.Cleistesiopsis">"2012.Cleistes_divaricata, 2015.Cleistesiopsis">"2012.Cleistes_bifaria, 2015.Cleistesiopsis_orcamporum"<"2012.Cleistes_bifaria, 2015.Cleistesiopsis_bifaria"<"2012.Cleistes, 2015.Cleistesiopsis_orcamporum"<"2012.Cleistes, 2015.Cleistesiopsis_divaricata"<"2012.Cleistes, 2015.Cleistesiopsis_bifaria"<"2012.Cleistes_bifaria, 2015.Cleistesiopsis"="2012.Cleistes, 2015.Cleistesiopsis_divaricata"="2012.Cleistes_divaricata}
+

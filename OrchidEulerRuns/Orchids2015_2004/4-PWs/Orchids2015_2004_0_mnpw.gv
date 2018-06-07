@@ -1,0 +1,27 @@
+digraph{
+rankdir=RL
+node[shape=box style="filled,rounded" fillcolor="#EEEEEE" fontname="helvetica"] 
+"2015.Cleistesiopsis_divaricata\n2004.Cleistes_divaricata"
+"2015.Cleistesiopsis_orcamporum\n2004.Cleistes_bifaria_coastalpopulations"
+"2015.Cleistesiopsis\n2004.Cleistes"
+"2015.Cleistesiopsis_bifaria\n2004.Cleistes_bifaria_mountainpopulations"
+edge[arrowhead=normal style=solid color="#000000" constraint=true penwidth=1]
+"2015.Cleistesiopsis_divaricata\n2004.Cleistes_divaricata" -> "2015.Cleistesiopsis\n2004.Cleistes"
+"2015.Cleistesiopsis_bifaria\n2004.Cleistes_bifaria_mountainpopulations" -> "2015.Cleistesiopsis\n2004.Cleistes"
+"2015.Cleistesiopsis_orcamporum\n2004.Cleistes_bifaria_coastalpopulations" -> "2015.Cleistesiopsis\n2004.Cleistes"
+edge[arrowhead=normal style=dotted color="#000000" constraint=true penwidth=1]
+node[shape=box] 
+{rank=source Legend [fillcolor= white margin=0 label=< 
+ <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4"> 
+<TR> <TD COLSPAN="2"><font face="Arial Black"> Nodes</font></TD> </TR> 
+<TR> 
+ <TD bgcolor="#EEEEEE" fontname="helvetica">congruent</TD> 
+ <TD>4</TD> 
+ </TR> 
+<TR> <TD COLSPAN="2"><font face = "Arial Black"> Edges </font></TD> </TR> 
+<TR> 
+ <TD><font color ="#000000">is_a (input)</font></TD><TD>3</TD>
+</TR>
+</TABLE> 
+ >] } 
+}

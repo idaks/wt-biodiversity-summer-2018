@@ -1,0 +1,11 @@
+firstTName = '2015'
+secondTName = '1950'
+thirdTName = ''
+fourthTName = ''
+fifthTName = ''
+allRcgEdgesDict = {}
+numOfPws = 2
+avFlag = False
+allRcgNodesDict = {'1950.Cleistes_divaricata_var_bifaria': {'concept': 'Cleistes_divaricata_var_bifaria', 'group': '1950'}, '2015.Cleistesiopsis_orcamporum': {'concept': 'Cleistesiopsis_orcamporum', 'group': '2015'}, 'congruent.2015.Cleistesiopsis\\n1950.Cleistes': {'concept': '2015.Cleistesiopsis\\n1950.Cleistes', 'group': 'congruent'}, '2015.Cleistesiopsis': {'concept': 'Cleistesiopsis', 'group': '2015'}, '2015.Cleistesiopsis_bifaria': {'concept': 'Cleistesiopsis_bifaria', 'group': '2015'}, 'congruent.2015.Cleistesiopsis_divaricata\\n1950.Cleistes_divaricata_var_divaricata': {'concept': '2015.Cleistesiopsis_divaricata\\n1950.Cleistes_divaricata_var_divaricata', 'group': 'congruent'}, '1950.Cleistes': {'concept': 'Cleistes', 'group': '1950'}}
+trlist = [['2015.Cleistesiopsis_orcamporum', '2015.Cleistesiopsis', 0], ['2015.Cleistesiopsis_bifaria', '2015.Cleistesiopsis', 0], ['1950.Cleistes_divaricata_var_bifaria', '1950.Cleistes', 0], ['2015.Cleistesiopsis_orcamporum', '1950.Cleistes_divaricata_var_bifaria', 0], ['2015.Cleistesiopsis_bifaria', '1950.Cleistes_divaricata_var_bifaria', 0], ['2015.Cleistesiopsis', '1950.Cleistes', 1], ['2015.Cleistesiopsis_divaricata\\n1950.Cleistes_divaricata_var_divaricata', '2015.Cleistesiopsis', 0], ['2015.Cleistesiopsis_divaricata\\n1950.Cleistes_divaricata_var_divaricata', '1950.Cleistes', 2], ['2015.Cleistesiopsis_orcamporum', '1950.Cleistes_divaricata_var_bifaria', 0], ['2015.Cleistesiopsis_bifaria', '1950.Cleistes_divaricata_var_bifaria', 0], ['1950.Cleistes_divaricata_var_bifaria', '2015.Cleistesiopsis\\n1950.Cleistes', 0], ['2015.Cleistesiopsis_divaricata\\n1950.Cleistes_divaricata_var_divaricata', '2015.Cleistesiopsis\\n1950.Cleistes', 0], ['2015.Cleistesiopsis_orcamporum', '2015.Cleistesiopsis\\n1950.Cleistes', 2], ['2015.Cleistesiopsis_bifaria', '2015.Cleistesiopsis\\n1950.Cleistes', 2]]
+avFlag = True

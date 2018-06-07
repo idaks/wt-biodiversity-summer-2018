@@ -1,0 +1,39 @@
+digraph{
+rankdir=RL
+node[shape=box style=filled fillcolor="#CCFFCC" fontname="helvetica"] 
+"2015.Cleistesiopsis_orcamporum"
+"2015.Cleistesiopsis_bifaria"
+node[shape=box style="filled,rounded" fillcolor="#EEEEEE" fontname="helvetica"] 
+"2015.Cleistesiopsis_divaricata\n2010.Cleistesiopsis_divaricata"
+"2015.Cleistesiopsis\n2010.Cleistesiopsis"
+node[shape=note style=filled fillcolor="#FFFFCC" fontname="helvetica"] 
+"2010.Cleistesiopsis_bifaria"
+edge[arrowhead=normal style=solid color="#000000" constraint=true penwidth=1]
+"2015.Cleistesiopsis_divaricata\n2010.Cleistesiopsis_divaricata" -> "2015.Cleistesiopsis\n2010.Cleistesiopsis"
+"2015.Cleistesiopsis_orcamporum" -> "2010.Cleistesiopsis_bifaria"
+"2015.Cleistesiopsis_bifaria" -> "2010.Cleistesiopsis_bifaria"
+"2010.Cleistesiopsis_bifaria" -> "2015.Cleistesiopsis\n2010.Cleistesiopsis"
+edge[arrowhead=normal style=dotted color="#000000" constraint=true penwidth=1]
+node[shape=box] 
+{rank=source Legend [fillcolor= white margin=0 label=< 
+ <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4"> 
+<TR> <TD COLSPAN="2"><font face="Arial Black"> Nodes</font></TD> </TR> 
+<TR> 
+ <TD bgcolor="#CCFFCC" fontname="helvetica">2015</TD> 
+ <TD>2</TD> 
+ </TR> 
+<TR> 
+ <TD bgcolor="#EEEEEE" fontname="helvetica">congruent</TD> 
+ <TD>2</TD> 
+ </TR> 
+<TR> 
+ <TD bgcolor="#FFFFCC" fontname="helvetica">2010</TD> 
+ <TD>1</TD> 
+ </TR> 
+<TR> <TD COLSPAN="2"><font face = "Arial Black"> Edges </font></TD> </TR> 
+<TR> 
+ <TD><font color ="#000000">is_a (input)</font></TD><TD>4</TD>
+</TR>
+</TABLE> 
+ >] } 
+}

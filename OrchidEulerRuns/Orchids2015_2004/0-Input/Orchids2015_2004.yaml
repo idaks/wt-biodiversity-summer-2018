@@ -1,0 +1,60 @@
+2004.Cleistes:
+  concept: Cleistes
+  group: '2004'
+2004.Cleistes_bifaria_coastalpopulations:
+  concept: Cleistes_bifaria_coastalpopulations
+  group: '2004'
+2004.Cleistes_bifaria_mountainpopulations:
+  concept: Cleistes_bifaria_mountainpopulations
+  group: '2004'
+2004.Cleistes_divaricata:
+  concept: Cleistes_divaricata
+  group: '2004'
+2015.Cleistesiopsis:
+  concept: Cleistesiopsis
+  group: '2015'
+2015.Cleistesiopsis_bifaria:
+  concept: Cleistesiopsis_bifaria
+  group: '2015'
+2015.Cleistesiopsis_divaricata:
+  concept: Cleistesiopsis_divaricata
+  group: '2015'
+2015.Cleistesiopsis_orcamporum:
+  concept: Cleistesiopsis_orcamporum
+  group: '2015'
+2004.Cleistes_bifaria_coastalpopulations_2004.Cleistes:
+  label: isa
+  s: 2004.Cleistes_bifaria_coastalpopulations
+  t: 2004.Cleistes
+2004.Cleistes_bifaria_mountainpopulations_2004.Cleistes:
+  label: isa
+  s: 2004.Cleistes_bifaria_mountainpopulations
+  t: 2004.Cleistes
+2004.Cleistes_divaricata_2004.Cleistes:
+  label: isa
+  s: 2004.Cleistes_divaricata
+  t: 2004.Cleistes
+2015.Cleistesiopsis_bifaria_2004.Cleistes_bifaria_mountainpopulations:
+  label: '{=}'
+  s: 2015.Cleistesiopsis_bifaria
+  t: 2004.Cleistes_bifaria_mountainpopulations
+2015.Cleistesiopsis_bifaria_2015.Cleistesiopsis:
+  label: isa
+  s: 2015.Cleistesiopsis_bifaria
+  t: 2015.Cleistesiopsis
+2015.Cleistesiopsis_divaricata_2004.Cleistes_divaricata:
+  label: '{=}'
+  s: 2015.Cleistesiopsis_divaricata
+  t: 2004.Cleistes_divaricata
+2015.Cleistesiopsis_divaricata_2015.Cleistesiopsis:
+  label: isa
+  s: 2015.Cleistesiopsis_divaricata
+  t: 2015.Cleistesiopsis
+2015.Cleistesiopsis_orcamporum_2004.Cleistes_bifaria_coastalpopulations:
+  label: '{=}'
+  s: 2015.Cleistesiopsis_orcamporum
+  t: 2004.Cleistes_bifaria_coastalpopulations
+2015.Cleistesiopsis_orcamporum_2015.Cleistesiopsis:
+  label: isa
+  s: 2015.Cleistesiopsis_orcamporum
+  t: 2015.Cleistesiopsis

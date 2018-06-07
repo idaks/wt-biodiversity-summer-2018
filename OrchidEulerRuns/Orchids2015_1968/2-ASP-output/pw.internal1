@@ -1,0 +1,13 @@
+from sets import Set
+fileName = 'Orchids2015_1968_1_mnpw'
+pwIndex = 1
+eq = {'2015.Cleistesiopsis': Set(['1968.Cleistes_divaricata', '1968.Cleistes']), '1968.Cleistes_divaricata': Set(['2015.Cleistesiopsis', '1968.Cleistes']), '1968.Cleistes': Set(['2015.Cleistesiopsis', '1968.Cleistes_divaricata'])}
+firstTName = '2015'
+secondTName = '1968'
+thirdTName = ''
+fourthTName = ''
+fifthTName = ''
+eqConLi = []
+tr = [['2015.Cleistesiopsis_divaricata', '2015.Cleistesiopsis', 0], ['2015.Cleistesiopsis_orcamporum', '2015.Cleistesiopsis', 0], ['2015.Cleistesiopsis_bifaria', '2015.Cleistesiopsis', 0], ['2015.Cleistesiopsis_divaricata', '1968.Cleistes_divaricata', 0], ['2015.Cleistesiopsis_orcamporum', '1968.Cleistes_divaricata', 0], ['2015.Cleistesiopsis_bifaria', '1968.Cleistes_divaricata', 0], ['2015.Cleistesiopsis_orcamporum', '1968.Cleistes_divaricata', 1], ['2015.Cleistesiopsis_divaricata', '1968.Cleistes', 1], ['2015.Cleistesiopsis_divaricata', '1968.Cleistes_divaricata', 1], ['2015.Cleistesiopsis_bifaria', '1968.Cleistes_divaricata', 1], ['2015.Cleistesiopsis_bifaria', '1968.Cleistes', 1], ['2015.Cleistesiopsis_orcamporum', '1968.Cleistes', 1]]
+mir = {'2015.Cleistesiopsis_divaricata,2015.Cleistesiopsis_bifaria': 1, '2015.Cleistesiopsis_orcamporum,2015.Cleistesiopsis_bifaria': 1, '2015.Cleistesiopsis,2015.Cleistesiopsis_divaricata': 8, '2015.Cleistesiopsis_divaricata,1968.Cleistes_divaricata': 2, '2015.Cleistesiopsis_orcamporum,1968.Cleistes_divaricata': 2, '2015.Cleistesiopsis_orcamporum,2015.Cleistesiopsis_divaricata': 1, '2015.Cleistesiopsis,2015.Cleistesiopsis_orcamporum': 8, '2015.Cleistesiopsis,1968.Cleistes_divaricata': 4, '2015.Cleistesiopsis_orcamporum,1968.Cleistes': 2, '2015.Cleistesiopsis_bifaria,2015.Cleistesiopsis_divaricata': 1, '2015.Cleistesiopsis_divaricata,1968.Cleistes': 2, '2015.Cleistesiopsis,2015.Cleistesiopsis_bifaria': 8, '2015.Cleistesiopsis_divaricata,2015.Cleistesiopsis_orcamporum': 1, '2015.Cleistesiopsis_bifaria,1968.Cleistes': 2, '2015.Cleistesiopsis_bifaria,2015.Cleistesiopsis_orcamporum': 1, '2015.Cleistesiopsis,1968.Cleistes': 4, '2015.Cleistesiopsis_bifaria,1968.Cleistes_divaricata': 2}
+inputoverlaps = []

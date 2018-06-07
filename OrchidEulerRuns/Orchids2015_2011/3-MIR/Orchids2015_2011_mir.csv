@@ -1,0 +1,12 @@
+2015.Cleistesiopsis,{=, <},2011.Pogonia,inferred
+2015.Cleistesiopsis,{>, ><},2011.Pogonia_bifaria,inferred
+2015.Cleistesiopsis,>,2011.Pogonia_divaricata,inferred
+2015.Cleistesiopsis_bifaria,<,2011.Pogonia,inferred
+2015.Cleistesiopsis_bifaria,!,2011.Pogonia_divaricata,inferred
+2015.Cleistesiopsis_divaricata,<,2011.Pogonia,inferred
+2015.Cleistesiopsis_divaricata,!,2011.Pogonia_bifaria,inferred
+2015.Cleistesiopsis_orcamporum,<,2011.Pogonia,inferred
+2015.Cleistesiopsis_orcamporum,!,2011.Pogonia_divaricata,inferred
+2015.Cleistesiopsis_bifaria,<,2011.Pogonia_bifaria,input
+2015.Cleistesiopsis_divaricata,=,2011.Pogonia_divaricata,input
+2015.Cleistesiopsis_orcamporum,<,2011.Pogonia_bifaria,input

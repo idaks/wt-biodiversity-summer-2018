@@ -1,0 +1,6 @@
+
+Possible world 0:
+{2015.Cleistesiopsis_divaricata"!"2012.Cleistes_bifaria, 2015.Cleistesiopsis_bifaria"!"2012.Cleistes_divaricata, 2015.Cleistesiopsis_orcamporum"!"2012.Cleistes_divaricata, 2015.Cleistesiopsis"><"2012.Cleistes_bifaria, 2015.Cleistesiopsis">"2012.Cleistes_divaricata, 2015.Cleistesiopsis_orcamporum"<"2012.Cleistes_bifaria, 2015.Cleistesiopsis"<"2012.Cleistes, 2015.Cleistesiopsis_bifaria"<"2012.Cleistes, 2015.Cleistesiopsis_orcamporum"<"2012.Cleistes, 2015.Cleistesiopsis_divaricata"<"2012.Cleistes, 2015.Cleistesiopsis_bifaria"<"2012.Cleistes_bifaria, 2015.Cleistesiopsis_divaricata"="2012.Cleistes_divaricata}
+
+Possible world 1:
+{2015.Cleistesiopsis_divaricata"!"2012.Cleistes_bifaria, 2015.Cleistesiopsis_bifaria"!"2012.Cleistes_divaricata, 2015.Cleistesiopsis_orcamporum"!"2012.Cleistes_divaricata, 2015.Cleistesiopsis">"2012.Cleistes_divaricata, 2015.Cleistesiopsis">"2012.Cleistes_bifaria, 2015.Cleistesiopsis_orcamporum"<"2012.Cleistes_bifaria, 2015.Cleistesiopsis_bifaria"<"2012.Cleistes, 2015.Cleistesiopsis_orcamporum"<"2012.Cleistes, 2015.Cleistesiopsis_divaricata"<"2012.Cleistes, 2015.Cleistesiopsis_bifaria"<"2012.Cleistes_bifaria, 2015.Cleistesiopsis"="2012.Cleistes, 2015.Cleistesiopsis_divaricata"="2012.Cleistes_divaricata}

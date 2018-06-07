@@ -1,0 +1,2 @@
+tr = [['2015.Cleistesiopsis_orcamporum', '2011.Pogonia_bifaria', 0], ['2015.Cleistesiopsis_bifaria', '2011.Pogonia_bifaria', 0], ['2011.Pogonia_bifaria', '2015.Cleistesiopsis\\n2011.Pogonia', 0], ['2015.Cleistesiopsis_divaricata\\n2011.Pogonia_divaricata', '2015.Cleistesiopsis\\n2011.Pogonia', 0], ['2015.Cleistesiopsis_orcamporum', '2015.Cleistesiopsis\\n2011.Pogonia', 2], ['2015.Cleistesiopsis_bifaria', '2015.Cleistesiopsis\\n2011.Pogonia', 2]]
+pwIndex = 1

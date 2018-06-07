@@ -1,0 +1,16 @@
+taxonomy 2015 Weakley2015
+(Cleistesiopsis Cleistesiopsis_divaricata Cleistesiopsis_orcamporum Cleistesiopsis_bifaria)
+
+taxonomy 2010 Kartesz2010
+(Cleistesiopsis Cleistesiopsis_divaricata Cleistesiopsis_bifaria)
+
+articulations 2015 2010
+[2015.Cleistesiopsis_divaricata {=} 2010.Cleistesiopsis_divaricata ]
+[2015.Cleistesiopsis_orcamporum {<} 2010.Cleistesiopsis_bifaria]
+[2015.Cleistesiopsis_bifaria {<} 2010.Cleistesiopsis_bifaria]
+
+
+
+
+
+

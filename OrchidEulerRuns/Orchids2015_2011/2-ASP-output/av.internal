@@ -1,0 +1,11 @@
+firstTName = '2015'
+secondTName = '2011'
+thirdTName = ''
+fourthTName = ''
+fifthTName = ''
+allRcgEdgesDict = {}
+numOfPws = 2
+avFlag = False
+allRcgNodesDict = {'2011.Pogonia_bifaria': {'concept': 'Pogonia_bifaria', 'group': '2011'}, '2011.Pogonia': {'concept': 'Pogonia', 'group': '2011'}, 'congruent.2015.Cleistesiopsis_divaricata\\n2011.Pogonia_divaricata': {'concept': '2015.Cleistesiopsis_divaricata\\n2011.Pogonia_divaricata', 'group': 'congruent'}, '2015.Cleistesiopsis_orcamporum': {'concept': 'Cleistesiopsis_orcamporum', 'group': '2015'}, '2015.Cleistesiopsis': {'concept': 'Cleistesiopsis', 'group': '2015'}, '2015.Cleistesiopsis_bifaria': {'concept': 'Cleistesiopsis_bifaria', 'group': '2015'}, 'congruent.2015.Cleistesiopsis\\n2011.Pogonia': {'concept': '2015.Cleistesiopsis\\n2011.Pogonia', 'group': 'congruent'}}
+trlist = [['2015.Cleistesiopsis_orcamporum', '2015.Cleistesiopsis', 0], ['2015.Cleistesiopsis_bifaria', '2015.Cleistesiopsis', 0], ['2011.Pogonia_bifaria', '2011.Pogonia', 0], ['2015.Cleistesiopsis_orcamporum', '2011.Pogonia_bifaria', 0], ['2015.Cleistesiopsis_bifaria', '2011.Pogonia_bifaria', 0], ['2015.Cleistesiopsis', '2011.Pogonia', 1], ['2015.Cleistesiopsis_divaricata\\n2011.Pogonia_divaricata', '2015.Cleistesiopsis', 0], ['2015.Cleistesiopsis_divaricata\\n2011.Pogonia_divaricata', '2011.Pogonia', 2], ['2015.Cleistesiopsis_orcamporum', '2011.Pogonia_bifaria', 0], ['2015.Cleistesiopsis_bifaria', '2011.Pogonia_bifaria', 0], ['2011.Pogonia_bifaria', '2015.Cleistesiopsis\\n2011.Pogonia', 0], ['2015.Cleistesiopsis_divaricata\\n2011.Pogonia_divaricata', '2015.Cleistesiopsis\\n2011.Pogonia', 0], ['2015.Cleistesiopsis_orcamporum', '2015.Cleistesiopsis\\n2011.Pogonia', 2], ['2015.Cleistesiopsis_bifaria', '2015.Cleistesiopsis\\n2011.Pogonia', 2]]
+avFlag = True

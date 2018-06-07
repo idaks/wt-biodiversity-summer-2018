@@ -1,0 +1,31 @@
+1968.1968.Cleistes\n1968.Cleistes_divaricata:
+  concept: 1968.Cleistes\n1968.Cleistes_divaricata
+  group: '1968'
+2015.Cleistesiopsis:
+  concept: Cleistesiopsis
+  group: '2015'
+2015.Cleistesiopsis_bifaria:
+  concept: Cleistesiopsis_bifaria
+  group: '2015'
+2015.Cleistesiopsis_divaricata:
+  concept: Cleistesiopsis_divaricata
+  group: '2015'
+2015.Cleistesiopsis_orcamporum:
+  concept: Cleistesiopsis_orcamporum
+  group: '2015'
+2015.Cleistesiopsis_1968.Cleistes\n1968.Cleistes_divaricata:
+  label: is_a (inferred)
+  s: 2015.Cleistesiopsis
+  t: 1968.Cleistes\n1968.Cleistes_divaricata
+2015.Cleistesiopsis_bifaria_2015.Cleistesiopsis:
+  label: is_a (input)
+  s: 2015.Cleistesiopsis_bifaria
+  t: 2015.Cleistesiopsis
+2015.Cleistesiopsis_divaricata_2015.Cleistesiopsis:
+  label: is_a (input)
+  s: 2015.Cleistesiopsis_divaricata
+  t: 2015.Cleistesiopsis
+2015.Cleistesiopsis_orcamporum_2015.Cleistesiopsis:
+  label: is_a (input)
+  s: 2015.Cleistesiopsis_orcamporum
+  t: 2015.Cleistesiopsis

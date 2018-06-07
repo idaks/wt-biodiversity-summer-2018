@@ -1,0 +1,183 @@
+%%% Max Number of Euler Regions
+#maxint=11.
+
+%%% Euler Regions
+r(M):- #int(M),M>=1,M<=#maxint.
+
+%%% Concepts
+tax(t2015,0).
+concept2(A, B) :- concept(A,B,_).
+concept(c2015_Cleistesiopsis_orcamporum,0,0).
+concept(c2015_Cleistesiopsis_divaricata,0,1).
+concept(c2015_Cleistesiopsis_bifaria,0,2).
+concept2(c2015_Cleistesiopsis,0).
+tax(t1950,1).
+concept2(A, B) :- concept(A,B,_).
+concept(c1950_Cleistes_divaricata_var_divaricata,1,0).
+concept(c1950_Cleistes_divaricata_var_bifaria,1,1).
+concept2(c1950_Cleistes,1).
+
+%%% Euler Bit
+bit(M, 0, V):-r(M),M1=M/1, #mod(M1,4,V).
+bit(M, 1, V):-r(M),M1=M/4, #mod(M1,3,V).
+
+
+%%% Meaning of regions
+in(X, M) :- r(M),concept(X,T,N),N1=N+1,bit(M,T,N1).
+out(X, M) :- r(M),concept(X,T,N),N1=N+1,not bit(M,T,N1).
+in(X, M) :- r(M),concept2(X,_),not out(X, M).
+out(X, M) :- out3(X, M, _), ix.
+irs(M) :- in(X, M), out(X, M), r(M), concept2(X,_).
+
+%%% Constraints of regions.
+irs(X) :- ir(X, _).
+vrs(X) :- vr(X, _).
+vr(X, X) :- not irs(X), r(X).
+ir(X, X) :- not vrs(X), r(X), pw.
+ie(prod(A,B)) :- vr(X, A), ir(X, B), ix.
+:- vrs(X), irs(X), pw.
+
+%%% Inconsistency Explanation.
+ie(s(R, A, Y)) :- pie(R, A, Y), not cc(R, Y), ix.
+cc(R, Y) :- c(R, _, Y), ix.
+
+%%% Parent-Child relations
+%% ISA
+% c2015_Cleistesiopsis_divaricata isa c2015_Cleistesiopsis
+ir(X, r0) :- in(c2015_Cleistesiopsis_divaricata, X), out(c2015_Cleistesiopsis, X), pw.
+ir(X, prod(r0,R)) :- in(c2015_Cleistesiopsis_divaricata,X), out3(c2015_Cleistesiopsis, X, R), ix.
+:- #count {X : vrs(X), in(c2015_Cleistesiopsis_divaricata,X), in(c2015_Cleistesiopsis,X)} <= 0, pw.
+pie(r0, A, 1) :- ir(X, A), in(c2015_Cleistesiopsis_divaricata, X), in(c2015_Cleistesiopsis, X), ix.
+c(r0, A, 1) :- vr(X, A), in(c2015_Cleistesiopsis_divaricata, X), in(c2015_Cleistesiopsis, X), ix.
+
+% c2015_Cleistesiopsis_orcamporum isa c2015_Cleistesiopsis
+ir(X, r1) :- in(c2015_Cleistesiopsis_orcamporum, X), out(c2015_Cleistesiopsis, X), pw.
+ir(X, prod(r1,R)) :- in(c2015_Cleistesiopsis_orcamporum,X), out3(c2015_Cleistesiopsis, X, R), ix.
+:- #count {X : vrs(X), in(c2015_Cleistesiopsis_orcamporum,X), in(c2015_Cleistesiopsis,X)} <= 0, pw.
+pie(r1, A, 1) :- ir(X, A), in(c2015_Cleistesiopsis_orcamporum, X), in(c2015_Cleistesiopsis, X), ix.
+c(r1, A, 1) :- vr(X, A), in(c2015_Cleistesiopsis_orcamporum, X), in(c2015_Cleistesiopsis, X), ix.
+
+% c2015_Cleistesiopsis_bifaria isa c2015_Cleistesiopsis
+ir(X, r2) :- in(c2015_Cleistesiopsis_bifaria, X), out(c2015_Cleistesiopsis, X), pw.
+ir(X, prod(r2,R)) :- in(c2015_Cleistesiopsis_bifaria,X), out3(c2015_Cleistesiopsis, X, R), ix.
+:- #count {X : vrs(X), in(c2015_Cleistesiopsis_bifaria,X), in(c2015_Cleistesiopsis,X)} <= 0, pw.
+pie(r2, A, 1) :- ir(X, A), in(c2015_Cleistesiopsis_bifaria, X), in(c2015_Cleistesiopsis, X), ix.
+c(r2, A, 1) :- vr(X, A), in(c2015_Cleistesiopsis_bifaria, X), in(c2015_Cleistesiopsis, X), ix.
+
+%% coverage
+out3(c2015_Cleistesiopsis, X, r3) :- out(c2015_Cleistesiopsis_divaricata, X), out(c2015_Cleistesiopsis_orcamporum, X), out(c2015_Cleistesiopsis_bifaria, X), ix.
+out(c2015_Cleistesiopsis, X) :- out(c2015_Cleistesiopsis_divaricata, X), out(c2015_Cleistesiopsis_orcamporum, X), out(c2015_Cleistesiopsis_bifaria, X), pw.
+%% sibling disjointness
+% c2015_Cleistesiopsis_divaricata ! c2015_Cleistesiopsis_orcamporum
+ir(X, r4) :- in(c2015_Cleistesiopsis_divaricata, X), in(c2015_Cleistesiopsis_orcamporum, X).
+:- #count {X : vrs(X), in(c2015_Cleistesiopsis_divaricata,X), out(c2015_Cleistesiopsis_orcamporum,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2015_Cleistesiopsis_divaricata,X), in(c2015_Cleistesiopsis_orcamporum,X)} <= 0, pw.
+pie(r4, A, 1) :- ir(X, A), in(c2015_Cleistesiopsis_divaricata, X), out(c2015_Cleistesiopsis_orcamporum, X), ix.
+c(r4, A, 1) :- vr(X, A), in(c2015_Cleistesiopsis_divaricata, X), out(c2015_Cleistesiopsis_orcamporum, X), ix.
+pie(r4, A, 2) :- ir(X, A), out(c2015_Cleistesiopsis_divaricata, X), in(c2015_Cleistesiopsis_orcamporum, X), ix.
+c(r4, A, 2) :- vr(X, A), out(c2015_Cleistesiopsis_divaricata, X), in(c2015_Cleistesiopsis_orcamporum, X), ix.
+
+% c2015_Cleistesiopsis_divaricata ! c2015_Cleistesiopsis_bifaria
+ir(X, r5) :- in(c2015_Cleistesiopsis_divaricata, X), in(c2015_Cleistesiopsis_bifaria, X).
+:- #count {X : vrs(X), in(c2015_Cleistesiopsis_divaricata,X), out(c2015_Cleistesiopsis_bifaria,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2015_Cleistesiopsis_divaricata,X), in(c2015_Cleistesiopsis_bifaria,X)} <= 0, pw.
+pie(r5, A, 1) :- ir(X, A), in(c2015_Cleistesiopsis_divaricata, X), out(c2015_Cleistesiopsis_bifaria, X), ix.
+c(r5, A, 1) :- vr(X, A), in(c2015_Cleistesiopsis_divaricata, X), out(c2015_Cleistesiopsis_bifaria, X), ix.
+pie(r5, A, 2) :- ir(X, A), out(c2015_Cleistesiopsis_divaricata, X), in(c2015_Cleistesiopsis_bifaria, X), ix.
+c(r5, A, 2) :- vr(X, A), out(c2015_Cleistesiopsis_divaricata, X), in(c2015_Cleistesiopsis_bifaria, X), ix.
+
+% c2015_Cleistesiopsis_orcamporum ! c2015_Cleistesiopsis_bifaria
+ir(X, r6) :- in(c2015_Cleistesiopsis_orcamporum, X), in(c2015_Cleistesiopsis_bifaria, X).
+:- #count {X : vrs(X), in(c2015_Cleistesiopsis_orcamporum,X), out(c2015_Cleistesiopsis_bifaria,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2015_Cleistesiopsis_orcamporum,X), in(c2015_Cleistesiopsis_bifaria,X)} <= 0, pw.
+pie(r6, A, 1) :- ir(X, A), in(c2015_Cleistesiopsis_orcamporum, X), out(c2015_Cleistesiopsis_bifaria, X), ix.
+c(r6, A, 1) :- vr(X, A), in(c2015_Cleistesiopsis_orcamporum, X), out(c2015_Cleistesiopsis_bifaria, X), ix.
+pie(r6, A, 2) :- ir(X, A), out(c2015_Cleistesiopsis_orcamporum, X), in(c2015_Cleistesiopsis_bifaria, X), ix.
+c(r6, A, 2) :- vr(X, A), out(c2015_Cleistesiopsis_orcamporum, X), in(c2015_Cleistesiopsis_bifaria, X), ix.
+
+%% ISA
+% c1950_Cleistes_divaricata_var_divaricata isa c1950_Cleistes
+ir(X, r7) :- in(c1950_Cleistes_divaricata_var_divaricata, X), out(c1950_Cleistes, X), pw.
+ir(X, prod(r7,R)) :- in(c1950_Cleistes_divaricata_var_divaricata,X), out3(c1950_Cleistes, X, R), ix.
+:- #count {X : vrs(X), in(c1950_Cleistes_divaricata_var_divaricata,X), in(c1950_Cleistes,X)} <= 0, pw.
+pie(r7, A, 1) :- ir(X, A), in(c1950_Cleistes_divaricata_var_divaricata, X), in(c1950_Cleistes, X), ix.
+c(r7, A, 1) :- vr(X, A), in(c1950_Cleistes_divaricata_var_divaricata, X), in(c1950_Cleistes, X), ix.
+
+% c1950_Cleistes_divaricata_var_bifaria isa c1950_Cleistes
+ir(X, r8) :- in(c1950_Cleistes_divaricata_var_bifaria, X), out(c1950_Cleistes, X), pw.
+ir(X, prod(r8,R)) :- in(c1950_Cleistes_divaricata_var_bifaria,X), out3(c1950_Cleistes, X, R), ix.
+:- #count {X : vrs(X), in(c1950_Cleistes_divaricata_var_bifaria,X), in(c1950_Cleistes,X)} <= 0, pw.
+pie(r8, A, 1) :- ir(X, A), in(c1950_Cleistes_divaricata_var_bifaria, X), in(c1950_Cleistes, X), ix.
+c(r8, A, 1) :- vr(X, A), in(c1950_Cleistes_divaricata_var_bifaria, X), in(c1950_Cleistes, X), ix.
+
+%% coverage
+out3(c1950_Cleistes, X, r9) :- out(c1950_Cleistes_divaricata_var_divaricata, X), out(c1950_Cleistes_divaricata_var_bifaria, X), ix.
+out(c1950_Cleistes, X) :- out(c1950_Cleistes_divaricata_var_divaricata, X), out(c1950_Cleistes_divaricata_var_bifaria, X), pw.
+%% sibling disjointness
+% c1950_Cleistes_divaricata_var_divaricata ! c1950_Cleistes_divaricata_var_bifaria
+ir(X, r10) :- in(c1950_Cleistes_divaricata_var_divaricata, X), in(c1950_Cleistes_divaricata_var_bifaria, X).
+:- #count {X : vrs(X), in(c1950_Cleistes_divaricata_var_divaricata,X), out(c1950_Cleistes_divaricata_var_bifaria,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c1950_Cleistes_divaricata_var_divaricata,X), in(c1950_Cleistes_divaricata_var_bifaria,X)} <= 0, pw.
+pie(r10, A, 1) :- ir(X, A), in(c1950_Cleistes_divaricata_var_divaricata, X), out(c1950_Cleistes_divaricata_var_bifaria, X), ix.
+c(r10, A, 1) :- vr(X, A), in(c1950_Cleistes_divaricata_var_divaricata, X), out(c1950_Cleistes_divaricata_var_bifaria, X), ix.
+pie(r10, A, 2) :- ir(X, A), out(c1950_Cleistes_divaricata_var_divaricata, X), in(c1950_Cleistes_divaricata_var_bifaria, X), ix.
+c(r10, A, 2) :- vr(X, A), out(c1950_Cleistes_divaricata_var_divaricata, X), in(c1950_Cleistes_divaricata_var_bifaria, X), ix.
+
+
+%%% Articulations
+% 2015.Cleistesiopsis_divaricata {=} 1950.Cleistes_divaricata_var_divaricata
+ir(X, r11) :- out(c2015_Cleistesiopsis_divaricata,X), in(c1950_Cleistes_divaricata_var_divaricata,X).
+ir(X, r11) :- in(c2015_Cleistesiopsis_divaricata,X), out(c1950_Cleistes_divaricata_var_divaricata,X).
+ir(X, prod(r11,R)) :- out3(c2015_Cleistesiopsis_divaricata, X, R), in(c1950_Cleistes_divaricata_var_divaricata,X), ix.
+ir(X, prod(r11,R)) :- in(c2015_Cleistesiopsis_divaricata,X), out3(c1950_Cleistes_divaricata_var_divaricata, X, R), ix.
+:- #count {X : vrs(X), in(c2015_Cleistesiopsis_divaricata,X), in(c1950_Cleistes_divaricata_var_divaricata,X)} <= 0, pw.
+pie(r11, A, 1) :- ir(X, A), in(c2015_Cleistesiopsis_divaricata, X), in(c1950_Cleistes_divaricata_var_divaricata, X), ix.
+c(r11, A, 1) :- vr(X, A), in(c2015_Cleistesiopsis_divaricata, X), in(c1950_Cleistes_divaricata_var_divaricata, X), ix.
+
+
+% 2015.Cleistesiopsis_orcamporum {<} 1950.Cleistes_divaricata_var_bifaria
+:- #count {X : vrs(X), in(c2015_Cleistesiopsis_orcamporum,X), in(c1950_Cleistes_divaricata_var_bifaria,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2015_Cleistesiopsis_orcamporum,X), in(c1950_Cleistes_divaricata_var_bifaria,X)} <= 0, pw.
+ir(X, r12) :- in(c2015_Cleistesiopsis_orcamporum,X), out(c1950_Cleistes_divaricata_var_bifaria,X), pw.
+pie(r12, A, 1) :- ir(X, A), out(c2015_Cleistesiopsis_orcamporum, X), in(c1950_Cleistes_divaricata_var_bifaria, X), ix.
+c(r12, A, 1) :- vr(X, A), out(c2015_Cleistesiopsis_orcamporum, X), in(c1950_Cleistes_divaricata_var_bifaria, X), ix.
+
+pie(r12, A, 2) :- ir(X, A), in(c2015_Cleistesiopsis_orcamporum, X), in(c1950_Cleistes_divaricata_var_bifaria, X), ix.
+c(r12, A, 2) :- vr(X, A), in(c2015_Cleistesiopsis_orcamporum, X), in(c1950_Cleistes_divaricata_var_bifaria, X), ix.
+
+
+% 2015.Cleistesiopsis_bifaria {<} 1950.Cleistes_divaricata_var_bifaria
+:- #count {X : vrs(X), in(c2015_Cleistesiopsis_bifaria,X), in(c1950_Cleistes_divaricata_var_bifaria,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2015_Cleistesiopsis_bifaria,X), in(c1950_Cleistes_divaricata_var_bifaria,X)} <= 0, pw.
+ir(X, r13) :- in(c2015_Cleistesiopsis_bifaria,X), out(c1950_Cleistes_divaricata_var_bifaria,X), pw.
+pie(r13, A, 1) :- ir(X, A), out(c2015_Cleistesiopsis_bifaria, X), in(c1950_Cleistes_divaricata_var_bifaria, X), ix.
+c(r13, A, 1) :- vr(X, A), out(c2015_Cleistesiopsis_bifaria, X), in(c1950_Cleistes_divaricata_var_bifaria, X), ix.
+
+pie(r13, A, 2) :- ir(X, A), in(c2015_Cleistesiopsis_bifaria, X), in(c1950_Cleistes_divaricata_var_bifaria, X), ix.
+c(r13, A, 2) :- vr(X, A), in(c2015_Cleistesiopsis_bifaria, X), in(c1950_Cleistes_divaricata_var_bifaria, X), ix.
+
+
+%%% Decoding now
+:- rel(X, Y, "="), rel(X, Y, "<"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, "="), rel(X, Y, ">"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, "="), rel(X, Y, "><"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, "="), rel(X, Y, "!"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, "<"), rel(X, Y, ">"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, "<"), rel(X, Y, "><"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, "<"), rel(X, Y, "!"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, ">"), rel(X, Y, "><"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, ">"), rel(X, Y, "!"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, "><"), rel(X, Y, "!"), concept2(X, N1), concept2(Y, N2), pw.
+:- not rel(X, Y, "="), not rel(X, Y, "<"), not rel(X, Y, ">"), not rel(X, Y, "><"), not rel(X, Y, "!"), concept2(X, N1), concept2(Y, N2), N1 < N2, not ncf(X), not ncf(Y), pw.
+
+rel(X, Y, "=") :- not hint(X, Y, 0), hint(X, Y, 1), not hint(X, Y, 2), pw.
+rel(X, Y, "<") :- not hint(X, Y, 0), hint(X, Y, 1), hint(X, Y, 2), pw.
+rel(X, Y, ">") :- hint(X, Y, 0), hint(X, Y, 1), not hint(X, Y, 2), pw.
+rel(X, Y, "><") :- hint(X, Y, 0), hint(X, Y, 1), hint(X, Y, 2), pw.
+rel(X, Y, "!") :- hint(X, Y, 0), not hint(X, Y, 1), hint(X, Y, 2), pw.
+
+
+hint(X, Y, 0) :- concept2(X, N1), concept2(Y, N2), N1 < N2, vrs(R), in(X, R), out(Y, R), not ncf(X), not ncf(Y), pw.
+hint(X, Y, 1) :- concept2(X, N1), concept2(Y, N2), N1 < N2, vrs(R), in(X, R), in(Y, R), not ncf(X), not ncf(Y), pw.
+hint(X, Y, 2) :- concept2(X, N1), concept2(Y, N2), N1 < N2, vrs(R), out(X, R), in(Y, R), not ncf(X), not ncf(Y), pw.
+

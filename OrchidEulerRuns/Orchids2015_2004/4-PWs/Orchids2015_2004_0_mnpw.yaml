@@ -1,0 +1,24 @@
+congruent.2015.Cleistesiopsis\n2004.Cleistes:
+  concept: 2015.Cleistesiopsis\n2004.Cleistes
+  group: congruent
+congruent.2015.Cleistesiopsis_bifaria\n2004.Cleistes_bifaria_mountainpopulations:
+  concept: 2015.Cleistesiopsis_bifaria\n2004.Cleistes_bifaria_mountainpopulations
+  group: congruent
+congruent.2015.Cleistesiopsis_divaricata\n2004.Cleistes_divaricata:
+  concept: 2015.Cleistesiopsis_divaricata\n2004.Cleistes_divaricata
+  group: congruent
+congruent.2015.Cleistesiopsis_orcamporum\n2004.Cleistes_bifaria_coastalpopulations:
+  concept: 2015.Cleistesiopsis_orcamporum\n2004.Cleistes_bifaria_coastalpopulations
+  group: congruent
+2015.Cleistesiopsis_bifaria\n2004.Cleistes_bifaria_mountainpopulations_2015.Cleistesiopsis\n2004.Cleistes:
+  label: is_a (input)
+  s: 2015.Cleistesiopsis_bifaria\n2004.Cleistes_bifaria_mountainpopulations
+  t: 2015.Cleistesiopsis\n2004.Cleistes
+2015.Cleistesiopsis_divaricata\n2004.Cleistes_divaricata_2015.Cleistesiopsis\n2004.Cleistes:
+  label: is_a (input)
+  s: 2015.Cleistesiopsis_divaricata\n2004.Cleistes_divaricata
+  t: 2015.Cleistesiopsis\n2004.Cleistes
+2015.Cleistesiopsis_orcamporum\n2004.Cleistes_bifaria_coastalpopulations_2015.Cleistesiopsis\n2004.Cleistes:
+  label: is_a (input)
+  s: 2015.Cleistesiopsis_orcamporum\n2004.Cleistes_bifaria_coastalpopulations
+  t: 2015.Cleistesiopsis\n2004.Cleistes

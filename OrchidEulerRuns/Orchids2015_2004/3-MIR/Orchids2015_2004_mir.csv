@@ -1,0 +1,16 @@
+2015.Cleistesiopsis,=,2004.Cleistes,inferred
+2015.Cleistesiopsis,>,2004.Cleistes_bifaria_coastalpopulations,inferred
+2015.Cleistesiopsis,>,2004.Cleistes_bifaria_mountainpopulations,inferred
+2015.Cleistesiopsis,>,2004.Cleistes_divaricata,inferred
+2015.Cleistesiopsis_bifaria,<,2004.Cleistes,inferred
+2015.Cleistesiopsis_bifaria,!,2004.Cleistes_bifaria_coastalpopulations,inferred
+2015.Cleistesiopsis_bifaria,!,2004.Cleistes_divaricata,inferred
+2015.Cleistesiopsis_divaricata,<,2004.Cleistes,inferred
+2015.Cleistesiopsis_divaricata,!,2004.Cleistes_bifaria_coastalpopulations,inferred
+2015.Cleistesiopsis_divaricata,!,2004.Cleistes_bifaria_mountainpopulations,inferred
+2015.Cleistesiopsis_orcamporum,<,2004.Cleistes,inferred
+2015.Cleistesiopsis_orcamporum,!,2004.Cleistes_bifaria_mountainpopulations,inferred
+2015.Cleistesiopsis_orcamporum,!,2004.Cleistes_divaricata,inferred
+2015.Cleistesiopsis_bifaria,=,2004.Cleistes_bifaria_mountainpopulations,input
+2015.Cleistesiopsis_divaricata,=,2004.Cleistes_divaricata,input
+2015.Cleistesiopsis_orcamporum,=,2004.Cleistes_bifaria_coastalpopulations,input

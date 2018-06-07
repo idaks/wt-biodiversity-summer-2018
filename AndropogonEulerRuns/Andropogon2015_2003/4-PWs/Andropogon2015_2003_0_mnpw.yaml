@@ -1,0 +1,94 @@
+2003.Andropogn_glomeratus:
+  concept: Andropogn_glomeratus
+  group: '2003'
+2003.Andropogn_virginicus_var_galucus:
+  concept: Andropogn_virginicus_var_galucus
+  group: '2003'
+2003.Andropogn_virginicus_var_virginicus:
+  concept: Andropogn_virginicus_var_virginicus
+  group: '2003'
+2015.Andropogon_virginicus:
+  concept: Andropogon_virginicus
+  group: '2015'
+congruent.2003.Andropogn\n2003.Andropogn_virginicus\n2015.Andropogon:
+  concept: 2003.Andropogn\n2003.Andropogn_virginicus\n2015.Andropogon
+  group: congruent
+congruent.2015.Andropogon_capillipes\n2003.Andropogn_virginicus_var_galucus_drylandsvariants:
+  concept: 2015.Andropogon_capillipes\n2003.Andropogn_virginicus_var_galucus_drylandsvariants
+  group: congruent
+congruent.2015.Andropogon_dealbatus\n2003.Andropogn_virginicus_var_galucus_wetlandsvariants:
+  concept: 2015.Andropogon_dealbatus\n2003.Andropogn_virginicus_var_galucus_wetlandsvariants
+  group: congruent
+congruent.2015.Andropogon_glaucopsis\n2003.Andropogn_glomeratus_var_glaucopsis:
+  concept: 2015.Andropogon_glaucopsis\n2003.Andropogn_glomeratus_var_glaucopsis
+  group: congruent
+congruent.2015.Andropogon_glomeratus_var_glomeratus\n2003.Andropogn_Andropogn_glomeratus_var_glomeratus:
+  concept: 2015.Andropogon_glomeratus_var_glomeratus\n2003.Andropogn_Andropogn_glomeratus_var_glomeratus
+  group: congruent
+congruent.2015.Andropogon_hirsutior\n2003.Andropogn_Andropogn_glomeratus_var_hirsutior:
+  concept: 2015.Andropogon_hirsutior\n2003.Andropogn_Andropogn_glomeratus_var_hirsutior
+  group: congruent
+congruent.2015.Andropogon_tenuispatheus\n2003.Andropogn_Andropogn_glomeratus_var_pumilus:
+  concept: 2015.Andropogon_tenuispatheus\n2003.Andropogn_Andropogn_glomeratus_var_pumilus
+  group: congruent
+congruent.2015.Andropogon_virgincus_oldfieldvariant\n2003.Andropogn_virginicus_var_virginicus_oldfieldvariant:
+  concept: 2015.Andropogon_virgincus_oldfieldvariant\n2003.Andropogn_virginicus_var_virginicus_oldfieldvariant
+  group: congruent
+congruent.2015.Andropogon_virginicus_smoothvariant\n2003.Andropogn_virginicus_var_virginicus_smoothvariant:
+  concept: 2015.Andropogon_virginicus_smoothvariant\n2003.Andropogn_virginicus_var_virginicus_smoothvariant
+  group: congruent
+congruent.2015.Andropogon_virginicus_var_decipiens\n2003.Andropogn_virginicus_var_decipiens:
+  concept: 2015.Andropogon_virginicus_var_decipiens\n2003.Andropogn_virginicus_var_decipiens
+  group: congruent
+2003.Andropogn_glomeratus_2003.Andropogn\n2003.Andropogn_virginicus\n2015.Andropogon:
+  label: is_a (input)
+  s: 2003.Andropogn_glomeratus
+  t: 2003.Andropogn\n2003.Andropogn_virginicus\n2015.Andropogon
+2003.Andropogn_virginicus_var_galucus_2003.Andropogn\n2003.Andropogn_virginicus\n2015.Andropogon:
+  label: is_a (input)
+  s: 2003.Andropogn_virginicus_var_galucus
+  t: 2003.Andropogn\n2003.Andropogn_virginicus\n2015.Andropogon
+2003.Andropogn_virginicus_var_virginicus_2015.Andropogon_virginicus:
+  label: is_a (inferred)
+  s: 2003.Andropogn_virginicus_var_virginicus
+  t: 2015.Andropogon_virginicus
+2015.Andropogon_capillipes\n2003.Andropogn_virginicus_var_galucus_drylandsvariants_2003.Andropogn_virginicus_var_galucus:
+  label: is_a (input)
+  s: 2015.Andropogon_capillipes\n2003.Andropogn_virginicus_var_galucus_drylandsvariants
+  t: 2003.Andropogn_virginicus_var_galucus
+2015.Andropogon_dealbatus\n2003.Andropogn_virginicus_var_galucus_wetlandsvariants_2003.Andropogn_virginicus_var_galucus:
+  label: is_a (input)
+  s: 2015.Andropogon_dealbatus\n2003.Andropogn_virginicus_var_galucus_wetlandsvariants
+  t: 2003.Andropogn_virginicus_var_galucus
+2015.Andropogon_glaucopsis\n2003.Andropogn_glomeratus_var_glaucopsis_2003.Andropogn_glomeratus:
+  label: is_a (input)
+  s: 2015.Andropogon_glaucopsis\n2003.Andropogn_glomeratus_var_glaucopsis
+  t: 2003.Andropogn_glomeratus
+2015.Andropogon_glomeratus_var_glomeratus\n2003.Andropogn_Andropogn_glomeratus_var_glomeratus_2003.Andropogn_glomeratus:
+  label: is_a (input)
+  s: 2015.Andropogon_glomeratus_var_glomeratus\n2003.Andropogn_Andropogn_glomeratus_var_glomeratus
+  t: 2003.Andropogn_glomeratus
+2015.Andropogon_hirsutior\n2003.Andropogn_Andropogn_glomeratus_var_hirsutior_2003.Andropogn_glomeratus:
+  label: is_a (input)
+  s: 2015.Andropogon_hirsutior\n2003.Andropogn_Andropogn_glomeratus_var_hirsutior
+  t: 2003.Andropogn_glomeratus
+2015.Andropogon_tenuispatheus\n2003.Andropogn_Andropogn_glomeratus_var_pumilus_2003.Andropogn_glomeratus:
+  label: is_a (input)
+  s: 2015.Andropogon_tenuispatheus\n2003.Andropogn_Andropogn_glomeratus_var_pumilus
+  t: 2003.Andropogn_glomeratus
+? 2015.Andropogon_virgincus_oldfieldvariant\n2003.Andropogn_virginicus_var_virginicus_oldfieldvariant_2003.Andropogn_virginicus_var_virginicus
+: label: is_a (input)
+  s: 2015.Andropogon_virgincus_oldfieldvariant\n2003.Andropogn_virginicus_var_virginicus_oldfieldvariant
+  t: 2003.Andropogn_virginicus_var_virginicus
+2015.Andropogon_virginicus_2003.Andropogn\n2003.Andropogn_virginicus\n2015.Andropogon:
+  label: is_a (input)
+  s: 2015.Andropogon_virginicus
+  t: 2003.Andropogn\n2003.Andropogn_virginicus\n2015.Andropogon
+? 2015.Andropogon_virginicus_smoothvariant\n2003.Andropogn_virginicus_var_virginicus_smoothvariant_2003.Andropogn_virginicus_var_virginicus
+: label: is_a (input)
+  s: 2015.Andropogon_virginicus_smoothvariant\n2003.Andropogn_virginicus_var_virginicus_smoothvariant
+  t: 2003.Andropogn_virginicus_var_virginicus
+2015.Andropogon_virginicus_var_decipiens\n2003.Andropogn_virginicus_var_decipiens_2015.Andropogon_virginicus:
+  label: is_a (input)
+  s: 2015.Andropogon_virginicus_var_decipiens\n2003.Andropogn_virginicus_var_decipiens
+  t: 2015.Andropogon_virginicus

@@ -1,0 +1,461 @@
+%%% Max Number of Euler Regions
+#maxint=19.
+
+%%% Euler Regions
+r(M):- #int(M),M>=1,M<=#maxint.
+
+%%% Concepts
+tax(t2015,0).
+concept2(A, B) :- concept(A,B,_).
+concept(c2015_Andropogon_dealbatus,0,0).
+concept(c2015_Andropogon_glomeratus_var_glomeratus,0,1).
+concept(c2015_Andropogon_glaucopsis,0,2).
+concept2(c2015_Andropogon_virginicus,0).
+concept(c2015_Andropogon_hirsutior,0,3).
+concept(c2015_Andropogon_tenuispatheus,0,4).
+concept(c2015_Andropogon_capillipes,0,5).
+concept(c2015_Andropogon_virginicus_smoothvariant,0,6).
+concept(c2015_Andropogon_virgincus_oldfieldvariant,0,7).
+concept2(c2015_Andropogon,0).
+concept(c2015_Andropogon_virginicus_var_decipiens,0,8).
+tax(t1968,1).
+concept2(A, B) :- concept(A,B,_).
+concept(c1968_Andropogn_virginicus,1,0).
+concept2(c1968_Andropogn,1).
+
+%%% Euler Bit
+bit(M, 0, V):-r(M),M1=M/1, #mod(M1,10,V).
+bit(M, 1, V):-r(M),M1=M/10, #mod(M1,2,V).
+
+
+%%% Meaning of regions
+in(X, M) :- r(M),concept(X,T,N),N1=N+1,bit(M,T,N1).
+out(X, M) :- r(M),concept(X,T,N),N1=N+1,not bit(M,T,N1).
+in(X, M) :- r(M),concept2(X,_),not out(X, M).
+out(X, M) :- out3(X, M, _), ix.
+irs(M) :- in(X, M), out(X, M), r(M), concept2(X,_).
+
+%%% Constraints of regions.
+irs(X) :- ir(X, _).
+vrs(X) :- vr(X, _).
+vr(X, X) :- not irs(X), r(X).
+ir(X, X) :- not vrs(X), r(X), pw.
+ie(prod(A,B)) :- vr(X, A), ir(X, B), ix.
+:- vrs(X), irs(X), pw.
+
+%%% Inconsistency Explanation.
+ie(s(R, A, Y)) :- pie(R, A, Y), not cc(R, Y), ix.
+cc(R, Y) :- c(R, _, Y), ix.
+
+%%% Parent-Child relations
+%% ISA
+% c2015_Andropogon_capillipes isa c2015_Andropogon
+ir(X, r0) :- in(c2015_Andropogon_capillipes, X), out(c2015_Andropogon, X), pw.
+ir(X, prod(r0,R)) :- in(c2015_Andropogon_capillipes,X), out3(c2015_Andropogon, X, R), ix.
+:- #count {X : vrs(X), in(c2015_Andropogon_capillipes,X), in(c2015_Andropogon,X)} <= 0, pw.
+pie(r0, A, 1) :- ir(X, A), in(c2015_Andropogon_capillipes, X), in(c2015_Andropogon, X), ix.
+c(r0, A, 1) :- vr(X, A), in(c2015_Andropogon_capillipes, X), in(c2015_Andropogon, X), ix.
+
+% c2015_Andropogon_dealbatus isa c2015_Andropogon
+ir(X, r1) :- in(c2015_Andropogon_dealbatus, X), out(c2015_Andropogon, X), pw.
+ir(X, prod(r1,R)) :- in(c2015_Andropogon_dealbatus,X), out3(c2015_Andropogon, X, R), ix.
+:- #count {X : vrs(X), in(c2015_Andropogon_dealbatus,X), in(c2015_Andropogon,X)} <= 0, pw.
+pie(r1, A, 1) :- ir(X, A), in(c2015_Andropogon_dealbatus, X), in(c2015_Andropogon, X), ix.
+c(r1, A, 1) :- vr(X, A), in(c2015_Andropogon_dealbatus, X), in(c2015_Andropogon, X), ix.
+
+% c2015_Andropogon_virginicus isa c2015_Andropogon
+ir(X, r2) :- in(c2015_Andropogon_virginicus, X), out(c2015_Andropogon, X), pw.
+ir(X, prod(r2,R)) :- in(c2015_Andropogon_virginicus,X), out3(c2015_Andropogon, X, R), ix.
+:- #count {X : vrs(X), in(c2015_Andropogon_virginicus,X), in(c2015_Andropogon,X)} <= 0, pw.
+pie(r2, A, 1) :- ir(X, A), in(c2015_Andropogon_virginicus, X), in(c2015_Andropogon, X), ix.
+c(r2, A, 1) :- vr(X, A), in(c2015_Andropogon_virginicus, X), in(c2015_Andropogon, X), ix.
+
+% c2015_Andropogon_glaucopsis isa c2015_Andropogon
+ir(X, r3) :- in(c2015_Andropogon_glaucopsis, X), out(c2015_Andropogon, X), pw.
+ir(X, prod(r3,R)) :- in(c2015_Andropogon_glaucopsis,X), out3(c2015_Andropogon, X, R), ix.
+:- #count {X : vrs(X), in(c2015_Andropogon_glaucopsis,X), in(c2015_Andropogon,X)} <= 0, pw.
+pie(r3, A, 1) :- ir(X, A), in(c2015_Andropogon_glaucopsis, X), in(c2015_Andropogon, X), ix.
+c(r3, A, 1) :- vr(X, A), in(c2015_Andropogon_glaucopsis, X), in(c2015_Andropogon, X), ix.
+
+% c2015_Andropogon_hirsutior isa c2015_Andropogon
+ir(X, r4) :- in(c2015_Andropogon_hirsutior, X), out(c2015_Andropogon, X), pw.
+ir(X, prod(r4,R)) :- in(c2015_Andropogon_hirsutior,X), out3(c2015_Andropogon, X, R), ix.
+:- #count {X : vrs(X), in(c2015_Andropogon_hirsutior,X), in(c2015_Andropogon,X)} <= 0, pw.
+pie(r4, A, 1) :- ir(X, A), in(c2015_Andropogon_hirsutior, X), in(c2015_Andropogon, X), ix.
+c(r4, A, 1) :- vr(X, A), in(c2015_Andropogon_hirsutior, X), in(c2015_Andropogon, X), ix.
+
+% c2015_Andropogon_glomeratus_var_glomeratus isa c2015_Andropogon
+ir(X, r5) :- in(c2015_Andropogon_glomeratus_var_glomeratus, X), out(c2015_Andropogon, X), pw.
+ir(X, prod(r5,R)) :- in(c2015_Andropogon_glomeratus_var_glomeratus,X), out3(c2015_Andropogon, X, R), ix.
+:- #count {X : vrs(X), in(c2015_Andropogon_glomeratus_var_glomeratus,X), in(c2015_Andropogon,X)} <= 0, pw.
+pie(r5, A, 1) :- ir(X, A), in(c2015_Andropogon_glomeratus_var_glomeratus, X), in(c2015_Andropogon, X), ix.
+c(r5, A, 1) :- vr(X, A), in(c2015_Andropogon_glomeratus_var_glomeratus, X), in(c2015_Andropogon, X), ix.
+
+% c2015_Andropogon_tenuispatheus isa c2015_Andropogon
+ir(X, r6) :- in(c2015_Andropogon_tenuispatheus, X), out(c2015_Andropogon, X), pw.
+ir(X, prod(r6,R)) :- in(c2015_Andropogon_tenuispatheus,X), out3(c2015_Andropogon, X, R), ix.
+:- #count {X : vrs(X), in(c2015_Andropogon_tenuispatheus,X), in(c2015_Andropogon,X)} <= 0, pw.
+pie(r6, A, 1) :- ir(X, A), in(c2015_Andropogon_tenuispatheus, X), in(c2015_Andropogon, X), ix.
+c(r6, A, 1) :- vr(X, A), in(c2015_Andropogon_tenuispatheus, X), in(c2015_Andropogon, X), ix.
+
+%% coverage
+out3(c2015_Andropogon, X, r7) :- out(c2015_Andropogon_capillipes, X), out(c2015_Andropogon_dealbatus, X), out(c2015_Andropogon_virginicus, X), out(c2015_Andropogon_glaucopsis, X), out(c2015_Andropogon_hirsutior, X), out(c2015_Andropogon_glomeratus_var_glomeratus, X), out(c2015_Andropogon_tenuispatheus, X), ix.
+out(c2015_Andropogon, X) :- out(c2015_Andropogon_capillipes, X), out(c2015_Andropogon_dealbatus, X), out(c2015_Andropogon_virginicus, X), out(c2015_Andropogon_glaucopsis, X), out(c2015_Andropogon_hirsutior, X), out(c2015_Andropogon_glomeratus_var_glomeratus, X), out(c2015_Andropogon_tenuispatheus, X), pw.
+%% sibling disjointness
+% c2015_Andropogon_capillipes ! c2015_Andropogon_dealbatus
+ir(X, r8) :- in(c2015_Andropogon_capillipes, X), in(c2015_Andropogon_dealbatus, X).
+:- #count {X : vrs(X), in(c2015_Andropogon_capillipes,X), out(c2015_Andropogon_dealbatus,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2015_Andropogon_capillipes,X), in(c2015_Andropogon_dealbatus,X)} <= 0, pw.
+pie(r8, A, 1) :- ir(X, A), in(c2015_Andropogon_capillipes, X), out(c2015_Andropogon_dealbatus, X), ix.
+c(r8, A, 1) :- vr(X, A), in(c2015_Andropogon_capillipes, X), out(c2015_Andropogon_dealbatus, X), ix.
+pie(r8, A, 2) :- ir(X, A), out(c2015_Andropogon_capillipes, X), in(c2015_Andropogon_dealbatus, X), ix.
+c(r8, A, 2) :- vr(X, A), out(c2015_Andropogon_capillipes, X), in(c2015_Andropogon_dealbatus, X), ix.
+
+% c2015_Andropogon_capillipes ! c2015_Andropogon_virginicus
+ir(X, r9) :- in(c2015_Andropogon_capillipes, X), in(c2015_Andropogon_virginicus, X).
+:- #count {X : vrs(X), in(c2015_Andropogon_capillipes,X), out(c2015_Andropogon_virginicus,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2015_Andropogon_capillipes,X), in(c2015_Andropogon_virginicus,X)} <= 0, pw.
+pie(r9, A, 1) :- ir(X, A), in(c2015_Andropogon_capillipes, X), out(c2015_Andropogon_virginicus, X), ix.
+c(r9, A, 1) :- vr(X, A), in(c2015_Andropogon_capillipes, X), out(c2015_Andropogon_virginicus, X), ix.
+pie(r9, A, 2) :- ir(X, A), out(c2015_Andropogon_capillipes, X), in(c2015_Andropogon_virginicus, X), ix.
+c(r9, A, 2) :- vr(X, A), out(c2015_Andropogon_capillipes, X), in(c2015_Andropogon_virginicus, X), ix.
+
+% c2015_Andropogon_capillipes ! c2015_Andropogon_glaucopsis
+ir(X, r10) :- in(c2015_Andropogon_capillipes, X), in(c2015_Andropogon_glaucopsis, X).
+:- #count {X : vrs(X), in(c2015_Andropogon_capillipes,X), out(c2015_Andropogon_glaucopsis,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2015_Andropogon_capillipes,X), in(c2015_Andropogon_glaucopsis,X)} <= 0, pw.
+pie(r10, A, 1) :- ir(X, A), in(c2015_Andropogon_capillipes, X), out(c2015_Andropogon_glaucopsis, X), ix.
+c(r10, A, 1) :- vr(X, A), in(c2015_Andropogon_capillipes, X), out(c2015_Andropogon_glaucopsis, X), ix.
+pie(r10, A, 2) :- ir(X, A), out(c2015_Andropogon_capillipes, X), in(c2015_Andropogon_glaucopsis, X), ix.
+c(r10, A, 2) :- vr(X, A), out(c2015_Andropogon_capillipes, X), in(c2015_Andropogon_glaucopsis, X), ix.
+
+% c2015_Andropogon_capillipes ! c2015_Andropogon_hirsutior
+ir(X, r11) :- in(c2015_Andropogon_capillipes, X), in(c2015_Andropogon_hirsutior, X).
+:- #count {X : vrs(X), in(c2015_Andropogon_capillipes,X), out(c2015_Andropogon_hirsutior,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2015_Andropogon_capillipes,X), in(c2015_Andropogon_hirsutior,X)} <= 0, pw.
+pie(r11, A, 1) :- ir(X, A), in(c2015_Andropogon_capillipes, X), out(c2015_Andropogon_hirsutior, X), ix.
+c(r11, A, 1) :- vr(X, A), in(c2015_Andropogon_capillipes, X), out(c2015_Andropogon_hirsutior, X), ix.
+pie(r11, A, 2) :- ir(X, A), out(c2015_Andropogon_capillipes, X), in(c2015_Andropogon_hirsutior, X), ix.
+c(r11, A, 2) :- vr(X, A), out(c2015_Andropogon_capillipes, X), in(c2015_Andropogon_hirsutior, X), ix.
+
+% c2015_Andropogon_capillipes ! c2015_Andropogon_glomeratus_var_glomeratus
+ir(X, r12) :- in(c2015_Andropogon_capillipes, X), in(c2015_Andropogon_glomeratus_var_glomeratus, X).
+:- #count {X : vrs(X), in(c2015_Andropogon_capillipes,X), out(c2015_Andropogon_glomeratus_var_glomeratus,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2015_Andropogon_capillipes,X), in(c2015_Andropogon_glomeratus_var_glomeratus,X)} <= 0, pw.
+pie(r12, A, 1) :- ir(X, A), in(c2015_Andropogon_capillipes, X), out(c2015_Andropogon_glomeratus_var_glomeratus, X), ix.
+c(r12, A, 1) :- vr(X, A), in(c2015_Andropogon_capillipes, X), out(c2015_Andropogon_glomeratus_var_glomeratus, X), ix.
+pie(r12, A, 2) :- ir(X, A), out(c2015_Andropogon_capillipes, X), in(c2015_Andropogon_glomeratus_var_glomeratus, X), ix.
+c(r12, A, 2) :- vr(X, A), out(c2015_Andropogon_capillipes, X), in(c2015_Andropogon_glomeratus_var_glomeratus, X), ix.
+
+% c2015_Andropogon_capillipes ! c2015_Andropogon_tenuispatheus
+ir(X, r13) :- in(c2015_Andropogon_capillipes, X), in(c2015_Andropogon_tenuispatheus, X).
+:- #count {X : vrs(X), in(c2015_Andropogon_capillipes,X), out(c2015_Andropogon_tenuispatheus,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2015_Andropogon_capillipes,X), in(c2015_Andropogon_tenuispatheus,X)} <= 0, pw.
+pie(r13, A, 1) :- ir(X, A), in(c2015_Andropogon_capillipes, X), out(c2015_Andropogon_tenuispatheus, X), ix.
+c(r13, A, 1) :- vr(X, A), in(c2015_Andropogon_capillipes, X), out(c2015_Andropogon_tenuispatheus, X), ix.
+pie(r13, A, 2) :- ir(X, A), out(c2015_Andropogon_capillipes, X), in(c2015_Andropogon_tenuispatheus, X), ix.
+c(r13, A, 2) :- vr(X, A), out(c2015_Andropogon_capillipes, X), in(c2015_Andropogon_tenuispatheus, X), ix.
+
+% c2015_Andropogon_dealbatus ! c2015_Andropogon_virginicus
+ir(X, r14) :- in(c2015_Andropogon_dealbatus, X), in(c2015_Andropogon_virginicus, X).
+:- #count {X : vrs(X), in(c2015_Andropogon_dealbatus,X), out(c2015_Andropogon_virginicus,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2015_Andropogon_dealbatus,X), in(c2015_Andropogon_virginicus,X)} <= 0, pw.
+pie(r14, A, 1) :- ir(X, A), in(c2015_Andropogon_dealbatus, X), out(c2015_Andropogon_virginicus, X), ix.
+c(r14, A, 1) :- vr(X, A), in(c2015_Andropogon_dealbatus, X), out(c2015_Andropogon_virginicus, X), ix.
+pie(r14, A, 2) :- ir(X, A), out(c2015_Andropogon_dealbatus, X), in(c2015_Andropogon_virginicus, X), ix.
+c(r14, A, 2) :- vr(X, A), out(c2015_Andropogon_dealbatus, X), in(c2015_Andropogon_virginicus, X), ix.
+
+% c2015_Andropogon_dealbatus ! c2015_Andropogon_glaucopsis
+ir(X, r15) :- in(c2015_Andropogon_dealbatus, X), in(c2015_Andropogon_glaucopsis, X).
+:- #count {X : vrs(X), in(c2015_Andropogon_dealbatus,X), out(c2015_Andropogon_glaucopsis,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2015_Andropogon_dealbatus,X), in(c2015_Andropogon_glaucopsis,X)} <= 0, pw.
+pie(r15, A, 1) :- ir(X, A), in(c2015_Andropogon_dealbatus, X), out(c2015_Andropogon_glaucopsis, X), ix.
+c(r15, A, 1) :- vr(X, A), in(c2015_Andropogon_dealbatus, X), out(c2015_Andropogon_glaucopsis, X), ix.
+pie(r15, A, 2) :- ir(X, A), out(c2015_Andropogon_dealbatus, X), in(c2015_Andropogon_glaucopsis, X), ix.
+c(r15, A, 2) :- vr(X, A), out(c2015_Andropogon_dealbatus, X), in(c2015_Andropogon_glaucopsis, X), ix.
+
+% c2015_Andropogon_dealbatus ! c2015_Andropogon_hirsutior
+ir(X, r16) :- in(c2015_Andropogon_dealbatus, X), in(c2015_Andropogon_hirsutior, X).
+:- #count {X : vrs(X), in(c2015_Andropogon_dealbatus,X), out(c2015_Andropogon_hirsutior,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2015_Andropogon_dealbatus,X), in(c2015_Andropogon_hirsutior,X)} <= 0, pw.
+pie(r16, A, 1) :- ir(X, A), in(c2015_Andropogon_dealbatus, X), out(c2015_Andropogon_hirsutior, X), ix.
+c(r16, A, 1) :- vr(X, A), in(c2015_Andropogon_dealbatus, X), out(c2015_Andropogon_hirsutior, X), ix.
+pie(r16, A, 2) :- ir(X, A), out(c2015_Andropogon_dealbatus, X), in(c2015_Andropogon_hirsutior, X), ix.
+c(r16, A, 2) :- vr(X, A), out(c2015_Andropogon_dealbatus, X), in(c2015_Andropogon_hirsutior, X), ix.
+
+% c2015_Andropogon_dealbatus ! c2015_Andropogon_glomeratus_var_glomeratus
+ir(X, r17) :- in(c2015_Andropogon_dealbatus, X), in(c2015_Andropogon_glomeratus_var_glomeratus, X).
+:- #count {X : vrs(X), in(c2015_Andropogon_dealbatus,X), out(c2015_Andropogon_glomeratus_var_glomeratus,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2015_Andropogon_dealbatus,X), in(c2015_Andropogon_glomeratus_var_glomeratus,X)} <= 0, pw.
+pie(r17, A, 1) :- ir(X, A), in(c2015_Andropogon_dealbatus, X), out(c2015_Andropogon_glomeratus_var_glomeratus, X), ix.
+c(r17, A, 1) :- vr(X, A), in(c2015_Andropogon_dealbatus, X), out(c2015_Andropogon_glomeratus_var_glomeratus, X), ix.
+pie(r17, A, 2) :- ir(X, A), out(c2015_Andropogon_dealbatus, X), in(c2015_Andropogon_glomeratus_var_glomeratus, X), ix.
+c(r17, A, 2) :- vr(X, A), out(c2015_Andropogon_dealbatus, X), in(c2015_Andropogon_glomeratus_var_glomeratus, X), ix.
+
+% c2015_Andropogon_dealbatus ! c2015_Andropogon_tenuispatheus
+ir(X, r18) :- in(c2015_Andropogon_dealbatus, X), in(c2015_Andropogon_tenuispatheus, X).
+:- #count {X : vrs(X), in(c2015_Andropogon_dealbatus,X), out(c2015_Andropogon_tenuispatheus,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2015_Andropogon_dealbatus,X), in(c2015_Andropogon_tenuispatheus,X)} <= 0, pw.
+pie(r18, A, 1) :- ir(X, A), in(c2015_Andropogon_dealbatus, X), out(c2015_Andropogon_tenuispatheus, X), ix.
+c(r18, A, 1) :- vr(X, A), in(c2015_Andropogon_dealbatus, X), out(c2015_Andropogon_tenuispatheus, X), ix.
+pie(r18, A, 2) :- ir(X, A), out(c2015_Andropogon_dealbatus, X), in(c2015_Andropogon_tenuispatheus, X), ix.
+c(r18, A, 2) :- vr(X, A), out(c2015_Andropogon_dealbatus, X), in(c2015_Andropogon_tenuispatheus, X), ix.
+
+% c2015_Andropogon_virginicus ! c2015_Andropogon_glaucopsis
+ir(X, r19) :- in(c2015_Andropogon_virginicus, X), in(c2015_Andropogon_glaucopsis, X).
+:- #count {X : vrs(X), in(c2015_Andropogon_virginicus,X), out(c2015_Andropogon_glaucopsis,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2015_Andropogon_virginicus,X), in(c2015_Andropogon_glaucopsis,X)} <= 0, pw.
+pie(r19, A, 1) :- ir(X, A), in(c2015_Andropogon_virginicus, X), out(c2015_Andropogon_glaucopsis, X), ix.
+c(r19, A, 1) :- vr(X, A), in(c2015_Andropogon_virginicus, X), out(c2015_Andropogon_glaucopsis, X), ix.
+pie(r19, A, 2) :- ir(X, A), out(c2015_Andropogon_virginicus, X), in(c2015_Andropogon_glaucopsis, X), ix.
+c(r19, A, 2) :- vr(X, A), out(c2015_Andropogon_virginicus, X), in(c2015_Andropogon_glaucopsis, X), ix.
+
+% c2015_Andropogon_virginicus ! c2015_Andropogon_hirsutior
+ir(X, r20) :- in(c2015_Andropogon_virginicus, X), in(c2015_Andropogon_hirsutior, X).
+:- #count {X : vrs(X), in(c2015_Andropogon_virginicus,X), out(c2015_Andropogon_hirsutior,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2015_Andropogon_virginicus,X), in(c2015_Andropogon_hirsutior,X)} <= 0, pw.
+pie(r20, A, 1) :- ir(X, A), in(c2015_Andropogon_virginicus, X), out(c2015_Andropogon_hirsutior, X), ix.
+c(r20, A, 1) :- vr(X, A), in(c2015_Andropogon_virginicus, X), out(c2015_Andropogon_hirsutior, X), ix.
+pie(r20, A, 2) :- ir(X, A), out(c2015_Andropogon_virginicus, X), in(c2015_Andropogon_hirsutior, X), ix.
+c(r20, A, 2) :- vr(X, A), out(c2015_Andropogon_virginicus, X), in(c2015_Andropogon_hirsutior, X), ix.
+
+% c2015_Andropogon_virginicus ! c2015_Andropogon_glomeratus_var_glomeratus
+ir(X, r21) :- in(c2015_Andropogon_virginicus, X), in(c2015_Andropogon_glomeratus_var_glomeratus, X).
+:- #count {X : vrs(X), in(c2015_Andropogon_virginicus,X), out(c2015_Andropogon_glomeratus_var_glomeratus,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2015_Andropogon_virginicus,X), in(c2015_Andropogon_glomeratus_var_glomeratus,X)} <= 0, pw.
+pie(r21, A, 1) :- ir(X, A), in(c2015_Andropogon_virginicus, X), out(c2015_Andropogon_glomeratus_var_glomeratus, X), ix.
+c(r21, A, 1) :- vr(X, A), in(c2015_Andropogon_virginicus, X), out(c2015_Andropogon_glomeratus_var_glomeratus, X), ix.
+pie(r21, A, 2) :- ir(X, A), out(c2015_Andropogon_virginicus, X), in(c2015_Andropogon_glomeratus_var_glomeratus, X), ix.
+c(r21, A, 2) :- vr(X, A), out(c2015_Andropogon_virginicus, X), in(c2015_Andropogon_glomeratus_var_glomeratus, X), ix.
+
+% c2015_Andropogon_virginicus ! c2015_Andropogon_tenuispatheus
+ir(X, r22) :- in(c2015_Andropogon_virginicus, X), in(c2015_Andropogon_tenuispatheus, X).
+:- #count {X : vrs(X), in(c2015_Andropogon_virginicus,X), out(c2015_Andropogon_tenuispatheus,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2015_Andropogon_virginicus,X), in(c2015_Andropogon_tenuispatheus,X)} <= 0, pw.
+pie(r22, A, 1) :- ir(X, A), in(c2015_Andropogon_virginicus, X), out(c2015_Andropogon_tenuispatheus, X), ix.
+c(r22, A, 1) :- vr(X, A), in(c2015_Andropogon_virginicus, X), out(c2015_Andropogon_tenuispatheus, X), ix.
+pie(r22, A, 2) :- ir(X, A), out(c2015_Andropogon_virginicus, X), in(c2015_Andropogon_tenuispatheus, X), ix.
+c(r22, A, 2) :- vr(X, A), out(c2015_Andropogon_virginicus, X), in(c2015_Andropogon_tenuispatheus, X), ix.
+
+% c2015_Andropogon_glaucopsis ! c2015_Andropogon_hirsutior
+ir(X, r23) :- in(c2015_Andropogon_glaucopsis, X), in(c2015_Andropogon_hirsutior, X).
+:- #count {X : vrs(X), in(c2015_Andropogon_glaucopsis,X), out(c2015_Andropogon_hirsutior,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2015_Andropogon_glaucopsis,X), in(c2015_Andropogon_hirsutior,X)} <= 0, pw.
+pie(r23, A, 1) :- ir(X, A), in(c2015_Andropogon_glaucopsis, X), out(c2015_Andropogon_hirsutior, X), ix.
+c(r23, A, 1) :- vr(X, A), in(c2015_Andropogon_glaucopsis, X), out(c2015_Andropogon_hirsutior, X), ix.
+pie(r23, A, 2) :- ir(X, A), out(c2015_Andropogon_glaucopsis, X), in(c2015_Andropogon_hirsutior, X), ix.
+c(r23, A, 2) :- vr(X, A), out(c2015_Andropogon_glaucopsis, X), in(c2015_Andropogon_hirsutior, X), ix.
+
+% c2015_Andropogon_glaucopsis ! c2015_Andropogon_glomeratus_var_glomeratus
+ir(X, r24) :- in(c2015_Andropogon_glaucopsis, X), in(c2015_Andropogon_glomeratus_var_glomeratus, X).
+:- #count {X : vrs(X), in(c2015_Andropogon_glaucopsis,X), out(c2015_Andropogon_glomeratus_var_glomeratus,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2015_Andropogon_glaucopsis,X), in(c2015_Andropogon_glomeratus_var_glomeratus,X)} <= 0, pw.
+pie(r24, A, 1) :- ir(X, A), in(c2015_Andropogon_glaucopsis, X), out(c2015_Andropogon_glomeratus_var_glomeratus, X), ix.
+c(r24, A, 1) :- vr(X, A), in(c2015_Andropogon_glaucopsis, X), out(c2015_Andropogon_glomeratus_var_glomeratus, X), ix.
+pie(r24, A, 2) :- ir(X, A), out(c2015_Andropogon_glaucopsis, X), in(c2015_Andropogon_glomeratus_var_glomeratus, X), ix.
+c(r24, A, 2) :- vr(X, A), out(c2015_Andropogon_glaucopsis, X), in(c2015_Andropogon_glomeratus_var_glomeratus, X), ix.
+
+% c2015_Andropogon_glaucopsis ! c2015_Andropogon_tenuispatheus
+ir(X, r25) :- in(c2015_Andropogon_glaucopsis, X), in(c2015_Andropogon_tenuispatheus, X).
+:- #count {X : vrs(X), in(c2015_Andropogon_glaucopsis,X), out(c2015_Andropogon_tenuispatheus,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2015_Andropogon_glaucopsis,X), in(c2015_Andropogon_tenuispatheus,X)} <= 0, pw.
+pie(r25, A, 1) :- ir(X, A), in(c2015_Andropogon_glaucopsis, X), out(c2015_Andropogon_tenuispatheus, X), ix.
+c(r25, A, 1) :- vr(X, A), in(c2015_Andropogon_glaucopsis, X), out(c2015_Andropogon_tenuispatheus, X), ix.
+pie(r25, A, 2) :- ir(X, A), out(c2015_Andropogon_glaucopsis, X), in(c2015_Andropogon_tenuispatheus, X), ix.
+c(r25, A, 2) :- vr(X, A), out(c2015_Andropogon_glaucopsis, X), in(c2015_Andropogon_tenuispatheus, X), ix.
+
+% c2015_Andropogon_hirsutior ! c2015_Andropogon_glomeratus_var_glomeratus
+ir(X, r26) :- in(c2015_Andropogon_hirsutior, X), in(c2015_Andropogon_glomeratus_var_glomeratus, X).
+:- #count {X : vrs(X), in(c2015_Andropogon_hirsutior,X), out(c2015_Andropogon_glomeratus_var_glomeratus,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2015_Andropogon_hirsutior,X), in(c2015_Andropogon_glomeratus_var_glomeratus,X)} <= 0, pw.
+pie(r26, A, 1) :- ir(X, A), in(c2015_Andropogon_hirsutior, X), out(c2015_Andropogon_glomeratus_var_glomeratus, X), ix.
+c(r26, A, 1) :- vr(X, A), in(c2015_Andropogon_hirsutior, X), out(c2015_Andropogon_glomeratus_var_glomeratus, X), ix.
+pie(r26, A, 2) :- ir(X, A), out(c2015_Andropogon_hirsutior, X), in(c2015_Andropogon_glomeratus_var_glomeratus, X), ix.
+c(r26, A, 2) :- vr(X, A), out(c2015_Andropogon_hirsutior, X), in(c2015_Andropogon_glomeratus_var_glomeratus, X), ix.
+
+% c2015_Andropogon_hirsutior ! c2015_Andropogon_tenuispatheus
+ir(X, r27) :- in(c2015_Andropogon_hirsutior, X), in(c2015_Andropogon_tenuispatheus, X).
+:- #count {X : vrs(X), in(c2015_Andropogon_hirsutior,X), out(c2015_Andropogon_tenuispatheus,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2015_Andropogon_hirsutior,X), in(c2015_Andropogon_tenuispatheus,X)} <= 0, pw.
+pie(r27, A, 1) :- ir(X, A), in(c2015_Andropogon_hirsutior, X), out(c2015_Andropogon_tenuispatheus, X), ix.
+c(r27, A, 1) :- vr(X, A), in(c2015_Andropogon_hirsutior, X), out(c2015_Andropogon_tenuispatheus, X), ix.
+pie(r27, A, 2) :- ir(X, A), out(c2015_Andropogon_hirsutior, X), in(c2015_Andropogon_tenuispatheus, X), ix.
+c(r27, A, 2) :- vr(X, A), out(c2015_Andropogon_hirsutior, X), in(c2015_Andropogon_tenuispatheus, X), ix.
+
+% c2015_Andropogon_glomeratus_var_glomeratus ! c2015_Andropogon_tenuispatheus
+ir(X, r28) :- in(c2015_Andropogon_glomeratus_var_glomeratus, X), in(c2015_Andropogon_tenuispatheus, X).
+:- #count {X : vrs(X), in(c2015_Andropogon_glomeratus_var_glomeratus,X), out(c2015_Andropogon_tenuispatheus,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2015_Andropogon_glomeratus_var_glomeratus,X), in(c2015_Andropogon_tenuispatheus,X)} <= 0, pw.
+pie(r28, A, 1) :- ir(X, A), in(c2015_Andropogon_glomeratus_var_glomeratus, X), out(c2015_Andropogon_tenuispatheus, X), ix.
+c(r28, A, 1) :- vr(X, A), in(c2015_Andropogon_glomeratus_var_glomeratus, X), out(c2015_Andropogon_tenuispatheus, X), ix.
+pie(r28, A, 2) :- ir(X, A), out(c2015_Andropogon_glomeratus_var_glomeratus, X), in(c2015_Andropogon_tenuispatheus, X), ix.
+c(r28, A, 2) :- vr(X, A), out(c2015_Andropogon_glomeratus_var_glomeratus, X), in(c2015_Andropogon_tenuispatheus, X), ix.
+
+%% ISA
+% c2015_Andropogon_virgincus_oldfieldvariant isa c2015_Andropogon_virginicus
+ir(X, r29) :- in(c2015_Andropogon_virgincus_oldfieldvariant, X), out(c2015_Andropogon_virginicus, X), pw.
+ir(X, prod(r29,R)) :- in(c2015_Andropogon_virgincus_oldfieldvariant,X), out3(c2015_Andropogon_virginicus, X, R), ix.
+:- #count {X : vrs(X), in(c2015_Andropogon_virgincus_oldfieldvariant,X), in(c2015_Andropogon_virginicus,X)} <= 0, pw.
+pie(r29, A, 1) :- ir(X, A), in(c2015_Andropogon_virgincus_oldfieldvariant, X), in(c2015_Andropogon_virginicus, X), ix.
+c(r29, A, 1) :- vr(X, A), in(c2015_Andropogon_virgincus_oldfieldvariant, X), in(c2015_Andropogon_virginicus, X), ix.
+
+% c2015_Andropogon_virginicus_smoothvariant isa c2015_Andropogon_virginicus
+ir(X, r30) :- in(c2015_Andropogon_virginicus_smoothvariant, X), out(c2015_Andropogon_virginicus, X), pw.
+ir(X, prod(r30,R)) :- in(c2015_Andropogon_virginicus_smoothvariant,X), out3(c2015_Andropogon_virginicus, X, R), ix.
+:- #count {X : vrs(X), in(c2015_Andropogon_virginicus_smoothvariant,X), in(c2015_Andropogon_virginicus,X)} <= 0, pw.
+pie(r30, A, 1) :- ir(X, A), in(c2015_Andropogon_virginicus_smoothvariant, X), in(c2015_Andropogon_virginicus, X), ix.
+c(r30, A, 1) :- vr(X, A), in(c2015_Andropogon_virginicus_smoothvariant, X), in(c2015_Andropogon_virginicus, X), ix.
+
+% c2015_Andropogon_virginicus_var_decipiens isa c2015_Andropogon_virginicus
+ir(X, r31) :- in(c2015_Andropogon_virginicus_var_decipiens, X), out(c2015_Andropogon_virginicus, X), pw.
+ir(X, prod(r31,R)) :- in(c2015_Andropogon_virginicus_var_decipiens,X), out3(c2015_Andropogon_virginicus, X, R), ix.
+:- #count {X : vrs(X), in(c2015_Andropogon_virginicus_var_decipiens,X), in(c2015_Andropogon_virginicus,X)} <= 0, pw.
+pie(r31, A, 1) :- ir(X, A), in(c2015_Andropogon_virginicus_var_decipiens, X), in(c2015_Andropogon_virginicus, X), ix.
+c(r31, A, 1) :- vr(X, A), in(c2015_Andropogon_virginicus_var_decipiens, X), in(c2015_Andropogon_virginicus, X), ix.
+
+%% coverage
+out3(c2015_Andropogon_virginicus, X, r32) :- out(c2015_Andropogon_virgincus_oldfieldvariant, X), out(c2015_Andropogon_virginicus_smoothvariant, X), out(c2015_Andropogon_virginicus_var_decipiens, X), ix.
+out(c2015_Andropogon_virginicus, X) :- out(c2015_Andropogon_virgincus_oldfieldvariant, X), out(c2015_Andropogon_virginicus_smoothvariant, X), out(c2015_Andropogon_virginicus_var_decipiens, X), pw.
+%% sibling disjointness
+% c2015_Andropogon_virgincus_oldfieldvariant ! c2015_Andropogon_virginicus_smoothvariant
+ir(X, r33) :- in(c2015_Andropogon_virgincus_oldfieldvariant, X), in(c2015_Andropogon_virginicus_smoothvariant, X).
+:- #count {X : vrs(X), in(c2015_Andropogon_virgincus_oldfieldvariant,X), out(c2015_Andropogon_virginicus_smoothvariant,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2015_Andropogon_virgincus_oldfieldvariant,X), in(c2015_Andropogon_virginicus_smoothvariant,X)} <= 0, pw.
+pie(r33, A, 1) :- ir(X, A), in(c2015_Andropogon_virgincus_oldfieldvariant, X), out(c2015_Andropogon_virginicus_smoothvariant, X), ix.
+c(r33, A, 1) :- vr(X, A), in(c2015_Andropogon_virgincus_oldfieldvariant, X), out(c2015_Andropogon_virginicus_smoothvariant, X), ix.
+pie(r33, A, 2) :- ir(X, A), out(c2015_Andropogon_virgincus_oldfieldvariant, X), in(c2015_Andropogon_virginicus_smoothvariant, X), ix.
+c(r33, A, 2) :- vr(X, A), out(c2015_Andropogon_virgincus_oldfieldvariant, X), in(c2015_Andropogon_virginicus_smoothvariant, X), ix.
+
+% c2015_Andropogon_virgincus_oldfieldvariant ! c2015_Andropogon_virginicus_var_decipiens
+ir(X, r34) :- in(c2015_Andropogon_virgincus_oldfieldvariant, X), in(c2015_Andropogon_virginicus_var_decipiens, X).
+:- #count {X : vrs(X), in(c2015_Andropogon_virgincus_oldfieldvariant,X), out(c2015_Andropogon_virginicus_var_decipiens,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2015_Andropogon_virgincus_oldfieldvariant,X), in(c2015_Andropogon_virginicus_var_decipiens,X)} <= 0, pw.
+pie(r34, A, 1) :- ir(X, A), in(c2015_Andropogon_virgincus_oldfieldvariant, X), out(c2015_Andropogon_virginicus_var_decipiens, X), ix.
+c(r34, A, 1) :- vr(X, A), in(c2015_Andropogon_virgincus_oldfieldvariant, X), out(c2015_Andropogon_virginicus_var_decipiens, X), ix.
+pie(r34, A, 2) :- ir(X, A), out(c2015_Andropogon_virgincus_oldfieldvariant, X), in(c2015_Andropogon_virginicus_var_decipiens, X), ix.
+c(r34, A, 2) :- vr(X, A), out(c2015_Andropogon_virgincus_oldfieldvariant, X), in(c2015_Andropogon_virginicus_var_decipiens, X), ix.
+
+% c2015_Andropogon_virginicus_smoothvariant ! c2015_Andropogon_virginicus_var_decipiens
+ir(X, r35) :- in(c2015_Andropogon_virginicus_smoothvariant, X), in(c2015_Andropogon_virginicus_var_decipiens, X).
+:- #count {X : vrs(X), in(c2015_Andropogon_virginicus_smoothvariant,X), out(c2015_Andropogon_virginicus_var_decipiens,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2015_Andropogon_virginicus_smoothvariant,X), in(c2015_Andropogon_virginicus_var_decipiens,X)} <= 0, pw.
+pie(r35, A, 1) :- ir(X, A), in(c2015_Andropogon_virginicus_smoothvariant, X), out(c2015_Andropogon_virginicus_var_decipiens, X), ix.
+c(r35, A, 1) :- vr(X, A), in(c2015_Andropogon_virginicus_smoothvariant, X), out(c2015_Andropogon_virginicus_var_decipiens, X), ix.
+pie(r35, A, 2) :- ir(X, A), out(c2015_Andropogon_virginicus_smoothvariant, X), in(c2015_Andropogon_virginicus_var_decipiens, X), ix.
+c(r35, A, 2) :- vr(X, A), out(c2015_Andropogon_virginicus_smoothvariant, X), in(c2015_Andropogon_virginicus_var_decipiens, X), ix.
+
+%% ISA
+% c1968_Andropogn_virginicus isa c1968_Andropogn
+ir(X, r36) :- in(c1968_Andropogn_virginicus, X), out(c1968_Andropogn, X), pw.
+ir(X, prod(r36,R)) :- in(c1968_Andropogn_virginicus,X), out3(c1968_Andropogn, X, R), ix.
+:- #count {X : vrs(X), in(c1968_Andropogn_virginicus,X), in(c1968_Andropogn,X)} <= 0, pw.
+pie(r36, A, 1) :- ir(X, A), in(c1968_Andropogn_virginicus, X), in(c1968_Andropogn, X), ix.
+c(r36, A, 1) :- vr(X, A), in(c1968_Andropogn_virginicus, X), in(c1968_Andropogn, X), ix.
+
+%% coverage
+out3(c1968_Andropogn, X, r37) :- out(c1968_Andropogn_virginicus, X), ix.
+out(c1968_Andropogn, X) :- out(c1968_Andropogn_virginicus, X), pw.
+%% sibling disjointness
+
+%%% Articulations
+% 2015.Andropogon_capillipes {<} 1968.Andropogn_virginicus
+:- #count {X : vrs(X), in(c2015_Andropogon_capillipes,X), in(c1968_Andropogn_virginicus,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2015_Andropogon_capillipes,X), in(c1968_Andropogn_virginicus,X)} <= 0, pw.
+ir(X, r38) :- in(c2015_Andropogon_capillipes,X), out(c1968_Andropogn_virginicus,X), pw.
+pie(r38, A, 1) :- ir(X, A), out(c2015_Andropogon_capillipes, X), in(c1968_Andropogn_virginicus, X), ix.
+c(r38, A, 1) :- vr(X, A), out(c2015_Andropogon_capillipes, X), in(c1968_Andropogn_virginicus, X), ix.
+
+pie(r38, A, 2) :- ir(X, A), in(c2015_Andropogon_capillipes, X), in(c1968_Andropogn_virginicus, X), ix.
+c(r38, A, 2) :- vr(X, A), in(c2015_Andropogon_capillipes, X), in(c1968_Andropogn_virginicus, X), ix.
+
+
+% 2015.Andropogon_dealbatus {<} 1968.Andropogn_virginicus
+:- #count {X : vrs(X), in(c2015_Andropogon_dealbatus,X), in(c1968_Andropogn_virginicus,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2015_Andropogon_dealbatus,X), in(c1968_Andropogn_virginicus,X)} <= 0, pw.
+ir(X, r39) :- in(c2015_Andropogon_dealbatus,X), out(c1968_Andropogn_virginicus,X), pw.
+pie(r39, A, 1) :- ir(X, A), out(c2015_Andropogon_dealbatus, X), in(c1968_Andropogn_virginicus, X), ix.
+c(r39, A, 1) :- vr(X, A), out(c2015_Andropogon_dealbatus, X), in(c1968_Andropogn_virginicus, X), ix.
+
+pie(r39, A, 2) :- ir(X, A), in(c2015_Andropogon_dealbatus, X), in(c1968_Andropogn_virginicus, X), ix.
+c(r39, A, 2) :- vr(X, A), in(c2015_Andropogon_dealbatus, X), in(c1968_Andropogn_virginicus, X), ix.
+
+
+% 2015.Andropogon_virginicus {<} 1968.Andropogn_virginicus
+:- #count {X : vrs(X), in(c2015_Andropogon_virginicus,X), in(c1968_Andropogn_virginicus,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2015_Andropogon_virginicus,X), in(c1968_Andropogn_virginicus,X)} <= 0, pw.
+ir(X, r40) :- in(c2015_Andropogon_virginicus,X), out(c1968_Andropogn_virginicus,X), pw.
+pie(r40, A, 1) :- ir(X, A), out(c2015_Andropogon_virginicus, X), in(c1968_Andropogn_virginicus, X), ix.
+c(r40, A, 1) :- vr(X, A), out(c2015_Andropogon_virginicus, X), in(c1968_Andropogn_virginicus, X), ix.
+
+pie(r40, A, 2) :- ir(X, A), in(c2015_Andropogon_virginicus, X), in(c1968_Andropogn_virginicus, X), ix.
+c(r40, A, 2) :- vr(X, A), in(c2015_Andropogon_virginicus, X), in(c1968_Andropogn_virginicus, X), ix.
+
+
+% 2015.Andropogon_glaucopsis  {<} 1968.Andropogn_virginicus
+:- #count {X : vrs(X), in(c2015_Andropogon_glaucopsis,X), in(c1968_Andropogn_virginicus,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2015_Andropogon_glaucopsis,X), in(c1968_Andropogn_virginicus,X)} <= 0, pw.
+ir(X, r41) :- in(c2015_Andropogon_glaucopsis,X), out(c1968_Andropogn_virginicus,X), pw.
+pie(r41, A, 1) :- ir(X, A), out(c2015_Andropogon_glaucopsis, X), in(c1968_Andropogn_virginicus, X), ix.
+c(r41, A, 1) :- vr(X, A), out(c2015_Andropogon_glaucopsis, X), in(c1968_Andropogn_virginicus, X), ix.
+
+pie(r41, A, 2) :- ir(X, A), in(c2015_Andropogon_glaucopsis, X), in(c1968_Andropogn_virginicus, X), ix.
+c(r41, A, 2) :- vr(X, A), in(c2015_Andropogon_glaucopsis, X), in(c1968_Andropogn_virginicus, X), ix.
+
+
+% 2015.Andropogon_hirsutior {<} 1968.Andropogn_virginicus
+:- #count {X : vrs(X), in(c2015_Andropogon_hirsutior,X), in(c1968_Andropogn_virginicus,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2015_Andropogon_hirsutior,X), in(c1968_Andropogn_virginicus,X)} <= 0, pw.
+ir(X, r42) :- in(c2015_Andropogon_hirsutior,X), out(c1968_Andropogn_virginicus,X), pw.
+pie(r42, A, 1) :- ir(X, A), out(c2015_Andropogon_hirsutior, X), in(c1968_Andropogn_virginicus, X), ix.
+c(r42, A, 1) :- vr(X, A), out(c2015_Andropogon_hirsutior, X), in(c1968_Andropogn_virginicus, X), ix.
+
+pie(r42, A, 2) :- ir(X, A), in(c2015_Andropogon_hirsutior, X), in(c1968_Andropogn_virginicus, X), ix.
+c(r42, A, 2) :- vr(X, A), in(c2015_Andropogon_hirsutior, X), in(c1968_Andropogn_virginicus, X), ix.
+
+
+% 2015.Andropogon_glomeratus_var_glomeratus {<} 1968.Andropogn_virginicus
+:- #count {X : vrs(X), in(c2015_Andropogon_glomeratus_var_glomeratus,X), in(c1968_Andropogn_virginicus,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2015_Andropogon_glomeratus_var_glomeratus,X), in(c1968_Andropogn_virginicus,X)} <= 0, pw.
+ir(X, r43) :- in(c2015_Andropogon_glomeratus_var_glomeratus,X), out(c1968_Andropogn_virginicus,X), pw.
+pie(r43, A, 1) :- ir(X, A), out(c2015_Andropogon_glomeratus_var_glomeratus, X), in(c1968_Andropogn_virginicus, X), ix.
+c(r43, A, 1) :- vr(X, A), out(c2015_Andropogon_glomeratus_var_glomeratus, X), in(c1968_Andropogn_virginicus, X), ix.
+
+pie(r43, A, 2) :- ir(X, A), in(c2015_Andropogon_glomeratus_var_glomeratus, X), in(c1968_Andropogn_virginicus, X), ix.
+c(r43, A, 2) :- vr(X, A), in(c2015_Andropogon_glomeratus_var_glomeratus, X), in(c1968_Andropogn_virginicus, X), ix.
+
+
+% 2015.Andropogon_tenuispatheus {<} 1968.Andropogn_virginicus
+:- #count {X : vrs(X), in(c2015_Andropogon_tenuispatheus,X), in(c1968_Andropogn_virginicus,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2015_Andropogon_tenuispatheus,X), in(c1968_Andropogn_virginicus,X)} <= 0, pw.
+ir(X, r44) :- in(c2015_Andropogon_tenuispatheus,X), out(c1968_Andropogn_virginicus,X), pw.
+pie(r44, A, 1) :- ir(X, A), out(c2015_Andropogon_tenuispatheus, X), in(c1968_Andropogn_virginicus, X), ix.
+c(r44, A, 1) :- vr(X, A), out(c2015_Andropogon_tenuispatheus, X), in(c1968_Andropogn_virginicus, X), ix.
+
+pie(r44, A, 2) :- ir(X, A), in(c2015_Andropogon_tenuispatheus, X), in(c1968_Andropogn_virginicus, X), ix.
+c(r44, A, 2) :- vr(X, A), in(c2015_Andropogon_tenuispatheus, X), in(c1968_Andropogn_virginicus, X), ix.
+
+
+%%% Decoding now
+:- rel(X, Y, "="), rel(X, Y, "<"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, "="), rel(X, Y, ">"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, "="), rel(X, Y, "><"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, "="), rel(X, Y, "!"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, "<"), rel(X, Y, ">"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, "<"), rel(X, Y, "><"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, "<"), rel(X, Y, "!"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, ">"), rel(X, Y, "><"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, ">"), rel(X, Y, "!"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, "><"), rel(X, Y, "!"), concept2(X, N1), concept2(Y, N2), pw.
+:- not rel(X, Y, "="), not rel(X, Y, "<"), not rel(X, Y, ">"), not rel(X, Y, "><"), not rel(X, Y, "!"), concept2(X, N1), concept2(Y, N2), N1 < N2, not ncf(X), not ncf(Y), pw.
+
+rel(X, Y, "=") :- not hint(X, Y, 0), hint(X, Y, 1), not hint(X, Y, 2), pw.
+rel(X, Y, "<") :- not hint(X, Y, 0), hint(X, Y, 1), hint(X, Y, 2), pw.
+rel(X, Y, ">") :- hint(X, Y, 0), hint(X, Y, 1), not hint(X, Y, 2), pw.
+rel(X, Y, "><") :- hint(X, Y, 0), hint(X, Y, 1), hint(X, Y, 2), pw.
+rel(X, Y, "!") :- hint(X, Y, 0), not hint(X, Y, 1), hint(X, Y, 2), pw.
+
+
+hint(X, Y, 0) :- concept2(X, N1), concept2(Y, N2), N1 < N2, vrs(R), in(X, R), out(Y, R), not ncf(X), not ncf(Y), pw.
+hint(X, Y, 1) :- concept2(X, N1), concept2(Y, N2), N1 < N2, vrs(R), in(X, R), in(Y, R), not ncf(X), not ncf(Y), pw.
+hint(X, Y, 2) :- concept2(X, N1), concept2(Y, N2), N1 < N2, vrs(R), out(X, R), in(Y, R), not ncf(X), not ncf(Y), pw.
+

@@ -1,0 +1,70 @@
+digraph{
+rankdir=RL
+node[shape=box style=filled fillcolor="#CCFFCC" fontname="helvetica"] 
+"2015.Andropogon_hirsutior"
+"2015.Andropogon_glaucopsis"
+"2015.Andropogon_dealbatus"
+"2015.Andropogon_capillipes"
+"2015.Andropogon_virginicus_var_decipiens"
+"2015.Andropogon"
+"2015.Andropogon_tenuispatheus"
+"2015.Andropogon_virginicus_smoothvariant"
+"2015.Andropogon_glomeratus_var_glomeratus"
+"2015.Andropogon_virgincus_oldfieldvariant"
+node[shape=note style=filled fillcolor="#FFFFCC" fontname="helvetica"] 
+"1933.Andropogn"
+"1933.Andropogon_capillipes"
+"1933.Andropogon_glomeratus"
+node[shape=box style="filled,rounded" fillcolor="#EEEEEE" fontname="helvetica"] 
+"2015.Andropogon_virginicus\n1933.Andropogn_virginicus"
+edge[arrowhead=normal style=solid color="#FF0000" constraint=true penwidth=1]
+"1933.Andropogon_capillipes" -> "2015.Andropogon"
+"2015.Andropogon" -> "1933.Andropogn"
+edge[arrowhead=normal style=solid color="#000000" constraint=true penwidth=1]
+"2015.Andropogon_virginicus_var_decipiens" -> "2015.Andropogon_virginicus\n1933.Andropogn_virginicus"
+"2015.Andropogon_capillipes" -> "1933.Andropogon_capillipes"
+"1933.Andropogon_glomeratus" -> "1933.Andropogn"
+"2015.Andropogon_tenuispatheus" -> "1933.Andropogon_glomeratus"
+"2015.Andropogon_virginicus\n1933.Andropogn_virginicus" -> "2015.Andropogon"
+"2015.Andropogon_hirsutior" -> "2015.Andropogon"
+"2015.Andropogon_hirsutior" -> "1933.Andropogon_glomeratus"
+"2015.Andropogon_virgincus_oldfieldvariant" -> "2015.Andropogon_virginicus\n1933.Andropogn_virginicus"
+"2015.Andropogon_glaucopsis" -> "1933.Andropogon_glomeratus"
+"2015.Andropogon_tenuispatheus" -> "2015.Andropogon"
+"2015.Andropogon_glomeratus_var_glomeratus" -> "1933.Andropogon_glomeratus"
+"2015.Andropogon_dealbatus" -> "1933.Andropogon_capillipes"
+"2015.Andropogon_glomeratus_var_glomeratus" -> "2015.Andropogon"
+"2015.Andropogon_glaucopsis" -> "2015.Andropogon"
+"2015.Andropogon_virginicus_smoothvariant" -> "2015.Andropogon_virginicus\n1933.Andropogn_virginicus"
+edge[arrowhead=normal style=dotted color="#000000" constraint=true penwidth=1]
+edge[arrowhead=none style=dashed color="#FF0000" constraint=false penwidth=1]
+"2015.Andropogon" -> "1933.Andropogon_glomeratus"
+node[shape=box] 
+{rank=source Legend [fillcolor= white margin=0 label=< 
+ <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4"> 
+<TR> <TD COLSPAN="2"><font face="Arial Black"> Nodes</font></TD> </TR> 
+<TR> 
+ <TD bgcolor="#CCFFCC" fontname="helvetica">2015</TD> 
+ <TD>10</TD> 
+ </TR> 
+<TR> 
+ <TD bgcolor="#FFFFCC" fontname="helvetica">1933</TD> 
+ <TD>3</TD> 
+ </TR> 
+<TR> 
+ <TD bgcolor="#EEEEEE" fontname="helvetica">congruent</TD> 
+ <TD>1</TD> 
+ </TR> 
+<TR> <TD COLSPAN="2"><font face = "Arial Black"> Edges </font></TD> </TR> 
+<TR> 
+ <TD><font color ="#FF0000">is_a (inferred)</font></TD><TD>2</TD>
+</TR>
+<TR> 
+ <TD><font color ="#000000">is_a (input)</font></TD><TD>15</TD>
+</TR>
+<TR> 
+ <TD><font color ="#FF0000">overlaps (inferred)</font></TD><TD>1</TD>
+</TR>
+</TABLE> 
+ >] } 
+}

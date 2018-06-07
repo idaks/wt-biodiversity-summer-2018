@@ -1,0 +1,106 @@
+1933.Andropogn:
+  concept: Andropogn
+  group: '1933'
+1933.Andropogon_capillipes:
+  concept: Andropogon_capillipes
+  group: '1933'
+1933.Andropogon_glomeratus:
+  concept: Andropogon_glomeratus
+  group: '1933'
+2015.Andropogon:
+  concept: Andropogon
+  group: '2015'
+2015.Andropogon_capillipes:
+  concept: Andropogon_capillipes
+  group: '2015'
+2015.Andropogon_dealbatus:
+  concept: Andropogon_dealbatus
+  group: '2015'
+2015.Andropogon_glaucopsis:
+  concept: Andropogon_glaucopsis
+  group: '2015'
+2015.Andropogon_glomeratus_var_glomeratus:
+  concept: Andropogon_glomeratus_var_glomeratus
+  group: '2015'
+2015.Andropogon_hirsutior:
+  concept: Andropogon_hirsutior
+  group: '2015'
+2015.Andropogon_tenuispatheus:
+  concept: Andropogon_tenuispatheus
+  group: '2015'
+2015.Andropogon_virgincus_oldfieldvariant:
+  concept: Andropogon_virgincus_oldfieldvariant
+  group: '2015'
+2015.Andropogon_virginicus_smoothvariant:
+  concept: Andropogon_virginicus_smoothvariant
+  group: '2015'
+2015.Andropogon_virginicus_var_decipiens:
+  concept: Andropogon_virginicus_var_decipiens
+  group: '2015'
+congruent.2015.Andropogon_virginicus\n1933.Andropogn_virginicus:
+  concept: 2015.Andropogon_virginicus\n1933.Andropogn_virginicus
+  group: congruent
+1933.Andropogon_capillipes_1933.Andropogn:
+  label: is_a (input)
+  s: 1933.Andropogon_capillipes
+  t: 1933.Andropogn
+1933.Andropogon_glomeratus_2015.Andropogon:
+  label: is_a (inferred)
+  s: 1933.Andropogon_glomeratus
+  t: 2015.Andropogon
+2015.Andropogon_1933.Andropogn:
+  label: is_a (inferred)
+  s: 2015.Andropogon
+  t: 1933.Andropogn
+2015.Andropogon_1933.Andropogon_capillipes:
+  label: overlaps (inferred)
+  s: 2015.Andropogon
+  t: 1933.Andropogon_capillipes
+2015.Andropogon_capillipes_1933.Andropogon_capillipes:
+  label: is_a (input)
+  s: 2015.Andropogon_capillipes
+  t: 1933.Andropogon_capillipes
+2015.Andropogon_capillipes_2015.Andropogon:
+  label: is_a (input)
+  s: 2015.Andropogon_capillipes
+  t: 2015.Andropogon
+2015.Andropogon_dealbatus_1933.Andropogon_capillipes:
+  label: is_a (input)
+  s: 2015.Andropogon_dealbatus
+  t: 1933.Andropogon_capillipes
+2015.Andropogon_dealbatus_2015.Andropogon:
+  label: is_a (input)
+  s: 2015.Andropogon_dealbatus
+  t: 2015.Andropogon
+2015.Andropogon_glaucopsis_1933.Andropogon_glomeratus:
+  label: is_a (input)
+  s: 2015.Andropogon_glaucopsis
+  t: 1933.Andropogon_glomeratus
+2015.Andropogon_glomeratus_var_glomeratus_1933.Andropogon_glomeratus:
+  label: is_a (input)
+  s: 2015.Andropogon_glomeratus_var_glomeratus
+  t: 1933.Andropogon_glomeratus
+2015.Andropogon_hirsutior_1933.Andropogon_glomeratus:
+  label: is_a (input)
+  s: 2015.Andropogon_hirsutior
+  t: 1933.Andropogon_glomeratus
+2015.Andropogon_tenuispatheus_1933.Andropogon_glomeratus:
+  label: is_a (input)
+  s: 2015.Andropogon_tenuispatheus
+  t: 1933.Andropogon_glomeratus
+2015.Andropogon_virgincus_oldfieldvariant_2015.Andropogon_virginicus\n1933.Andropogn_virginicus:
+  label: is_a (input)
+  s: 2015.Andropogon_virgincus_oldfieldvariant
+  t: 2015.Andropogon_virginicus\n1933.Andropogn_virginicus
+2015.Andropogon_virginicus\n1933.Andropogn_virginicus_2015.Andropogon:
+  label: is_a (input)
+  s: 2015.Andropogon_virginicus\n1933.Andropogn_virginicus
+  t: 2015.Andropogon
+2015.Andropogon_virginicus_smoothvariant_2015.Andropogon_virginicus\n1933.Andropogn_virginicus:
+  label: is_a (input)
+  s: 2015.Andropogon_virginicus_smoothvariant
+  t: 2015.Andropogon_virginicus\n1933.Andropogn_virginicus
+2015.Andropogon_virginicus_var_decipiens_2015.Andropogon_virginicus\n1933.Andropogn_virginicus:
+  label: is_a (input)
+  s: 2015.Andropogon_virginicus_var_decipiens
+  t: 2015.Andropogon_virginicus\n1933.Andropogn_virginicus

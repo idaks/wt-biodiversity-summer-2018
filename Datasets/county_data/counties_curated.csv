@@ -1,4 +1,4 @@
-STATE,COUNTYNAME,LON,LAT
+stateProvince,county,centroidLon,centroidLat
 Maine,Washington,-67.63610156450,45.03631909760
 American Samoa,Swains Island,-171.04590685400,-11.08431357270
 American Samoa,Manu'a,-169.50597436700,-14.22191885580

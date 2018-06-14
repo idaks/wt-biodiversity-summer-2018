@@ -1,0 +1,27 @@
+taxonomy 2015 Weakley2015
+(Andropogon Andropogon_capillipes Andropogon_dealbatus Andropogon_virginicus Andropogon_glaucopsis Andropogon_hirsutior Andropogon_glomeratus_var_glomeratus Andropogon_tenuispatheus)
+(Andropogon_virginicus Andropogon_virgincus_oldfieldvariant Andropogon_virginicus_smoothvariant Andropogon_virginicus_var_decipiens) 
+
+taxonomy 2003 Campbell2003
+(Andropogon Andropogon_virginicus )
+(Andropogon_virginicus Andropogon_virginicus_var_galucus Andropogon_virginicus_var_virginicus Andropogon_virginicus_var_decipiens Andropogon_glomeratus)
+(Andropogon_virginicus_var_galucus Andropogon_virginicus_var_galucus_drylandsvariants Andropogon_virginicus_var_galucus_wetlandsvariants)
+(Andropogon_virginicus_var_virginicus Andropogon_virginicus_var_virginicus_oldfieldvariant  Andropogon_virginicus_var_virginicus_smoothvariant)
+(Andropogon_glomeratus Andropogon_glomeratus_var_glaucopsis Andropogon_glomeratus_var_hirsutior Andropogon_glomeratus_var_glomeratus Andropogon_glomeratus_var_pumilus)
+
+articulations 2015 1968
+[2015.Andropogon_capillipes {=} 2003.Andropogon_virginicus_var_galucus_drylandsvariants]
+[2015.Andropogon_dealbatus {=} 2003.Andropogon_virginicus_var_galucus_wetlandsvariants]
+[2015.Andropogon_virgincus_oldfieldvariant {=} 2003.Andropogon_virginicus_var_virginicus_oldfieldvariant]
+[2015.Andropogon_virginicus_smoothvariant {=} 2003.Andropogon_virginicus_var_virginicus_smoothvariant]
+[2015.Andropogon_virginicus_var_decipiens {=} 2003.Andropogon_virginicus_var_decipiens]
+[2015.Andropogon_glaucopsis  {=} 2003.Andropogon_glomeratus_var_glaucopsis]
+[2015.Andropogon_hirsutior {=} 2003.Andropogon_glomeratus_var_hirsutior]
+[2015.Andropogon_glomeratus_var_glomeratus {=} 2003.Andropogon_glomeratus_var_glomeratus]
+[2015.Andropogon_tenuispatheus {=} 2003.Andropogon_glomeratus_var_pumilus]
+
+
+
+
+
+

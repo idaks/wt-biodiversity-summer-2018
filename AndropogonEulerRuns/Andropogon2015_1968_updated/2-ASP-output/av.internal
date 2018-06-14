@@ -1,0 +1,11 @@
+firstTName = '2015'
+secondTName = '1968'
+thirdTName = ''
+fourthTName = ''
+fifthTName = ''
+allRcgEdgesDict = {}
+numOfPws = 1
+avFlag = False
+allRcgNodesDict = {'2015.Andropogon_virginicus': {'concept': 'Andropogon_virginicus', 'group': '2015'}, '2015.Andropogon_glomeratus_var_glomeratus': {'concept': 'Andropogon_glomeratus_var_glomeratus', 'group': '2015'}, '2015.Andropogon_dealbatus': {'concept': 'Andropogon_dealbatus', 'group': '2015'}, '2015.Andropogon_hirsutior': {'concept': 'Andropogon_hirsutior', 'group': '2015'}, '2015.Andropogon_capillipes': {'concept': 'Andropogon_capillipes', 'group': '2015'}, 'congruent.1968.Andropogon\\n1968.Andropogon_virginicus\\n2015.Andropogon': {'concept': '1968.Andropogon\\n1968.Andropogon_virginicus\\n2015.Andropogon', 'group': 'congruent'}, '2015.Andropogon_virginicus_smoothvariant': {'concept': 'Andropogon_virginicus_smoothvariant', 'group': '2015'}, '2015.Andropogon_virginicus_var_decipiens': {'concept': 'Andropogon_virginicus_var_decipiens', 'group': '2015'}, '2015.Andropogon_virgincus_oldfieldvariant': {'concept': 'Andropogon_virgincus_oldfieldvariant', 'group': '2015'}, '2015.Andropogon_glaucopsis': {'concept': 'Andropogon_glaucopsis', 'group': '2015'}, '2015.Andropogon_tenuispatheus': {'concept': 'Andropogon_tenuispatheus', 'group': '2015'}}
+trlist = [['2015.Andropogon_virgincus_oldfieldvariant', '2015.Andropogon_virginicus', 0], ['2015.Andropogon_virginicus_smoothvariant', '2015.Andropogon_virginicus', 0], ['2015.Andropogon_virginicus_var_decipiens', '2015.Andropogon_virginicus', 0], ['2015.Andropogon_capillipes', '1968.Andropogon\\n1968.Andropogon_virginicus\\n2015.Andropogon', 0], ['2015.Andropogon_dealbatus', '1968.Andropogon\\n1968.Andropogon_virginicus\\n2015.Andropogon', 0], ['2015.Andropogon_virginicus', '1968.Andropogon\\n1968.Andropogon_virginicus\\n2015.Andropogon', 0], ['2015.Andropogon_glaucopsis', '1968.Andropogon\\n1968.Andropogon_virginicus\\n2015.Andropogon', 0], ['2015.Andropogon_hirsutior', '1968.Andropogon\\n1968.Andropogon_virginicus\\n2015.Andropogon', 0], ['2015.Andropogon_glomeratus_var_glomeratus', '1968.Andropogon\\n1968.Andropogon_virginicus\\n2015.Andropogon', 0], ['2015.Andropogon_tenuispatheus', '1968.Andropogon\\n1968.Andropogon_virginicus\\n2015.Andropogon', 0]]
+avFlag = True

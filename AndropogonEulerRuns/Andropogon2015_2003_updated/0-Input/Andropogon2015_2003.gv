@@ -1,0 +1,96 @@
+digraph{
+rankdir=LR
+node[shape=circle style=filled fillcolor="#FFFFFF"] 
+node[shape=box style=filled fillcolor="#CCFFCC" fontname="helvetica"] 
+"2015.Andropogon_hirsutior"
+"2015.Andropogon_virgincus_oldfieldvariant"
+"2015.Andropogon_glaucopsis"
+"2015.Andropogon_dealbatus"
+"2015.Andropogon_capillipes"
+"2015.Andropogon"
+"2015.Andropogon_virginicus_var_decipiens"
+"2015.Andropogon_tenuispatheus"
+"2015.Andropogon_virginicus_smoothvariant"
+"2015.Andropogon_virginicus"
+"2015.Andropogon_glomeratus_var_glomeratus"
+node[shape=circle style=filled fillcolor="#FFFFFF"] 
+node[shape=note style=filled fillcolor="#FFFFCC" fontname="helvetica"] 
+"2003.Andropogon_glomeratus_var_glaucopsis"
+"2003.Andropogon_virginicus_var_decipiens"
+"2003.Andropogon_glomeratus"
+"2003.Andropogon_glomeratus_var_pumilus"
+"2003.Andropogon_virginicus_var_galucus_wetlandsvariants"
+"2003.Andropogon_virginicus_var_virginicus_smoothvariant"
+"2003.Andropogon_virginicus_var_virginicus_oldfieldvariant"
+"2003.Andropogon"
+"2003.Andropogon_glomeratus_var_glomeratus"
+"2003.Andropogon_virginicus"
+"2003.Andropogon_virginicus_var_galucus"
+"2003.Andropogon_virginicus_var_galucus_drylandsvariants"
+"2003.Andropogon_virginicus_var_virginicus"
+"2003.Andropogon_glomeratus_var_hirsutior"
+edge[style=solid color="#000000" constraint=true penwidth=1 dir=forward]
+edge[style=solid color="#000000" constraint=true penwidth=1 dir=forward]
+"2015.Andropogon_hirsutior" -> "2003.Andropogon_glomeratus_var_hirsutior" [label="{=}"]
+"2015.Andropogon_tenuispatheus" -> "2003.Andropogon_glomeratus_var_pumilus" [label="{=}"]
+"2015.Andropogon_glaucopsis" -> "2003.Andropogon_glomeratus_var_glaucopsis" [label="{=}"]
+"2015.Andropogon_glomeratus_var_glomeratus" -> "2003.Andropogon_glomeratus_var_glomeratus" [label="{=}"]
+"2015.Andropogon_dealbatus" -> "2003.Andropogon_virginicus_var_galucus_wetlandsvariants" [label="{=}"]
+"2015.Andropogon_virginicus_var_decipiens" -> "2003.Andropogon_virginicus_var_decipiens" [label="{=}"]
+"2015.Andropogon_capillipes" -> "2003.Andropogon_virginicus_var_galucus_drylandsvariants" [label="{=}"]
+"2015.Andropogon_virginicus_smoothvariant" -> "2003.Andropogon_virginicus_var_virginicus_smoothvariant" [label="{=}"]
+"2015.Andropogon_virgincus_oldfieldvariant" -> "2003.Andropogon_virginicus_var_virginicus_oldfieldvariant" [label="{=}"]
+edge[style=solid color="#000000" constraint=true penwidth=1 dir=forward]
+edge[style=solid color="#000000" constraint=true penwidth=1 dir=forward]
+"2003.Andropogon_virginicus" -> "2003.Andropogon"
+"2003.Andropogon_glomeratus_var_pumilus" -> "2003.Andropogon_glomeratus"
+"2003.Andropogon_virginicus_var_galucus_wetlandsvariants" -> "2003.Andropogon_virginicus_var_galucus"
+"2003.Andropogon_glomeratus_var_glomeratus" -> "2003.Andropogon_glomeratus"
+"2003.Andropogon_glomeratus_var_glaucopsis" -> "2003.Andropogon_glomeratus"
+"2003.Andropogon_virginicus_var_virginicus_smoothvariant" -> "2003.Andropogon_virginicus_var_virginicus"
+"2003.Andropogon_glomeratus" -> "2003.Andropogon_virginicus"
+"2003.Andropogon_virginicus_var_decipiens" -> "2003.Andropogon_virginicus"
+"2003.Andropogon_virginicus_var_virginicus" -> "2003.Andropogon_virginicus"
+"2003.Andropogon_virginicus_var_galucus_drylandsvariants" -> "2003.Andropogon_virginicus_var_galucus"
+"2003.Andropogon_virginicus_var_galucus" -> "2003.Andropogon_virginicus"
+"2003.Andropogon_glomeratus_var_hirsutior" -> "2003.Andropogon_glomeratus"
+"2003.Andropogon_virginicus_var_virginicus_oldfieldvariant" -> "2003.Andropogon_virginicus_var_virginicus"
+edge[style=solid color="#000000" constraint=true penwidth=1 dir=forward]
+edge[style=dashed color="#AA00FF" constraint=true penwidth=2 dir=both]
+edge[style=solid color="#000000" constraint=true penwidth=1 dir=forward]
+edge[style=solid color="#000000" constraint=true penwidth=1 dir=forward]
+"2015.Andropogon_dealbatus" -> "2015.Andropogon"
+"2015.Andropogon_virginicus_smoothvariant" -> "2015.Andropogon_virginicus"
+"2015.Andropogon_hirsutior" -> "2015.Andropogon"
+"2015.Andropogon_virgincus_oldfieldvariant" -> "2015.Andropogon_virginicus"
+"2015.Andropogon_virginicus" -> "2015.Andropogon"
+"2015.Andropogon_virginicus_var_decipiens" -> "2015.Andropogon_virginicus"
+"2015.Andropogon_capillipes" -> "2015.Andropogon"
+"2015.Andropogon_tenuispatheus" -> "2015.Andropogon"
+"2015.Andropogon_glomeratus_var_glomeratus" -> "2015.Andropogon"
+"2015.Andropogon_glaucopsis" -> "2015.Andropogon"
+node[shape=box] 
+{rank=source Legend [fillcolor= white margin=0 label=< 
+ <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4"> 
+<TR> <TD COLSPAN="2"><font face="Arial Black"> Nodes</font></TD> </TR> 
+<TR> 
+ <TD bgcolor="#CCFFCC" fontname="helvetica">2015</TD> 
+ <TD>11</TD> 
+ </TR> 
+<TR> 
+ <TD bgcolor="#FFFFCC" fontname="helvetica">2003</TD> 
+ <TD>14</TD> 
+ </TR> 
+<TR> <TD COLSPAN="2"><font face = "Arial Black"> Edges </font></TD> </TR> 
+<TR> 
+ <TD><font color ="#000000">default</font></TD><TD>9</TD>
+</TR>
+<TR> 
+ <TD><font color ="#000000">is_a (2003)</font></TD><TD>13</TD>
+</TR>
+<TR> 
+ <TD><font color ="#000000">is_a (2015)</font></TD><TD>10</TD>
+</TR>
+</TABLE> 
+ >] } 
+}

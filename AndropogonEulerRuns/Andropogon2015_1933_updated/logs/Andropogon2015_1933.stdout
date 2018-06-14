@@ -1,0 +1,37 @@
+##### Executing command:
+
+/Users/jessicacheng/EulerX/src-el/euler2 align Andropogon2015_1933.txt -r clingo 
+
+
+##### Euler version:
+
+master
+49e63e6a27be97ab30832180a47d214494388e15
+
+
+##### GraphViz version:
+
+dot - graphviz version 2.36.0 (20140111.2315)
+
+
+##### DLV version:
+
+DLV [build BEN/Dec 17 2012   gcc 4.2.1 (Apple Inc. build 5666) (dot 3)]
+
+usage: dlv {FRONTEND} {OPTIONS} [filename [filename [...]]]
+
+Specify -help for more detailed usage information.
+
+
+##### Running User, Host and Date:
+User:	jessicacheng
+Host:	wirelessprv-10-195-175-58.near.illinois.edu
+Date:	2018-06-14-11:28:56
+
+
+##### Euler Outputs:
+******* You are running example Andropogon2015_1933 *******
+
+Possible world 0:
+{2015.Andropogon_virginicus"<"1933.Andropogon, 2015.Andropogon_dealbatus"<"1933.Andropogon, 2015.Andropogon_dealbatus"<"1933.Andropogon_capillipes, 2015.Andropogon_glomeratus_var_glomeratus"<"1933.Andropogon, 2015.Andropogon_glomeratus_var_glomeratus"<"1933.Andropogon_glomeratus, 2015.Andropogon_glaucopsis"<"1933.Andropogon, 2015.Andropogon_glaucopsis"<"1933.Andropogon_glomeratus, 2015.Andropogon_hirsutior"<"1933.Andropogon, 2015.Andropogon_hirsutior"<"1933.Andropogon_glomeratus, 2015.Andropogon_tenuispatheus"<"1933.Andropogon, 2015.Andropogon_tenuispatheus"<"1933.Andropogon_glomeratus, 2015.Andropogon_capillipes"<"1933.Andropogon, 2015.Andropogon_capillipes"<"1933.Andropogon_capillipes, 2015.Andropogon_virginicus_smoothvariant"<"1933.Andropogon_virginicus, 2015.Andropogon_virginicus_smoothvariant"<"1933.Andropogon, 2015.Andropogon_virgincus_oldfieldvariant"<"1933.Andropogon_virginicus, 2015.Andropogon_virgincus_oldfieldvariant"<"1933.Andropogon, 2015.Andropogon_virginicus_var_decipiens"<"1933.Andropogon_virginicus, 2015.Andropogon_virginicus_var_decipiens"<"1933.Andropogon, 2015.Andropogon_virginicus"="1933.Andropogon_virginicus, 2015.Andropogon"="1933.Andropogon, 2015.Andropogon">"1933.Andropogon_virginicus, 2015.Andropogon">"1933.Andropogon_glomeratus, 2015.Andropogon">"1933.Andropogon_capillipes, 2015.Andropogon_virginicus"!"1933.Andropogon_capillipes, 2015.Andropogon_virginicus"!"1933.Andropogon_glomeratus, 2015.Andropogon_dealbatus"!"1933.Andropogon_virginicus, 2015.Andropogon_dealbatus"!"1933.Andropogon_glomeratus, 2015.Andropogon_glomeratus_var_glomeratus"!"1933.Andropogon_virginicus, 2015.Andropogon_glomeratus_var_glomeratus"!"1933.Andropogon_capillipes, 2015.Andropogon_glaucopsis"!"1933.Andropogon_virginicus, 2015.Andropogon_glaucopsis"!"1933.Andropogon_capillipes, 2015.Andropogon_hirsutior"!"1933.Andropogon_virginicus, 2015.Andropogon_hirsutior"!"1933.Andropogon_capillipes, 2015.Andropogon_tenuispatheus"!"1933.Andropogon_virginicus, 2015.Andropogon_tenuispatheus"!"1933.Andropogon_capillipes, 2015.Andropogon_capillipes"!"1933.Andropogon_virginicus, 2015.Andropogon_capillipes"!"1933.Andropogon_glomeratus, 2015.Andropogon_virginicus_smoothvariant"!"1933.Andropogon_glomeratus, 2015.Andropogon_virginicus_smoothvariant"!"1933.Andropogon_capillipes, 2015.Andropogon_virgincus_oldfieldvariant"!"1933.Andropogon_glomeratus, 2015.Andropogon_virgincus_oldfieldvariant"!"1933.Andropogon_capillipes, 2015.Andropogon_virginicus_var_decipiens"!"1933.Andropogon_glomeratus, 2015.Andropogon_virginicus_var_decipiens"!"1933.Andropogon_capillipes}
+

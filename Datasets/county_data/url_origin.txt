@@ -1,0 +1,5 @@
+National Weather Service
+U.S. Counties dataset
+
+Version: 10 July 2018
+Link: https://www.weather.gov/source/gis/Shapefiles/County/c_10jl18.zip

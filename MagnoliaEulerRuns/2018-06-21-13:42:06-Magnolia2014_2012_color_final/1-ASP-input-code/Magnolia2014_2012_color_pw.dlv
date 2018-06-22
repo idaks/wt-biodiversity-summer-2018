@@ -1,0 +1,779 @@
+%%% Max Number of Euler Regions
+#maxint=109.
+
+%%% Euler Regions
+r(M):- #int(M),M>=1,M<=#maxint.
+
+%%% Concepts
+tax(t2014,0).
+concept2(A, B) :- concept(A,B,_).
+concept(c2014_Magnolia_fraseri,0,0).
+concept(c2014_Magnolia_pyramidata,0,1).
+concept(c2014_Magnolia_tripetala,0,2).
+concept(c2014_Magnolia_virginiana_var_australis,0,3).
+concept(c2014_Magnolia_acuminata_var_subcordata,0,4).
+concept2(c2014_Magnolia_Clade2,0).
+concept2(c2014_Magnolia,0).
+concept(c2014_Magnolia_virginiana_var_virginiana,0,5).
+concept(c2014_Magnolia_acuminata_var_acuminata,0,6).
+concept(c2014_Magnolia_macrophylla,0,7).
+concept(c2014_Magnolia_grandiflora,0,8).
+concept2(c2014_Magnolia_Clade1,0).
+concept(c2014_Magnolia_ashei,0,9).
+tax(t2012,1).
+concept2(A, B) :- concept(A,B,_).
+concept(c2012_Metamagnolia_macrophylla_ssp_ashei_Weatherby_Spongberg,1,0).
+concept(c2012_Yulania_acuminata,1,1).
+concept2(c2012_Paramagnolia_fraseri,1).
+concept(c2012_Magnolia_Clade3,1,2).
+concept2(c2012_Magnolia_Clade2,1).
+concept2(c2012_Magnolia,1).
+concept(c2012_Metamagnolia_macrophylla_ssp_macrophylla,1,3).
+concept(c2012_Houpoea_tripetala,1,4).
+concept(c2012_Magnolia_grandiflora,1,5).
+concept(c2012_Paramagnolia_fraseri_var_fraseri,1,6).
+concept(c2012_Paramagnolia_fraseri_var_pyramidata,1,7).
+concept(c2012_Magnolia_virginiana,1,8).
+concept2(c2012_Magnolia_Clade1,1).
+concept2(c2012_Metamagnolia_macrophylla,1).
+
+%%% Euler Bit
+bit(M, 0, V):-r(M),M1=M/1, #mod(M1,11,V).
+bit(M, 1, V):-r(M),M1=M/11, #mod(M1,10,V).
+
+
+%%% Meaning of regions
+in(X, M) :- r(M),concept(X,T,N),N1=N+1,bit(M,T,N1).
+out(X, M) :- r(M),concept(X,T,N),N1=N+1,not bit(M,T,N1).
+in(X, M) :- r(M),concept2(X,_),not out(X, M).
+out(X, M) :- out3(X, M, _), ix.
+irs(M) :- in(X, M), out(X, M), r(M), concept2(X,_).
+
+%%% Constraints of regions.
+irs(X) :- ir(X, _).
+vrs(X) :- vr(X, _).
+vr(X, X) :- not irs(X), r(X).
+ir(X, X) :- not vrs(X), r(X), pw.
+ie(prod(A,B)) :- vr(X, A), ir(X, B), ix.
+:- vrs(X), irs(X), pw.
+
+%%% Inconsistency Explanation.
+ie(s(R, A, Y)) :- pie(R, A, Y), not cc(R, Y), ix.
+cc(R, Y) :- c(R, _, Y), ix.
+
+%%% Parent-Child relations
+%% ISA
+% c2014_Magnolia_Clade1 isa c2014_Magnolia
+ir(X, r0) :- in(c2014_Magnolia_Clade1, X), out(c2014_Magnolia, X), pw.
+ir(X, prod(r0,R)) :- in(c2014_Magnolia_Clade1,X), out3(c2014_Magnolia, X, R), ix.
+:- #count {X : vrs(X), in(c2014_Magnolia_Clade1,X), in(c2014_Magnolia,X)} <= 0, pw.
+pie(r0, A, 1) :- ir(X, A), in(c2014_Magnolia_Clade1, X), in(c2014_Magnolia, X), ix.
+c(r0, A, 1) :- vr(X, A), in(c2014_Magnolia_Clade1, X), in(c2014_Magnolia, X), ix.
+
+% c2014_Magnolia_Clade2 isa c2014_Magnolia
+ir(X, r1) :- in(c2014_Magnolia_Clade2, X), out(c2014_Magnolia, X), pw.
+ir(X, prod(r1,R)) :- in(c2014_Magnolia_Clade2,X), out3(c2014_Magnolia, X, R), ix.
+:- #count {X : vrs(X), in(c2014_Magnolia_Clade2,X), in(c2014_Magnolia,X)} <= 0, pw.
+pie(r1, A, 1) :- ir(X, A), in(c2014_Magnolia_Clade2, X), in(c2014_Magnolia, X), ix.
+c(r1, A, 1) :- vr(X, A), in(c2014_Magnolia_Clade2, X), in(c2014_Magnolia, X), ix.
+
+%% coverage
+out3(c2014_Magnolia, X, r2) :- out(c2014_Magnolia_Clade1, X), out(c2014_Magnolia_Clade2, X), ix.
+out(c2014_Magnolia, X) :- out(c2014_Magnolia_Clade1, X), out(c2014_Magnolia_Clade2, X), pw.
+%% sibling disjointness
+% c2014_Magnolia_Clade1 ! c2014_Magnolia_Clade2
+ir(X, r3) :- in(c2014_Magnolia_Clade1, X), in(c2014_Magnolia_Clade2, X).
+:- #count {X : vrs(X), in(c2014_Magnolia_Clade1,X), out(c2014_Magnolia_Clade2,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2014_Magnolia_Clade1,X), in(c2014_Magnolia_Clade2,X)} <= 0, pw.
+pie(r3, A, 1) :- ir(X, A), in(c2014_Magnolia_Clade1, X), out(c2014_Magnolia_Clade2, X), ix.
+c(r3, A, 1) :- vr(X, A), in(c2014_Magnolia_Clade1, X), out(c2014_Magnolia_Clade2, X), ix.
+pie(r3, A, 2) :- ir(X, A), out(c2014_Magnolia_Clade1, X), in(c2014_Magnolia_Clade2, X), ix.
+c(r3, A, 2) :- vr(X, A), out(c2014_Magnolia_Clade1, X), in(c2014_Magnolia_Clade2, X), ix.
+
+%% ISA
+% c2014_Magnolia_acuminata_var_acuminata isa c2014_Magnolia_Clade1
+ir(X, r4) :- in(c2014_Magnolia_acuminata_var_acuminata, X), out(c2014_Magnolia_Clade1, X), pw.
+ir(X, prod(r4,R)) :- in(c2014_Magnolia_acuminata_var_acuminata,X), out3(c2014_Magnolia_Clade1, X, R), ix.
+:- #count {X : vrs(X), in(c2014_Magnolia_acuminata_var_acuminata,X), in(c2014_Magnolia_Clade1,X)} <= 0, pw.
+pie(r4, A, 1) :- ir(X, A), in(c2014_Magnolia_acuminata_var_acuminata, X), in(c2014_Magnolia_Clade1, X), ix.
+c(r4, A, 1) :- vr(X, A), in(c2014_Magnolia_acuminata_var_acuminata, X), in(c2014_Magnolia_Clade1, X), ix.
+
+% c2014_Magnolia_acuminata_var_subcordata isa c2014_Magnolia_Clade1
+ir(X, r5) :- in(c2014_Magnolia_acuminata_var_subcordata, X), out(c2014_Magnolia_Clade1, X), pw.
+ir(X, prod(r5,R)) :- in(c2014_Magnolia_acuminata_var_subcordata,X), out3(c2014_Magnolia_Clade1, X, R), ix.
+:- #count {X : vrs(X), in(c2014_Magnolia_acuminata_var_subcordata,X), in(c2014_Magnolia_Clade1,X)} <= 0, pw.
+pie(r5, A, 1) :- ir(X, A), in(c2014_Magnolia_acuminata_var_subcordata, X), in(c2014_Magnolia_Clade1, X), ix.
+c(r5, A, 1) :- vr(X, A), in(c2014_Magnolia_acuminata_var_subcordata, X), in(c2014_Magnolia_Clade1, X), ix.
+
+% c2014_Magnolia_virginiana_var_australis isa c2014_Magnolia_Clade1
+ir(X, r6) :- in(c2014_Magnolia_virginiana_var_australis, X), out(c2014_Magnolia_Clade1, X), pw.
+ir(X, prod(r6,R)) :- in(c2014_Magnolia_virginiana_var_australis,X), out3(c2014_Magnolia_Clade1, X, R), ix.
+:- #count {X : vrs(X), in(c2014_Magnolia_virginiana_var_australis,X), in(c2014_Magnolia_Clade1,X)} <= 0, pw.
+pie(r6, A, 1) :- ir(X, A), in(c2014_Magnolia_virginiana_var_australis, X), in(c2014_Magnolia_Clade1, X), ix.
+c(r6, A, 1) :- vr(X, A), in(c2014_Magnolia_virginiana_var_australis, X), in(c2014_Magnolia_Clade1, X), ix.
+
+% c2014_Magnolia_virginiana_var_virginiana isa c2014_Magnolia_Clade1
+ir(X, r7) :- in(c2014_Magnolia_virginiana_var_virginiana, X), out(c2014_Magnolia_Clade1, X), pw.
+ir(X, prod(r7,R)) :- in(c2014_Magnolia_virginiana_var_virginiana,X), out3(c2014_Magnolia_Clade1, X, R), ix.
+:- #count {X : vrs(X), in(c2014_Magnolia_virginiana_var_virginiana,X), in(c2014_Magnolia_Clade1,X)} <= 0, pw.
+pie(r7, A, 1) :- ir(X, A), in(c2014_Magnolia_virginiana_var_virginiana, X), in(c2014_Magnolia_Clade1, X), ix.
+c(r7, A, 1) :- vr(X, A), in(c2014_Magnolia_virginiana_var_virginiana, X), in(c2014_Magnolia_Clade1, X), ix.
+
+%% coverage
+out3(c2014_Magnolia_Clade1, X, r8) :- out(c2014_Magnolia_acuminata_var_acuminata, X), out(c2014_Magnolia_acuminata_var_subcordata, X), out(c2014_Magnolia_virginiana_var_australis, X), out(c2014_Magnolia_virginiana_var_virginiana, X), ix.
+out(c2014_Magnolia_Clade1, X) :- out(c2014_Magnolia_acuminata_var_acuminata, X), out(c2014_Magnolia_acuminata_var_subcordata, X), out(c2014_Magnolia_virginiana_var_australis, X), out(c2014_Magnolia_virginiana_var_virginiana, X), pw.
+%% sibling disjointness
+% c2014_Magnolia_acuminata_var_acuminata ! c2014_Magnolia_acuminata_var_subcordata
+ir(X, r9) :- in(c2014_Magnolia_acuminata_var_acuminata, X), in(c2014_Magnolia_acuminata_var_subcordata, X).
+:- #count {X : vrs(X), in(c2014_Magnolia_acuminata_var_acuminata,X), out(c2014_Magnolia_acuminata_var_subcordata,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2014_Magnolia_acuminata_var_acuminata,X), in(c2014_Magnolia_acuminata_var_subcordata,X)} <= 0, pw.
+pie(r9, A, 1) :- ir(X, A), in(c2014_Magnolia_acuminata_var_acuminata, X), out(c2014_Magnolia_acuminata_var_subcordata, X), ix.
+c(r9, A, 1) :- vr(X, A), in(c2014_Magnolia_acuminata_var_acuminata, X), out(c2014_Magnolia_acuminata_var_subcordata, X), ix.
+pie(r9, A, 2) :- ir(X, A), out(c2014_Magnolia_acuminata_var_acuminata, X), in(c2014_Magnolia_acuminata_var_subcordata, X), ix.
+c(r9, A, 2) :- vr(X, A), out(c2014_Magnolia_acuminata_var_acuminata, X), in(c2014_Magnolia_acuminata_var_subcordata, X), ix.
+
+% c2014_Magnolia_acuminata_var_acuminata ! c2014_Magnolia_virginiana_var_australis
+ir(X, r10) :- in(c2014_Magnolia_acuminata_var_acuminata, X), in(c2014_Magnolia_virginiana_var_australis, X).
+:- #count {X : vrs(X), in(c2014_Magnolia_acuminata_var_acuminata,X), out(c2014_Magnolia_virginiana_var_australis,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2014_Magnolia_acuminata_var_acuminata,X), in(c2014_Magnolia_virginiana_var_australis,X)} <= 0, pw.
+pie(r10, A, 1) :- ir(X, A), in(c2014_Magnolia_acuminata_var_acuminata, X), out(c2014_Magnolia_virginiana_var_australis, X), ix.
+c(r10, A, 1) :- vr(X, A), in(c2014_Magnolia_acuminata_var_acuminata, X), out(c2014_Magnolia_virginiana_var_australis, X), ix.
+pie(r10, A, 2) :- ir(X, A), out(c2014_Magnolia_acuminata_var_acuminata, X), in(c2014_Magnolia_virginiana_var_australis, X), ix.
+c(r10, A, 2) :- vr(X, A), out(c2014_Magnolia_acuminata_var_acuminata, X), in(c2014_Magnolia_virginiana_var_australis, X), ix.
+
+% c2014_Magnolia_acuminata_var_acuminata ! c2014_Magnolia_virginiana_var_virginiana
+ir(X, r11) :- in(c2014_Magnolia_acuminata_var_acuminata, X), in(c2014_Magnolia_virginiana_var_virginiana, X).
+:- #count {X : vrs(X), in(c2014_Magnolia_acuminata_var_acuminata,X), out(c2014_Magnolia_virginiana_var_virginiana,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2014_Magnolia_acuminata_var_acuminata,X), in(c2014_Magnolia_virginiana_var_virginiana,X)} <= 0, pw.
+pie(r11, A, 1) :- ir(X, A), in(c2014_Magnolia_acuminata_var_acuminata, X), out(c2014_Magnolia_virginiana_var_virginiana, X), ix.
+c(r11, A, 1) :- vr(X, A), in(c2014_Magnolia_acuminata_var_acuminata, X), out(c2014_Magnolia_virginiana_var_virginiana, X), ix.
+pie(r11, A, 2) :- ir(X, A), out(c2014_Magnolia_acuminata_var_acuminata, X), in(c2014_Magnolia_virginiana_var_virginiana, X), ix.
+c(r11, A, 2) :- vr(X, A), out(c2014_Magnolia_acuminata_var_acuminata, X), in(c2014_Magnolia_virginiana_var_virginiana, X), ix.
+
+% c2014_Magnolia_acuminata_var_subcordata ! c2014_Magnolia_virginiana_var_australis
+ir(X, r12) :- in(c2014_Magnolia_acuminata_var_subcordata, X), in(c2014_Magnolia_virginiana_var_australis, X).
+:- #count {X : vrs(X), in(c2014_Magnolia_acuminata_var_subcordata,X), out(c2014_Magnolia_virginiana_var_australis,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2014_Magnolia_acuminata_var_subcordata,X), in(c2014_Magnolia_virginiana_var_australis,X)} <= 0, pw.
+pie(r12, A, 1) :- ir(X, A), in(c2014_Magnolia_acuminata_var_subcordata, X), out(c2014_Magnolia_virginiana_var_australis, X), ix.
+c(r12, A, 1) :- vr(X, A), in(c2014_Magnolia_acuminata_var_subcordata, X), out(c2014_Magnolia_virginiana_var_australis, X), ix.
+pie(r12, A, 2) :- ir(X, A), out(c2014_Magnolia_acuminata_var_subcordata, X), in(c2014_Magnolia_virginiana_var_australis, X), ix.
+c(r12, A, 2) :- vr(X, A), out(c2014_Magnolia_acuminata_var_subcordata, X), in(c2014_Magnolia_virginiana_var_australis, X), ix.
+
+% c2014_Magnolia_acuminata_var_subcordata ! c2014_Magnolia_virginiana_var_virginiana
+ir(X, r13) :- in(c2014_Magnolia_acuminata_var_subcordata, X), in(c2014_Magnolia_virginiana_var_virginiana, X).
+:- #count {X : vrs(X), in(c2014_Magnolia_acuminata_var_subcordata,X), out(c2014_Magnolia_virginiana_var_virginiana,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2014_Magnolia_acuminata_var_subcordata,X), in(c2014_Magnolia_virginiana_var_virginiana,X)} <= 0, pw.
+pie(r13, A, 1) :- ir(X, A), in(c2014_Magnolia_acuminata_var_subcordata, X), out(c2014_Magnolia_virginiana_var_virginiana, X), ix.
+c(r13, A, 1) :- vr(X, A), in(c2014_Magnolia_acuminata_var_subcordata, X), out(c2014_Magnolia_virginiana_var_virginiana, X), ix.
+pie(r13, A, 2) :- ir(X, A), out(c2014_Magnolia_acuminata_var_subcordata, X), in(c2014_Magnolia_virginiana_var_virginiana, X), ix.
+c(r13, A, 2) :- vr(X, A), out(c2014_Magnolia_acuminata_var_subcordata, X), in(c2014_Magnolia_virginiana_var_virginiana, X), ix.
+
+% c2014_Magnolia_virginiana_var_australis ! c2014_Magnolia_virginiana_var_virginiana
+ir(X, r14) :- in(c2014_Magnolia_virginiana_var_australis, X), in(c2014_Magnolia_virginiana_var_virginiana, X).
+:- #count {X : vrs(X), in(c2014_Magnolia_virginiana_var_australis,X), out(c2014_Magnolia_virginiana_var_virginiana,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2014_Magnolia_virginiana_var_australis,X), in(c2014_Magnolia_virginiana_var_virginiana,X)} <= 0, pw.
+pie(r14, A, 1) :- ir(X, A), in(c2014_Magnolia_virginiana_var_australis, X), out(c2014_Magnolia_virginiana_var_virginiana, X), ix.
+c(r14, A, 1) :- vr(X, A), in(c2014_Magnolia_virginiana_var_australis, X), out(c2014_Magnolia_virginiana_var_virginiana, X), ix.
+pie(r14, A, 2) :- ir(X, A), out(c2014_Magnolia_virginiana_var_australis, X), in(c2014_Magnolia_virginiana_var_virginiana, X), ix.
+c(r14, A, 2) :- vr(X, A), out(c2014_Magnolia_virginiana_var_australis, X), in(c2014_Magnolia_virginiana_var_virginiana, X), ix.
+
+%% ISA
+% c2014_Magnolia_grandiflora isa c2014_Magnolia_Clade2
+ir(X, r15) :- in(c2014_Magnolia_grandiflora, X), out(c2014_Magnolia_Clade2, X), pw.
+ir(X, prod(r15,R)) :- in(c2014_Magnolia_grandiflora,X), out3(c2014_Magnolia_Clade2, X, R), ix.
+:- #count {X : vrs(X), in(c2014_Magnolia_grandiflora,X), in(c2014_Magnolia_Clade2,X)} <= 0, pw.
+pie(r15, A, 1) :- ir(X, A), in(c2014_Magnolia_grandiflora, X), in(c2014_Magnolia_Clade2, X), ix.
+c(r15, A, 1) :- vr(X, A), in(c2014_Magnolia_grandiflora, X), in(c2014_Magnolia_Clade2, X), ix.
+
+% c2014_Magnolia_ashei isa c2014_Magnolia_Clade2
+ir(X, r16) :- in(c2014_Magnolia_ashei, X), out(c2014_Magnolia_Clade2, X), pw.
+ir(X, prod(r16,R)) :- in(c2014_Magnolia_ashei,X), out3(c2014_Magnolia_Clade2, X, R), ix.
+:- #count {X : vrs(X), in(c2014_Magnolia_ashei,X), in(c2014_Magnolia_Clade2,X)} <= 0, pw.
+pie(r16, A, 1) :- ir(X, A), in(c2014_Magnolia_ashei, X), in(c2014_Magnolia_Clade2, X), ix.
+c(r16, A, 1) :- vr(X, A), in(c2014_Magnolia_ashei, X), in(c2014_Magnolia_Clade2, X), ix.
+
+% c2014_Magnolia_macrophylla isa c2014_Magnolia_Clade2
+ir(X, r17) :- in(c2014_Magnolia_macrophylla, X), out(c2014_Magnolia_Clade2, X), pw.
+ir(X, prod(r17,R)) :- in(c2014_Magnolia_macrophylla,X), out3(c2014_Magnolia_Clade2, X, R), ix.
+:- #count {X : vrs(X), in(c2014_Magnolia_macrophylla,X), in(c2014_Magnolia_Clade2,X)} <= 0, pw.
+pie(r17, A, 1) :- ir(X, A), in(c2014_Magnolia_macrophylla, X), in(c2014_Magnolia_Clade2, X), ix.
+c(r17, A, 1) :- vr(X, A), in(c2014_Magnolia_macrophylla, X), in(c2014_Magnolia_Clade2, X), ix.
+
+% c2014_Magnolia_fraseri isa c2014_Magnolia_Clade2
+ir(X, r18) :- in(c2014_Magnolia_fraseri, X), out(c2014_Magnolia_Clade2, X), pw.
+ir(X, prod(r18,R)) :- in(c2014_Magnolia_fraseri,X), out3(c2014_Magnolia_Clade2, X, R), ix.
+:- #count {X : vrs(X), in(c2014_Magnolia_fraseri,X), in(c2014_Magnolia_Clade2,X)} <= 0, pw.
+pie(r18, A, 1) :- ir(X, A), in(c2014_Magnolia_fraseri, X), in(c2014_Magnolia_Clade2, X), ix.
+c(r18, A, 1) :- vr(X, A), in(c2014_Magnolia_fraseri, X), in(c2014_Magnolia_Clade2, X), ix.
+
+% c2014_Magnolia_pyramidata isa c2014_Magnolia_Clade2
+ir(X, r19) :- in(c2014_Magnolia_pyramidata, X), out(c2014_Magnolia_Clade2, X), pw.
+ir(X, prod(r19,R)) :- in(c2014_Magnolia_pyramidata,X), out3(c2014_Magnolia_Clade2, X, R), ix.
+:- #count {X : vrs(X), in(c2014_Magnolia_pyramidata,X), in(c2014_Magnolia_Clade2,X)} <= 0, pw.
+pie(r19, A, 1) :- ir(X, A), in(c2014_Magnolia_pyramidata, X), in(c2014_Magnolia_Clade2, X), ix.
+c(r19, A, 1) :- vr(X, A), in(c2014_Magnolia_pyramidata, X), in(c2014_Magnolia_Clade2, X), ix.
+
+% c2014_Magnolia_tripetala isa c2014_Magnolia_Clade2
+ir(X, r20) :- in(c2014_Magnolia_tripetala, X), out(c2014_Magnolia_Clade2, X), pw.
+ir(X, prod(r20,R)) :- in(c2014_Magnolia_tripetala,X), out3(c2014_Magnolia_Clade2, X, R), ix.
+:- #count {X : vrs(X), in(c2014_Magnolia_tripetala,X), in(c2014_Magnolia_Clade2,X)} <= 0, pw.
+pie(r20, A, 1) :- ir(X, A), in(c2014_Magnolia_tripetala, X), in(c2014_Magnolia_Clade2, X), ix.
+c(r20, A, 1) :- vr(X, A), in(c2014_Magnolia_tripetala, X), in(c2014_Magnolia_Clade2, X), ix.
+
+%% coverage
+out3(c2014_Magnolia_Clade2, X, r21) :- out(c2014_Magnolia_grandiflora, X), out(c2014_Magnolia_ashei, X), out(c2014_Magnolia_macrophylla, X), out(c2014_Magnolia_fraseri, X), out(c2014_Magnolia_pyramidata, X), out(c2014_Magnolia_tripetala, X), ix.
+out(c2014_Magnolia_Clade2, X) :- out(c2014_Magnolia_grandiflora, X), out(c2014_Magnolia_ashei, X), out(c2014_Magnolia_macrophylla, X), out(c2014_Magnolia_fraseri, X), out(c2014_Magnolia_pyramidata, X), out(c2014_Magnolia_tripetala, X), pw.
+%% sibling disjointness
+% c2014_Magnolia_grandiflora ! c2014_Magnolia_ashei
+ir(X, r22) :- in(c2014_Magnolia_grandiflora, X), in(c2014_Magnolia_ashei, X).
+:- #count {X : vrs(X), in(c2014_Magnolia_grandiflora,X), out(c2014_Magnolia_ashei,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2014_Magnolia_grandiflora,X), in(c2014_Magnolia_ashei,X)} <= 0, pw.
+pie(r22, A, 1) :- ir(X, A), in(c2014_Magnolia_grandiflora, X), out(c2014_Magnolia_ashei, X), ix.
+c(r22, A, 1) :- vr(X, A), in(c2014_Magnolia_grandiflora, X), out(c2014_Magnolia_ashei, X), ix.
+pie(r22, A, 2) :- ir(X, A), out(c2014_Magnolia_grandiflora, X), in(c2014_Magnolia_ashei, X), ix.
+c(r22, A, 2) :- vr(X, A), out(c2014_Magnolia_grandiflora, X), in(c2014_Magnolia_ashei, X), ix.
+
+% c2014_Magnolia_grandiflora ! c2014_Magnolia_macrophylla
+ir(X, r23) :- in(c2014_Magnolia_grandiflora, X), in(c2014_Magnolia_macrophylla, X).
+:- #count {X : vrs(X), in(c2014_Magnolia_grandiflora,X), out(c2014_Magnolia_macrophylla,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2014_Magnolia_grandiflora,X), in(c2014_Magnolia_macrophylla,X)} <= 0, pw.
+pie(r23, A, 1) :- ir(X, A), in(c2014_Magnolia_grandiflora, X), out(c2014_Magnolia_macrophylla, X), ix.
+c(r23, A, 1) :- vr(X, A), in(c2014_Magnolia_grandiflora, X), out(c2014_Magnolia_macrophylla, X), ix.
+pie(r23, A, 2) :- ir(X, A), out(c2014_Magnolia_grandiflora, X), in(c2014_Magnolia_macrophylla, X), ix.
+c(r23, A, 2) :- vr(X, A), out(c2014_Magnolia_grandiflora, X), in(c2014_Magnolia_macrophylla, X), ix.
+
+% c2014_Magnolia_grandiflora ! c2014_Magnolia_fraseri
+ir(X, r24) :- in(c2014_Magnolia_grandiflora, X), in(c2014_Magnolia_fraseri, X).
+:- #count {X : vrs(X), in(c2014_Magnolia_grandiflora,X), out(c2014_Magnolia_fraseri,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2014_Magnolia_grandiflora,X), in(c2014_Magnolia_fraseri,X)} <= 0, pw.
+pie(r24, A, 1) :- ir(X, A), in(c2014_Magnolia_grandiflora, X), out(c2014_Magnolia_fraseri, X), ix.
+c(r24, A, 1) :- vr(X, A), in(c2014_Magnolia_grandiflora, X), out(c2014_Magnolia_fraseri, X), ix.
+pie(r24, A, 2) :- ir(X, A), out(c2014_Magnolia_grandiflora, X), in(c2014_Magnolia_fraseri, X), ix.
+c(r24, A, 2) :- vr(X, A), out(c2014_Magnolia_grandiflora, X), in(c2014_Magnolia_fraseri, X), ix.
+
+% c2014_Magnolia_grandiflora ! c2014_Magnolia_pyramidata
+ir(X, r25) :- in(c2014_Magnolia_grandiflora, X), in(c2014_Magnolia_pyramidata, X).
+:- #count {X : vrs(X), in(c2014_Magnolia_grandiflora,X), out(c2014_Magnolia_pyramidata,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2014_Magnolia_grandiflora,X), in(c2014_Magnolia_pyramidata,X)} <= 0, pw.
+pie(r25, A, 1) :- ir(X, A), in(c2014_Magnolia_grandiflora, X), out(c2014_Magnolia_pyramidata, X), ix.
+c(r25, A, 1) :- vr(X, A), in(c2014_Magnolia_grandiflora, X), out(c2014_Magnolia_pyramidata, X), ix.
+pie(r25, A, 2) :- ir(X, A), out(c2014_Magnolia_grandiflora, X), in(c2014_Magnolia_pyramidata, X), ix.
+c(r25, A, 2) :- vr(X, A), out(c2014_Magnolia_grandiflora, X), in(c2014_Magnolia_pyramidata, X), ix.
+
+% c2014_Magnolia_grandiflora ! c2014_Magnolia_tripetala
+ir(X, r26) :- in(c2014_Magnolia_grandiflora, X), in(c2014_Magnolia_tripetala, X).
+:- #count {X : vrs(X), in(c2014_Magnolia_grandiflora,X), out(c2014_Magnolia_tripetala,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2014_Magnolia_grandiflora,X), in(c2014_Magnolia_tripetala,X)} <= 0, pw.
+pie(r26, A, 1) :- ir(X, A), in(c2014_Magnolia_grandiflora, X), out(c2014_Magnolia_tripetala, X), ix.
+c(r26, A, 1) :- vr(X, A), in(c2014_Magnolia_grandiflora, X), out(c2014_Magnolia_tripetala, X), ix.
+pie(r26, A, 2) :- ir(X, A), out(c2014_Magnolia_grandiflora, X), in(c2014_Magnolia_tripetala, X), ix.
+c(r26, A, 2) :- vr(X, A), out(c2014_Magnolia_grandiflora, X), in(c2014_Magnolia_tripetala, X), ix.
+
+% c2014_Magnolia_ashei ! c2014_Magnolia_macrophylla
+ir(X, r27) :- in(c2014_Magnolia_ashei, X), in(c2014_Magnolia_macrophylla, X).
+:- #count {X : vrs(X), in(c2014_Magnolia_ashei,X), out(c2014_Magnolia_macrophylla,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2014_Magnolia_ashei,X), in(c2014_Magnolia_macrophylla,X)} <= 0, pw.
+pie(r27, A, 1) :- ir(X, A), in(c2014_Magnolia_ashei, X), out(c2014_Magnolia_macrophylla, X), ix.
+c(r27, A, 1) :- vr(X, A), in(c2014_Magnolia_ashei, X), out(c2014_Magnolia_macrophylla, X), ix.
+pie(r27, A, 2) :- ir(X, A), out(c2014_Magnolia_ashei, X), in(c2014_Magnolia_macrophylla, X), ix.
+c(r27, A, 2) :- vr(X, A), out(c2014_Magnolia_ashei, X), in(c2014_Magnolia_macrophylla, X), ix.
+
+% c2014_Magnolia_ashei ! c2014_Magnolia_fraseri
+ir(X, r28) :- in(c2014_Magnolia_ashei, X), in(c2014_Magnolia_fraseri, X).
+:- #count {X : vrs(X), in(c2014_Magnolia_ashei,X), out(c2014_Magnolia_fraseri,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2014_Magnolia_ashei,X), in(c2014_Magnolia_fraseri,X)} <= 0, pw.
+pie(r28, A, 1) :- ir(X, A), in(c2014_Magnolia_ashei, X), out(c2014_Magnolia_fraseri, X), ix.
+c(r28, A, 1) :- vr(X, A), in(c2014_Magnolia_ashei, X), out(c2014_Magnolia_fraseri, X), ix.
+pie(r28, A, 2) :- ir(X, A), out(c2014_Magnolia_ashei, X), in(c2014_Magnolia_fraseri, X), ix.
+c(r28, A, 2) :- vr(X, A), out(c2014_Magnolia_ashei, X), in(c2014_Magnolia_fraseri, X), ix.
+
+% c2014_Magnolia_ashei ! c2014_Magnolia_pyramidata
+ir(X, r29) :- in(c2014_Magnolia_ashei, X), in(c2014_Magnolia_pyramidata, X).
+:- #count {X : vrs(X), in(c2014_Magnolia_ashei,X), out(c2014_Magnolia_pyramidata,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2014_Magnolia_ashei,X), in(c2014_Magnolia_pyramidata,X)} <= 0, pw.
+pie(r29, A, 1) :- ir(X, A), in(c2014_Magnolia_ashei, X), out(c2014_Magnolia_pyramidata, X), ix.
+c(r29, A, 1) :- vr(X, A), in(c2014_Magnolia_ashei, X), out(c2014_Magnolia_pyramidata, X), ix.
+pie(r29, A, 2) :- ir(X, A), out(c2014_Magnolia_ashei, X), in(c2014_Magnolia_pyramidata, X), ix.
+c(r29, A, 2) :- vr(X, A), out(c2014_Magnolia_ashei, X), in(c2014_Magnolia_pyramidata, X), ix.
+
+% c2014_Magnolia_ashei ! c2014_Magnolia_tripetala
+ir(X, r30) :- in(c2014_Magnolia_ashei, X), in(c2014_Magnolia_tripetala, X).
+:- #count {X : vrs(X), in(c2014_Magnolia_ashei,X), out(c2014_Magnolia_tripetala,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2014_Magnolia_ashei,X), in(c2014_Magnolia_tripetala,X)} <= 0, pw.
+pie(r30, A, 1) :- ir(X, A), in(c2014_Magnolia_ashei, X), out(c2014_Magnolia_tripetala, X), ix.
+c(r30, A, 1) :- vr(X, A), in(c2014_Magnolia_ashei, X), out(c2014_Magnolia_tripetala, X), ix.
+pie(r30, A, 2) :- ir(X, A), out(c2014_Magnolia_ashei, X), in(c2014_Magnolia_tripetala, X), ix.
+c(r30, A, 2) :- vr(X, A), out(c2014_Magnolia_ashei, X), in(c2014_Magnolia_tripetala, X), ix.
+
+% c2014_Magnolia_macrophylla ! c2014_Magnolia_fraseri
+ir(X, r31) :- in(c2014_Magnolia_macrophylla, X), in(c2014_Magnolia_fraseri, X).
+:- #count {X : vrs(X), in(c2014_Magnolia_macrophylla,X), out(c2014_Magnolia_fraseri,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2014_Magnolia_macrophylla,X), in(c2014_Magnolia_fraseri,X)} <= 0, pw.
+pie(r31, A, 1) :- ir(X, A), in(c2014_Magnolia_macrophylla, X), out(c2014_Magnolia_fraseri, X), ix.
+c(r31, A, 1) :- vr(X, A), in(c2014_Magnolia_macrophylla, X), out(c2014_Magnolia_fraseri, X), ix.
+pie(r31, A, 2) :- ir(X, A), out(c2014_Magnolia_macrophylla, X), in(c2014_Magnolia_fraseri, X), ix.
+c(r31, A, 2) :- vr(X, A), out(c2014_Magnolia_macrophylla, X), in(c2014_Magnolia_fraseri, X), ix.
+
+% c2014_Magnolia_macrophylla ! c2014_Magnolia_pyramidata
+ir(X, r32) :- in(c2014_Magnolia_macrophylla, X), in(c2014_Magnolia_pyramidata, X).
+:- #count {X : vrs(X), in(c2014_Magnolia_macrophylla,X), out(c2014_Magnolia_pyramidata,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2014_Magnolia_macrophylla,X), in(c2014_Magnolia_pyramidata,X)} <= 0, pw.
+pie(r32, A, 1) :- ir(X, A), in(c2014_Magnolia_macrophylla, X), out(c2014_Magnolia_pyramidata, X), ix.
+c(r32, A, 1) :- vr(X, A), in(c2014_Magnolia_macrophylla, X), out(c2014_Magnolia_pyramidata, X), ix.
+pie(r32, A, 2) :- ir(X, A), out(c2014_Magnolia_macrophylla, X), in(c2014_Magnolia_pyramidata, X), ix.
+c(r32, A, 2) :- vr(X, A), out(c2014_Magnolia_macrophylla, X), in(c2014_Magnolia_pyramidata, X), ix.
+
+% c2014_Magnolia_macrophylla ! c2014_Magnolia_tripetala
+ir(X, r33) :- in(c2014_Magnolia_macrophylla, X), in(c2014_Magnolia_tripetala, X).
+:- #count {X : vrs(X), in(c2014_Magnolia_macrophylla,X), out(c2014_Magnolia_tripetala,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2014_Magnolia_macrophylla,X), in(c2014_Magnolia_tripetala,X)} <= 0, pw.
+pie(r33, A, 1) :- ir(X, A), in(c2014_Magnolia_macrophylla, X), out(c2014_Magnolia_tripetala, X), ix.
+c(r33, A, 1) :- vr(X, A), in(c2014_Magnolia_macrophylla, X), out(c2014_Magnolia_tripetala, X), ix.
+pie(r33, A, 2) :- ir(X, A), out(c2014_Magnolia_macrophylla, X), in(c2014_Magnolia_tripetala, X), ix.
+c(r33, A, 2) :- vr(X, A), out(c2014_Magnolia_macrophylla, X), in(c2014_Magnolia_tripetala, X), ix.
+
+% c2014_Magnolia_fraseri ! c2014_Magnolia_pyramidata
+ir(X, r34) :- in(c2014_Magnolia_fraseri, X), in(c2014_Magnolia_pyramidata, X).
+:- #count {X : vrs(X), in(c2014_Magnolia_fraseri,X), out(c2014_Magnolia_pyramidata,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2014_Magnolia_fraseri,X), in(c2014_Magnolia_pyramidata,X)} <= 0, pw.
+pie(r34, A, 1) :- ir(X, A), in(c2014_Magnolia_fraseri, X), out(c2014_Magnolia_pyramidata, X), ix.
+c(r34, A, 1) :- vr(X, A), in(c2014_Magnolia_fraseri, X), out(c2014_Magnolia_pyramidata, X), ix.
+pie(r34, A, 2) :- ir(X, A), out(c2014_Magnolia_fraseri, X), in(c2014_Magnolia_pyramidata, X), ix.
+c(r34, A, 2) :- vr(X, A), out(c2014_Magnolia_fraseri, X), in(c2014_Magnolia_pyramidata, X), ix.
+
+% c2014_Magnolia_fraseri ! c2014_Magnolia_tripetala
+ir(X, r35) :- in(c2014_Magnolia_fraseri, X), in(c2014_Magnolia_tripetala, X).
+:- #count {X : vrs(X), in(c2014_Magnolia_fraseri,X), out(c2014_Magnolia_tripetala,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2014_Magnolia_fraseri,X), in(c2014_Magnolia_tripetala,X)} <= 0, pw.
+pie(r35, A, 1) :- ir(X, A), in(c2014_Magnolia_fraseri, X), out(c2014_Magnolia_tripetala, X), ix.
+c(r35, A, 1) :- vr(X, A), in(c2014_Magnolia_fraseri, X), out(c2014_Magnolia_tripetala, X), ix.
+pie(r35, A, 2) :- ir(X, A), out(c2014_Magnolia_fraseri, X), in(c2014_Magnolia_tripetala, X), ix.
+c(r35, A, 2) :- vr(X, A), out(c2014_Magnolia_fraseri, X), in(c2014_Magnolia_tripetala, X), ix.
+
+% c2014_Magnolia_pyramidata ! c2014_Magnolia_tripetala
+ir(X, r36) :- in(c2014_Magnolia_pyramidata, X), in(c2014_Magnolia_tripetala, X).
+:- #count {X : vrs(X), in(c2014_Magnolia_pyramidata,X), out(c2014_Magnolia_tripetala,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2014_Magnolia_pyramidata,X), in(c2014_Magnolia_tripetala,X)} <= 0, pw.
+pie(r36, A, 1) :- ir(X, A), in(c2014_Magnolia_pyramidata, X), out(c2014_Magnolia_tripetala, X), ix.
+c(r36, A, 1) :- vr(X, A), in(c2014_Magnolia_pyramidata, X), out(c2014_Magnolia_tripetala, X), ix.
+pie(r36, A, 2) :- ir(X, A), out(c2014_Magnolia_pyramidata, X), in(c2014_Magnolia_tripetala, X), ix.
+c(r36, A, 2) :- vr(X, A), out(c2014_Magnolia_pyramidata, X), in(c2014_Magnolia_tripetala, X), ix.
+
+%% ISA
+% c2012_Magnolia_Clade1 isa c2012_Magnolia
+ir(X, r37) :- in(c2012_Magnolia_Clade1, X), out(c2012_Magnolia, X), pw.
+ir(X, prod(r37,R)) :- in(c2012_Magnolia_Clade1,X), out3(c2012_Magnolia, X, R), ix.
+:- #count {X : vrs(X), in(c2012_Magnolia_Clade1,X), in(c2012_Magnolia,X)} <= 0, pw.
+pie(r37, A, 1) :- ir(X, A), in(c2012_Magnolia_Clade1, X), in(c2012_Magnolia, X), ix.
+c(r37, A, 1) :- vr(X, A), in(c2012_Magnolia_Clade1, X), in(c2012_Magnolia, X), ix.
+
+% c2012_Magnolia_Clade2 isa c2012_Magnolia
+ir(X, r38) :- in(c2012_Magnolia_Clade2, X), out(c2012_Magnolia, X), pw.
+ir(X, prod(r38,R)) :- in(c2012_Magnolia_Clade2,X), out3(c2012_Magnolia, X, R), ix.
+:- #count {X : vrs(X), in(c2012_Magnolia_Clade2,X), in(c2012_Magnolia,X)} <= 0, pw.
+pie(r38, A, 1) :- ir(X, A), in(c2012_Magnolia_Clade2, X), in(c2012_Magnolia, X), ix.
+c(r38, A, 1) :- vr(X, A), in(c2012_Magnolia_Clade2, X), in(c2012_Magnolia, X), ix.
+
+% c2012_Metamagnolia_macrophylla isa c2012_Magnolia
+ir(X, r39) :- in(c2012_Metamagnolia_macrophylla, X), out(c2012_Magnolia, X), pw.
+ir(X, prod(r39,R)) :- in(c2012_Metamagnolia_macrophylla,X), out3(c2012_Magnolia, X, R), ix.
+:- #count {X : vrs(X), in(c2012_Metamagnolia_macrophylla,X), in(c2012_Magnolia,X)} <= 0, pw.
+pie(r39, A, 1) :- ir(X, A), in(c2012_Metamagnolia_macrophylla, X), in(c2012_Magnolia, X), ix.
+c(r39, A, 1) :- vr(X, A), in(c2012_Metamagnolia_macrophylla, X), in(c2012_Magnolia, X), ix.
+
+% c2012_Paramagnolia_fraseri isa c2012_Magnolia
+ir(X, r40) :- in(c2012_Paramagnolia_fraseri, X), out(c2012_Magnolia, X), pw.
+ir(X, prod(r40,R)) :- in(c2012_Paramagnolia_fraseri,X), out3(c2012_Magnolia, X, R), ix.
+:- #count {X : vrs(X), in(c2012_Paramagnolia_fraseri,X), in(c2012_Magnolia,X)} <= 0, pw.
+pie(r40, A, 1) :- ir(X, A), in(c2012_Paramagnolia_fraseri, X), in(c2012_Magnolia, X), ix.
+c(r40, A, 1) :- vr(X, A), in(c2012_Paramagnolia_fraseri, X), in(c2012_Magnolia, X), ix.
+
+% c2012_Magnolia_Clade3 isa c2012_Magnolia
+ir(X, r41) :- in(c2012_Magnolia_Clade3, X), out(c2012_Magnolia, X), pw.
+ir(X, prod(r41,R)) :- in(c2012_Magnolia_Clade3,X), out3(c2012_Magnolia, X, R), ix.
+:- #count {X : vrs(X), in(c2012_Magnolia_Clade3,X), in(c2012_Magnolia,X)} <= 0, pw.
+pie(r41, A, 1) :- ir(X, A), in(c2012_Magnolia_Clade3, X), in(c2012_Magnolia, X), ix.
+c(r41, A, 1) :- vr(X, A), in(c2012_Magnolia_Clade3, X), in(c2012_Magnolia, X), ix.
+
+%% coverage
+out3(c2012_Magnolia, X, r42) :- out(c2012_Magnolia_Clade1, X), out(c2012_Magnolia_Clade2, X), out(c2012_Metamagnolia_macrophylla, X), out(c2012_Paramagnolia_fraseri, X), out(c2012_Magnolia_Clade3, X), ix.
+out(c2012_Magnolia, X) :- out(c2012_Magnolia_Clade1, X), out(c2012_Magnolia_Clade2, X), out(c2012_Metamagnolia_macrophylla, X), out(c2012_Paramagnolia_fraseri, X), out(c2012_Magnolia_Clade3, X), pw.
+%% sibling disjointness
+% c2012_Magnolia_Clade1 ! c2012_Magnolia_Clade2
+ir(X, r43) :- in(c2012_Magnolia_Clade1, X), in(c2012_Magnolia_Clade2, X).
+:- #count {X : vrs(X), in(c2012_Magnolia_Clade1,X), out(c2012_Magnolia_Clade2,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2012_Magnolia_Clade1,X), in(c2012_Magnolia_Clade2,X)} <= 0, pw.
+pie(r43, A, 1) :- ir(X, A), in(c2012_Magnolia_Clade1, X), out(c2012_Magnolia_Clade2, X), ix.
+c(r43, A, 1) :- vr(X, A), in(c2012_Magnolia_Clade1, X), out(c2012_Magnolia_Clade2, X), ix.
+pie(r43, A, 2) :- ir(X, A), out(c2012_Magnolia_Clade1, X), in(c2012_Magnolia_Clade2, X), ix.
+c(r43, A, 2) :- vr(X, A), out(c2012_Magnolia_Clade1, X), in(c2012_Magnolia_Clade2, X), ix.
+
+% c2012_Magnolia_Clade1 ! c2012_Metamagnolia_macrophylla
+ir(X, r44) :- in(c2012_Magnolia_Clade1, X), in(c2012_Metamagnolia_macrophylla, X).
+:- #count {X : vrs(X), in(c2012_Magnolia_Clade1,X), out(c2012_Metamagnolia_macrophylla,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2012_Magnolia_Clade1,X), in(c2012_Metamagnolia_macrophylla,X)} <= 0, pw.
+pie(r44, A, 1) :- ir(X, A), in(c2012_Magnolia_Clade1, X), out(c2012_Metamagnolia_macrophylla, X), ix.
+c(r44, A, 1) :- vr(X, A), in(c2012_Magnolia_Clade1, X), out(c2012_Metamagnolia_macrophylla, X), ix.
+pie(r44, A, 2) :- ir(X, A), out(c2012_Magnolia_Clade1, X), in(c2012_Metamagnolia_macrophylla, X), ix.
+c(r44, A, 2) :- vr(X, A), out(c2012_Magnolia_Clade1, X), in(c2012_Metamagnolia_macrophylla, X), ix.
+
+% c2012_Magnolia_Clade1 ! c2012_Paramagnolia_fraseri
+ir(X, r45) :- in(c2012_Magnolia_Clade1, X), in(c2012_Paramagnolia_fraseri, X).
+:- #count {X : vrs(X), in(c2012_Magnolia_Clade1,X), out(c2012_Paramagnolia_fraseri,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2012_Magnolia_Clade1,X), in(c2012_Paramagnolia_fraseri,X)} <= 0, pw.
+pie(r45, A, 1) :- ir(X, A), in(c2012_Magnolia_Clade1, X), out(c2012_Paramagnolia_fraseri, X), ix.
+c(r45, A, 1) :- vr(X, A), in(c2012_Magnolia_Clade1, X), out(c2012_Paramagnolia_fraseri, X), ix.
+pie(r45, A, 2) :- ir(X, A), out(c2012_Magnolia_Clade1, X), in(c2012_Paramagnolia_fraseri, X), ix.
+c(r45, A, 2) :- vr(X, A), out(c2012_Magnolia_Clade1, X), in(c2012_Paramagnolia_fraseri, X), ix.
+
+% c2012_Magnolia_Clade1 ! c2012_Magnolia_Clade3
+ir(X, r46) :- in(c2012_Magnolia_Clade1, X), in(c2012_Magnolia_Clade3, X).
+:- #count {X : vrs(X), in(c2012_Magnolia_Clade1,X), out(c2012_Magnolia_Clade3,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2012_Magnolia_Clade1,X), in(c2012_Magnolia_Clade3,X)} <= 0, pw.
+pie(r46, A, 1) :- ir(X, A), in(c2012_Magnolia_Clade1, X), out(c2012_Magnolia_Clade3, X), ix.
+c(r46, A, 1) :- vr(X, A), in(c2012_Magnolia_Clade1, X), out(c2012_Magnolia_Clade3, X), ix.
+pie(r46, A, 2) :- ir(X, A), out(c2012_Magnolia_Clade1, X), in(c2012_Magnolia_Clade3, X), ix.
+c(r46, A, 2) :- vr(X, A), out(c2012_Magnolia_Clade1, X), in(c2012_Magnolia_Clade3, X), ix.
+
+% c2012_Magnolia_Clade2 ! c2012_Metamagnolia_macrophylla
+ir(X, r47) :- in(c2012_Magnolia_Clade2, X), in(c2012_Metamagnolia_macrophylla, X).
+:- #count {X : vrs(X), in(c2012_Magnolia_Clade2,X), out(c2012_Metamagnolia_macrophylla,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2012_Magnolia_Clade2,X), in(c2012_Metamagnolia_macrophylla,X)} <= 0, pw.
+pie(r47, A, 1) :- ir(X, A), in(c2012_Magnolia_Clade2, X), out(c2012_Metamagnolia_macrophylla, X), ix.
+c(r47, A, 1) :- vr(X, A), in(c2012_Magnolia_Clade2, X), out(c2012_Metamagnolia_macrophylla, X), ix.
+pie(r47, A, 2) :- ir(X, A), out(c2012_Magnolia_Clade2, X), in(c2012_Metamagnolia_macrophylla, X), ix.
+c(r47, A, 2) :- vr(X, A), out(c2012_Magnolia_Clade2, X), in(c2012_Metamagnolia_macrophylla, X), ix.
+
+% c2012_Magnolia_Clade2 ! c2012_Paramagnolia_fraseri
+ir(X, r48) :- in(c2012_Magnolia_Clade2, X), in(c2012_Paramagnolia_fraseri, X).
+:- #count {X : vrs(X), in(c2012_Magnolia_Clade2,X), out(c2012_Paramagnolia_fraseri,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2012_Magnolia_Clade2,X), in(c2012_Paramagnolia_fraseri,X)} <= 0, pw.
+pie(r48, A, 1) :- ir(X, A), in(c2012_Magnolia_Clade2, X), out(c2012_Paramagnolia_fraseri, X), ix.
+c(r48, A, 1) :- vr(X, A), in(c2012_Magnolia_Clade2, X), out(c2012_Paramagnolia_fraseri, X), ix.
+pie(r48, A, 2) :- ir(X, A), out(c2012_Magnolia_Clade2, X), in(c2012_Paramagnolia_fraseri, X), ix.
+c(r48, A, 2) :- vr(X, A), out(c2012_Magnolia_Clade2, X), in(c2012_Paramagnolia_fraseri, X), ix.
+
+% c2012_Magnolia_Clade2 ! c2012_Magnolia_Clade3
+ir(X, r49) :- in(c2012_Magnolia_Clade2, X), in(c2012_Magnolia_Clade3, X).
+:- #count {X : vrs(X), in(c2012_Magnolia_Clade2,X), out(c2012_Magnolia_Clade3,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2012_Magnolia_Clade2,X), in(c2012_Magnolia_Clade3,X)} <= 0, pw.
+pie(r49, A, 1) :- ir(X, A), in(c2012_Magnolia_Clade2, X), out(c2012_Magnolia_Clade3, X), ix.
+c(r49, A, 1) :- vr(X, A), in(c2012_Magnolia_Clade2, X), out(c2012_Magnolia_Clade3, X), ix.
+pie(r49, A, 2) :- ir(X, A), out(c2012_Magnolia_Clade2, X), in(c2012_Magnolia_Clade3, X), ix.
+c(r49, A, 2) :- vr(X, A), out(c2012_Magnolia_Clade2, X), in(c2012_Magnolia_Clade3, X), ix.
+
+% c2012_Metamagnolia_macrophylla ! c2012_Paramagnolia_fraseri
+ir(X, r50) :- in(c2012_Metamagnolia_macrophylla, X), in(c2012_Paramagnolia_fraseri, X).
+:- #count {X : vrs(X), in(c2012_Metamagnolia_macrophylla,X), out(c2012_Paramagnolia_fraseri,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2012_Metamagnolia_macrophylla,X), in(c2012_Paramagnolia_fraseri,X)} <= 0, pw.
+pie(r50, A, 1) :- ir(X, A), in(c2012_Metamagnolia_macrophylla, X), out(c2012_Paramagnolia_fraseri, X), ix.
+c(r50, A, 1) :- vr(X, A), in(c2012_Metamagnolia_macrophylla, X), out(c2012_Paramagnolia_fraseri, X), ix.
+pie(r50, A, 2) :- ir(X, A), out(c2012_Metamagnolia_macrophylla, X), in(c2012_Paramagnolia_fraseri, X), ix.
+c(r50, A, 2) :- vr(X, A), out(c2012_Metamagnolia_macrophylla, X), in(c2012_Paramagnolia_fraseri, X), ix.
+
+% c2012_Metamagnolia_macrophylla ! c2012_Magnolia_Clade3
+ir(X, r51) :- in(c2012_Metamagnolia_macrophylla, X), in(c2012_Magnolia_Clade3, X).
+:- #count {X : vrs(X), in(c2012_Metamagnolia_macrophylla,X), out(c2012_Magnolia_Clade3,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2012_Metamagnolia_macrophylla,X), in(c2012_Magnolia_Clade3,X)} <= 0, pw.
+pie(r51, A, 1) :- ir(X, A), in(c2012_Metamagnolia_macrophylla, X), out(c2012_Magnolia_Clade3, X), ix.
+c(r51, A, 1) :- vr(X, A), in(c2012_Metamagnolia_macrophylla, X), out(c2012_Magnolia_Clade3, X), ix.
+pie(r51, A, 2) :- ir(X, A), out(c2012_Metamagnolia_macrophylla, X), in(c2012_Magnolia_Clade3, X), ix.
+c(r51, A, 2) :- vr(X, A), out(c2012_Metamagnolia_macrophylla, X), in(c2012_Magnolia_Clade3, X), ix.
+
+% c2012_Paramagnolia_fraseri ! c2012_Magnolia_Clade3
+ir(X, r52) :- in(c2012_Paramagnolia_fraseri, X), in(c2012_Magnolia_Clade3, X).
+:- #count {X : vrs(X), in(c2012_Paramagnolia_fraseri,X), out(c2012_Magnolia_Clade3,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2012_Paramagnolia_fraseri,X), in(c2012_Magnolia_Clade3,X)} <= 0, pw.
+pie(r52, A, 1) :- ir(X, A), in(c2012_Paramagnolia_fraseri, X), out(c2012_Magnolia_Clade3, X), ix.
+c(r52, A, 1) :- vr(X, A), in(c2012_Paramagnolia_fraseri, X), out(c2012_Magnolia_Clade3, X), ix.
+pie(r52, A, 2) :- ir(X, A), out(c2012_Paramagnolia_fraseri, X), in(c2012_Magnolia_Clade3, X), ix.
+c(r52, A, 2) :- vr(X, A), out(c2012_Paramagnolia_fraseri, X), in(c2012_Magnolia_Clade3, X), ix.
+
+%% ISA
+% c2012_Yulania_acuminata isa c2012_Magnolia_Clade1
+ir(X, r53) :- in(c2012_Yulania_acuminata, X), out(c2012_Magnolia_Clade1, X), pw.
+ir(X, prod(r53,R)) :- in(c2012_Yulania_acuminata,X), out3(c2012_Magnolia_Clade1, X, R), ix.
+:- #count {X : vrs(X), in(c2012_Yulania_acuminata,X), in(c2012_Magnolia_Clade1,X)} <= 0, pw.
+pie(r53, A, 1) :- ir(X, A), in(c2012_Yulania_acuminata, X), in(c2012_Magnolia_Clade1, X), ix.
+c(r53, A, 1) :- vr(X, A), in(c2012_Yulania_acuminata, X), in(c2012_Magnolia_Clade1, X), ix.
+
+% c2012_Magnolia_virginiana isa c2012_Magnolia_Clade1
+ir(X, r54) :- in(c2012_Magnolia_virginiana, X), out(c2012_Magnolia_Clade1, X), pw.
+ir(X, prod(r54,R)) :- in(c2012_Magnolia_virginiana,X), out3(c2012_Magnolia_Clade1, X, R), ix.
+:- #count {X : vrs(X), in(c2012_Magnolia_virginiana,X), in(c2012_Magnolia_Clade1,X)} <= 0, pw.
+pie(r54, A, 1) :- ir(X, A), in(c2012_Magnolia_virginiana, X), in(c2012_Magnolia_Clade1, X), ix.
+c(r54, A, 1) :- vr(X, A), in(c2012_Magnolia_virginiana, X), in(c2012_Magnolia_Clade1, X), ix.
+
+%% coverage
+out3(c2012_Magnolia_Clade1, X, r55) :- out(c2012_Yulania_acuminata, X), out(c2012_Magnolia_virginiana, X), ix.
+out(c2012_Magnolia_Clade1, X) :- out(c2012_Yulania_acuminata, X), out(c2012_Magnolia_virginiana, X), pw.
+%% sibling disjointness
+% c2012_Yulania_acuminata ! c2012_Magnolia_virginiana
+ir(X, r56) :- in(c2012_Yulania_acuminata, X), in(c2012_Magnolia_virginiana, X).
+:- #count {X : vrs(X), in(c2012_Yulania_acuminata,X), out(c2012_Magnolia_virginiana,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2012_Yulania_acuminata,X), in(c2012_Magnolia_virginiana,X)} <= 0, pw.
+pie(r56, A, 1) :- ir(X, A), in(c2012_Yulania_acuminata, X), out(c2012_Magnolia_virginiana, X), ix.
+c(r56, A, 1) :- vr(X, A), in(c2012_Yulania_acuminata, X), out(c2012_Magnolia_virginiana, X), ix.
+pie(r56, A, 2) :- ir(X, A), out(c2012_Yulania_acuminata, X), in(c2012_Magnolia_virginiana, X), ix.
+c(r56, A, 2) :- vr(X, A), out(c2012_Yulania_acuminata, X), in(c2012_Magnolia_virginiana, X), ix.
+
+%% ISA
+% c2012_Magnolia_grandiflora isa c2012_Magnolia_Clade2
+ir(X, r57) :- in(c2012_Magnolia_grandiflora, X), out(c2012_Magnolia_Clade2, X), pw.
+ir(X, prod(r57,R)) :- in(c2012_Magnolia_grandiflora,X), out3(c2012_Magnolia_Clade2, X, R), ix.
+:- #count {X : vrs(X), in(c2012_Magnolia_grandiflora,X), in(c2012_Magnolia_Clade2,X)} <= 0, pw.
+pie(r57, A, 1) :- ir(X, A), in(c2012_Magnolia_grandiflora, X), in(c2012_Magnolia_Clade2, X), ix.
+c(r57, A, 1) :- vr(X, A), in(c2012_Magnolia_grandiflora, X), in(c2012_Magnolia_Clade2, X), ix.
+
+% c2012_Houpoea_tripetala isa c2012_Magnolia_Clade2
+ir(X, r58) :- in(c2012_Houpoea_tripetala, X), out(c2012_Magnolia_Clade2, X), pw.
+ir(X, prod(r58,R)) :- in(c2012_Houpoea_tripetala,X), out3(c2012_Magnolia_Clade2, X, R), ix.
+:- #count {X : vrs(X), in(c2012_Houpoea_tripetala,X), in(c2012_Magnolia_Clade2,X)} <= 0, pw.
+pie(r58, A, 1) :- ir(X, A), in(c2012_Houpoea_tripetala, X), in(c2012_Magnolia_Clade2, X), ix.
+c(r58, A, 1) :- vr(X, A), in(c2012_Houpoea_tripetala, X), in(c2012_Magnolia_Clade2, X), ix.
+
+%% coverage
+out3(c2012_Magnolia_Clade2, X, r59) :- out(c2012_Magnolia_grandiflora, X), out(c2012_Houpoea_tripetala, X), ix.
+out(c2012_Magnolia_Clade2, X) :- out(c2012_Magnolia_grandiflora, X), out(c2012_Houpoea_tripetala, X), pw.
+%% sibling disjointness
+% c2012_Magnolia_grandiflora ! c2012_Houpoea_tripetala
+ir(X, r60) :- in(c2012_Magnolia_grandiflora, X), in(c2012_Houpoea_tripetala, X).
+:- #count {X : vrs(X), in(c2012_Magnolia_grandiflora,X), out(c2012_Houpoea_tripetala,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2012_Magnolia_grandiflora,X), in(c2012_Houpoea_tripetala,X)} <= 0, pw.
+pie(r60, A, 1) :- ir(X, A), in(c2012_Magnolia_grandiflora, X), out(c2012_Houpoea_tripetala, X), ix.
+c(r60, A, 1) :- vr(X, A), in(c2012_Magnolia_grandiflora, X), out(c2012_Houpoea_tripetala, X), ix.
+pie(r60, A, 2) :- ir(X, A), out(c2012_Magnolia_grandiflora, X), in(c2012_Houpoea_tripetala, X), ix.
+c(r60, A, 2) :- vr(X, A), out(c2012_Magnolia_grandiflora, X), in(c2012_Houpoea_tripetala, X), ix.
+
+%% ISA
+% c2012_Metamagnolia_macrophylla_ssp_ashei_Weatherby_Spongberg isa c2012_Metamagnolia_macrophylla
+ir(X, r61) :- in(c2012_Metamagnolia_macrophylla_ssp_ashei_Weatherby_Spongberg, X), out(c2012_Metamagnolia_macrophylla, X), pw.
+ir(X, prod(r61,R)) :- in(c2012_Metamagnolia_macrophylla_ssp_ashei_Weatherby_Spongberg,X), out3(c2012_Metamagnolia_macrophylla, X, R), ix.
+:- #count {X : vrs(X), in(c2012_Metamagnolia_macrophylla_ssp_ashei_Weatherby_Spongberg,X), in(c2012_Metamagnolia_macrophylla,X)} <= 0, pw.
+pie(r61, A, 1) :- ir(X, A), in(c2012_Metamagnolia_macrophylla_ssp_ashei_Weatherby_Spongberg, X), in(c2012_Metamagnolia_macrophylla, X), ix.
+c(r61, A, 1) :- vr(X, A), in(c2012_Metamagnolia_macrophylla_ssp_ashei_Weatherby_Spongberg, X), in(c2012_Metamagnolia_macrophylla, X), ix.
+
+% c2012_Metamagnolia_macrophylla_ssp_macrophylla isa c2012_Metamagnolia_macrophylla
+ir(X, r62) :- in(c2012_Metamagnolia_macrophylla_ssp_macrophylla, X), out(c2012_Metamagnolia_macrophylla, X), pw.
+ir(X, prod(r62,R)) :- in(c2012_Metamagnolia_macrophylla_ssp_macrophylla,X), out3(c2012_Metamagnolia_macrophylla, X, R), ix.
+:- #count {X : vrs(X), in(c2012_Metamagnolia_macrophylla_ssp_macrophylla,X), in(c2012_Metamagnolia_macrophylla,X)} <= 0, pw.
+pie(r62, A, 1) :- ir(X, A), in(c2012_Metamagnolia_macrophylla_ssp_macrophylla, X), in(c2012_Metamagnolia_macrophylla, X), ix.
+c(r62, A, 1) :- vr(X, A), in(c2012_Metamagnolia_macrophylla_ssp_macrophylla, X), in(c2012_Metamagnolia_macrophylla, X), ix.
+
+%% coverage
+out3(c2012_Metamagnolia_macrophylla, X, r63) :- out(c2012_Metamagnolia_macrophylla_ssp_ashei_Weatherby_Spongberg, X), out(c2012_Metamagnolia_macrophylla_ssp_macrophylla, X), ix.
+out(c2012_Metamagnolia_macrophylla, X) :- out(c2012_Metamagnolia_macrophylla_ssp_ashei_Weatherby_Spongberg, X), out(c2012_Metamagnolia_macrophylla_ssp_macrophylla, X), pw.
+%% sibling disjointness
+% c2012_Metamagnolia_macrophylla_ssp_ashei_Weatherby_Spongberg ! c2012_Metamagnolia_macrophylla_ssp_macrophylla
+ir(X, r64) :- in(c2012_Metamagnolia_macrophylla_ssp_ashei_Weatherby_Spongberg, X), in(c2012_Metamagnolia_macrophylla_ssp_macrophylla, X).
+:- #count {X : vrs(X), in(c2012_Metamagnolia_macrophylla_ssp_ashei_Weatherby_Spongberg,X), out(c2012_Metamagnolia_macrophylla_ssp_macrophylla,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2012_Metamagnolia_macrophylla_ssp_ashei_Weatherby_Spongberg,X), in(c2012_Metamagnolia_macrophylla_ssp_macrophylla,X)} <= 0, pw.
+pie(r64, A, 1) :- ir(X, A), in(c2012_Metamagnolia_macrophylla_ssp_ashei_Weatherby_Spongberg, X), out(c2012_Metamagnolia_macrophylla_ssp_macrophylla, X), ix.
+c(r64, A, 1) :- vr(X, A), in(c2012_Metamagnolia_macrophylla_ssp_ashei_Weatherby_Spongberg, X), out(c2012_Metamagnolia_macrophylla_ssp_macrophylla, X), ix.
+pie(r64, A, 2) :- ir(X, A), out(c2012_Metamagnolia_macrophylla_ssp_ashei_Weatherby_Spongberg, X), in(c2012_Metamagnolia_macrophylla_ssp_macrophylla, X), ix.
+c(r64, A, 2) :- vr(X, A), out(c2012_Metamagnolia_macrophylla_ssp_ashei_Weatherby_Spongberg, X), in(c2012_Metamagnolia_macrophylla_ssp_macrophylla, X), ix.
+
+%% ISA
+% c2012_Paramagnolia_fraseri_var_fraseri isa c2012_Paramagnolia_fraseri
+ir(X, r65) :- in(c2012_Paramagnolia_fraseri_var_fraseri, X), out(c2012_Paramagnolia_fraseri, X), pw.
+ir(X, prod(r65,R)) :- in(c2012_Paramagnolia_fraseri_var_fraseri,X), out3(c2012_Paramagnolia_fraseri, X, R), ix.
+:- #count {X : vrs(X), in(c2012_Paramagnolia_fraseri_var_fraseri,X), in(c2012_Paramagnolia_fraseri,X)} <= 0, pw.
+pie(r65, A, 1) :- ir(X, A), in(c2012_Paramagnolia_fraseri_var_fraseri, X), in(c2012_Paramagnolia_fraseri, X), ix.
+c(r65, A, 1) :- vr(X, A), in(c2012_Paramagnolia_fraseri_var_fraseri, X), in(c2012_Paramagnolia_fraseri, X), ix.
+
+% c2012_Paramagnolia_fraseri_var_pyramidata isa c2012_Paramagnolia_fraseri
+ir(X, r66) :- in(c2012_Paramagnolia_fraseri_var_pyramidata, X), out(c2012_Paramagnolia_fraseri, X), pw.
+ir(X, prod(r66,R)) :- in(c2012_Paramagnolia_fraseri_var_pyramidata,X), out3(c2012_Paramagnolia_fraseri, X, R), ix.
+:- #count {X : vrs(X), in(c2012_Paramagnolia_fraseri_var_pyramidata,X), in(c2012_Paramagnolia_fraseri,X)} <= 0, pw.
+pie(r66, A, 1) :- ir(X, A), in(c2012_Paramagnolia_fraseri_var_pyramidata, X), in(c2012_Paramagnolia_fraseri, X), ix.
+c(r66, A, 1) :- vr(X, A), in(c2012_Paramagnolia_fraseri_var_pyramidata, X), in(c2012_Paramagnolia_fraseri, X), ix.
+
+%% coverage
+out3(c2012_Paramagnolia_fraseri, X, r67) :- out(c2012_Paramagnolia_fraseri_var_fraseri, X), out(c2012_Paramagnolia_fraseri_var_pyramidata, X), ix.
+out(c2012_Paramagnolia_fraseri, X) :- out(c2012_Paramagnolia_fraseri_var_fraseri, X), out(c2012_Paramagnolia_fraseri_var_pyramidata, X), pw.
+%% sibling disjointness
+% c2012_Paramagnolia_fraseri_var_fraseri ! c2012_Paramagnolia_fraseri_var_pyramidata
+ir(X, r68) :- in(c2012_Paramagnolia_fraseri_var_fraseri, X), in(c2012_Paramagnolia_fraseri_var_pyramidata, X).
+:- #count {X : vrs(X), in(c2012_Paramagnolia_fraseri_var_fraseri,X), out(c2012_Paramagnolia_fraseri_var_pyramidata,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2012_Paramagnolia_fraseri_var_fraseri,X), in(c2012_Paramagnolia_fraseri_var_pyramidata,X)} <= 0, pw.
+pie(r68, A, 1) :- ir(X, A), in(c2012_Paramagnolia_fraseri_var_fraseri, X), out(c2012_Paramagnolia_fraseri_var_pyramidata, X), ix.
+c(r68, A, 1) :- vr(X, A), in(c2012_Paramagnolia_fraseri_var_fraseri, X), out(c2012_Paramagnolia_fraseri_var_pyramidata, X), ix.
+pie(r68, A, 2) :- ir(X, A), out(c2012_Paramagnolia_fraseri_var_fraseri, X), in(c2012_Paramagnolia_fraseri_var_pyramidata, X), ix.
+c(r68, A, 2) :- vr(X, A), out(c2012_Paramagnolia_fraseri_var_fraseri, X), in(c2012_Paramagnolia_fraseri_var_pyramidata, X), ix.
+
+
+%%% Articulations
+% 2014.Magnolia_Clade1 {=} 2012.Magnolia_Clade1
+ir(X, r69) :- out(c2014_Magnolia_Clade1,X), in(c2012_Magnolia_Clade1,X).
+ir(X, r69) :- in(c2014_Magnolia_Clade1,X), out(c2012_Magnolia_Clade1,X).
+ir(X, prod(r69,R)) :- out3(c2014_Magnolia_Clade1, X, R), in(c2012_Magnolia_Clade1,X), ix.
+ir(X, prod(r69,R)) :- in(c2014_Magnolia_Clade1,X), out3(c2012_Magnolia_Clade1, X, R), ix.
+:- #count {X : vrs(X), in(c2014_Magnolia_Clade1,X), in(c2012_Magnolia_Clade1,X)} <= 0, pw.
+pie(r69, A, 1) :- ir(X, A), in(c2014_Magnolia_Clade1, X), in(c2012_Magnolia_Clade1, X), ix.
+c(r69, A, 1) :- vr(X, A), in(c2014_Magnolia_Clade1, X), in(c2012_Magnolia_Clade1, X), ix.
+
+
+% 2014.Magnolia_Clade2 {>} 2012.Magnolia_Clade2
+ir(X, r70) :- out(c2014_Magnolia_Clade2,X), in(c2012_Magnolia_Clade2,X), pw.
+ir(X, prod(r70,R)) :- out3(c2014_Magnolia_Clade2, X, R), in(c2012_Magnolia_Clade2,X), ix.
+:- #count {X : vrs(X), in(c2014_Magnolia_Clade2,X), in(c2012_Magnolia_Clade2,X)} <= 0, pw.
+:- #count {X : vrs(X), in(c2014_Magnolia_Clade2,X), out(c2012_Magnolia_Clade2,X)} <= 0, pw.
+pie(r70, A, 1) :- ir(X, A), in(c2014_Magnolia_Clade2, X), out(c2012_Magnolia_Clade2, X), ix.
+c(r70, A, 1) :- vr(X, A), in(c2014_Magnolia_Clade2, X), out(c2012_Magnolia_Clade2, X), ix.
+
+pie(r70, A, 2) :- ir(X, A), in(c2014_Magnolia_Clade2, X), in(c2012_Magnolia_Clade2, X), ix.
+c(r70, A, 2) :- vr(X, A), in(c2014_Magnolia_Clade2, X), in(c2012_Magnolia_Clade2, X), ix.
+
+
+% 2014.Magnolia_Clade2 {>} 2012.Metamagnolia_macrophylla
+ir(X, r71) :- out(c2014_Magnolia_Clade2,X), in(c2012_Metamagnolia_macrophylla,X), pw.
+ir(X, prod(r71,R)) :- out3(c2014_Magnolia_Clade2, X, R), in(c2012_Metamagnolia_macrophylla,X), ix.
+:- #count {X : vrs(X), in(c2014_Magnolia_Clade2,X), in(c2012_Metamagnolia_macrophylla,X)} <= 0, pw.
+:- #count {X : vrs(X), in(c2014_Magnolia_Clade2,X), out(c2012_Metamagnolia_macrophylla,X)} <= 0, pw.
+pie(r71, A, 1) :- ir(X, A), in(c2014_Magnolia_Clade2, X), out(c2012_Metamagnolia_macrophylla, X), ix.
+c(r71, A, 1) :- vr(X, A), in(c2014_Magnolia_Clade2, X), out(c2012_Metamagnolia_macrophylla, X), ix.
+
+pie(r71, A, 2) :- ir(X, A), in(c2014_Magnolia_Clade2, X), in(c2012_Metamagnolia_macrophylla, X), ix.
+c(r71, A, 2) :- vr(X, A), in(c2014_Magnolia_Clade2, X), in(c2012_Metamagnolia_macrophylla, X), ix.
+
+
+% 2014.Magnolia_Clade2 {>} 2012.Paramagnolia_fraseri
+ir(X, r72) :- out(c2014_Magnolia_Clade2,X), in(c2012_Paramagnolia_fraseri,X), pw.
+ir(X, prod(r72,R)) :- out3(c2014_Magnolia_Clade2, X, R), in(c2012_Paramagnolia_fraseri,X), ix.
+:- #count {X : vrs(X), in(c2014_Magnolia_Clade2,X), in(c2012_Paramagnolia_fraseri,X)} <= 0, pw.
+:- #count {X : vrs(X), in(c2014_Magnolia_Clade2,X), out(c2012_Paramagnolia_fraseri,X)} <= 0, pw.
+pie(r72, A, 1) :- ir(X, A), in(c2014_Magnolia_Clade2, X), out(c2012_Paramagnolia_fraseri, X), ix.
+c(r72, A, 1) :- vr(X, A), in(c2014_Magnolia_Clade2, X), out(c2012_Paramagnolia_fraseri, X), ix.
+
+pie(r72, A, 2) :- ir(X, A), in(c2014_Magnolia_Clade2, X), in(c2012_Paramagnolia_fraseri, X), ix.
+c(r72, A, 2) :- vr(X, A), in(c2014_Magnolia_Clade2, X), in(c2012_Paramagnolia_fraseri, X), ix.
+
+
+% 2014.Magnolia_acuminata_var_acuminata {<} 2012.Yulania_acuminata
+:- #count {X : vrs(X), in(c2014_Magnolia_acuminata_var_acuminata,X), in(c2012_Yulania_acuminata,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2014_Magnolia_acuminata_var_acuminata,X), in(c2012_Yulania_acuminata,X)} <= 0, pw.
+ir(X, r73) :- in(c2014_Magnolia_acuminata_var_acuminata,X), out(c2012_Yulania_acuminata,X), pw.
+pie(r73, A, 1) :- ir(X, A), out(c2014_Magnolia_acuminata_var_acuminata, X), in(c2012_Yulania_acuminata, X), ix.
+c(r73, A, 1) :- vr(X, A), out(c2014_Magnolia_acuminata_var_acuminata, X), in(c2012_Yulania_acuminata, X), ix.
+
+pie(r73, A, 2) :- ir(X, A), in(c2014_Magnolia_acuminata_var_acuminata, X), in(c2012_Yulania_acuminata, X), ix.
+c(r73, A, 2) :- vr(X, A), in(c2014_Magnolia_acuminata_var_acuminata, X), in(c2012_Yulania_acuminata, X), ix.
+
+
+% 2014.Magnolia_acuminata_var_subcordata {<} 2012.Yulania_acuminata
+:- #count {X : vrs(X), in(c2014_Magnolia_acuminata_var_subcordata,X), in(c2012_Yulania_acuminata,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2014_Magnolia_acuminata_var_subcordata,X), in(c2012_Yulania_acuminata,X)} <= 0, pw.
+ir(X, r74) :- in(c2014_Magnolia_acuminata_var_subcordata,X), out(c2012_Yulania_acuminata,X), pw.
+pie(r74, A, 1) :- ir(X, A), out(c2014_Magnolia_acuminata_var_subcordata, X), in(c2012_Yulania_acuminata, X), ix.
+c(r74, A, 1) :- vr(X, A), out(c2014_Magnolia_acuminata_var_subcordata, X), in(c2012_Yulania_acuminata, X), ix.
+
+pie(r74, A, 2) :- ir(X, A), in(c2014_Magnolia_acuminata_var_subcordata, X), in(c2012_Yulania_acuminata, X), ix.
+c(r74, A, 2) :- vr(X, A), in(c2014_Magnolia_acuminata_var_subcordata, X), in(c2012_Yulania_acuminata, X), ix.
+
+
+% 2014.Magnolia_virginiana_var_australis {<} 2012.Magnolia_virginiana
+:- #count {X : vrs(X), in(c2014_Magnolia_virginiana_var_australis,X), in(c2012_Magnolia_virginiana,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2014_Magnolia_virginiana_var_australis,X), in(c2012_Magnolia_virginiana,X)} <= 0, pw.
+ir(X, r75) :- in(c2014_Magnolia_virginiana_var_australis,X), out(c2012_Magnolia_virginiana,X), pw.
+pie(r75, A, 1) :- ir(X, A), out(c2014_Magnolia_virginiana_var_australis, X), in(c2012_Magnolia_virginiana, X), ix.
+c(r75, A, 1) :- vr(X, A), out(c2014_Magnolia_virginiana_var_australis, X), in(c2012_Magnolia_virginiana, X), ix.
+
+pie(r75, A, 2) :- ir(X, A), in(c2014_Magnolia_virginiana_var_australis, X), in(c2012_Magnolia_virginiana, X), ix.
+c(r75, A, 2) :- vr(X, A), in(c2014_Magnolia_virginiana_var_australis, X), in(c2012_Magnolia_virginiana, X), ix.
+
+
+% 2014.Magnolia_virginiana_var_virginiana {<} 2012.Magnolia_virginiana
+:- #count {X : vrs(X), in(c2014_Magnolia_virginiana_var_virginiana,X), in(c2012_Magnolia_virginiana,X)} <= 0, pw.
+:- #count {X : vrs(X), out(c2014_Magnolia_virginiana_var_virginiana,X), in(c2012_Magnolia_virginiana,X)} <= 0, pw.
+ir(X, r76) :- in(c2014_Magnolia_virginiana_var_virginiana,X), out(c2012_Magnolia_virginiana,X), pw.
+pie(r76, A, 1) :- ir(X, A), out(c2014_Magnolia_virginiana_var_virginiana, X), in(c2012_Magnolia_virginiana, X), ix.
+c(r76, A, 1) :- vr(X, A), out(c2014_Magnolia_virginiana_var_virginiana, X), in(c2012_Magnolia_virginiana, X), ix.
+
+pie(r76, A, 2) :- ir(X, A), in(c2014_Magnolia_virginiana_var_virginiana, X), in(c2012_Magnolia_virginiana, X), ix.
+c(r76, A, 2) :- vr(X, A), in(c2014_Magnolia_virginiana_var_virginiana, X), in(c2012_Magnolia_virginiana, X), ix.
+
+
+% 2014.Magnolia_grandiflora {=} 2012.Magnolia_grandiflora
+ir(X, r77) :- out(c2014_Magnolia_grandiflora,X), in(c2012_Magnolia_grandiflora,X).
+ir(X, r77) :- in(c2014_Magnolia_grandiflora,X), out(c2012_Magnolia_grandiflora,X).
+ir(X, prod(r77,R)) :- out3(c2014_Magnolia_grandiflora, X, R), in(c2012_Magnolia_grandiflora,X), ix.
+ir(X, prod(r77,R)) :- in(c2014_Magnolia_grandiflora,X), out3(c2012_Magnolia_grandiflora, X, R), ix.
+:- #count {X : vrs(X), in(c2014_Magnolia_grandiflora,X), in(c2012_Magnolia_grandiflora,X)} <= 0, pw.
+pie(r77, A, 1) :- ir(X, A), in(c2014_Magnolia_grandiflora, X), in(c2012_Magnolia_grandiflora, X), ix.
+c(r77, A, 1) :- vr(X, A), in(c2014_Magnolia_grandiflora, X), in(c2012_Magnolia_grandiflora, X), ix.
+
+
+% 2014.Magnolia_ashei {=} 2012.Metamagnolia_macrophylla_ssp_ashei_Weatherby_Spongberg
+ir(X, r78) :- out(c2014_Magnolia_ashei,X), in(c2012_Metamagnolia_macrophylla_ssp_ashei_Weatherby_Spongberg,X).
+ir(X, r78) :- in(c2014_Magnolia_ashei,X), out(c2012_Metamagnolia_macrophylla_ssp_ashei_Weatherby_Spongberg,X).
+ir(X, prod(r78,R)) :- out3(c2014_Magnolia_ashei, X, R), in(c2012_Metamagnolia_macrophylla_ssp_ashei_Weatherby_Spongberg,X), ix.
+ir(X, prod(r78,R)) :- in(c2014_Magnolia_ashei,X), out3(c2012_Metamagnolia_macrophylla_ssp_ashei_Weatherby_Spongberg, X, R), ix.
+:- #count {X : vrs(X), in(c2014_Magnolia_ashei,X), in(c2012_Metamagnolia_macrophylla_ssp_ashei_Weatherby_Spongberg,X)} <= 0, pw.
+pie(r78, A, 1) :- ir(X, A), in(c2014_Magnolia_ashei, X), in(c2012_Metamagnolia_macrophylla_ssp_ashei_Weatherby_Spongberg, X), ix.
+c(r78, A, 1) :- vr(X, A), in(c2014_Magnolia_ashei, X), in(c2012_Metamagnolia_macrophylla_ssp_ashei_Weatherby_Spongberg, X), ix.
+
+
+% 2014.Magnolia_macrophylla {=} 2012.Metamagnolia_macrophylla_ssp_macrophylla
+ir(X, r79) :- out(c2014_Magnolia_macrophylla,X), in(c2012_Metamagnolia_macrophylla_ssp_macrophylla,X).
+ir(X, r79) :- in(c2014_Magnolia_macrophylla,X), out(c2012_Metamagnolia_macrophylla_ssp_macrophylla,X).
+ir(X, prod(r79,R)) :- out3(c2014_Magnolia_macrophylla, X, R), in(c2012_Metamagnolia_macrophylla_ssp_macrophylla,X), ix.
+ir(X, prod(r79,R)) :- in(c2014_Magnolia_macrophylla,X), out3(c2012_Metamagnolia_macrophylla_ssp_macrophylla, X, R), ix.
+:- #count {X : vrs(X), in(c2014_Magnolia_macrophylla,X), in(c2012_Metamagnolia_macrophylla_ssp_macrophylla,X)} <= 0, pw.
+pie(r79, A, 1) :- ir(X, A), in(c2014_Magnolia_macrophylla, X), in(c2012_Metamagnolia_macrophylla_ssp_macrophylla, X), ix.
+c(r79, A, 1) :- vr(X, A), in(c2014_Magnolia_macrophylla, X), in(c2012_Metamagnolia_macrophylla_ssp_macrophylla, X), ix.
+
+
+% 2014.Magnolia_fraseri {=} 2012.Paramagnolia_fraseri_var_fraseri
+ir(X, r80) :- out(c2014_Magnolia_fraseri,X), in(c2012_Paramagnolia_fraseri_var_fraseri,X).
+ir(X, r80) :- in(c2014_Magnolia_fraseri,X), out(c2012_Paramagnolia_fraseri_var_fraseri,X).
+ir(X, prod(r80,R)) :- out3(c2014_Magnolia_fraseri, X, R), in(c2012_Paramagnolia_fraseri_var_fraseri,X), ix.
+ir(X, prod(r80,R)) :- in(c2014_Magnolia_fraseri,X), out3(c2012_Paramagnolia_fraseri_var_fraseri, X, R), ix.
+:- #count {X : vrs(X), in(c2014_Magnolia_fraseri,X), in(c2012_Paramagnolia_fraseri_var_fraseri,X)} <= 0, pw.
+pie(r80, A, 1) :- ir(X, A), in(c2014_Magnolia_fraseri, X), in(c2012_Paramagnolia_fraseri_var_fraseri, X), ix.
+c(r80, A, 1) :- vr(X, A), in(c2014_Magnolia_fraseri, X), in(c2012_Paramagnolia_fraseri_var_fraseri, X), ix.
+
+
+% 2014.Magnolia_pyramidata {=} 2012.Paramagnolia_fraseri_var_pyramidata
+ir(X, r81) :- out(c2014_Magnolia_pyramidata,X), in(c2012_Paramagnolia_fraseri_var_pyramidata,X).
+ir(X, r81) :- in(c2014_Magnolia_pyramidata,X), out(c2012_Paramagnolia_fraseri_var_pyramidata,X).
+ir(X, prod(r81,R)) :- out3(c2014_Magnolia_pyramidata, X, R), in(c2012_Paramagnolia_fraseri_var_pyramidata,X), ix.
+ir(X, prod(r81,R)) :- in(c2014_Magnolia_pyramidata,X), out3(c2012_Paramagnolia_fraseri_var_pyramidata, X, R), ix.
+:- #count {X : vrs(X), in(c2014_Magnolia_pyramidata,X), in(c2012_Paramagnolia_fraseri_var_pyramidata,X)} <= 0, pw.
+pie(r81, A, 1) :- ir(X, A), in(c2014_Magnolia_pyramidata, X), in(c2012_Paramagnolia_fraseri_var_pyramidata, X), ix.
+c(r81, A, 1) :- vr(X, A), in(c2014_Magnolia_pyramidata, X), in(c2012_Paramagnolia_fraseri_var_pyramidata, X), ix.
+
+
+% 2014.Magnolia_tripetala {=} 2012.Houpoea_tripetala
+ir(X, r82) :- out(c2014_Magnolia_tripetala,X), in(c2012_Houpoea_tripetala,X).
+ir(X, r82) :- in(c2014_Magnolia_tripetala,X), out(c2012_Houpoea_tripetala,X).
+ir(X, prod(r82,R)) :- out3(c2014_Magnolia_tripetala, X, R), in(c2012_Houpoea_tripetala,X), ix.
+ir(X, prod(r82,R)) :- in(c2014_Magnolia_tripetala,X), out3(c2012_Houpoea_tripetala, X, R), ix.
+:- #count {X : vrs(X), in(c2014_Magnolia_tripetala,X), in(c2012_Houpoea_tripetala,X)} <= 0, pw.
+pie(r82, A, 1) :- ir(X, A), in(c2014_Magnolia_tripetala, X), in(c2012_Houpoea_tripetala, X), ix.
+c(r82, A, 1) :- vr(X, A), in(c2014_Magnolia_tripetala, X), in(c2012_Houpoea_tripetala, X), ix.
+
+
+%%% Decoding now
+:- rel(X, Y, "="), rel(X, Y, "<"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, "="), rel(X, Y, ">"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, "="), rel(X, Y, "><"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, "="), rel(X, Y, "!"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, "<"), rel(X, Y, ">"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, "<"), rel(X, Y, "><"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, "<"), rel(X, Y, "!"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, ">"), rel(X, Y, "><"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, ">"), rel(X, Y, "!"), concept2(X, N1), concept2(Y, N2), pw.
+:- rel(X, Y, "><"), rel(X, Y, "!"), concept2(X, N1), concept2(Y, N2), pw.
+:- not rel(X, Y, "="), not rel(X, Y, "<"), not rel(X, Y, ">"), not rel(X, Y, "><"), not rel(X, Y, "!"), concept2(X, N1), concept2(Y, N2), N1 < N2, not ncf(X), not ncf(Y), pw.
+
+rel(X, Y, "=") :- not hint(X, Y, 0), hint(X, Y, 1), not hint(X, Y, 2), pw.
+rel(X, Y, "<") :- not hint(X, Y, 0), hint(X, Y, 1), hint(X, Y, 2), pw.
+rel(X, Y, ">") :- hint(X, Y, 0), hint(X, Y, 1), not hint(X, Y, 2), pw.
+rel(X, Y, "><") :- hint(X, Y, 0), hint(X, Y, 1), hint(X, Y, 2), pw.
+rel(X, Y, "!") :- hint(X, Y, 0), not hint(X, Y, 1), hint(X, Y, 2), pw.
+
+
+hint(X, Y, 0) :- concept2(X, N1), concept2(Y, N2), N1 < N2, vrs(R), in(X, R), out(Y, R), not ncf(X), not ncf(Y), pw.
+hint(X, Y, 1) :- concept2(X, N1), concept2(Y, N2), N1 < N2, vrs(R), in(X, R), in(Y, R), not ncf(X), not ncf(Y), pw.
+hint(X, Y, 2) :- concept2(X, N1), concept2(Y, N2), N1 < N2, vrs(R), out(X, R), in(Y, R), not ncf(X), not ncf(Y), pw.
+

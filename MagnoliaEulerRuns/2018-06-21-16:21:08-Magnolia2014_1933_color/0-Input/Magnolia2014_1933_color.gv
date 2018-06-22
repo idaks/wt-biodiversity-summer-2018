@@ -1,0 +1,101 @@
+digraph{
+rankdir=LR
+node[shape=circle style=filled fillcolor="#FFFFFF"] 
+node[shape=note style=filled fillcolor="#FFFFCC" fontname="helvetica"] 
+"1933.Tulipastrum_cordatum"
+"1933.Magnolia_tripetala"
+"1933.Magnolia_fraseri"
+"1933.Magnolia_ashei"
+"1933.Magnolia"
+"1933.Magnolia_pyramidata"
+"1933.Tulipastrum_acuminatum"
+"1933.Magnolia_macrophylla"
+"1933.Magnolia_grandiflora"
+"1933.Magnolia_virginiana"
+"1933.Magnolia_Clade2"
+"1933.Magnolia_Clade3"
+"1933.Magnolia_Clade1"
+node[shape=circle style=filled fillcolor="#FFFFFF"] 
+node[shape=box style=filled fillcolor="#CCFFCC" fontname="helvetica"] 
+"2014.Magnolia_tripetala"
+"2014.Magnolia_Clade2"
+"2014.Magnolia_Clade1"
+"2014.Magnolia_fraseri"
+"2014.Magnolia"
+"2014.Magnolia_acuminata_var_subcordata"
+"2014.Magnolia_ashei"
+"2014.Magnolia_grandiflora"
+"2014.Magnolia_acuminata_var_acuminata"
+"2014.Magnolia_virginiana_var_virginiana"
+"2014.Magnolia_macrophylla"
+"2014.Magnolia_virginiana_var_australis"
+"2014.Magnolia_pyramidata"
+edge[style=solid color="#000000" constraint=true penwidth=1 dir=forward]
+edge[style=solid color="#000000" constraint=true penwidth=1 dir=forward]
+"1933.Magnolia_virginiana" -> "1933.Magnolia_Clade2"
+"1933.Magnolia_Clade1" -> "1933.Magnolia"
+"1933.Magnolia_Clade2" -> "1933.Magnolia"
+"1933.Magnolia_pyramidata" -> "1933.Magnolia_Clade1"
+"1933.Magnolia_ashei" -> "1933.Magnolia_Clade1"
+"1933.Magnolia_fraseri" -> "1933.Magnolia_Clade1"
+"1933.Magnolia_macrophylla" -> "1933.Magnolia_Clade1"
+"1933.Magnolia_tripetala" -> "1933.Magnolia_Clade1"
+"1933.Magnolia_grandiflora" -> "1933.Magnolia_Clade1"
+"1933.Tulipastrum_cordatum" -> "1933.Magnolia_Clade1"
+"1933.Magnolia_Clade3" -> "1933.Magnolia"
+"1933.Tulipastrum_acuminatum" -> "1933.Magnolia_Clade1"
+edge[style=solid color="#000000" constraint=true penwidth=1 dir=forward]
+edge[style=solid color="#000000" constraint=true penwidth=1 dir=forward]
+"2014.Magnolia_acuminata_var_acuminata" -> "2014.Magnolia_Clade1"
+"2014.Magnolia_fraseri" -> "2014.Magnolia_Clade2"
+"2014.Magnolia_Clade2" -> "2014.Magnolia"
+"2014.Magnolia_tripetala" -> "2014.Magnolia_Clade2"
+"2014.Magnolia_macrophylla" -> "2014.Magnolia_Clade2"
+"2014.Magnolia_virginiana_var_virginiana" -> "2014.Magnolia_Clade1"
+"2014.Magnolia_grandiflora" -> "2014.Magnolia_Clade2"
+"2014.Magnolia_ashei" -> "2014.Magnolia_Clade2"
+"2014.Magnolia_acuminata_var_subcordata" -> "2014.Magnolia_Clade1"
+"2014.Magnolia_pyramidata" -> "2014.Magnolia_Clade2"
+"2014.Magnolia_virginiana_var_australis" -> "2014.Magnolia_Clade1"
+"2014.Magnolia_Clade1" -> "2014.Magnolia"
+edge[style=solid color="#000000" constraint=true penwidth=1 dir=forward]
+edge[style=solid color="#000000" constraint=true penwidth=1 dir=forward]
+"2014.Magnolia_pyramidata" -> "1933.Magnolia_pyramidata" [label="{=}"]
+"2014.Magnolia_virginiana_var_australis" -> "1933.Magnolia_virginiana" [label="{<}"]
+"2014.Magnolia_acuminata_var_subcordata" -> "1933.Tulipastrum_cordatum" [label="{=}"]
+"2014.Magnolia_Clade1" -> "1933.Magnolia_Clade2" [label="{>}"]
+"2014.Magnolia_Clade1" -> "1933.Magnolia_Clade1" [label="{><}"]
+"2014.Magnolia_grandiflora" -> "1933.Magnolia_grandiflora" [label="{=}"]
+"2014.Magnolia_tripetala" -> "1933.Magnolia_tripetala" [label="{=}"]
+"2014.Magnolia_fraseri" -> "1933.Magnolia_fraseri" [label="{=}"]
+"2014.Magnolia_acuminata_var_acuminata" -> "1933.Tulipastrum_acuminatum" [label="{=}"]
+"2014.Magnolia_ashei" -> "1933.Magnolia_ashei" [label="{=}"]
+"2014.Magnolia_macrophylla" -> "1933.Magnolia_macrophylla" [label="{=}"]
+"2014.Magnolia_virginiana_var_virginiana" -> "1933.Magnolia_virginiana" [label="{<}"]
+edge[style=solid color="#000000" constraint=true penwidth=1 dir=forward]
+edge[style=dashed color="#AA00FF" constraint=true penwidth=2 dir=both]
+node[shape=box] 
+{rank=source Legend [fillcolor= white margin=0 label=< 
+ <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4"> 
+<TR> <TD COLSPAN="2"><font face="Arial Black"> Nodes</font></TD> </TR> 
+<TR> 
+ <TD bgcolor="#FFFFCC" fontname="helvetica">1933</TD> 
+ <TD>13</TD> 
+ </TR> 
+<TR> 
+ <TD bgcolor="#CCFFCC" fontname="helvetica">2014</TD> 
+ <TD>13</TD> 
+ </TR> 
+<TR> <TD COLSPAN="2"><font face = "Arial Black"> Edges </font></TD> </TR> 
+<TR> 
+ <TD><font color ="#000000">is_a (1933)</font></TD><TD>12</TD>
+</TR>
+<TR> 
+ <TD><font color ="#000000">is_a (2014)</font></TD><TD>12</TD>
+</TR>
+<TR> 
+ <TD><font color ="#000000">default</font></TD><TD>12</TD>
+</TR>
+</TABLE> 
+ >] } 
+}

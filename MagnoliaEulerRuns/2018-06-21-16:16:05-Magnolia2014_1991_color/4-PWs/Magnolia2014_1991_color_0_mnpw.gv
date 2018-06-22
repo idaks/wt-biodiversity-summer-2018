@@ -1,0 +1,69 @@
+digraph{
+rankdir=RL
+node[shape=note style=filled fillcolor="#FFFFCC" fontname="helvetica"] 
+"1991.Magnolia_virginiana"
+"1991.Magnolia_acuminata"
+"1991.Magnolia_Clade2"
+"1991.Magnolia"
+node[shape=box style=filled fillcolor="#CCFFCC" fontname="helvetica"] 
+"2014.Magnolia_Clade2"
+"2014.Magnolia"
+"2014.Magnolia_acuminata_var_subcordata"
+"2014.Magnolia_ashei"
+"2014.Magnolia_virginiana_var_australis"
+"2014.Magnolia_acuminata_var_acuminata"
+"2014.Magnolia_virginiana_var_virginiana"
+"2014.Magnolia_pyramidata"
+node[shape=box style="filled,rounded" fillcolor="#EEEEEE" fontname="helvetica"] 
+"2014.Magnolia_tripetala\n1991.Magnolia_tripetala"
+"2014.Magnolia_Clade1\n1991.Magnolia_Clade1"
+"2014.Magnolia_grandiflora\n1991.Magnolia_grandiflora"
+"2014.Magnolia_macrophylla\n1991.Magnolia_macrophylla"
+"2014.Magnolia_fraseri\n1991.Magnolia_fraseri"
+edge[arrowhead=normal style=dotted color="#000000" constraint=true penwidth=1]
+edge[arrowhead=none style=dashed color="#FF0000" constraint=false penwidth=1]
+"1991.Magnolia" -> "2014.Magnolia_Clade2"
+edge[arrowhead=normal style=solid color="#000000" constraint=true penwidth=1]
+"1991.Magnolia_virginiana" -> "2014.Magnolia_Clade1\n1991.Magnolia_Clade1"
+"2014.Magnolia_tripetala\n1991.Magnolia_tripetala" -> "1991.Magnolia_Clade2"
+"2014.Magnolia_Clade2" -> "2014.Magnolia"
+"1991.Magnolia_acuminata" -> "2014.Magnolia_Clade1\n1991.Magnolia_Clade1"
+"2014.Magnolia_grandiflora\n1991.Magnolia_grandiflora" -> "1991.Magnolia_Clade2"
+"2014.Magnolia_fraseri\n1991.Magnolia_fraseri" -> "1991.Magnolia_Clade2"
+"2014.Magnolia_virginiana_var_virginiana" -> "1991.Magnolia_virginiana"
+"1991.Magnolia_Clade2" -> "2014.Magnolia_Clade2"
+"2014.Magnolia_ashei" -> "2014.Magnolia_Clade2"
+"2014.Magnolia_macrophylla\n1991.Magnolia_macrophylla" -> "1991.Magnolia_Clade2"
+"2014.Magnolia_Clade1\n1991.Magnolia_Clade1" -> "1991.Magnolia"
+"1991.Magnolia" -> "2014.Magnolia"
+"1991.Magnolia_Clade2" -> "1991.Magnolia"
+"2014.Magnolia_pyramidata" -> "2014.Magnolia_Clade2"
+"2014.Magnolia_acuminata_var_acuminata" -> "1991.Magnolia_acuminata"
+"2014.Magnolia_acuminata_var_subcordata" -> "1991.Magnolia_acuminata"
+"2014.Magnolia_virginiana_var_australis" -> "1991.Magnolia_virginiana"
+node[shape=box] 
+{rank=source Legend [fillcolor= white margin=0 label=< 
+ <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4"> 
+<TR> <TD COLSPAN="2"><font face="Arial Black"> Nodes</font></TD> </TR> 
+<TR> 
+ <TD bgcolor="#FFFFCC" fontname="helvetica">1991</TD> 
+ <TD>4</TD> 
+ </TR> 
+<TR> 
+ <TD bgcolor="#CCFFCC" fontname="helvetica">2014</TD> 
+ <TD>8</TD> 
+ </TR> 
+<TR> 
+ <TD bgcolor="#EEEEEE" fontname="helvetica">congruent</TD> 
+ <TD>5</TD> 
+ </TR> 
+<TR> <TD COLSPAN="2"><font face = "Arial Black"> Edges </font></TD> </TR> 
+<TR> 
+ <TD><font color ="#FF0000">overlaps (inferred)</font></TD><TD>1</TD>
+</TR>
+<TR> 
+ <TD><font color ="#000000">is_a (input)</font></TD><TD>17</TD>
+</TR>
+</TABLE> 
+ >] } 
+}

@@ -1,0 +1,30 @@
+taxonomy 2014 Weakley
+(Magnolia Magnolia_Clade1 Magnolia_Clade2)
+(Magnolia_Clade1 Magnolia_acuminata_var_acuminata Magnolia_acuminata_var_subcordata Magnolia_virginiana_var_australis Magnolia_virginiana_var_virginiana)
+(Magnolia_Clade2 Magnolia_grandiflora Magnolia_ashei Magnolia_macrophylla Magnolia_fraseri Magnolia_pyramidata Magnolia_tripetala)
+
+taxonomy 1998S Spongberg
+(Magnolia Magnolia_Clade1 Magnolia_Clade2 Magnolia_Clade3)
+(Magnolia_Clade1 Magnolia_acuminata_var_acuminata Magnolia_acuminata_var_subcordata Magnolia_fraseri_var_pyramidata Magnolia_fraseri_var_fraseri)
+(Magnolia_Clade2 Magnolia_virginiana_ssp_australis Magnolia_virginiana_ssp_virginiana Magnolia_macrophylla_ssp_ashei Magnolia_macrophylla_ssp_macrophylla)	
+(Magnolia_Clade3 Magnolia_grandiflora Magnolia_tripetala)
+
+articulation 2014-1998S Weakley-Spongberg
+#[2014.Magnolia {=} 1998S.Magnolia]
+[2014.Magnolia_Clade1 {><} 1998S.Magnolia_Clade1]
+[2014.Magnolia_Clade2 {><} 1998S.Magnolia_Clade2]
+[2014.Magnolia_Clade2 {>} 1998S.Magnolia_Clade3]
+[2014.Magnolia_acuminata_var_acuminata {=} 1998S.Magnolia_acuminata_var_acuminata]
+[2014.Magnolia_acuminata_var_subcordata {=} 1998S.Magnolia_acuminata_var_subcordata]
+[2014.Magnolia_virginiana_var_australis {=} 1998S.Magnolia_virginiana_ssp_australis]
+[2014.Magnolia_virginiana_var_virginiana {=} 1998S.Magnolia_virginiana_ssp_virginiana]
+[2014.Magnolia_grandiflora {=} 1998S.Magnolia_grandiflora]
+[2014.Magnolia_ashei {=} 1998S.Magnolia_macrophylla_ssp_ashei]
+[2014.Magnolia_macrophylla {=} 1998S.Magnolia_macrophylla_ssp_macrophylla]
+[2014.Magnolia_fraseri {=} 1998S.Magnolia_fraseri_var_pyramidata]
+[2014.Magnolia_pyramidata {=} 1998S.Magnolia_fraseri_var_fraseri]
+[2014.Magnolia_tripetala {=} 1998S.Magnolia_tripetala]
+
+
+
+

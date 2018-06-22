@@ -1,0 +1,101 @@
+1997.Magnolia_acuminata:
+  concept: Magnolia_acuminata
+  group: '1997'
+1997.Magnolia_virginiana:
+  concept: Magnolia_virginiana
+  group: '1997'
+2014.Magnolia_acuminata_var_acuminata:
+  concept: Magnolia_acuminata_var_acuminata
+  group: '2014'
+2014.Magnolia_acuminata_var_subcordata:
+  concept: Magnolia_acuminata_var_subcordata
+  group: '2014'
+2014.Magnolia_virginiana_var_australis:
+  concept: Magnolia_virginiana_var_australis
+  group: '2014'
+2014.Magnolia_virginiana_var_virginiana:
+  concept: Magnolia_virginiana_var_virginiana
+  group: '2014'
+congruent.2014.Magnolia\n1997.Magnolia:
+  concept: 2014.Magnolia\n1997.Magnolia
+  group: congruent
+congruent.2014.Magnolia_Clade1\n1997.Magnolia_Clade1:
+  concept: 2014.Magnolia_Clade1\n1997.Magnolia_Clade1
+  group: congruent
+congruent.2014.Magnolia_Clade2\n1997.Magnolia_Clade2:
+  concept: 2014.Magnolia_Clade2\n1997.Magnolia_Clade2
+  group: congruent
+congruent.2014.Magnolia_ashei\n1997.Magnolia_ashei:
+  concept: 2014.Magnolia_ashei\n1997.Magnolia_ashei
+  group: congruent
+congruent.2014.Magnolia_fraseri\n1997.Magnolia_fraseri:
+  concept: 2014.Magnolia_fraseri\n1997.Magnolia_fraseri
+  group: congruent
+congruent.2014.Magnolia_grandiflora\n1997.Magnolia_grandiflora:
+  concept: 2014.Magnolia_grandiflora\n1997.Magnolia_grandiflora
+  group: congruent
+congruent.2014.Magnolia_macrophylla\n1997.Magnolia_macrophylla:
+  concept: 2014.Magnolia_macrophylla\n1997.Magnolia_macrophylla
+  group: congruent
+congruent.2014.Magnolia_pyramidata\n1997.Magnolia_pyramidata:
+  concept: 2014.Magnolia_pyramidata\n1997.Magnolia_pyramidata
+  group: congruent
+congruent.2014.Magnolia_tripetala\n1997.Magnolia_tripetala:
+  concept: 2014.Magnolia_tripetala\n1997.Magnolia_tripetala
+  group: congruent
+1997.Magnolia_acuminata_2014.Magnolia_Clade1\n1997.Magnolia_Clade1:
+  label: is_a (input)
+  s: 1997.Magnolia_acuminata
+  t: 2014.Magnolia_Clade1\n1997.Magnolia_Clade1
+1997.Magnolia_virginiana_2014.Magnolia_Clade1\n1997.Magnolia_Clade1:
+  label: is_a (input)
+  s: 1997.Magnolia_virginiana
+  t: 2014.Magnolia_Clade1\n1997.Magnolia_Clade1
+2014.Magnolia_Clade1\n1997.Magnolia_Clade1_2014.Magnolia\n1997.Magnolia:
+  label: is_a (input)
+  s: 2014.Magnolia_Clade1\n1997.Magnolia_Clade1
+  t: 2014.Magnolia\n1997.Magnolia
+2014.Magnolia_Clade2\n1997.Magnolia_Clade2_2014.Magnolia\n1997.Magnolia:
+  label: is_a (input)
+  s: 2014.Magnolia_Clade2\n1997.Magnolia_Clade2
+  t: 2014.Magnolia\n1997.Magnolia
+2014.Magnolia_acuminata_var_acuminata_1997.Magnolia_acuminata:
+  label: is_a (input)
+  s: 2014.Magnolia_acuminata_var_acuminata
+  t: 1997.Magnolia_acuminata
+2014.Magnolia_acuminata_var_subcordata_1997.Magnolia_acuminata:
+  label: is_a (input)
+  s: 2014.Magnolia_acuminata_var_subcordata
+  t: 1997.Magnolia_acuminata
+2014.Magnolia_ashei\n1997.Magnolia_ashei_2014.Magnolia_Clade2\n1997.Magnolia_Clade2:
+  label: is_a (input)
+  s: 2014.Magnolia_ashei\n1997.Magnolia_ashei
+  t: 2014.Magnolia_Clade2\n1997.Magnolia_Clade2
+2014.Magnolia_fraseri\n1997.Magnolia_fraseri_2014.Magnolia_Clade2\n1997.Magnolia_Clade2:
+  label: is_a (input)
+  s: 2014.Magnolia_fraseri\n1997.Magnolia_fraseri
+  t: 2014.Magnolia_Clade2\n1997.Magnolia_Clade2
+2014.Magnolia_grandiflora\n1997.Magnolia_grandiflora_2014.Magnolia_Clade2\n1997.Magnolia_Clade2:
+  label: is_a (input)
+  s: 2014.Magnolia_grandiflora\n1997.Magnolia_grandiflora
+  t: 2014.Magnolia_Clade2\n1997.Magnolia_Clade2
+2014.Magnolia_macrophylla\n1997.Magnolia_macrophylla_2014.Magnolia_Clade2\n1997.Magnolia_Clade2:
+  label: is_a (input)
+  s: 2014.Magnolia_macrophylla\n1997.Magnolia_macrophylla
+  t: 2014.Magnolia_Clade2\n1997.Magnolia_Clade2
+2014.Magnolia_pyramidata\n1997.Magnolia_pyramidata_2014.Magnolia_Clade2\n1997.Magnolia_Clade2:
+  label: is_a (input)
+  s: 2014.Magnolia_pyramidata\n1997.Magnolia_pyramidata
+  t: 2014.Magnolia_Clade2\n1997.Magnolia_Clade2
+2014.Magnolia_tripetala\n1997.Magnolia_tripetala_2014.Magnolia_Clade2\n1997.Magnolia_Clade2:
+  label: is_a (input)
+  s: 2014.Magnolia_tripetala\n1997.Magnolia_tripetala
+  t: 2014.Magnolia_Clade2\n1997.Magnolia_Clade2
+2014.Magnolia_virginiana_var_australis_1997.Magnolia_virginiana:
+  label: is_a (input)
+  s: 2014.Magnolia_virginiana_var_australis
+  t: 1997.Magnolia_virginiana
+2014.Magnolia_virginiana_var_virginiana_1997.Magnolia_virginiana:
+  label: is_a (input)
+  s: 2014.Magnolia_virginiana_var_virginiana
+  t: 1997.Magnolia_virginiana

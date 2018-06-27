@@ -1,0 +1,234 @@
+2012.Houpoea_tripetala:
+  concept: Houpoea_tripetala
+  group: '2012'
+2012.Magnolia:
+  concept: Magnolia
+  group: '2012'
+2012.Magnolia_Clade1:
+  concept: Magnolia_Clade1
+  group: '2012'
+2012.Magnolia_Clade2:
+  concept: Magnolia_Clade2
+  group: '2012'
+2012.Magnolia_grandiflora:
+  concept: Magnolia_grandiflora
+  group: '2012'
+2012.Magnolia_virginiana:
+  concept: Magnolia_virginiana
+  group: '2012'
+2012.Metamagnolia_macrophylla:
+  concept: Metamagnolia_macrophylla
+  group: '2012'
+2012.Metamagnolia_macrophylla_ssp_ashei_Weatherby_Spongberg:
+  concept: Metamagnolia_macrophylla_ssp_ashei_Weatherby_Spongberg
+  group: '2012'
+2012.Metamagnolia_macrophylla_ssp_macrophylla:
+  concept: Metamagnolia_macrophylla_ssp_macrophylla
+  group: '2012'
+2012.Paramagnolia_fraseri:
+  concept: Paramagnolia_fraseri
+  group: '2012'
+2012.Paramagnolia_fraseri_var_fraseri:
+  concept: Paramagnolia_fraseri_var_fraseri
+  group: '2012'
+2012.Paramagnolia_fraseri_var_pyramidata:
+  concept: Paramagnolia_fraseri_var_pyramidata
+  group: '2012'
+2012.Yulania_acuminata:
+  concept: Yulania_acuminata
+  group: '2012'
+2014.Magnolia:
+  concept: Magnolia
+  group: '2014'
+2014.Magnolia_Clade1:
+  concept: Magnolia_Clade1
+  group: '2014'
+2014.Magnolia_Clade2:
+  concept: Magnolia_Clade2
+  group: '2014'
+2014.Magnolia_acuminata_var_acuminata:
+  concept: Magnolia_acuminata_var_acuminata
+  group: '2014'
+2014.Magnolia_acuminata_var_subcordata:
+  concept: Magnolia_acuminata_var_subcordata
+  group: '2014'
+2014.Magnolia_ashei:
+  concept: Magnolia_ashei
+  group: '2014'
+2014.Magnolia_fraseri:
+  concept: Magnolia_fraseri
+  group: '2014'
+2014.Magnolia_grandiflora:
+  concept: Magnolia_grandiflora
+  group: '2014'
+2014.Magnolia_macrophylla:
+  concept: Magnolia_macrophylla
+  group: '2014'
+2014.Magnolia_pyramidata:
+  concept: Magnolia_pyramidata
+  group: '2014'
+2014.Magnolia_tripetala:
+  concept: Magnolia_tripetala
+  group: '2014'
+2014.Magnolia_virginiana_var_australis:
+  concept: Magnolia_virginiana_var_australis
+  group: '2014'
+2014.Magnolia_virginiana_var_virginiana:
+  concept: Magnolia_virginiana_var_virginiana
+  group: '2014'
+2012.Houpoea_tripetala_2012.Magnolia_Clade2:
+  label: isa
+  s: 2012.Houpoea_tripetala
+  t: 2012.Magnolia_Clade2
+2012.Magnolia_Clade1_2012.Magnolia:
+  label: isa
+  s: 2012.Magnolia_Clade1
+  t: 2012.Magnolia
+2012.Magnolia_Clade2_2012.Magnolia:
+  label: isa
+  s: 2012.Magnolia_Clade2
+  t: 2012.Magnolia
+2012.Magnolia_grandiflora_2012.Magnolia_Clade2:
+  label: isa
+  s: 2012.Magnolia_grandiflora
+  t: 2012.Magnolia_Clade2
+2012.Magnolia_virginiana_2012.Magnolia_Clade1:
+  label: isa
+  s: 2012.Magnolia_virginiana
+  t: 2012.Magnolia_Clade1
+2012.Metamagnolia_macrophylla_2012.Magnolia:
+  label: isa
+  s: 2012.Metamagnolia_macrophylla
+  t: 2012.Magnolia
+2012.Metamagnolia_macrophylla_ssp_ashei_Weatherby_Spongberg_2012.Metamagnolia_macrophylla:
+  label: isa
+  s: 2012.Metamagnolia_macrophylla_ssp_ashei_Weatherby_Spongberg
+  t: 2012.Metamagnolia_macrophylla
+2012.Metamagnolia_macrophylla_ssp_macrophylla_2012.Metamagnolia_macrophylla:
+  label: isa
+  s: 2012.Metamagnolia_macrophylla_ssp_macrophylla
+  t: 2012.Metamagnolia_macrophylla
+2012.Paramagnolia_fraseri_2012.Magnolia:
+  label: isa
+  s: 2012.Paramagnolia_fraseri
+  t: 2012.Magnolia
+2012.Paramagnolia_fraseri_var_fraseri_2012.Paramagnolia_fraseri:
+  label: isa
+  s: 2012.Paramagnolia_fraseri_var_fraseri
+  t: 2012.Paramagnolia_fraseri
+2012.Paramagnolia_fraseri_var_pyramidata_2012.Paramagnolia_fraseri:
+  label: isa
+  s: 2012.Paramagnolia_fraseri_var_pyramidata
+  t: 2012.Paramagnolia_fraseri
+2012.Yulania_acuminata_2012.Magnolia_Clade1:
+  label: isa
+  s: 2012.Yulania_acuminata
+  t: 2012.Magnolia_Clade1
+2014.Magnolia_2012.Magnolia:
+  label: '{=}'
+  s: 2014.Magnolia
+  t: 2012.Magnolia
+2014.Magnolia_Clade1_2012.Magnolia_Clade1:
+  label: '{=}'
+  s: 2014.Magnolia_Clade1
+  t: 2012.Magnolia_Clade1
+2014.Magnolia_Clade1_2014.Magnolia:
+  label: isa
+  s: 2014.Magnolia_Clade1
+  t: 2014.Magnolia
+2014.Magnolia_Clade2_2012.Magnolia_Clade2:
+  label: '{>}'
+  s: 2014.Magnolia_Clade2
+  t: 2012.Magnolia_Clade2
+2014.Magnolia_Clade2_2012.Metamagnolia_macrophylla:
+  label: '{>}'
+  s: 2014.Magnolia_Clade2
+  t: 2012.Metamagnolia_macrophylla
+2014.Magnolia_Clade2_2012.Paramagnolia_fraseri:
+  label: '{>}'
+  s: 2014.Magnolia_Clade2
+  t: 2012.Paramagnolia_fraseri
+2014.Magnolia_Clade2_2014.Magnolia:
+  label: isa
+  s: 2014.Magnolia_Clade2
+  t: 2014.Magnolia
+2014.Magnolia_acuminata_var_acuminata_2012.Yulania_acuminata:
+  label: '{<}'
+  s: 2014.Magnolia_acuminata_var_acuminata
+  t: 2012.Yulania_acuminata
+2014.Magnolia_acuminata_var_acuminata_2014.Magnolia_Clade1:
+  label: isa
+  s: 2014.Magnolia_acuminata_var_acuminata
+  t: 2014.Magnolia_Clade1
+2014.Magnolia_acuminata_var_subcordata_2012.Yulania_acuminata:
+  label: '{<}'
+  s: 2014.Magnolia_acuminata_var_subcordata
+  t: 2012.Yulania_acuminata
+2014.Magnolia_acuminata_var_subcordata_2014.Magnolia_Clade1:
+  label: isa
+  s: 2014.Magnolia_acuminata_var_subcordata
+  t: 2014.Magnolia_Clade1
+2014.Magnolia_ashei_2012.Metamagnolia_macrophylla_ssp_ashei_Weatherby_Spongberg:
+  label: '{=}'
+  s: 2014.Magnolia_ashei
+  t: 2012.Metamagnolia_macrophylla_ssp_ashei_Weatherby_Spongberg
+2014.Magnolia_ashei_2014.Magnolia_Clade2:
+  label: isa
+  s: 2014.Magnolia_ashei
+  t: 2014.Magnolia_Clade2
+2014.Magnolia_fraseri_2012.Paramagnolia_fraseri_var_fraseri:
+  label: '{=}'
+  s: 2014.Magnolia_fraseri
+  t: 2012.Paramagnolia_fraseri_var_fraseri
+2014.Magnolia_fraseri_2014.Magnolia_Clade2:
+  label: isa
+  s: 2014.Magnolia_fraseri
+  t: 2014.Magnolia_Clade2
+2014.Magnolia_grandiflora_2012.Magnolia_grandiflora:
+  label: '{=}'
+  s: 2014.Magnolia_grandiflora
+  t: 2012.Magnolia_grandiflora
+2014.Magnolia_grandiflora_2014.Magnolia_Clade2:
+  label: isa
+  s: 2014.Magnolia_grandiflora
+  t: 2014.Magnolia_Clade2
+2014.Magnolia_macrophylla_2012.Metamagnolia_macrophylla_ssp_macrophylla:
+  label: '{=}'
+  s: 2014.Magnolia_macrophylla
+  t: 2012.Metamagnolia_macrophylla_ssp_macrophylla
+2014.Magnolia_macrophylla_2014.Magnolia_Clade2:
+  label: isa
+  s: 2014.Magnolia_macrophylla
+  t: 2014.Magnolia_Clade2
+2014.Magnolia_pyramidata_2012.Paramagnolia_fraseri_var_pyramidata:
+  label: '{=}'
+  s: 2014.Magnolia_pyramidata
+  t: 2012.Paramagnolia_fraseri_var_pyramidata
+2014.Magnolia_pyramidata_2014.Magnolia_Clade2:
+  label: isa
+  s: 2014.Magnolia_pyramidata
+  t: 2014.Magnolia_Clade2
+2014.Magnolia_tripetala_2012.Houpoea_tripetala:
+  label: '{=}'
+  s: 2014.Magnolia_tripetala
+  t: 2012.Houpoea_tripetala
+2014.Magnolia_tripetala_2014.Magnolia_Clade2:
+  label: isa
+  s: 2014.Magnolia_tripetala
+  t: 2014.Magnolia_Clade2
+2014.Magnolia_virginiana_var_australis_2012.Magnolia_virginiana:
+  label: '{<}'
+  s: 2014.Magnolia_virginiana_var_australis
+  t: 2012.Magnolia_virginiana
+2014.Magnolia_virginiana_var_australis_2014.Magnolia_Clade1:
+  label: isa
+  s: 2014.Magnolia_virginiana_var_australis
+  t: 2014.Magnolia_Clade1
+2014.Magnolia_virginiana_var_virginiana_2012.Magnolia_virginiana:
+  label: '{<}'
+  s: 2014.Magnolia_virginiana_var_virginiana
+  t: 2012.Magnolia_virginiana
+2014.Magnolia_virginiana_var_virginiana_2014.Magnolia_Clade1:
+  label: isa
+  s: 2014.Magnolia_virginiana_var_virginiana
+  t: 2014.Magnolia_Clade1

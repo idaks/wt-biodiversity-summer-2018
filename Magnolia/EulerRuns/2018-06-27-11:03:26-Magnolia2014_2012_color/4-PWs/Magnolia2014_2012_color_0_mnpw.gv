@@ -1,0 +1,65 @@
+digraph{
+rankdir=RL
+node[shape=box style=filled fillcolor="#CCFFCC" fontname="helvetica"] 
+"2014.Magnolia_Clade2"
+"2014.Magnolia_acuminata_var_subcordata"
+"2014.Magnolia_virginiana_var_australis"
+"2014.Magnolia_acuminata_var_acuminata"
+"2014.Magnolia_virginiana_var_virginiana"
+node[shape=box style="filled,rounded" fillcolor="#EEEEEE" fontname="helvetica"] 
+"2014.Magnolia\n2012.Magnolia"
+"2014.Magnolia_fraseri\n2012.Paramagnolia_fraseri_var_fraseri"
+"2014.Magnolia_tripetala\n2012.Houpoea_tripetala"
+"2014.Magnolia_Clade1\n2012.Magnolia_Clade1"
+"2014.Magnolia_macrophylla\n2012.Metamagnolia_macrophylla_ssp_macrophylla"
+"2014.Magnolia_ashei\n2012.Metamagnolia_macrophylla_ssp_ashei_Weatherby_Spongberg"
+"2014.Magnolia_pyramidata\n2012.Paramagnolia_fraseri_var_pyramidata"
+"2014.Magnolia_grandiflora\n2012.Magnolia_grandiflora"
+node[shape=note style=filled fillcolor="#FFFFCC" fontname="helvetica"] 
+"2012.Magnolia_Clade2"
+"2012.Paramagnolia_fraseri"
+"2012.Yulania_acuminata"
+"2012.Magnolia_virginiana"
+"2012.Metamagnolia_macrophylla"
+edge[arrowhead=normal style=solid color="#000000" constraint=true penwidth=1]
+"2014.Magnolia_acuminata_var_acuminata" -> "2012.Yulania_acuminata"
+"2012.Paramagnolia_fraseri" -> "2014.Magnolia_Clade2"
+"2014.Magnolia_tripetala\n2012.Houpoea_tripetala" -> "2012.Magnolia_Clade2"
+"2014.Magnolia_acuminata_var_subcordata" -> "2012.Yulania_acuminata"
+"2012.Magnolia_Clade2" -> "2014.Magnolia_Clade2"
+"2014.Magnolia_Clade1\n2012.Magnolia_Clade1" -> "2014.Magnolia\n2012.Magnolia"
+"2014.Magnolia_virginiana_var_australis" -> "2012.Magnolia_virginiana"
+"2014.Magnolia_macrophylla\n2012.Metamagnolia_macrophylla_ssp_macrophylla" -> "2012.Metamagnolia_macrophylla"
+"2012.Magnolia_virginiana" -> "2014.Magnolia_Clade1\n2012.Magnolia_Clade1"
+"2014.Magnolia_pyramidata\n2012.Paramagnolia_fraseri_var_pyramidata" -> "2012.Paramagnolia_fraseri"
+"2014.Magnolia_fraseri\n2012.Paramagnolia_fraseri_var_fraseri" -> "2012.Paramagnolia_fraseri"
+"2014.Magnolia_virginiana_var_virginiana" -> "2012.Magnolia_virginiana"
+"2012.Metamagnolia_macrophylla" -> "2014.Magnolia_Clade2"
+"2014.Magnolia_Clade2" -> "2014.Magnolia\n2012.Magnolia"
+"2014.Magnolia_grandiflora\n2012.Magnolia_grandiflora" -> "2012.Magnolia_Clade2"
+"2014.Magnolia_ashei\n2012.Metamagnolia_macrophylla_ssp_ashei_Weatherby_Spongberg" -> "2012.Metamagnolia_macrophylla"
+"2012.Yulania_acuminata" -> "2014.Magnolia_Clade1\n2012.Magnolia_Clade1"
+edge[arrowhead=normal style=dotted color="#000000" constraint=true penwidth=1]
+node[shape=box] 
+{rank=source Legend [fillcolor= white margin=0 label=< 
+ <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4"> 
+<TR> <TD COLSPAN="2"><font face="Arial Black"> Nodes</font></TD> </TR> 
+<TR> 
+ <TD bgcolor="#CCFFCC" fontname="helvetica">2014</TD> 
+ <TD>5</TD> 
+ </TR> 
+<TR> 
+ <TD bgcolor="#EEEEEE" fontname="helvetica">congruent</TD> 
+ <TD>8</TD> 
+ </TR> 
+<TR> 
+ <TD bgcolor="#FFFFCC" fontname="helvetica">2012</TD> 
+ <TD>5</TD> 
+ </TR> 
+<TR> <TD COLSPAN="2"><font face = "Arial Black"> Edges </font></TD> </TR> 
+<TR> 
+ <TD><font color ="#000000">is_a (input)</font></TD><TD>17</TD>
+</TR>
+</TABLE> 
+ >] } 
+}

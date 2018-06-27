@@ -1,0 +1,37 @@
+##### Executing command:
+
+/Users/jessicacheng/EulerX/src-el/euler2 align Magnolia2014_1991_color.txt -r clingo 
+
+
+##### Euler version:
+
+master
+49e63e6a27be97ab30832180a47d214494388e15
+
+
+##### GraphViz version:
+
+dot - graphviz version 2.36.0 (20140111.2315)
+
+
+##### DLV version:
+
+DLV [build BEN/Dec 17 2012   gcc 4.2.1 (Apple Inc. build 5666) (dot 3)]
+
+usage: dlv {FRONTEND} {OPTIONS} [filename [filename [...]]]
+
+Specify -help for more detailed usage information.
+
+
+##### Running User, Host and Date:
+User:	jessicacheng
+Host:	wirelessprv-10-195-175-58.near.illinois.edu
+Date:	2018-06-27-11:10:14
+
+
+##### Euler Outputs:
+******* You are running example Magnolia2014_1991_color *******
+
+Possible world 0:
+{2014.Magnolia_Clade2">"1991.Magnolia_Clade2, 2014.Magnolia">"1991.Magnolia_Clade2, 2014.Magnolia">"1991.Magnolia, 2014.Magnolia">"1991.Magnolia_Clade1, 2014.Magnolia_Clade2">"1991.Magnolia_fraseri, 2014.Magnolia">"1991.Magnolia_fraseri, 2014.Magnolia_Clade2">"1991.Magnolia_tripetala, 2014.Magnolia">"1991.Magnolia_tripetala, 2014.Magnolia">"1991.Magnolia_acuminata, 2014.Magnolia_Clade1">"1991.Magnolia_acuminata, 2014.Magnolia_Clade2">"1991.Magnolia_grandiflora, 2014.Magnolia">"1991.Magnolia_grandiflora, 2014.Magnolia_Clade2">"1991.Magnolia_macrophylla, 2014.Magnolia">"1991.Magnolia_macrophylla, 2014.Magnolia">"1991.Magnolia_virginiana, 2014.Magnolia_Clade1">"1991.Magnolia_virginiana, 2014.Magnolia_Clade1"="1991.Magnolia_Clade1, 2014.Magnolia_fraseri"="1991.Magnolia_fraseri, 2014.Magnolia_tripetala"="1991.Magnolia_tripetala, 2014.Magnolia_grandiflora"="1991.Magnolia_grandiflora, 2014.Magnolia_macrophylla"="1991.Magnolia_macrophylla, 2014.Magnolia_fraseri"<"1991.Magnolia_Clade2, 2014.Magnolia_tripetala"<"1991.Magnolia_Clade2, 2014.Magnolia_macrophylla"<"1991.Magnolia_Clade2, 2014.Magnolia_grandiflora"<"1991.Magnolia_Clade2, 2014.Magnolia_fraseri"<"1991.Magnolia, 2014.Magnolia_tripetala"<"1991.Magnolia, 2014.Magnolia_virginiana_var_australis"<"1991.Magnolia, 2014.Magnolia_Clade1"<"1991.Magnolia, 2014.Magnolia_acuminata_var_subcordata"<"1991.Magnolia, 2014.Magnolia_virginiana_var_virginiana"<"1991.Magnolia, 2014.Magnolia_acuminata_var_acuminata"<"1991.Magnolia, 2014.Magnolia_macrophylla"<"1991.Magnolia, 2014.Magnolia_grandiflora"<"1991.Magnolia, 2014.Magnolia_virginiana_var_australis"<"1991.Magnolia_Clade1, 2014.Magnolia_acuminata_var_subcordata"<"1991.Magnolia_Clade1, 2014.Magnolia_virginiana_var_virginiana"<"1991.Magnolia_Clade1, 2014.Magnolia_acuminata_var_acuminata"<"1991.Magnolia_Clade1, 2014.Magnolia_acuminata_var_subcordata"<"1991.Magnolia_acuminata, 2014.Magnolia_acuminata_var_acuminata"<"1991.Magnolia_acuminata, 2014.Magnolia_virginiana_var_australis"<"1991.Magnolia_virginiana, 2014.Magnolia_virginiana_var_virginiana"<"1991.Magnolia_virginiana, 2014.Magnolia_Clade2"><"1991.Magnolia, 2014.Magnolia_ashei"!"1991.Magnolia_Clade2, 2014.Magnolia_acuminata_var_acuminata"!"1991.Magnolia_Clade2, 2014.Magnolia_Clade1"!"1991.Magnolia_Clade2, 2014.Magnolia_virginiana_var_virginiana"!"1991.Magnolia_Clade2, 2014.Magnolia_acuminata_var_subcordata"!"1991.Magnolia_Clade2, 2014.Magnolia_virginiana_var_australis"!"1991.Magnolia_Clade2, 2014.Magnolia_pyramidata"!"1991.Magnolia_Clade2, 2014.Magnolia_ashei"!"1991.Magnolia, 2014.Magnolia_pyramidata"!"1991.Magnolia, 2014.Magnolia_ashei"!"1991.Magnolia_Clade1, 2014.Magnolia_Clade2"!"1991.Magnolia_Clade1, 2014.Magnolia_grandiflora"!"1991.Magnolia_Clade1, 2014.Magnolia_macrophylla"!"1991.Magnolia_Clade1, 2014.Magnolia_tripetala"!"1991.Magnolia_Clade1, 2014.Magnolia_pyramidata"!"1991.Magnolia_Clade1, 2014.Magnolia_fraseri"!"1991.Magnolia_Clade1, 2014.Magnolia_pyramidata"!"1991.Magnolia_fraseri, 2014.Magnolia_tripetala"!"1991.Magnolia_fraseri, 2014.Magnolia_virginiana_var_australis"!"1991.Magnolia_fraseri, 2014.Magnolia_Clade1"!"1991.Magnolia_fraseri, 2014.Magnolia_acuminata_var_subcordata"!"1991.Magnolia_fraseri, 2014.Magnolia_virginiana_var_virginiana"!"1991.Magnolia_fraseri, 2014.Magnolia_acuminata_var_acuminata"!"1991.Magnolia_fraseri, 2014.Magnolia_macrophylla"!"1991.Magnolia_fraseri, 2014.Magnolia_grandiflora"!"1991.Magnolia_fraseri, 2014.Magnolia_ashei"!"1991.Magnolia_fraseri, 2014.Magnolia_fraseri"!"1991.Magnolia_tripetala, 2014.Magnolia_pyramidata"!"1991.Magnolia_tripetala, 2014.Magnolia_virginiana_var_australis"!"1991.Magnolia_tripetala, 2014.Magnolia_Clade1"!"1991.Magnolia_tripetala, 2014.Magnolia_acuminata_var_subcordata"!"1991.Magnolia_tripetala, 2014.Magnolia_virginiana_var_virginiana"!"1991.Magnolia_tripetala, 2014.Magnolia_acuminata_var_acuminata"!"1991.Magnolia_tripetala, 2014.Magnolia_macrophylla"!"1991.Magnolia_tripetala, 2014.Magnolia_grandiflora"!"1991.Magnolia_tripetala, 2014.Magnolia_ashei"!"1991.Magnolia_tripetala, 2014.Magnolia_fraseri"!"1991.Magnolia_acuminata, 2014.Magnolia_Clade2"!"1991.Magnolia_acuminata, 2014.Magnolia_pyramidata"!"1991.Magnolia_acuminata, 2014.Magnolia_tripetala"!"1991.Magnolia_acuminata, 2014.Magnolia_virginiana_var_australis"!"1991.Magnolia_acuminata, 2014.Magnolia_virginiana_var_virginiana"!"1991.Magnolia_acuminata, 2014.Magnolia_macrophylla"!"1991.Magnolia_acuminata, 2014.Magnolia_grandiflora"!"1991.Magnolia_acuminata, 2014.Magnolia_ashei"!"1991.Magnolia_acuminata, 2014.Magnolia_fraseri"!"1991.Magnolia_grandiflora, 2014.Magnolia_pyramidata"!"1991.Magnolia_grandiflora, 2014.Magnolia_tripetala"!"1991.Magnolia_grandiflora, 2014.Magnolia_virginiana_var_australis"!"1991.Magnolia_grandiflora, 2014.Magnolia_Clade1"!"1991.Magnolia_grandiflora, 2014.Magnolia_acuminata_var_subcordata"!"1991.Magnolia_grandiflora, 2014.Magnolia_virginiana_var_virginiana"!"1991.Magnolia_grandiflora, 2014.Magnolia_acuminata_var_acuminata"!"1991.Magnolia_grandiflora, 2014.Magnolia_macrophylla"!"1991.Magnolia_grandiflora, 2014.Magnolia_ashei"!"1991.Magnolia_grandiflora, 2014.Magnolia_fraseri"!"1991.Magnolia_macrophylla, 2014.Magnolia_pyramidata"!"1991.Magnolia_macrophylla, 2014.Magnolia_tripetala"!"1991.Magnolia_macrophylla, 2014.Magnolia_virginiana_var_australis"!"1991.Magnolia_macrophylla, 2014.Magnolia_Clade1"!"1991.Magnolia_macrophylla, 2014.Magnolia_acuminata_var_subcordata"!"1991.Magnolia_macrophylla, 2014.Magnolia_virginiana_var_virginiana"!"1991.Magnolia_macrophylla, 2014.Magnolia_acuminata_var_acuminata"!"1991.Magnolia_macrophylla, 2014.Magnolia_grandiflora"!"1991.Magnolia_macrophylla, 2014.Magnolia_ashei"!"1991.Magnolia_macrophylla, 2014.Magnolia_fraseri"!"1991.Magnolia_virginiana, 2014.Magnolia_Clade2"!"1991.Magnolia_virginiana, 2014.Magnolia_pyramidata"!"1991.Magnolia_virginiana, 2014.Magnolia_tripetala"!"1991.Magnolia_virginiana, 2014.Magnolia_acuminata_var_subcordata"!"1991.Magnolia_virginiana, 2014.Magnolia_acuminata_var_acuminata"!"1991.Magnolia_virginiana, 2014.Magnolia_macrophylla"!"1991.Magnolia_virginiana, 2014.Magnolia_grandiflora"!"1991.Magnolia_virginiana, 2014.Magnolia_ashei"!"1991.Magnolia_virginiana}
+

@@ -1,0 +1,23 @@
+taxonomy 2014 Weakley
+(Magnolia Magnolia_Clade1 Magnolia_Clade2)
+(Magnolia_Clade1 Magnolia_acuminata_var_acuminata Magnolia_acuminata_var_subcordata Magnolia_virginiana_var_australis Magnolia_virginiana_var_virginiana)
+(Magnolia_Clade2 Magnolia_grandiflora Magnolia_ashei Magnolia_macrophylla Magnolia_fraseri Magnolia_pyramidata Magnolia_tripetala)
+
+taxonomy 1991 Cronquist
+(Magnolia Magnolia_Clade1 Magnolia_Clade2)
+(Magnolia_Clade1 Magnolia_acuminata Magnolia_virginiana)
+(Magnolia_Clade2 Magnolia_grandiflora Magnolia_macrophylla Magnolia_fraseri Magnolia_tripetala)
+
+
+articulation 2014-1991 Weakley-Cronquist
+#[2014.Magnolia {>} 1991.Magnolia]
+[2014.Magnolia_Clade1 {=} 1991.Magnolia_Clade1]
+[2014.Magnolia_Clade2 {>} 1991.Magnolia_Clade2]
+[2014.Magnolia_acuminata_var_acuminata {<} 1991.Magnolia_acuminata]
+[2014.Magnolia_acuminata_var_subcordata {<} 1991.Magnolia_acuminata]
+[2014.Magnolia_virginiana_var_australis {<} 1991.Magnolia_virginiana]
+[2014.Magnolia_virginiana_var_virginiana {<} 1991.Magnolia_virginiana]
+[2014.Magnolia_grandiflora {=} 1991.Magnolia_grandiflora]
+[2014.Magnolia_macrophylla {=} 1991.Magnolia_macrophylla]
+[2014.Magnolia_fraseri {=} 1991.Magnolia_fraseri]
+[2014.Magnolia_tripetala {=} 1991.Magnolia_tripetala]

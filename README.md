@@ -4,6 +4,8 @@
 
 2. Refer to Magnolia folder for the Euler/x taxonomy alignment use case. 
 
+3. Download the plotdata.py if you want to run the species occurrence distribution visualization individually.
+
 ### Ideal Workflow:
 
 ```                                           

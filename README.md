@@ -18,6 +18,8 @@
                                           Euler/X taxonomy alignments 
                                                        ⏬
                             Gather species occurrence datasets (Source: SERENEC; metadata:Darwin-Core)
+                                                       ⏬
+                              Geocode the dataset where Lat-Long data are missing (using geocode.py)
                                                        ⏬
                                  Visualize species co-occurrence distribution 
                                                        ⏬

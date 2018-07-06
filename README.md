@@ -2,9 +2,9 @@
 ### Refer to the following files or folder for latest progress:
 1. Magnolia_all.ipynb for species co-occurence distribution visualization function. 
 
-- all the Mangolia distribution datasets are in the folder /Magnolia/datasets
+- all the Mangolia distribution datasets are in the folder: /Magnolia/dataset/geocoded/
 
-2. Refer to Magnolia folder for the Euler/x taxonomy alignment use case. 
+2. Refer to Magnolia folder for the Euler/x taxonomy alignment use case.  /Magnolia/EulerRuns/
 
 3. Download the plotdata.py if you want to run the species occurrence distribution visualization individually.
 

@@ -8,6 +8,8 @@
 
 3. Download the plotdata.py if you want to run the species occurrence distribution visualization individually.
 
+4. ConceptMapping.ipynb automated the mapping process and create mock datasets.
+
 ### Ideal Workflow:
 
 ```                                           

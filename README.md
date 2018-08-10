@@ -1,4 +1,4 @@
-# wt-biodiversity-summer-2018
+# WholeTale Summer Internship 2018- Taxonomy alignment as a key to enhance reproducibility in biodiversity research: a case study of Magnolia 
 ### Refer to the following files or folder for latest progress:
 1. Magnolia_all.ipynb for species co-occurence distribution visualization function. 
 
@@ -8,9 +8,9 @@
 
 3. Download the plotdata.py if you want to run the species occurrence distribution visualization individually.
 
-4. ConceptMapping.ipynb automated the mapping process and create mock datasets.
+4. Different Concept mapping jupyter notebooks in the Concept mapping folder.
 
-### Ideal Workflow:
+### Overview of the task:
 
 ```                                           
                                         Decide which species we want to examine 

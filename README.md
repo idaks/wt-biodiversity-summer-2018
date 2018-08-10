@@ -1,4 +1,8 @@
 # WholeTale Summer Internship 2018- Taxonomy alignment as a key to enhance reproducibility in biodiversity research: a case study of Magnolia 
+
+### Author: Yi-Yun Cheng (Jessica), University of Illinois at Urbana-Champaign
+### Mentors: Dr. Bertram Ludaescher, UIUC ; Dr. Nico Franz, ASU
+
 ### Refer to the following files or folder for latest progress:
 1. Magnolia_all.ipynb for species co-occurence distribution visualization function. 
 

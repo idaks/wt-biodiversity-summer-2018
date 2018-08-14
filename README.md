@@ -38,9 +38,9 @@ This is why we are in a pressing need to align diffferent taxonomies that is add
 **Step 8**: Niche modeling and further analyisis
 
 ### Refer to the following for details
-1. **Step 5**: Concept mapping process. Refer to [this notebook](wt-biodiversity-summer-2018/ConceptMapping/ConceptMapping-MagnoliaMapping_correct.ipynb)
+1. **Step 5**: Concept mapping process. Refer to [this notebook](https://github.com/wt-biodiversity-summer-2018/ConceptMapping/ConceptMapping-MagnoliaMapping_correct.ipynb)
 
-2. **Step 6**: Filling in missing geo-location information. Clone [this repository](https://github.com/idaks/intros-MaxEnt/tree/master/introsmaxent) and run the [geocode.py](intros-MaxEnt/introsmaxent/geocode.py) along with [testgeocode.py](https://github.com/idaks/intros-MaxEnt/blob/master/introsmaxent/test_geocode.py).
+2. **Step 6**: Filling in missing geo-location information. Clone [this repository](https://github.com/idaks/intros-MaxEnt/tree/master/introsmaxent) and run the [geocode.py](https://github.com/intros-MaxEnt/introsmaxent/geocode.py) along with [testgeocode.py](https://github.com/idaks/intros-MaxEnt/blob/master/introsmaxent/test_geocode.py).
 
-3. **Step 7**: Species co-occurrence distribution visualization. Refer to [this notebook](wt-biodiversity-summer-2018/Magnolia_all.ipynb)
-  - try [plotdata.py](wt-biodiversity-summer-2018/plotdata.py) to run the code directly
+3. **Step 7**: Species co-occurrence distribution visualization. Refer to [this notebook](https://github.com/wt-biodiversity-summer-2018/Magnolia_all.ipynb)
+  - try [plotdata.py](https://github.com/wt-biodiversity-summer-2018/plotdata.py) to run the code directly

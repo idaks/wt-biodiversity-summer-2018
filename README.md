@@ -1,34 +1,46 @@
-# WholeTale Summer Internship 2018- Taxonomy alignment as a key to enhance reproducibility in biodiversity research: a case study of Magnolia 
+# WholeTale Summer Internship 2018
+## Taxonomy alignment as a key to enhance reproducibility in biodiversity research: a case study of Magnolia 
 
-### Author: Yi-Yun Cheng (Jessica), University of Illinois at Urbana-Champaign
-### Mentors: Dr. Bertram Ludaescher, UIUC ; Dr. Nico Franz, ASU
+Author: Yi-Yun Cheng (Jessica), University of Illinois at Urbana-Champaign
 
-### Refer to the following files or folder for latest progress:
-1. Magnolia_all.ipynb for species co-occurence distribution visualization function. 
+Mentors: Dr. Bertram Ludaescher, UIUC ; Dr. Nico Franz, ASU
 
-- all the Mangolia distribution datasets are in the folder: /Magnolia/dataset/geocoded/
+### Goal of this project
+Oftentimes in biodiversity research, we expect the scientific names of species to be unique identifiers, but actually they may not be. Why is that?
 
-2. Refer to Magnolia folder for the Euler/x taxonomy alignment use case.  /Magnolia/EulerRuns/
+(1) The scientific names can vary over time
 
-3. Download the plotdata.py if you want to run the species occurrence distribution visualization individually.
+(2) The names stay the same, but the semantics of the names change
 
-4. Different Concept mapping jupyter notebooks in the Concept mapping folder.
+Other complicated issues:
 
-### Overview of the task:
+(1) Different people may have different perceptions to the taxonomy of a same topic
 
-```                                           
-                                        Decide which species we want to examine 
-                                                       ⏬
-                      Domain experts (systematists) provide a 'concept mapping' table for taxonomies over time
-                                                       ⏬
-                                          Euler/X taxonomy alignments 
-                                                       ⏬
-                            Gather species occurrence datasets (Source: SERENEC; metadata:Darwin-Core)
-                                                       ⏬
-                              Geocode the dataset where Lat-Long data are missing (using geocode.py)
-                                                       ⏬
-                                 Visualize species co-occurrence distribution 
-                                                       ⏬
-                                            niche modeling analysis
-                                                      
-```
+(2) Species distribution datasets oftentimes only include information on a species ‘name’ without crediting the authorship of that taxonomy
+
+This is why we are in a pressing need to align diffferent taxonomies that is addressing the same topic, not to only make the names more interoperable, but also to make way for further datasets usage.
+
+### Overview of the tasks for this project
+**Step 1**: Decide which species (or genus) to examine
+
+**Step 2**: Domain experts provide a mapping table for the taxonomies used over time for that particular species
+
+**Step 3**: Researcher transpose domain experts’ table into Euler/X or LeanEuler input file
+
+**Step 4**: Gather species distribution dataset from biodiverisity portals
+
+**Step 5**: Concept mapping of the taxonomies and create new datasets based on different taxonomies
+
+**Step 6**: Data cleaning - geocode missing lat-long information
+
+**Step 7**: Visualizing species co-occurrence distribution & synthesized taxonomy alignment distribution
+
+**Step 8**: Niche modeling and further analyisis
+
+### Refer to the following for details
+1. **Step 5**: Concept mapping process. Refer to [this notebook](wt-biodiversity-summer-2018/ConceptMapping/ConceptMapping-MagnoliaMapping_correct.ipynb)
+
+2. **Step 6**: Filling in missing geo-location information. Clone [this repository](https://github.com/idaks/intros-MaxEnt/tree/master/introsmaxent) and run the [geocode.py](intros-MaxEnt/introsmaxent/geocode.py) along with [testgeocode.py](https://github.com/idaks/intros-MaxEnt/blob/master/introsmaxent/test_geocode.py).
+
+3. **Step 7**: Species co-occurrence distribution visualization. Refer to [this notebook](wt-biodiversity-summer-2018/Magnolia_all.ipynb)
+  - try [plotdata.py](wt-biodiversity-summer-2018/plotdata.py) to run the code directly
